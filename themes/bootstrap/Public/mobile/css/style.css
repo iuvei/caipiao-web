@@ -1,0 +1,2377 @@
+﻿/* CSS Document */
+/*The layer style of public*/
+/*--header--*/
+header{
+    background:#a30018;
+    height:4.5rem;
+    width:100%;
+    position:fixed;
+    top:0;
+    box-shadow:0px 0px 1px rgba(0,0,0,0.5);
+    z-index:10000;
+}
+header.headerNone{
+    background:none;
+    position:absolute;
+    top:0;
+    box-shadow:none;
+}
+.headName{
+    width:100%;
+    height:4.5rem;
+    line-height:4.5rem;
+    font-size:1.6rem;
+    margin:0 auto;
+    text-shadow:0px 0px 1px rgba(0,0,0,0.7);
+    color:#fff;
+}
+.headerLeft{
+    position:absolute;
+    left:0.5rem;
+    line-height:5rem;
+    top:0;
+    text-shadow:0px 0px 1px rgba(0,0,0,0.7);
+    color:#fff;
+}
+.headerLeft a{
+    color:#fff;
+}
+.headerRight{
+    position:absolute;
+    right:0.5rem;
+    line-height:4.5rem;
+    top:0;
+    text-shadow:0px 0px 1px rgba(0,0,0,0.7);
+    color:#fff;
+    font-family:"Microsoft YaHei UI","Microsoft YaHei","寰蒋闆呴粦","WenQuanYi Micro Hei","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3",sans-serif; 
+}
+.headerRight a{
+    color:#fff;
+}
+.txt{
+    color:#fff;
+    font-size:1.4rem;       
+}
+.headerPosition{ 
+    height:4.5rem;
+}
+/*--footer--*/
+.fottop{height:5rem;}
+.footer{
+    width:100%;
+    height:4.5rem;
+    background:#000;
+    box-shadow:0 -1px 2px rgba(0,0,0,0.4);
+    position:fixed;
+    bottom:0;
+}
+.fotList{
+    width:25%;
+    height:4rem;
+    text-align:center;
+    float:left;
+    margin-top:0.25rem;
+}
+.fotIconImg{
+    width:1.6rem;
+    height:2rem;
+    margin:0.5rem auto 0;
+}
+.fotIconImg img{
+    width:100%;
+}
+.fotIconTxt{
+    font-size:1.1rem;
+    line-height:1.6rem;
+    color:#7f8393;
+}
+
+/*--Quick class options--*/
+.grayer{
+    color:#292929 !important;
+}
+.orange{
+    color:#ff8200 !important;
+}
+.red{
+    color:#bc001c !important;
+}
+.blue{
+    color:#00a1e9 !important;
+}
+/*--My account page--*/
+.accountTop{
+    height:5rem;
+    background:#fff;
+    padding:1rem;
+    box-shadow:0 0 2px rgba(0,0,0,0.3);
+}
+.pictureFrame{
+    width:5rem;
+    height:5rem;
+    border-radius:100%;
+    overflow:hidden;
+    float:left;
+    border:1px solid #ccc;
+    background:#dadada;
+}
+.pictureFrame img{
+    width:100%;
+}
+.accountInfo{
+    float:left;
+    margin-left:1rem;
+}
+.accountInfo .iIcon_h{
+    font-size:1.4rem;
+    color:#000;
+    text-align:left;
+    line-height:2.6rem;
+}
+.accountInfo .iIcon_h i{
+    font-size:1.3rem;
+    color:#383838;
+    text-align:left;
+    padding-right:0.5rem;
+}
+.accountListBox{
+    background:#fff;
+    margin-top:1rem;
+    box-shadow:0 0 1px rgba(0,0,0,0.3); 
+}
+.accountList li a{
+    display:block;
+    padding:0 1rem;
+    height:4.5rem;
+    position:relative;
+}
+.accountList li a .accountCon{
+    border-bottom:1px dotted #ccc;
+    height:4.5rem;
+}
+.accountList li:last-child a .accountCon{
+    border-bottom:none; 
+}
+.accountCon .iIcon{
+    float:left;
+    width:2.2rem;
+    height:2.2rem;
+    margin-top:1rem;
+}
+.accountCon .iIcon img{
+    width:2.2rem;
+}
+.accountCon .iIconTxt{
+    float:left;
+    margin-left:1rem;
+    line-height:4.5rem;
+    font-size:1.3rem;
+    color:#2d2d2d;
+}
+.arrow{
+    position:absolute;
+    background:url(../images/arrow.png) no-repeat center center;
+    right:1rem;
+    background-size:45%;
+    width:2rem;
+    height:4rem;
+    top:0.25rem;
+}
+.arrowSh{
+    position:absolute;
+    background:url(../images/arrow.png) no-repeat center center;
+    right:1rem;
+    background-size:45%;
+    width:2rem;
+    height:3rem;
+    top:0.5rem;
+}
+
+
+/*I'd like to top-up page*/
+.back a{
+    background:url(../images/backIcon.png) no-repeat center center;
+    background-size:70%;
+    width:1.6rem;
+    display:block;
+    height:4.5rem;
+    clear:both;
+}
+.lineList li{
+    background:#fff;
+    margin-top:1rem;
+    box-shadow:0 0 1px rgba(0,0,0,0.3);
+    position:relative;
+}
+.lineList li a{
+    display:block;
+    height:6rem;
+}
+.listContentBox{
+    padding:0 1rem;
+}
+.lineImg{
+    float:left;
+    width:4rem;
+    margin-top:1rem;
+}
+.lineImg img{
+    width:4rem;
+}
+.lineR{
+    float:left;
+    margin-left:1rem;
+    width:70%;
+}
+.TxtTitle{
+    font-size:1.3rem;
+    text-align:left;
+    line-height:2.5rem;
+    color:#000;
+    margin-top:0.75rem;
+}
+.TxtP{
+    font-size:1.2rem;
+    text-align:left;
+    line-height:1.5rem;
+    color:#737373;
+    width:90%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+
+}
+/*Security center page*/
+.prompt{
+    font-size:1.4rem;
+    line-height:4.5rem;
+    background:#E3661A;
+    color:#fff; 
+}
+.allCenterBox{
+    margin-top:1rem;
+    background:#fff;
+    box-shadow:0 0 1px rgba(0,0,0,0.3);
+}
+.onlylineList li{
+    position:relative;
+    height:4rem;
+}
+.onlylineList li a{
+    display:block;
+    line-height:4rem;
+    text-align:left;
+}
+.allpaddingL{
+    padding-left:1rem;
+}
+.alineWord{
+    font-size:1.3rem;
+    color:#292929;
+    border-bottom:1px solid #ccc;
+    line-height:4rem;
+}
+.onlylineList li:last-child a .allpaddingL .alineWord{
+    border-bottom:none;
+}
+ .lineExit{
+    line-height:4rem;
+    background:#fff;
+    box-shadow:0 0 1px rgba(0,0,0,0.3);
+    color:#292929;
+    margin-top:1rem;
+    font-size:1.4rem;
+}
+/*agent center page*/
+.submitBtn{
+    display:block;
+    font-size:1.4rem;
+    background:#B1001C;
+    color:#fff;
+    width:90%;
+    margin:2rem auto;
+    line-height:3.4rem;
+    border-radius:0.3rem;
+    -webkit-border-radius:0.3rem;
+    -moz-border-radius:0.3rem;
+}
+/*Binding encrypted mobile page*/
+.mobileList li{
+    border-bottom:1px solid #ccc;
+    height:4rem;
+    text-align:left;
+    padding-left:4%;
+    position:relative;
+}
+.mobileList li span{
+    line-height:4rem;
+    float:left;
+    font-size:1.3rem;
+    width:30%;
+}
+.userInput{
+    height:4rem !important;
+    width:70%;
+    float:left;
+    font-size:1.4rem;
+    color:#292929;
+    border:none;
+    background:none;
+}
+.shortInput{
+    width:40%;
+}
+.sendCode{
+    width:29%;
+    display:block;
+    float:left;
+    line-height:4rem;
+    font-size:1.3rem;
+    text-align:center;
+    cursor:pointer;
+    border-left:1px solid #ccc;
+    color:#333;
+}
+.sendCode.codePic{
+    border-left:none;
+}
+.sendCode img{
+    height:4rem;
+    width:100%;
+}
+
+/*Verify the security code page*/
+.passLenth li span{
+    width:35%;
+}
+.passLenth li .userInput{
+    width:65%;
+}
+/*Proxy statements page*/
+.date a{
+    background:url(../images/date.png) no-repeat right center;
+    background-size:30%;
+    width:4.5rem;
+    display:block;
+    height:4.5rem;
+    clear:both;
+}
+.search{
+    padding:1rem;
+    text-align:left;
+    background:#EDECF2;
+    height:2.4rem;
+}
+.searchInput{
+    width:75%;
+    height:2.4rem !important;
+    float:left;
+    border-radius:0.5rem 0 0 0.5rem !important;
+    -webkit-border-radius:0.5rem 0 0 0.5rem !important;
+    -moz-border-radius:0.5rem 0 0 0.5rem !important;
+    border:1px solid #ccc;
+}
+.searchBtn{
+    width:20%;
+    height:2.6rem !important;
+    float:left;
+    border-radius:0 0.5rem 0.5rem 0;
+    -webkit-border-radius:0 0.5rem 0.5rem 0;
+    -moz-border-radius:0 0.5rem 0.5rem 0;
+    border:none;
+    background:#970019 url(../images/searchIcon.png) no-repeat center;
+    background-size:1.6rem;
+    font-size:0;
+    line-height:2.6rem;
+    border:1px solid #970019;
+}
+.agentReportList li{
+    width:33%;
+    height:6rem;
+    border-bottom:1px solid #ccc;
+    border-right:1px solid #ccc;
+    float:left;
+}
+.agentReportList li:nth-child(3n){
+    border-bottom:1px solid #ccc;
+    border-right:none;
+
+}
+.agentReportList li a{
+    display:block;
+    height:3rem;
+    padding:1rem 0;
+}
+.agentReportList li a span{
+    line-height:2rem;
+    color:#202020;
+    font-size:1.3rem;
+}
+.agentReportList li a span i{
+    color:#98001A;
+    font-size:1.2rem;
+}
+body.allback{
+    background:#fff !important;
+}
+
+/*The agent page*/
+.agentBox{
+    margin:1rem 0;
+    text-align:left;
+}
+.agentInfo{
+    padding:0 1rem;
+}
+.agentInfo h1{
+    font-size:1.4rem;
+    color:#ff8400;
+    line-height:2.8rem;
+    font-weight:400;
+}
+.agentInfo h1.agentInfo1{
+    background:url(../images/agentInfoIcon1.png) no-repeat left center;
+    background-size:1.6rem;
+    padding-left:2.4rem;
+}
+.agentInfo h1.agentInfo2{
+    background:url(../images/agentInfoIcon2.png) no-repeat left center;
+    background-size:1.6rem;
+    padding-left:2.4rem;
+}
+.agentInfo h1.agentInfo3{
+    background:url(../images/agentInfoIcon3.png) no-repeat left center;
+    background-size:1.6rem;
+    padding-left:2.4rem;
+}
+.agentInfo p{
+    font-size:1.3rem;
+    color:#707070;
+    line-height:2.2rem;
+    padding-left:2rem;
+}
+/*login page*/
+.toLoginBtn{
+    color:#D21927;
+    font-size:1.2rem;
+    margin-top:1rem;
+    line-height:2rem;
+    display:block;
+    text-align:right;
+    padding-right:1rem;
+}
+/*found page*/
+.topOptBtn{
+    margin:0 auto;
+    width:70%;
+}
+
+.topOptBtn.betDouble{ width:55%}
+.topBtnList li{
+    float:left;
+    font-size:1.3rem;
+    line-height:2.4rem;
+    width:48%;
+    border:0.1rem solid  #fff;
+    color:#fff;
+    margin-top:1rem;
+}
+.topBtnList li.on{
+    color:#D22C39;
+    background:#fff;
+}
+.topBtnList li:first-child{
+    border-radius:0.3rem 0 0 0.3rem;
+    -webkit-border-radius:0.3rem 0 0 0.3rem;
+    -moz-border-radius:0.3rem 0 0 0.3rem;
+}
+.topBtnList li:last-child{
+    border-radius:0 0.3rem 0.3rem 0;
+    -webkit-border-radius:0 0.3rem 0.3rem 0;
+    -moz-border-radius:0 0.3rem 0.3rem 0;
+}
+.optionList li{
+    height:5rem;
+    position:relative;
+    border-bottom:1px solid #c5c5c5;
+    padding:0.5rem 0;
+}
+.optionList li a{
+    display:block;
+    height:5rem;
+}
+.optionList li a .singleLineInfo{
+    padding:0 1rem;
+}
+.headPort{
+    width:4rem;
+    height:4rem;
+    overflow:hidden;
+    border:1px solid #ccc;
+    background:#D5D6D6;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    margin-top:0.5rem;
+    float:left;
+}
+.headPort img{
+    width:100%;
+}
+.doubleLineTxt{
+    float:left;
+    text-align:left;
+    margin-left:1rem;
+    font-size:1.3rem;
+    line-height:2rem;
+    margin-top:0.5rem;
+    color:#292929;
+}
+.doubleLineTxt dd{
+    padding-left:0.5rem;
+}
+.doubleLineTxt i{
+    color:#D22C39;
+    padding:0 0.5rem;
+}
+.doubleR em{
+    color:#FC751E;
+}
+.doubleR dl{
+    padding-left:0.5rem;
+}
+.rank{
+    position:absolute;
+    right:1rem;
+    top:1.5rem;
+    width:2rem;
+    height:2rem;
+    line-height:2rem;
+    font-size:1.2rem;
+    text-align:center;
+    color:#292929;
+}
+.rank.first{
+    background:#D22C39;
+    color:#fff;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    box-shadow:0px 1px 2px rgba(0,0,0,0.4);
+}
+.rank.second{
+    background:#FC761D;
+    color:#fff;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    box-shadow:0px 1px 2px rgba(0,0,0,0.4);
+}
+.rank.third{
+    background:#19B4E9;
+    color:#fff;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    box-shadow:0px 1px 2px rgba(0,0,0,0.4);
+}
+/*The announcement page*/
+.announceLine{
+    padding:0.5rem 1rem;
+}
+.announceTxt{
+    text-align:left;
+    
+}
+.announceTxt h1{
+    font-size:1.4rem;
+    font-weight:400;
+    line-height:2.4rem;
+    color:#292929;
+}
+.announceTxt time{
+    font-size:1.2rem;
+    line-height:1.6rem;
+    color:#9C9C9C;
+}
+.pageBottom{
+    margin-top:2rem;
+    font-size:1.3rem;
+    color:#292929;
+    line-height:2rem;
+}
+/*Today's profit and loss page*/
+.profitBg{
+    background:url(../images/profitBg.png) no-repeat center top;
+    background-size:100%;
+    color:#fff;
+    text-shadow:0 0 1px rgba(0,0,0,0.5);
+    width:100%;
+    padding:1.8rem 0;
+}
+.profitBg h1{
+    font-size:1.4rem;
+    line-height:3rem;
+    font-weight:400;
+    
+}
+.profitBg p{
+    font-size:3.2rem;
+    line-height:4rem;
+    font-weight:400;
+}
+.calculation{
+    background:#0393FB url(../images/calculation.png) no-repeat 0.5rem 0.8rem;
+    padding:0.5rem 0 0.5rem 2.4rem;
+    background-size:1.6rem;
+    color:#fff;
+    text-shadow:0 0 1px rgba(0,0,0,0.5);
+    font-size:1.3rem;
+    line-height:2.4rem;
+    text-align:left;
+}
+.boxData{
+    background:#fff;
+    margin:1rem 0;
+    padding:0.4rem;
+}
+.profitData{
+    border-bottom:1px solid #ccc;
+    height:7rem;
+}
+.profitData:last-child{
+    border-bottom:none; 
+}
+.profitData a{
+    display:block;
+    border-right:1px solid #ccc;
+    width:32%;
+    height:5.5rem;
+    float:left;
+    padding-top:1.5rem;
+}
+.profitData a:last-child{
+    border-right:none;
+}
+
+.profitData a span{
+    font-size:1.2rem;
+    color:#292929;
+    line-height:2rem;
+}
+.profitData a span i{
+    color:#ff8400;
+}
+/*Member management page*/
+.navInfo{
+    background:#fff;
+}
+.navInfoList li{
+    float:left;
+    width:25%;
+    font-size:1.3rem;
+    line-height:3.5rem;
+    color:#292929;
+}
+.navInfoDiv{
+    margin-top:1rem;
+}
+.navDataList li{
+    background:#fff;
+    margin-bottom:0.5rem;
+}
+.navDataList li a{
+    display:block;
+    
+}
+.topline{
+    padding:0 1rem;
+    font-size:1.1rem;
+    line-height:2.4rem;
+    height:2.4rem;
+    border-bottom:1px solid #ccc;
+}
+.topline div:nth-child(1){
+    float:left;
+    color:#9c9c9c;
+}
+.topline div:nth-child(2){
+    float:right;
+    color:#0393FB;
+}
+.navmes{
+    padding:1rem;
+    height:4.5rem;  
+}
+.bigHeadPort{
+    width:4.5rem;
+    height:4.5rem;
+    margin:0
+}
+.navmesTxt{
+    float:left;
+    text-align:left;
+    margin-left:1rem;
+    width:70%;
+}
+.navmesTxt i{
+    color:#D22C39;
+    padding-right:0.5rem;
+}
+.navmesTxt dl{
+    font-size:1.3rem;
+    color:#292929;
+    line-height:2.4rem;
+    width:90%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.navmesTxt dd{
+    font-size:1.2rem;
+    color:#292929;
+    line-height:2rem;
+    width:90%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+/*Transaction records page*/
+.recordList li{
+    width:33%;
+}
+.recordList li.on{
+    border-bottom:1px solid #D22C39;
+    color:#D22C39;
+}
+.recordDataList li{
+    height:5.5rem;
+    padding:0.5rem 1rem 0;
+    position:relative;
+    border-bottom:1px solid #c1c1c1;
+    margin:0;
+}
+.recordDataList li:last-child{
+    border-bottom:none;
+}
+
+.recordTxt dd{
+    padding:0;
+    color:#9c9c9c;
+    font-size:1.2rem;
+    line-height:2rem;
+}
+.sum{
+    color:#D22C39;
+    font-size:1.4rem;
+    margin-top:0.3rem;
+}
+/*Betting record page*/
+.betRecord{
+    margin-top:1rem;
+    background:#fff;
+}
+.betSel li{
+    width:25%;
+}
+
+/*For the color hall page*/
+.logo img{
+    width:50%;
+    margin-top:0.5rem;
+}
+
+.banner img{
+    width:100%;
+    max-height:11rem;
+}
+.hello{
+    color:#D22C39;
+    background:#fff url(../images/hello.png) no-repeat 1rem center;
+    font-size:1.2rem;
+    line-height:3rem;
+    text-align:left;
+    padding-left:3rem;
+    background-size:1.6rem;
+}
+.main{
+    background:#fff;
+    margin-top:1rem;
+}
+.lotteryCp{
+    border-bottom:1px solid #ccc;
+}
+.lotteryCp:last-child{
+    border-bottom:none;
+}
+.lotteryCp li{
+    float:left;
+    width:49%;
+    border-right:1px solid #ccc;
+    height:6rem;
+}
+.lotteryCp li:nth-child(2){
+    border-right:none;
+}
+
+.lotteryCp li a{
+    display:block;
+    margin-left:1rem;
+    padding:1rem 0;
+    height:4rem;
+}
+.lotteryImg{
+    float:left;
+}
+.lotteryImg img{
+    width:3.5rem;
+}
+.lotteryRtxt{
+    float:left;
+    margin-left:0.5rem;
+    font-size:1.2rem;
+    color:#292929;
+    line-height:2rem;
+    text-align:left;
+}
+.lotteryRtxt dd{
+    color:#9c9c9c;
+}
+/*Promotion rewards page*/
+.rewardsMain{
+    padding:0 1rem;
+    text-align:left;
+}
+.rewardInfo{
+    font-size:1.3rem;
+    color:#292929;
+    line-height:2rem;
+    margin-bottom:0.5rem;
+}
+.rewardInfo i{
+    color:#E6030C
+}
+.rewardBtn{
+    margin:1.5rem 0;
+}
+.rewardBtn a{
+    background:#e8e8e8;
+    width:80%;
+    margin:1rem auto;
+    text-align:center;
+    line-height:3rem;
+    color:#292929;
+    font-size:1.4rem;
+    border-radius:0.5rem;
+    -webkit-border-radius:0.5rem;
+    -moz-border-radius:0.5rem;
+    font-weight:500;
+    box-shadow:0.1rem 0.3rem 0.1rem rgba(0,0,0,0.4);
+    display:block;
+}
+.jinjiTh{
+    margin:1.5rem 0;
+    font-size:1.4rem;
+    color:#109a5a;
+    border-left:0.4rem solid #109a5a;
+    padding-left:0.5rem;
+    line-height:2rem;
+}
+.promotionTab{
+    border:1px solid #e8e7e7;
+    width:100%;
+    text-align:center;
+    color:#666;
+    margin:1.5rem 0;
+    
+}
+.promotionTab tr{
+    border-bottom:1px solid #e8e7e7;
+}
+.promotionTab tr:last-child{
+    border-bottom:none;
+}
+.promotionTab tr th{
+    width:25%;
+    height:3rem;
+    font-size:1.2rem;
+    font-weight:400;
+    background:#F0F6FF;
+    border-right:1px solid #e8e7e7;
+}
+.promotionTab tr th:last-child{
+    border-right:none;
+}
+.promotionTab tr td{
+    width:25%;
+    height:3rem;
+    font-size:1.2rem;
+    border-right:1px solid #e8e7e7;
+}
+.promotionTab tr td:last-child{
+    border-right:none;
+}
+.rewardsMain p{
+    font-size:1.2rem;
+    color:#292929;
+    line-height:2.2rem;
+    margin-bottom:2rem;
+}
+
+/*Add daily prize page*/
+.dayTab tr th{
+    line-height:1.6rem;
+}
+/*Holiday gift bag page*/
+.holidayInfo{
+    font-size:1.2rem;
+    line-height:1.6rem;
+    margin-bottom:0.5rem;
+}
+.holidayTh{
+    font-size:1.4rem;
+    line-height:3rem;
+    color:#000;
+}
+.holidayGiftTab{
+     border:1px solid #000;
+     width:50%;
+     font-size:1.2rem;
+     text-align:center;
+     line-height:2.4rem;     
+}
+.holidayGiftTab tr{
+     border-bottom:1px solid #000;
+}
+.holidayGiftTab tr th{
+    border-right:1px solid #000;
+    width:50%;
+    font-weight:500;    
+}
+.holidayGiftTab tr td{
+    border-right:1px solid #000;
+    width:50%;
+    font-weight:500;    
+}
+.column{
+     width:100%;
+     border:1px solid #000;
+     font-size:1.2rem;
+     text-align:center;
+     line-height:2.4rem;
+}
+.column tr{
+     border-bottom:1px solid #000;
+}
+.column tr th{
+    border-right:1px solid #000;
+    font-weight:400;
+    font-size:1.2rem;
+}
+.column tr td{
+    border-right:1px solid #000;
+}
+/*Encrypted problem page*/
+.problemDiv{
+    margin:1rem 0;
+}
+.problemBox{
+    margin-bottom:1rem;
+    background:#fff;
+    box-shadow:0 0 0.1rem rgba(0,0,0,0.4);
+}
+.selectDiv{
+    position:relative;
+    height:4rem;
+}
+.selInput{
+    width:100%;
+    height:4rem;
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:0;
+}
+.selectDiv .inputTxtLeft{
+    position:absolute;
+    left:1rem;
+    line-height:4rem;
+    font-size:1.3rem;
+}
+.inputValue{
+    display:block;
+    width:60%;
+    height:4rem;
+    line-height:4rem;
+    font-size:1.3rem;
+    position:absolute;
+    text-align:center;
+    right:3rem;
+    color:#333;
+}
+.inputValue.inputValTl{
+    text-align:left;
+} 
+.selArrow{
+    background:url(../images/arrow.png) no-repeat right center;
+    position:absolute;
+    right:2%;
+    background-size:50%;
+    width:2rem;
+    height:4rem;
+}
+.answer{
+     height:4rem;
+     border-top:1px solid #ccc;
+}
+.answer span{
+    width:35%;
+    display:block;
+    line-height:4rem;
+    float:left;
+    text-align:left;
+    padding-left:1rem;
+    font-size:1.4rem;
+}
+.balance{
+    color:#ff8400;
+    line-height:4rem;
+    font-size:1.4rem;
+}
+.answer .answerInput{
+    width:60%;
+    float:left;
+    height:4rem !important;
+}
+
+/*withdrawal page*/
+.withdrawalList li{
+    border-bottom:1px solid #ccc;
+}
+.withdrawal{
+    border-bottom:1px solid #ccc;
+    border-top:none;
+}
+.tip{
+    background:#fffdeb;
+    border:0.1rem solid #F7DAAD;
+    border-radius:0.5rem;
+    -webkit-border-radius:0.5rem;
+    -moz-border-radius:0.5rem;
+    width:80%;
+    margin:2rem auto;
+    font-size:1.2rem;
+    text-align:left;
+    padding:0.5rem;
+    line-height:2.4rem;
+    color:#F05417;
+}
+
+.bankImg{
+    width:4rem;
+    height:4rem;
+    overflow:hidden;
+    margin-top:0.5rem;
+    float:left;
+}
+.bankImg img{
+    width:100%;
+}
+.bankList li{
+    background:#fff;
+    margin:1rem 0;
+}
+.arrowbank{
+    position:absolute;
+    background:url(../images/arrow.png) no-repeat center center;
+    right:1rem;
+    background-size:45%;
+    width:2rem;
+    height:5rem;
+    top:0.25rem;
+}
+/*The player information page*/
+.playerBg{
+    background:url(../images/personalBg.png) no-repeat center bottom;
+    background-size:100%;
+}
+.playInfo{
+    margin:2rem 0 0;
+    padding-bottom:0.5rem;
+}
+.playPort{
+    width:5rem;
+    height:5rem;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    background:#cccccc;
+    overflow:hidden;
+    margin:0.5rem auto;
+}
+.playPort img{
+    width:100%;
+}
+.infoTxt{
+    font-size:1.2rem;
+    color:#fff;
+    text-shadow:0 0 1px rgba(0,0,0,0.3);
+    line-height:2.2rem;
+}
+.infoTxt span{
+    padding-right:1rem;
+}
+.cpLike{
+    background:#fff;
+    line-height:4rem;
+    color:#292929;
+    margin-top:1rem;
+    box-shadow:0 0 0.1rem rgba(0,0,0,0.5);
+    font-size:1.4rem;
+}
+.cpBox{
+    background:#fff;
+    margin-top:1rem;
+    padding:1rem;
+}
+.cpList{
+    padding:1rem;
+}
+.cpList li{
+    float:left;
+    width:25%;
+    
+}
+.cpList li a{ 
+    display:block;
+    height:6rem;
+}
+.cpImg{
+    width:4.5rem;
+    height:4.5rem;
+    text-align:center;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    background:#999999;
+}
+.cpImg img{ 
+    width:4.5rem;
+}
+/*personal information page*/
+.personalP0 li{
+    padding:0;
+}
+.backWhite{
+    background:#fff;
+}
+.personalDataList li{
+    position:relative;
+    height:4rem;
+}
+.personalDataList li a{
+    display:block;
+}
+.personalDataHead{
+    width:3rem;
+    height:3rem;
+    overflow:hidden;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50;
+    background:#ccc;
+    position:absolute;
+    right:3rem;
+    top:0.5rem; 
+}
+.personalDataHead img{
+    width:100%;
+}
+.personalBoxLeft{
+    position:absolute;
+    left:0rem;
+    top:0rem;
+    font-size:1.3rem;
+    line-height:4rem;
+    color:#292929;
+    background:#fff;
+    padding-left:1rem;
+}
+.file{
+    width:100%;
+    display:block;
+    height:4rem;
+    font-size:0;
+    position:absolute;
+    border:0;
+    top:0;
+    left:0;
+}
+.nameInput{
+    width:60%;
+    position:absolute;
+    top:0;
+    right:1rem;
+    height:4rem !important;
+    font-size:1.4rem;
+    color:#292929;
+    text-align:right;
+    padding:0 0.5rem;
+}
+.valLocation{
+    width:60%;
+    height:4rem;
+    display:block;
+    position:absolute;
+    right:3.5rem;
+    color:#292929;
+    font-size:1.4rem;
+    line-height:4rem;
+    text-align:right;
+}
+.dateTime{
+    width:100%;
+    height:4rem;
+    position:absolute;
+    background:none;
+    left:0;
+    top:0;
+    font-size:0;
+    border:none;
+}
+.dateTime::-webkit-datetime-edit-fields-wrapper {
+    position:absolute;
+    top:0;
+    right:2%;
+    width:94%;
+    line-height:3rem;
+    font-size:1rem;
+    color:#3c3c3c;
+    background-size:0.8rem;
+    padding-right:6%;
+    text-align:right;
+    visibility:hidden;
+    z-index:999;
+    }
+.dateTime::-webkit-datetime-edit-text { color:#3c3c3c;padding-top:9rem;visibility:hidden;font-size:0}
+.dateTime::-webkit-datetime-edit-year-field { color:#3c3c3c; visibility:hidden;padding-top:9rem;font-size:0}
+.dateTime::-webkit-datetime-edit-month-field { color:#3c3c3c; visibility:hidden;padding-top:9rem;font-size:0}
+.dateTime::-webkit-datetime-edit-day-field { color:#3c3c3c;visibility:hidden;padding-top:9rem;font-size:0
+}
+.dateTime::-webkit-inner-spin-button {
+visibility:hidden;
+}
+.dateTime::-webkit-calendar-picker-indicator {
+    width:100%;
+    height:3rem;
+    padding-top:9rem;
+    position:absolute;
+    background:none;
+    top:0;
+    left:0;
+    opcity:0;
+    
+}
+.dateTime::-webkit-clear-button {
+     -webkit-appearance: none; 
+}
+.birthLeft{
+    background:none !important;
+}
+.sex{
+    width:100%;
+    height:4rem;
+    position:absolute;
+    background:none;
+    left:0;
+    top:0;
+    font-size:0;
+    border:none;
+}
+.boxRank{
+    background: -webkit-linear-gradient(#661d2c, #3c052c);
+    background: -o-linear-gradient(#661d2c, #3c052c);
+    background: -moz-linear-gradient(#661d2c, #3c052c);
+    background: linear-gradient(#661d2c, #3c052c);
+    padding:1rem 0;
+}
+.rankTop{
+    width:100%;
+    height:4rem; 
+    padding:2rem 1rem 5rem;
+}
+.rankHead{
+    width:4rem;
+    height:4rem;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    background:#774154;
+    border:0.3rem solid #774154;
+    overflow:hidden;
+    float:left;
+    margin-right:1rem;
+}
+.rankHead img{
+    width:100%;
+}
+.rankTxt{
+    float:left;
+}
+.rankTxt dl{
+    font-size:1.4rem;
+    line-height:2rem;
+    height:2rem;
+    color:#fff;
+    text-align:left;
+}
+.rankTxt dl span{
+    font-size:1.2rem;
+}
+.vipImg img{
+    width:1.4rem;
+}
+.rankTxt dl i{
+    color:#fff606;
+}
+.nextStep{
+    color:#fff;
+    text-align:left;
+    font-size:1.3rem;
+    line-height:3rem;
+    margin-top:1.4rem;
+}
+.stepICON span{
+    font-size:1.2rem;
+    color:#fff;
+}
+.stepLine{
+    width:70% !important;
+    height:1.2rem;
+    border-radius:0.5rem;
+    background:#746582;
+    display:inline-block;
+    line-height:1.2rem;
+}
+.rankMain{
+    background:#fff;
+    margin-top:1rem;
+}
+.rankMain h1{
+    color:#292929;
+    font-size:1.4rem;
+    line-height:3.4rem;
+    font-weight:500;
+    text-align:left;
+    background:url(../images/rankw.png) no-repeat 1rem center;
+    background-size:2rem;
+    padding-left:3.5rem;
+}
+.tableRank{
+    border-top:1px solid #ccc;
+    width:100%;
+}
+.tableRank tr{
+    border-bottom:1px solid #ccc;
+}
+.tableRank tr:last-child{
+    border-bottom:none;
+}
+.tableRank tr th{
+    border-right:1px solid #ccc;
+    background:#f2f4f7;
+    font-size:1.3rem;
+    font-weight:500;
+    line-height:3rem;
+    width:33%;
+}
+.tableRank tr th:last-child{
+    border-right:none;
+}
+.tableRank tr td{
+    border-right:1px solid #ccc;
+    font-size:1.3rem;
+    font-weight:500;
+    line-height:3rem;
+    width:33%;
+}
+
+/*To open an account page at a lower level*/
+.openTop{
+    margin-top:1rem;
+    background:#fff;
+}
+.openTopList li{
+    height:4rem;
+    box-shadow:0 0 1px rgba(0,0,0,0.3);
+    line-height:4rem;
+    text-align:left;
+    padding:0 1rem;
+    font-size:1.4rem;
+}
+.openTopList li a{
+    display:inline-block;
+    color:#db3237;
+}
+.openTopList li span{
+    float:left;
+}
+fieldset { 
+    border: 0; 
+    width:70%;
+    float:left;
+    margin-left:1rem;
+}
+label { 
+    display: block; 
+    cursor: pointer; 
+    line-height: 4rem; 
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    float:left;
+    margin-right:0.7rem;
+}
+.label_radio input { 
+    margin-right: 0.3rem; 
+}
+.has-js .label_radio { 
+    padding-left: 1.5rem;
+}
+.has-js .label_radio { 
+    background:url(../images/r.png) no-repeat left center;
+    background-size:1.3rem;
+}
+.has-js label.r_on { 
+    background:url(../images/r_on.png) no-repeat left center;
+    background-size:1.3rem;
+}
+.has-js .label_radio input {
+    position: absolute;
+    left: -9999px;
+} 
+.openInfo{
+    margin-top:1rem;
+    background:#fff;
+}
+.openInfoList li{
+    padding:0 1rem;
+    line-height:4rem;
+}
+.openInfoList li span{
+    line-height:4rem;
+    width:35%;
+}
+.openInfoList li .openInput{
+    height:4rem !important;
+    width:65%;
+}
+.tableInvite{
+    margin-top:1rem;
+    background:#fff;
+    width:100%;
+}
+.tableInvite tr th{
+    color:#666;
+    line-height:3rem;
+    font-size:1.4rem;
+    font-weight:500;
+}
+.tableInvite tr td{
+    color:#292929;
+    line-height:3.4rem;
+    font-size:1.2rem;
+    font-weight:500;
+    border-bottom:1px solid #ccc;
+}
+.tableInvite tr td:first-child{
+    color:#ff8400;
+}
+/**/
+.bindCard{
+    height:4rem;
+    border-bottom:1px solid #ccc;
+}
+.bindCard span{
+    float:left;
+    line-height:4rem;
+    font-size:1.3rem;
+    width:45%;
+    text-align:left;
+    padding-left:1rem;
+}
+.cardInput{
+    height:3.4rem !important;
+    width:50% !important;
+    float:left;
+}
+.topDate{
+    position:relative;
+}
+.topLabelVal{
+    width:100%;
+    height:4.5rem;
+    font-size:0.8rem;
+    position:absolute;
+    top:0;
+    line-height:4.5rem;
+}
+.dateTime.topTime{
+    height:5rem;
+}
+
+
+
+.focus{ width:100%; max-height:11rem;margin:0 auto; position:relative; overflow:hidden;}
+.focus .hd{ width:100%; height:11px; position:absolute; z-index:1; bottom:0.5rem; text-align:center;}
+.focus .hd ul{ display:inline-block; height:0.3rem; padding:0.3rem 0.3rem;  font-size:0; vertical-align:top;}
+.focus .hd ul li{ display:inline-block; width:0.5rem;height:0.5rem; background:rgba(255,255,255,0.3); margin:0 0.3rem;  vertical-align:top; overflow:hidden;border-radius:50%;}
+.focus .hd ul .on{ background:#fff;}
+
+.focus .bd{ position:relative; z-index:0;}
+.focus .bd li img{  width:100%; max-height:11rem;}
+.focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */  }
+
+/*news detail page*/
+.newdetail{
+    text-align:left;
+    padding:1rem;
+}
+.newdetail h1{
+    font-size:1.6rem;
+    line-height:2.4rem;
+    font-weight:500;
+}
+.newdetail time{
+    font-size:1.1rem;
+    color:#292929;
+    display:block;
+    line-height:2rem;
+    border-bottom:1px solid #e6e6e6;
+}
+.newdetail dl{
+    font-size:1.3rem;
+    line-height:3rem;
+}
+.newdetail p{
+    font-size:1.3rem;
+    line-height:2.4rem;
+    text-indent:2.6rem;
+}
+.newdetail dd{
+    font-size:1.2rem;
+    line-height:2rem;
+}
+
+.newdetail .newsup{
+    margin-top:3rem;
+}
+/*-------------------------投票页面-----------------------*/
+body.allOrange{
+    background:#F4EFE1;
+}
+.layelPlay{
+    width:100%;
+    height:100%;
+    position:fixed;
+    background:rgba(0,0,0,0.5);
+    top:4rem;
+    bottom:4rem;
+    z-index:20000;
+}
+.sscCheckBox{
+    width:100%;
+    height:6rem;
+    background:#fff;
+    box-shadow:0 0 5px rgba(0,0,0,0.2);
+    padding:0 1rem;
+    position:fixed;
+    top:4rem;
+}
+.sscCheckBoxList{
+    width:100%;
+}
+.sscCheckBoxList li{
+    float:left;
+    width:17%;
+    margin-right:2%;
+    font-size:1.3rem;
+    line-height:1.8rem;
+    border:1px solid #D9D9D9;
+    color:#4D4D4D;
+    margin-top:0.7rem;
+    border-radius:0.5rem;
+    -webkit-border-radius:0.5rem;
+    -moz-border-radius:0.5rem;
+}
+.sscCheckBoxList li:last-child{
+    width:28%;
+}
+.sscCheckBoxList li.on{
+    background:#D42E3B;
+    border:1p solid #D42E3B;
+    color:#fff;
+}
+.sscTopData{
+    background:#fff;
+    width:100%;
+    height:auto;
+    margin-top:5.5rem;
+    padding:1rem 0;
+    
+}
+.sscTopDataInfoList{
+    width:98%;
+    margin:0 auto;
+    height:auto;
+    box-sizing:border-box;
+}
+.child_list{
+    width:100%;
+    height:auto;
+    clear:both;
+    display:table;
+    zoom:1;
+    border-bottom:1px dashed #ccc;
+}
+.child_list:last-child{
+    border-bottom:none;
+}
+.child_list li{
+    float:left;
+    font-size:1.2rem;
+    line-height:2.4rem;
+    padding:0 0.5rem;
+    margin:0.5rem 0.5rem 0.5rem 0;
+    border:1px solid #D9D9D9;
+    border-radius:0.5rem;
+    -webkit-border-radius:0.5rem;
+    -moz-border-radius:0.5rem;
+    color:#4D4D4D;
+}
+.child_list span#none{
+    float:left;
+    font-size:1.2rem;
+    line-height:2.4rem;
+    padding:0 0.5rem;
+    margin:0.5rem 0.5rem 0.5rem 0;
+    border:1px solid #D9D9D9;
+    border-radius:0.5rem;
+    -webkit-border-radius:0.5rem;
+    -moz-border-radius:0.5rem;
+    color:#4D4D4D;
+}
+.child_list span#none:first-child,.child_list li.null-table{
+    width:30%;
+    border:none;
+    margin:0.5rem 0;
+    padding:0;
+    text-align:left;
+}
+.child_list #none i.iconcircle{
+    display:inline-block;
+    width:1rem;
+    height:1rem;
+    box-shadow:inset 0 0 0 0.35rem #D9D9D9;
+    border-radius:50%;
+    margin:0 0.3rem;
+}
+.child_list li.ok{
+    background:#D42E3B;
+    color:#fff;
+    border-color:#D42E3B;
+}
+.playHeadCenter{
+    position:relative;
+    display:inline-block;
+}
+.playHeadCenter .playSel{
+    color:#fff;
+    line-height:2rem;
+    padding:0.2rem 2rem 0.2rem 0.2rem;
+    border:1px solid #fff;
+    border-radius:0.5rem;
+    font-size:1.3rem;
+    height:2rem;
+    margin-top:0.8rem;
+    z-index:20000;
+}
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.7rem solid #ffb600;
+    position:absolute;
+    border-radius:0.2rem;
+    top:1.7rem;
+    right:0.5rem;
+    z-index:10000;
+}
+.play{
+    font-size:1rem;
+    width:1.2rem;
+    line-height:1.2rem;
+    color:#fff;
+    position:absolute;
+    left:-1.5rem;
+    top:0.8rem;
+}
+.playHeadRight{
+    position:absolute;
+    right:1rem;
+    height:4rem;
+    top:0;
+}
+.playHeadRight select.cityChoose{
+    color:#fff;
+    line-height:4rem;
+    height:4rem;
+    font-size:1.2rem;
+    padding-right:1.2rem;
+}
+.arrow-down{
+    background:url(../images/arrow-down.png) no-repeat right center;
+    position:absolute;
+    right:0rem;
+    top:0;
+    width:1rem;
+    height:4rem;
+    background-size:100%;
+}
+.playtopMain{
+    height:4rem;
+    background:#DED3B4;
+    border:1px solid rgba(0,0,0,0.3);
+    position:relative;
+}
+.playTopList li{
+    float:left;
+    width:49%;
+    height:4rem;
+    border-right:1px solid rgba(0,0,0,0.3);
+}
+.playTopList li h1{
+    font-size:1rem;
+    line-height:1.8rem;
+    font-weight:500;
+    color:#2F2F2F;
+}
+.playTopList li.li-down img{
+    width:1rem;
+    padding-left:0.3rem;
+}
+.playTopList li:last-child{
+    border-right:none;
+}
+.circleDot{ 
+}
+.circleDot span{
+    display:inline-block;
+    width:1.4rem;
+    height:1.4rem;
+    line-height:1.4rem;
+    color:#fff;
+    font-size:1rem;
+    border-radius:50%;
+    box-shadow:0 3px 0px rgba(0,0,0,0.2);
+    /*颜色渐变*/
+    background-image: -moz-linear-gradient(top, #ED505B, #B51323); /*火狐*/
+    background: -o-linear-gradient(top, #ED505B , #B51323 );/*Opera*/
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ED505B), color-stop(1,#B51323)); /*Chrome*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ED505B', endColorstr='#B51323', GradientType='0');
+}
+.playTopList li time{
+    color:#2F2F2F;
+    font-size:1.2rem;
+    line-height:1.4rem;
+}
+.lotteryHistory{
+    width:100%;
+    position:absolute;
+    z-index:1000000;
+}
+.lotteryHistory.ssc{
+    background:#F4EFE1;
+}
+.lotteryHistory.ssc tr th{
+    height:2rem;
+    border-bottom:1px solid rgba(0,0,0,0.3);
+    font-size:1rem;
+    font-weight:500;
+    line-height:2rem;
+    color:#292929;
+}
+.lotteryHistory.ssc tr td{
+    height:2.5rem;
+    font-size:1rem;
+    font-weight:500;
+    line-height:2.5rem;
+    color:#292929;
+    position:relative;
+}
+.lotteryHistory.ssc tr td .cpL{
+    border-bottom:1px solid rgba(0,0,0,0.3);
+    width:0.6rem;
+    position:absolute;
+    right:0;
+    top:1.2rem;
+}
+.lotteryHistory.ssc tr td:first-child{
+    border-right:1px solid rgba(0,0,0,0.3);
+}
+
+.betInfo.ssc{
+    background:#F4EFE1;
+    padding:1rem;
+}
+.betInfo.ssc p{
+    font-size:1.2rem;
+    color:#292929;
+    line-height:1.4rem;
+    text-align:left;
+}
+.ssc-text{
+    width:96%;
+    height:5rem;
+    border:1px solid #ccc;
+    background:#fff;
+    color:#292929;
+    font-size:1.2rem;
+    padding:0.5rem;
+    margin-top:1rem;
+    /*去除右下角三角标志*/
+    resize:none;
+}
+.playTabBox{
+    width:100%;
+    margin:1rem 0 1.5rem;
+}
+
+.playTabBox tr td{
+    width:16%;
+    height:3rem;
+}
+.playTabBox tr td:first-child{
+    width:20%;
+}
+.playTabBox tr td i.tabPlayL{
+    font-size:1.2rem;
+    border:1px solid #E0D9CA;
+    width:3rem;
+    line-height:1.8rem;
+    border-radius:0.3rem;
+    background:#ECE8D6;
+    color:#B7AF98;
+    display:inline-block;
+}
+.playTabBox tr td i.tabPlayNo{
+    width:1.8rem;
+    height:1.8rem;
+    border:1px solid #B8B8B8;
+    background:#fff;
+    display:inline-block;
+    font-size:1.2rem;
+    border-radius:50%;
+    line-height:1.8rem;
+    color:#D42E3B;
+}
+.playTabBox tr td i.tabPlayNo.on{
+    background:#D42E3B;
+    color:#fff;
+}
+.playTabBox tr:nth-child(2n){
+    border-bottom:1px solid #DBDBD6;
+}
+.footNav-ssc{
+    position:fixed;
+    bottom:0;
+    height:4rem;
+    background:#4F5050;
+    width:100%;
+    z-index:30000;
+}
+.NavfotL{
+    width:60%;
+    height:4rem;
+    background:#202020;
+    position:relative;
+    text-align:left;
+    float:left;
+}
+.arrow-right{
+    border-bottom:2.05rem solid transparent;
+    border-top:2.05rem solid transparent;
+    border-left:2rem solid #202020;
+    width:0;
+    height:0;
+    position:absolute;
+    right:-1.95rem;
+}
+.NavfotL span{
+    font-size:1.2rem;
+    line-height:2rem;
+    color:#fff;
+    text-align:left;
+    padding:0 1rem;
+}
+.NavfotL .navfotbet{
+    padding-left:1rem;
+    color:#A1A1A1;
+    font-size:1.2rem;
+    line-height:1.4rem;
+}
+.NavfotR{
+    text-align:right;
+    color:#fff;
+    float:right;
+    padding: 0 2.5rem;
+    font-size:1.2rem;
+    line-height:4rem;
+    position:relative;
+}
+.NavfotR a{
+    color:#fff;
+}
+.footNav-ssc.on{
+    background:#D42E3B;
+}
+.NavfotR .circleNum{
+    width:1.4rem;
+    height:1.4rem;
+    border-radius:50%;
+    background:#fff;
+    position:absolute;
+    right:1rem;
+    bottom:2rem;
+    line-height:1.4rem;
+    font-size:1.2rem;
+    text-align:center;
+    color:#D42E3B;
+}
+.choosecp{
+    position:fixed;
+    bottom:4rem;
+    background:#fff;
+    height:5rem;
+    left:0;
+    width:100%;
+    text-align:left;
+}
+.chooseK3bottm{
+    background:#244E3A;
+    position:fixed;
+    height:4rem;
+    left:0;
+    width:100%;
+    bottom:4rem;
+    text-align:left;
+    padding:0 1rem;
+    padding-bottom:0.5rem;
+    z-index:200000;
+}
+.chooseK3bottm dl em{
+    font-size:1rem;
+    margin-left:1rem;
+}
+
+dl.chooseK3num{
+    color:#fff;
+    font-size:1.2rem;
+    line-height:2rem;
+}
+dl.chooseK3num i{
+    color:#E7B32A;
+    padding-left:1rem;
+}
+.inputsum{
+    width:3rem;
+    height:1.6rem;
+    background:#fff;
+    border-radius:0.2rem;
+    border:none;
+    margin-left:1rem;
+    padding:0 0.5rem;
+}
+.choosecp div{
+    width:2.4rem;
+    height:2.4rem;
+    display:inline-block;
+    margin-top:0.8rem;
+    text-align:center;
+    border:1px solid #CDCDCD;
+    background:#fff;
+    font-size:1.3rem;
+    float:left;
+    color:#4F4F4F;
+    line-height:2.4rem;
+}
+.choosecp div.chooseNumVal{
+    width:3.4rem;
+    border-right:none;
+    border-left:none;
+}
+.choosecp div:first-child{
+    margin-left:1rem;
+}
+.choosecp dl{
+    float:left;
+    display:inline-block;
+    font-size:1.3rem;
+    line-height:4rem;
+    margin-left:0.5rem;
+    color:#4F4F4F;
+}
+.moneyType{
+    float:right;
+    padding-right:1rem;
+    margin-top:0.8rem;
+}
+.moneyType li{
+    float:left;
+    width:2.4rem;
+    height:2.4rem;
+    border:1px solid #CDCDCD;
+    background:#fff;
+    font-size:1.2rem;
+    line-height:2.4rem;
+    color:#4F4F4F;
+    text-align:center;
+}
+.moneyType li.on{
+    background:#D42E3B;
+    color:#fff;
+
+}
+.moneyType li:nth-child(2){
+    border-right:none;
+    border-left:none;   
+}
+
+
+/*----number field page----*/
+.pauseBox{
+    position:fixed;
+    top:4rem;
+    background:#fff;
+    width:100%;
+    box-shadow:0 0 5px rgba(0,0,0,0.4);
+}
+.pauseBtn{
+    padding:0 1rem;
+}
+.pauseBtn li{
+    width:30%;
+    float:left;
+    height:3rem;
+    border:1px solid #CDCDCD;
+    border-radius:0.5rem;
+    margin:1rem 1%;
+    text-align:center;
+    line-height:3rem;
+    font-size:1.2rem;
+    color:#4F5050;
+}
+.lotteryData{
+    width:94%;
+    margin:4rem auto 0;
+    background:#fff;
+    box-shadow:0 0 1px rgba(0,0,0,0.3);
+    text-align:left;
+    box-shadow:0 0 5px rgba(0,0,0,0.4);
+}
+.lDataList li{
+    height:4rem;
+    position:relative;
+    padding:1rem;
+    border-bottom:1px dashed #ccc;
+}
+.lDataList li i{
+    color:#D42E3B;
+    font-size:1.2rem;
+    line-height:1.4rem;
+}
+.lDataList li p{
+    font-size:1.2rem;
+    color:#4F5050;
+    line-height:2rem;
+}
+.lDataList li .del{
+    width:1.5rem;
+    height:1.5rem;
+    background:#D42E3B;
+    border-radius:50%;
+    color:#fff;
+    font-size:1.2rem;
+    line-height:1.5rem;
+    text-align:center;
+    position:absolute;
+    right:1rem;
+    top:2rem;
+    overflow:hidden;
+}
+.numberFIll{
+    width:100%;
+    height:5rem;
+    margin:0 auto;
+    background:#fff url(../images/numberFieldBg.png) repeat-x left bottom;
+    background-size:1.2rem;
+}
+.numberFIll a{
+    width:49%;
+    display:inline-block;
+    height:2.4rem;
+    font-size:1.2rem;
+    line-height:2.4rem;
+    color:#4F4F4F;
+    margin-top:1rem;
+    text-align:center;
+}
+.numberFIll a:first-child{
+    border-right:1px solid #ccc;
+}
+/*Betting K3 LOTTERY page*/
+body.allGREEN{
+    background:#326B4E;
+}
+header.headerBlack{
+    background:#000;
+}
+
+.playtopMain.playTopK3{
+    background:#244E3A;
+    border:1px solid #73B396;
+}
+.playTopList.playTopListK3 li h1{
+    color:#73B396;
+}
+.touzi{
+    position:relative;
+    width:7rem;
+    text-align:left;
+    margin:0 auto;
+}
+.tz{
+    width:1.4rem;
+    height:1.4rem;
+    border-radius:0.2rem;
+    background:#fff;
+    display:inline-block;
+    line-height:1.4rem;
+    font-size:1.2rem;
+    text-align:center;
+    color:red;
+    margin-bottom:0.1rem;
+    box-shadow:0 0 0.2rem rgba(0,0,0,0.3);
+    margin-right:0.2rem;    
+}
+.tz-down{
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.7rem solid #73B396;
+    border-radius:0.1rem;
+    -webkit-border-radius:0.1rem;
+    -moz-border-radius:0.1rem;
+    position:absolute;
+    top:0.6rem;
+    right:0;
+}
+.playTopListK3 li time{
+    color:#73B396;
+}
+
+.lotteryHistory.K3{
+    background:#244E3A;
+    width:100%;
+    position:absolute;
+    z-index:1000000;
+}
+.lotteryHistory.K3 tr th{
+    height:2rem;
+    border-bottom:1px solid rgba(0,0,0,0.7);
+    font-size:1rem;
+    font-weight:500;
+    line-height:2rem;
+    color:#73B396;
+}
+.lotteryHistory.K3 tr td{
+    height:3rem;
+    font-size:1rem;
+    font-weight:500;
+    line-height:3rem;
+    color:#73B396;
+    position:relative;
+}
+.lotteryHistory.K3 tr td .cpL{
+    border-bottom:1px solid #000;
+    width:0.6rem;
+    position:absolute;
+    right:0;
+    top:1.5rem;
+}
+.lotteryHistory.K3 tr td:first-child{
+    border-right:1px solid rgba(0,0,0,0.7);
+}
+
+.betInfo{
+    background:#326B4E;
+    padding:1rem;
+}
+.betInfo p{
+    font-size:1.2rem;
+    color:#73B396;
+    line-height:1.4rem;
+}
+.betplayList{
+    width:20rem;
+    margin:0 auto;
+}
+.betplayList li{
+    float:left;
+    width:5rem;
+    height:4rem;    
+}
+.betplayList li a{
+    display:block;
+    border:1px solid #73B396;
+    width:4.5rem;
+    height:3rem;
+    line-height:1.2rem;
+    color:#fff;
+    font-size:1.2rem;
+    padding-top:0.3rem;
+}
+.betplayList li a.checked{
+    color:#E5B02B;
+    border:1px solid #E5B02B;
+}
+.betplayList li a.checked i{
+    color:#E5B02B;
+}
+.betplayList li a i{
+    color:#73B396;
+    font-size:0.8rem;
+}
+
+footer.footBlack{
+    background:#000;
+    position:fixed;
+    bottom:0;
+    height:4rem;
+    padding:0 5%;
+    display:block;
+    width:90%;
+}
+footer.footBlack a{
+    float:left;
+    display:block;
+    color:#E7B32A;
+    font-size:1.4rem;
+    line-height:4rem;
+}
+footer.footBlack a span{
+    color:#fff;
+    font-size:1.3rem;
+    line-height:4rem;
+    margin-left:1rem;
+}
+.betBtn{
+    /*颜色渐变css*/
+    background: -webkit-linear-gradient(#E7B32A, #D08833);
+    background: -o-linear-gradient(#E7B32A, #D08833);
+    background: -moz-linear-gradient(#E7B32A, #D08833);
+    background: linear-gradient(#E7B32A, #D08833);
+    height:2.4rem;
+    width:7rem !important;
+    border-radius:0.3rem;
+    -webkit-border-radius:0.3rem;
+    -moz-border-radius:0.3rem;
+    box-shadow:0 0.1rem 0.2rem rgba(211,107,23,0.4);
+    border:none;
+    color:#fff;
+    line-height:2.4rem;
+    font-size:1.4rem;
+    float:right; display:block;
+    margin-top:0.8rem;
+}
+.k3DataBtn{
+    font-size:1.3rem;
+    color:#fff;
+    border:1px solid #689580;
+    line-height:2.4rem;
+    display:inline-block;
+    padding:0 1rem;
+}
+.k3num-col6{
+    margin:1rem auto 0;
+    display:table;
+    clear:both;
+    zoom:1;width:100%;
+}
+.k3num-col6 li{
+    font-size:1.2rem;
+    color:#fff;
+    border:1px solid #689580;
+    line-height:2rem;
+    display:inline-block;
+/*  padding:0 0.5rem;*/
+    margin:0 1%;
+    width:13%;
+    float:left;
+    margin-bottom:0.5rem;
+}
+.k3num-col6 li.on{
+    border:1px solid #E7B32A;
+    color:#E7B32A;
+}
+/*play onclick focus*/
+.checkplay{
+    position:fixed;
+    top:4.5rem;
+    z-index:1000000;
+}
+.topPlayBtnList li{
+    width:30%;
+    margin:1.2%;
+    border:1px solid #fff;
+    float:left;
+    padding:0.3rem 0;
+}
+.topPlayBtnList li.cur{
+    border:1px solid #E5A740;
+}
+.topPlayBtnList li span{
+    font-size:1rem;
+    line-height:1rem;
+    color:#fff;
+}
+.topPlayBtnList li em{
+    font-size:0.8rem;
+    line-height:1rem;
+    color:#fff;
+}
+/*pagedetail.html page addclass*/
+.accountList.pagedetailList li a{
+    display:block;
+    padding:0;
+    height:4.5rem;
+    position:relative;
+}
+.accountInfo .iIcon_p{
+    font-size:1.1rem;
+    color:#ccc;
+}
+.awardcss{
+    position:absolute;
+    right:1rem;
+    font-size:1.2rem;
+    line-height:2.6rem;
+}
+.detailpageR{
+    font-size:1.2rem;
+    line-height:4.5rem;
+    color:#666;
+    text-align:left;
+    position:absolute;
+    left:36%;
+}

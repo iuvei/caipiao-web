@@ -1,0 +1,81 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">今日盈亏</div>
+            <div class="userMain allmain">
+            	<div id="PLhtml">
+                    <div class="plCon fix">
+                    	<div class="balance">
+                            <span class="yueIcon">余额<em>{$user.money}</em></span>
+                            <p>
+                                <a href="{:U('Portal/User/ebankPay')}">充值</a>
+                                <a href="{:U('Portal/User/coll_money')}">提现</a>
+                                <a href="{:U('Portal/User/billRecord')}">交易记录</a>
+                            </p>
+                        </div>
+                        <div class="plTotal">
+                            <i class="iconfont"><img src="__TMPL__Public/bifa/images/yk.png"></i>
+                            <div class="detail">
+                                <p>盈亏总额（元）</p>
+                                <em>
+                                    <i></i>{$zyl}
+                                </em>
+                            </div>
+                        </div>
+                        <div class="calculate">
+                            <i class="iconfont js"><img src="__TMPL__Public/bifa/images/js.png"></i>
+                            <div class="detail">
+                            	<p>盈亏计算公式</p>
+                            	<ins>中奖-投注+活动+返点</ins>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="headLine">
+                        <ul class="PLstatementList">
+                            <li>投注金额</li>
+                            <li>中奖金额</li>
+                            <li>活动礼金</li>
+                            <li>返点金额</li>
+                            <li>充值金额</li>
+                            <li>提现金额</li>
+                        </ul>
+                    </div>
+                    <div class="PLdata">
+                    	<ul>
+                        	<li>{$tzje}</li>
+                            <li>{$zjje}</li>
+                            <li>{$hdze}</li>
+                            <li>{$fdze}</li>
+                            <li>{$czze}</li>
+                            <li>{$txze}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

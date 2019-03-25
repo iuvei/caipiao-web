@@ -1,0 +1,79 @@
+<form method="post" name="companyform" action="http://fw5.b789b.com/index.php?action=reportclass&zizhanghao="></form>
+<input type="hidden" name="formhash" value="d167814a">
+<style>
+    .header a{color: yellow; cursor:pointer}
+    .header a.active {
+        color: red;
+    }
+</style>
+
+<table border="0" cellpadding="0" cellspacing="0" class="tableborder" width="100%">
+    <thead>
+        <tr class="header">
+            <td colspan="7"   class="query-mount">
+                月分类帐&nbsp;&nbsp;<span id="periodsNumberSpan"></span>
+                |
+                <!--ko foreach:dateList-->
+                <a data-bind="text:text,click:$parent.queryFormDate,css:{active:cur}"></a>
+                <span class="split-line">|</span>
+                <!--/ko-->
+                <a data-bind="click:queryFormDate" class="query-all">全部</a>
+            </td>
+            
+        </tr>
+
+        <tr class="reportTop">
+            <td style="width:15%"><span id="ClassifyJuniorLable"></span></td>
+            <td style="width:15%">类别</td>
+            <td style="width:14%">笔数</td>
+            <td style="width:14%">下注金额</td>
+            <td style="width:14%">回水</td>
+            <td style="width:14%">中奖</td>
+            <td style="width:14%">盈亏</td>
+        </tr>
+    </thead>
+
+    <tbody data-bind="foreach:lists">
+        <!--ko foreach:list1-->
+        <!--ko ifnot:(TotalBetCount+TotalBetAmount+TotalBackComm+TotalWinAmt+TotalWinLoss)===0-->
+        <tr>
+            <td style="cursor: pointer;" data-bind="text:$index()%2?'':(PeriodsNumber==1?'总统计':periodsTime),click:$parents[1].LoginNameNlineClassify.bind($parents[1]),style:{color:$parents[1].Stop()?'#000':'#FF6600'}"></td>
+
+            <td style="cursor: pointer; color: #FF6600;" data-bind="click:$parents[1].ClickCount,text:$index()%2?'占成合计':'总货合计'" class="reduce-gif"></td>
+            <td data-bind="text:TotalBetCount"></td>
+            <td data-bind="text:TotalBetAmount"></td>
+            <td data-bind="text:TotalBackComm"></td>
+            <td data-bind="text:TotalWinAmt"></td>
+            <td data-bind="text:TotalWinLoss"></td>
+        </tr>
+        <!-- ko foreach:list -->
+        <tr style="display: none">
+            <td>&#12288;</td>
+            <td data-bind="text:groupname"></td>
+            <td data-bind="text:BetCount"></td>
+            <td data-bind="text:Math.ceil(BetAmount)"></td>
+            <td data-bind="text:Math.ceil(BackComm)"></td>
+            <td data-bind="text:Math.ceil(WinAmt)"></td>
+            <td data-bind="text:Math.ceil(WinLoss)"></td>
+        </tr>
+        <!-- ko ifnot:/^(13)|(14)|(15)|(16)$/.test(BetTypeID) -->
+        <!-- ko foreach:children -->
+        <tr class="reportNow_z hover" style="display:none">
+            <td style="background:#fff;"></td>
+            <td data-bind="text:typename"></td>
+            <td data-bind="text:BetCount"></td>
+            <td data-bind="text:Math.ceil(BetAmount)"></td>
+            <td data-bind="text:Math.ceil(BackComm)"></td>
+            <td data-bind="text:Math.ceil(WinAmt)"></td>
+            <td data-bind="text:Math.ceil(WinLoss)"></td>
+        </tr>
+        <!--/ko-->
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- /ko -->
+        <!--/ko-->
+
+    </tbody>
+</table>
+<br>
+

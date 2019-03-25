@@ -1,0 +1,108 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <form class="form-horizontal" action="{:U('Portal/AdminOrder/xgzd2_post')}" method="post">
+            <fieldset>
+                <div class="control-group" >
+                    <label class="control-label">注单信息ID</label>
+                    <div class="controls" >
+                        {$bet.betinfoid}
+                    </div>
+                </div>
+                <div class="control-group" >
+                    <label class="control-label">下注信息</label>
+                    <div class="controls" >
+                        {$bet.bz}，共{$bet.count}个号
+                    </div>
+                </div>
+                <div class="control-group" >
+                    <label class="control-label">仟/佰/拾/个</label>
+                    <div class="controls">
+                        <input type="text" id="betnumber1" class="betnumber-input" name="betnumber1" value="{$bz_info['betnumber1']}" required style="width: 100px">
+                        <input type="text" id="betnumber2" class="betnumber-input" name="betnumber2" value="{$bz_info['betnumber2']}" required style="width: 100px">
+                        <input type="text" id="betnumber3" class="betnumber-input" name="betnumber3" value="{$bz_info['betnumber3']}" required style="width: 100px">
+                        <input type="text" id="betnumber4" class="betnumber-input" name="betnumber4" value="{$bz_info['betnumber4']}" required style="width: 100px">
+                    </div>
+                </div>
+                <div class="control-group" >
+                    <label class="control-label">号码列表</label>
+                    <div class="controls">
+                        <pre id="generated_numbers" style="max-width: 600px;max-height: 300px; overflow-y: scroll;"></pre>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-actions">
+                <input type="hidden" name="bet_id" value="{$bet.id}"/>
+                <input type="hidden" name="uid" value="{$uid}"/>
+                <input type="hidden" id="submit_numbers" name="numbers" value=""/>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <input type="submit" class="btn btn-primary">
+                &emsp;&emsp;&emsp;
+                <a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+            </div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script>
+        $(function() {
+            // 如果是随机号，则仅读
+            $('.betnumber-input[value="X"]').prop('readonly', true);
+            // 生成结果
+            generate_numbers();
+            // 修改内容时重新生成结果
+            $('.betnumber-input').on('keyup', function() {
+                generate_numbers();
+            });
+        });
+
+        function generate_numbers() {
+            var number_list = [];
+            var betnumber1 = unique_string($('#betnumber1').val());
+            var betnumber2 = unique_string($('#betnumber2').val());
+            var betnumber3 = unique_string($('#betnumber3').val());
+            var betnumber4 = unique_string($('#betnumber4').val());
+            var arr = [
+                betnumber1.split(''),
+                betnumber2.split(''),
+                betnumber3.split(''),
+                betnumber4.split(''),
+            ];
+            var results = [];
+            var result = [];
+            number_list = do_exchange(arr, 0);
+            function do_exchange(arr, index) {
+                for (var i = 0; i<arr[index].length; i++) {
+                    result[index] = arr[index][i];
+                    if (index != arr.length - 1) {
+                        do_exchange(arr, index + 1)
+                    } else {
+                        results.push(result.join(''))
+                    }
+                }
+                return results;
+            }
+            // console.log(number_list);
+            var numbers = number_list.join(',');
+            $('#generated_numbers').html(numbers);
+            $('#submit_numbers').val(numbers);
+        }
+
+        function unique_string(str) {
+          // 存放结果
+          var res = "";
+          // 遍历字符串元素
+          for (var i in str) {
+            // 如果结果不存在该元素则保存
+            if (res.indexOf(str.charAt(i)) == -1) {
+               res += str.charAt(i);
+            }
+          }
+          // 返回去重后的字符串
+          return res;
+        }
+
+    </script>
+</body>
+</html>

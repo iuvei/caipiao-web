@@ -1,0 +1,178 @@
+<style>
+    .header .split-line {
+        margin: 0 2.5px;
+    }
+
+    .header a {
+        font-weight: 700;
+        color: yellow;
+        cursor: pointer;
+    }
+
+        .header a.all {
+            color: red;
+        }
+</style>
+<table border="0" cellpadding="0" cellspacing="0" class="tableborder" width="100%" style="table-layout: auto;">
+    <tbody>
+        <tr class="header">
+            <td colspan="12" data-bind="attr:{colspan:lastAgent()||isMember()?7:12}">
+                <span data-bind="visible:IsShowZCompany()">
+                    大股东<select id="companyIDVal" data-bind="options:CompanyList,optionsText:'LoginName',optionsValue:'ID'"></select>
+                </span>
+                <span data-bind="text:monthInfo()"></span>
+                <span class="split-line" data-bind="if:nextLevel()?'|':'',visible:!IsShowZCompany()">|</span>
+                <a data-bind="text:nextLevel,click:goToAgent,visible:!IsShowZCompany()"></a>
+                <span class="mount-infor">
+                    
+                    <!--ko foreach:dateList-->
+                    <span class="split-line">|</span>
+                    <a data-bind="text:text,click:$parent.queryFormDate, css:{all:$index()==$parent.dateList().length-1}"></a>
+                    <!--/ko-->
+                    
+                </span>
+                &nbsp;
+                <a style="color:#0000FF" data-bind="visible:IsShowZCompany()" target="_blank">综合报表</a>
+                 
+                <input type="hidden"  value="<php>echo date('Y/m/d H:i:s',time());</php>" id="ServerDate" />
+            </td>
+            <td colspan="2">
+                <select data-bind="options:periodsNumbersFrom,optionsValue:'PeriodsNumber',optionsText:'PeriodsNumber',value:periodsNumberFrom" class="query-period" data-query="periodsNumberFrom"></select>
+        <span>~</span>
+        <select data-bind="options:periodsNumbersTo,optionsText:'PeriodsNumber',optionsValue:'PeriodsNumber',value:periodsNumberFromTo" class="query-period" data-query="periodsNumberFromTo"></select>
+
+
+                
+            </td>
+            <td width="80" style="text-align:center">
+                <span data-bind="click:Print" style="cursor:pointer;border-right:none;">打印</span>
+            </td>
+        </tr>
+
+        <tr class="reportTop">
+            <td rowspan="2" data-bind="text:title"></td>
+            <!--ko if:!isMember()&&!lastAgent()-->
+            <td colspan="3" class="reportNow_z">直属会员</td>
+            <!--/ko-->
+            <td colspan="3" class="reportmember">会员</td>
+            <!--ko if:!lastAgent()-->
+            <td width="20%" data-bind="text:nextLevel" colspan="2" class="reportLevel"></td>
+            <!--/ko-->
+            <td colspan="4" data-bind="text:current,css:isMember()?'reportLevel':'reportNow',attr:{colspan:isMember()?7:4}"></td>
+
+            <!--ko if:!isMember()-->
+            <td colspan="2" class="reportLevel" data-bind="text:upper"></td>
+            <!--/ko-->
+        </tr>
+        <tr class="reportTop">
+            <!--ko if:!isMember()&&!lastAgent()-->
+            <td class="reportNow_z">笔数</td>
+            <td class="reportNow_z">总投</td>
+            <td class="reportNow_z">盈亏</td>
+            <!--/ko-->
+            <td class="reportmember">笔数</td>
+            <td class="reportmember">总投</td>
+            <td class="reportmember">盈亏</td>
+
+            <!--ko if:!lastAgent()-->
+            <td class="reportLevel">总投</td>
+            <td class="reportLevel">盈亏</td>
+            <!--/ko-->
+            <!--ko if:!isMember()-->
+            <td class="reportNow">占成金额</td>
+            <td class="reportNow">占成盈亏</td>
+            <td class="reportNow_z">赚水</td>
+            <td class="reportNow_z">总盈亏</td>
+            <!--/ko-->
+            <td class="reportLevel" data-bind="attr:{colspan:isMember()&&5}">总投</td>
+            <td class="reportLevel" >盈亏</td>
+
+        </tr>
+        <!--ko foreach:list-->
+        <tr class="hover">
+
+            <td>
+                <font color="#0000FF"><b data-bind="text:'['+($index()+1)+']'"></b></font>
+                <!--ko if:!$data.CompanyID-->
+              
+                <!--ko if:!$parent.isLook()-->
+                <p style="cursor:pointer; display:inline-block;" data-bind="text:PeriodsTime.replace(/^\d+-/,'')"></p>
+                <!--/ko-->
+
+                <!--ko if:$parent.isLook()-->
+                <a style="cursor:pointer; display:inline-block;" data-bind="text:PeriodsTime.replace(/^\d+-/,''),click:$parent.next.bind($parent)"></a>
+                <!--/ko-->
+
+                <!--/ko-->
+
+                <!--ko if:$data.CompanyID-->
+                
+                <!--ko if:!$parent.isLook()-->
+                <p style="cursor:pointer;display:inline-block;" data-bind="text:LoginName+'('+ NickName+')'"></p>
+                <!--/ko-->
+
+                <!--ko if:$parent.isLook()-->
+                <a style="cursor:pointer;display:inline-block;" data-bind="text:LoginName+'('+ NickName+')',click:$parent.next.bind($parent)"></a>
+                <!--/ko-->
+
+                <!--/ko-->
+            </td>
+            <!--ko if:!$parent.isMember()&&!$parent.lastAgent()-->
+            <td class="reportNow_z">
+                <!--ko if:DirectMemBetCount-0<=0-->
+                <label>0</label>
+                <!--/ko-->
+                <!--ko if:DirectMemBetCount-0>0-->
+                <a href="#" style="color:blue;font-weight:bold;" class="directMember" data-bind="text:$data.DirectMemBetCount,click:$parent.nextMember.bind($parent,$data,true)"></a>
+                <!--/ko-->
+            </td>
+            <td class="reportNow_z" data-bind="text:Utils.rounding(DirectMemBetAmt)"></td>
+            <td class="reportNow_z report_1" data-bind="text:Utils.rounding(DirectMemWL)"></td>
+            <!--/ko-->
+            <td class="reportmember" data-bind="text:MemberBetCount"></td>
+            <td class="reportmember" data-bind="text:Utils.rounding(MemBetAmt)"></td>
+            <td class="reportmember report_1" data-bind="text:Utils.rounding(MemWL)"></td>
+
+            <!--ko if:!$parent.lastAgent()-->
+            <td class="reportLevel" data-bind="text:Utils.rounding(DownLineBetAmt)"></td>
+            <td class="reportLevel report_1" data-bind="text:Utils.rounding(DownLineWL)"></td>
+            <!--/ko-->
+            <!--ko if:!$parent.isMember()-->
+            <td class="reportNow" data-bind="text:Utils.rounding(SelfBetAmt)"></td>
+            <td class="reportNow" data-bind="text:Utils.rounding(SelfWL)"></td>
+            <td class="reportNow_z " data-bind="text:Utils.rounding(SelfComm)"></td>
+            <td class="reportNow_z" data-bind="text:Utils.rounding(SelfWLTotal)"></td>
+            <!--/ko-->
+            <td class="reportLevel" data-bind="text:Utils.rounding(UperBetAmt),attr:{colspan:$parent.isMember()&&5}"></td>
+            <td class="reportLevel" data-bind="text:Utils.rounding(UperWL)"></td>
+        </tr>
+        <!--/ko-->
+        <tr class="reportFooter">
+
+            <td><font color="#0000FF"><b>合计</b></font></td>
+            <!--ko if:!isMember()&&!lastAgent()-->
+            <td data-bind="text:total.directMemberBetTotal"></td>
+            <td data-bind="text:total.directMemberBetAmtTotal"></td>
+            <td data-bind="text:total.directMemWLTotal"></td>
+            <!--/ko-->
+            <td data-bind="text:total.memberBetTotal"></td>
+            <td data-bind="text:total.memberBetAmtTotal"></td>
+            <td data-bind="text:total.memWLTotal"></td>
+
+            <!--ko if:!lastAgent()-->
+            <td data-bind="text:total.downLineBetTotal"></td>
+            <td data-bind="text:total.downLineWLTotal"></td>
+            <!--/ko-->
+            <!--ko if:!isMember()-->
+            <td data-bind="text:total.selfBetAmtTotal"></td>
+            <td data-bind="text:total.selfWLTotal"></td>
+            <td data-bind="text:total.makeWaterTotal"></td>
+            <td data-bind="text:total.selfCommTotal"></td>
+            <!--/ko-->
+            <td data-bind="text:total.uperBetAmtTotal, attr:{colspan:isMember()&&5}"></td>
+            <td data-bind="text:total.uperWLTotal"></td>
+
+        </tr>
+
+    </tbody>
+</table>

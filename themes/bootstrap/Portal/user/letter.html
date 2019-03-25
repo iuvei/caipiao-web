@@ -1,0 +1,71 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">站内信</div>
+            <div class="userMain allmain">
+            	<div class="sendList">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    	<tbody  class="headLine">
+                            <tr>
+                                <th scope="col"> </th>
+                                <th scope="col">主题</th>
+                                <th scope="col">发件人</th>
+                                <th scope="col">时间</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="letterDetail">
+                        <!--<ul class="fudetail_list">
+                            <li><input type="checkbox"></li>
+                            <li>admin</li>
+                            <li>admin</li>
+                            <li>admin</li>
+                        </ul>
+                        <ul class="fudetail_list">
+                            <li><input type="checkbox"></li>
+                            <li>admin</li>
+                            <li>admin</li>
+                            <li>admin</li>
+                        </ul>-->
+                    </div>
+                    <div class="page">
+                    	<p>共<em>0</em>条记录</p>
+                        <div id="pageNav" class="pageNav"></div>
+                    </div>
+                    <div class="msgControl">
+                    	<input id="CheckAll" type="checkbox">全选
+                        <input class="l_btn is_readBtn" value="标为已读" type="button">
+                        <input class="l_btn is_delet" value="删除" type="button">
+                    </div>
+                    <div class="userTip">
+                    	<p><i></i>温馨提示：系统将自动清空5天前的用户消息记录。</p>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

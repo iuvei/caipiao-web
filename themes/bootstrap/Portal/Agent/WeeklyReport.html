@@ -1,0 +1,188 @@
+<style>
+    .header .split-line {
+        margin: 0 2.5px;
+    }
+
+    .header a {
+        font-weight: 700;
+        color: yellow;
+        cursor: pointer;
+    }
+
+        .header a.all {
+            color: red;
+        }
+</style>
+<table border="0" cellpadding="0" cellspacing="0" class="tableborder" width="100%" style="table-layout: auto;">
+    <tbody>
+        <tr class="header">
+            <td colspan="12" data-bind="attr:{colspan:isDirecet()?7:lastAgent()||isMember()?7:9}">
+                周报表(<label style="color:red;">已结算</label>)>>>
+                时间范围：
+                <input type="hidden" value="<php>echo date('Y/m/d H:i:s',time());</php>" id="ServerDate" />
+                
+               
+                
+                <input type="text" id="staDt" name="staDt" data-bind="textinput:DateFrom" onfocus="WdatePicker({ readOnly: true})" style="width:100px;">~
+                <input type="text" id="endDt" name="endDt" data-bind="textinput:DateTo" onfocus="WdatePicker({readOnly: true})" style="width:100px;">
+                &nbsp;&nbsp;
+                <input class="button" type="submit" name="addsubmit" data-bind="click:Setday.LastWeek" value="上 周">&nbsp;&nbsp;
+                <input class="button" type="submit" name="addsubmit" data-bind="click:Setday.ThisWeek" value="本 周">&nbsp;&nbsp;
+                <input class="button" type="submit" name="addsubmit" data-bind="click:Seach" value="查 询">
+                
+            </td>
+            <td colspan="4" data-bind="attr:{colspan:isDirectMember()?4:2}">
+
+                  
+            </td>
+            <td width="80" style="text-align:center">
+                
+            </td>
+        </tr>
+
+        <tr class="reportTop">
+            <td rowspan="2" data-bind="text:nextLeveName"></td>
+
+            
+
+            <td colspan="3" class="reportmember">会员</td>
+
+            <!--ko if:!isDirecet()-->
+            <!--ko if:!lastAgent()-->
+            <td width="20%" data-bind="text:nextLevel" colspan="2" class="reportLevel"></td>
+            <!--/ko-->
+            <!--/ko-->
+
+            <td colspan="4" data-bind="text:current,css:isMember()?'reportLevel':'reportNow',attr:{colspan:isMember()?7:4}"></td>
+
+            <!--ko if:!isMember()-->
+            <td colspan="2" class="reportLevel" data-bind="text:upper"></td>
+            <!--/ko-->
+        </tr>
+        <tr class="reportTop">
+            
+
+            <td class="reportmember">笔数</td>
+            <td class="reportmember">总投</td>
+            <td class="reportmember">盈亏</td>
+
+            <!--ko if:!isDirecet()-->
+            <!--ko if:!lastAgent()-->
+            <td class="reportLevel">总投</td>
+            <td class="reportLevel">盈亏</td>
+            <!--/ko-->
+            <!--/ko-->
+            <!--ko if:!isMember()-->
+            <td class="reportNow">占成金额</td>
+            <td class="reportNow">占成盈亏</td>
+            <td class="reportNow_z">赚水</td>
+            <td class="reportNow_z">总盈亏</td>
+            <!--/ko-->
+            <td class="reportLevel" data-bind="attr:{colspan:isMember()&&5}">总投</td>
+            <td class="reportLevel">盈亏</td>
+
+        </tr>
+        <!--ko foreach:list-->
+        <tr class="hover">
+
+            <td>
+                <font color="#0000FF"><b data-bind="text:'['+($index()+1)+']'"></b></font>
+
+                <!--ko if:$data.AgentLevel-0==-2-->
+               
+                <!--ko if:$data.CompanyID-0==0-->
+               
+                <!--ko if:!$parent.isLook()-->
+                <p style="cursor:pointer;display:inline-block;" data-bind="text:LoginName==null?'直属会员':LoginName+'('+ NickName+')'"></p>
+                <!--/ko-->
+
+                <!--ko if:$parent.isLook()-->
+                <a style="cursor:pointer;display:inline-block;" data-bind="text:LoginName==null?'直属会员':LoginName+'('+ NickName+')',click:$parent.next.bind($parent)"></a>
+                <!--/ko-->
+
+                <!--/ko-->
+
+                <!--ko if:$data.CompanyID-0!=0-->
+                <label data-bind="text:LoginName==null?'直属会员':LoginName+'('+ NickName+')'"></label>
+                <!--/ko-->
+              
+                <!--/ko-->
+
+                <!--ko if:$data.AgentLevel-0!=-2-->
+                <!--ko if:!$data.CompanyID-->
+
+                    <!--ko if:!$parent.isLook()-->
+                    <p style="cursor:pointer;display:inline-block;" data-bind="text:PeriodsNumber"></p>
+                    <!--/ko-->
+
+                    <!--ko if:$parent.isLook()-->
+                    <a style="cursor:pointer;display:inline-block;" data-bind="text:PeriodsNumber,click:$parent.next.bind($parent)"></a>
+                    <!--/ko-->
+
+                    <!--/ko-->
+                    <!--ko if:$data.CompanyID-->
+                   
+                    <!--ko if:!$parent.isLook()-->
+                    <p style="cursor:pointer;display:inline-block;" data-bind="text:LoginName+'('+ NickName+')'"></p>
+                    <!--/ko-->
+
+                    <!--ko if:$parent.isLook()-->
+                    <a style="cursor:pointer;display:inline-block;" data-bind="text:LoginName+'('+ NickName+')',click:$parent.next.bind($parent)"></a>
+                    <!--/ko-->
+
+                    <!--/ko-->
+                <!--/ko-->
+            </td>
+            
+
+
+            <td class="reportmember" data-bind="text:MemberBetCount"></td>
+            <td class="reportmember" data-bind="text:Utils.rounding(MemBetAmt)"></td>
+            <td class="reportmember report_1" data-bind="text:Utils.rounding(MemWL)"></td>
+
+            <!--ko if:!$parent.isDirecet()-->
+            <!--ko if:!$parent.lastAgent()-->
+            <td class="reportLevel" data-bind="text:Utils.rounding(DownLineBetAmt)"></td>
+            <td class="reportLevel report_1" data-bind="text:Utils.rounding(DownLineWL)"></td>
+            <!--/ko-->
+            <!--/ko-->
+            <!--ko if:!$parent.isMember()-->
+            <td class="reportNow" data-bind="text:Utils.rounding(SelfBetAmt)"></td>
+            <td class="reportNow" data-bind="text:Utils.rounding(SelfWL)"></td>
+            <td class="reportNow_z " data-bind="text:Utils.rounding(SelfComm)"></td>
+            <td class="reportNow_z" data-bind="text:Utils.rounding(SelfWLTotal)"></td>
+            <!--/ko-->
+            <td class="reportLevel" data-bind="text:Utils.rounding(UperBetAmt),attr:{colspan:$parent.isMember()&&5}"></td>
+            <td class="reportLevel" data-bind="text:Utils.rounding(UperWL)"></td>
+        </tr>
+        <!--/ko-->
+        <tr class="reportFooter">
+
+            <td><font color="#0000FF"><b>合计</b></font></td>
+
+            
+
+            <td data-bind="text:total.memberBetTotal"></td>
+            <td data-bind="text:total.memberBetAmtTotal"></td>
+            <td data-bind="text:total.memWLTotal"></td>
+
+            <!--ko if:!isDirecet()-->
+            <!--ko if:!lastAgent()-->
+            <td data-bind="text:total.downLineBetTotal"></td>
+            <td data-bind="text:total.downLineWLTotal"></td>
+            <!--/ko-->
+            <!--/ko-->
+            <!--ko if:!isMember()-->
+            <td data-bind="text:total.selfBetAmtTotal"></td>
+            <td data-bind="text:total.selfWLTotal"></td>
+            <td data-bind="text:total.makeWaterTotal"></td>
+            <td data-bind="text:total.selfCommTotal"></td>
+            <!--/ko-->
+            <td data-bind="text:total.uperBetAmtTotal, attr:{colspan:isMember()&&5}"></td>
+            <td data-bind="text:total.uperWLTotal"></td>
+
+        </tr>
+
+    </tbody>
+</table>
+<center><!--ko if:isBack --><input class="button" type="submit" value="返 回" data-bind="click:goBack"><!--/ko--></center>

@@ -1,0 +1,111 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">下级开户</div>
+            <div class="manageBoxTop">
+            	<div class="manageCheckList fix">
+                    <a href="/index.php/Portal/User/manageInvite" >下级开户</a>
+                    <a href="/index.php/Portal/User/regcode" class="light">邀请码管理</a>
+                </div>
+            </div>
+            <div class="manageBoxMain" style="padding: 0px; display: block;">
+                <div class="headLine">
+                    <ul class="inviteList">
+                        <li>邀请码</li>
+                        <li>注册链接</li>
+                        <li>备注</li>
+                        <li>生成时间</li>
+                        <li>状态</li>
+                        <li>操作</li>
+                    </ul>
+                </div>
+                <div class="dataBox">
+                <foreach name="list" item="one">
+                    <ul class="inviteData">
+                        <li><input type="text" class="userInput inviteInput" value="{$one.code}" id="data-code"><a onClick="copyUrl2($('#data-code'))">复制</a></li>
+                        <li><input type="text" class="userInput inviteInput" value="http://<php>echo $_SERVER['HTTP_HOST'];</php>/index.php/Portal/index/register/rid/{$one.code}" id="data-url"><a  onClick="copyUrl2($('#data-url'))">复制</a></li>
+                        <li><a onclick="bz('{$one.bz}',{$one.id})"><if condition="$one[bz]">{$one.bz}<else/>未设置</if></a></li>
+                        <li>{$one.time|strtotime|date='Y-m-d',###}</li>
+                        <li>注册({$one.regsl})</li>
+                        <li><a onclick="dkxx({$one.k3},{$one.ssc},{$one.xw});">详情</a>|<a href="/index.php/Portal/User/regdel/id/{$one.id}">删除</a></li>
+                    </ul>
+                </foreach>
+                </div>
+                <script type="text/javascript">
+                    function copyUrl2(Url2)
+                    {
+
+                    Url2.select(); // 选择对象
+                    document.execCommand("Copy"); // 执行浏览器复制命令
+                    alert("已复制好，可贴粘。");
+                    }
+                </script>
+
+                <!--fenye-->
+                <div class="page">
+                    <div id="pageNav" class="pageNav">
+                        <div class="pagenav">
+                        <ul class="pageList">
+                            {$page}
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <div class="userTip">
+                    <p>* 温馨提示：“邀请码” 与 “注册链接” 功能一致，可以使用邀请码，也可以使用注册链接。</p>
+                </div>
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<script>
+function bz(xx,id){
+    layer.prompt({title: '备注', formType: 0}, function(pass, index){
+  layer.close(index);
+  $.ajax({
+             type: "post",
+             url: "/index.php/Portal/User/xgbz",
+             data: {id:id, bz:pass},
+             dataType: "json",
+             success: function(data){
+                         location.reload();
+                      }
+         });
+});
+    $('.layui-layer-input').val(xx);
+}
+
+function dkxx(k3,ssc,xw){
+    layer.open({
+  type: 0,
+  title:'详情',
+  skin: 'layui-layer-rim', //加上边框
+  area: ['600px', '400px'], //宽高
+  content: '<div  id="Detail" class="bonusTable" style="padding: 0px;"><ul data-v-a961bf6c="" class="InviteW"><ul class="InviteW"><li>快3</li> <li><input type="text" name="K3" disabled="disabled" class="userInput mgl20" value="'+k3+'">&nbsp;<span>（自身返点：{$user[k3]}）</span></li></ul><ul class="InviteW"><li>时时彩</li> <li><input type="text" name="SSC" disabled="disabled" class="userInput mgl20" value="'+ssc+'">&nbsp;<span>（自身返点：{$user[ssc]}）</span></li></ul><ul class="InviteW"><li>11选5</li> <li><input type="text" name="XW" disabled="disabled" class="userInput mgl20" value="'+xw+'">&nbsp;<span>（自身返点：{$user[xw]}）</span></li></ul></div>'
+});
+}
+</script>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

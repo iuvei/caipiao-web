@@ -1,0 +1,55 @@
+
+
+<form  method="post">
+    <table class="tableborder" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr class="header" align="center">
+            <td>信息提示</td>
+        </tr>
+        <tr>
+            <td style="color:red;">
+                (二，三，四）字现，计算赔率上限方法(供参考）。 二字现，赔率上限10，相当于四定位赔率上限10x974=9740。 三字现，赔率上限47，相当于四定位赔率上限47x204=9588。 四字现，赔率上限380，相当于四定位赔率上限380x24=9120
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table class="tableborder" width="100%" cellspacing="0" cellpadding="0" border="0">
+
+        <tr class="header" align="center">
+            <td width="10"></td>
+            <td width="12%">类别</td>
+            <td width="12%">最小下注</td>
+
+            <td width="12%">赔率上限(多个用/分开)</td>
+            <td width="12%">单注上限</td>
+            <td width="12%">单项上限</td>
+            <td width="12%">赔率下限</td>
+            <td width="*">操作</td>
+        </tr>
+        <tbody id="SHOW" data-bind="foreach:list,click:oprater">
+            <tr name="Store" class="hover" data-bind="id:classid">
+                <td class="altbg2" width="10"></td>
+                <td class="altbg2" width="12%" data-bind="text:BetTypeName"></td>
+                <td class="altbg2" width="12%" data-bind="if:!hidden"><input type="text" data-bind="textinput:MinLimitBetAmount,event:{change:$parent.change},disable:$parent.isInheritComm(),css:$parent.isInheritComm()==false?'':'noChange'" /></td>
+                <td class="altbg2" width="12%" data-bind="if:!hidden"><input type="text" data-bind="textinput:upperLimit,event:{change:$parent.change},disable:$parent.isInheritComm(),css:$parent.isInheritComm()==false?'':'noChange'" class="odds" /></td>
+                <td class="altbg2" width="12%" data-bind="if:!hidden"><input type="text" data-bind="textinput:MaxLimitSigleBet,event:{change:$parent.change},disable:$parent.isInheritComm(),css:$parent.isInheritComm()==false?'':'noChange'" /></td>
+                <td class="altbg2" width="*" data-bind="if:!hidden">  <input type="text" data-bind="textinput:MaxLimitItemBet,event:{change:$parent.change},disable:$parent.isInheritComm(),css:$parent.isInheritComm()==false?'':'noChange'" /></td>
+                <td class="altbg2" width="12%" data-bind="if:!hidden"><input type="text" data-bind="textinput:minLimitOdds,event:{change:$parent.change},disable:$parent.isInheritComm(),css:$parent.isInheritComm()==false?'':'noChange'" /> </td>
+                <td class="altbg2" width="24%">
+                    <!--ko if:!$data.hidden-->
+                    <a href="javascript:void(0)" data-flags="add">[添加赔率]</a> | <a href="#" data-flags="abatch">[分批赔率]</a>
+                    <!--/ko-->
+                    <!--ko if:$data.hidden-->
+                    <a href="javascript:void(0)" data-flags="add" style="color:red">[添加赔率]</a>
+                    <!--/ko-->
+                </td>
+
+            </tr>
+        </tbody>
+        <tr>
+            <td class="altbg2" colspan="8" style="text-align:center">
+                <input type="submit" value="修改" data-bind="click:submit,visible:!isInheritComm()" class="button" />&#12288;
+                <!--ko if:isBack--><input type="button" class="button" value="返回" data-bind="click:back" /><!--/ko-->
+            </td>
+        </tr>
+    </table>
+</form>

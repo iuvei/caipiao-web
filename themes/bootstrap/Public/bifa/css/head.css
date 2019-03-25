@@ -1,0 +1,192 @@
+/* CSS Document */
+.head5 .navItem li {
+  width: 130px;
+}
+
+.head5 .navItem li a {
+  line-height: 46px;
+  padding: 0px 10px;
+  position: relative;
+}
+
+.head5 .navItem li a:after {
+  content: "";
+  position: absolute;
+  background: #ec6262;
+  left: 0;
+  top: 14px;
+  width: 1px;
+  height: 18px;
+}
+
+.head5 .navItem .curr a,
+.head5 .navItem li a:hover {
+  background: none;
+}
+
+.head5 .navItem .curr,
+.head5 .navItem li:hover {
+  background: #da291c;
+}
+
+.head5 .navItem .curr+li a:after,
+.head5 .navItem .curr a:after,
+.head5 .navItem li:hover+li a:after,
+.head5 .navItem li:hover a:after {
+  background: none;
+}
+
+.head5 .navItem li:first-child a:after {
+  background: none !important;
+}
+
+.head5 #navIndex a:before {
+  content: "\e648";
+}
+
+.head5 #navLottery a:before {
+  content: "\e64c";
+}
+
+.head5 #navActivity a:before {
+  content: "\e64d";
+}
+
+.head5 #navMobile a:before {
+  content: "\e64e";
+}
+
+.head5 #navSecurityCenter a:before {
+  content: "\e64f";
+}
+
+.head5 #navHelp a:before {
+  content: "\e650";
+}
+
+.head5 .navItem li a:before {
+  font-size: 19px;
+  margin-right: 6px;
+  font-family: 'iconfont';
+  transform: translateY(2px);
+  display: inline-block;
+}
+.sildeSession a:hover, .mybet a:hover, .userTitle span:hover, .noticCon ul a:hover, .footer > div > p a:hover, .LoginOut:hover, .snavInfo a:hover, .checkedList a:hover, .userName span:hover, .messageShow dt p:hover, .announcementList li a:hover {
+	color: #e4393c !important;
+	text-decoration: underline;
+}
+.snav {
+	height: 30px;
+	line-height: 30px;
+	color: #666;
+	background: #F8F8F8;
+	border-bottom: 1px solid #e8e8e8;
+}
+.snav a {
+	color: #666;
+}
+.snavAll {
+	float: left;
+	padding-right: 20px;
+}
+.snavAll #Hi {
+	cursor: default;
+}
+.snavAll ins, .snavAll .betNavMore {
+	display: none;
+}
+.snavIndexLink {
+	float: left;
+}
+.snavInfo {
+	float: right;
+	height: 30px;
+	/* overflow: hidden; */
+}
+.snavInfo li {
+	display: inline-block;
+	padding-left: 20px;
+	cursor: pointer;
+}
+.snavInfo .service {
+	margin-top: 3px;
+}
+/*登陆注册的竖线 */
+.vertical {
+	position:absolute;
+	height:15px;
+	width: 1px;
+	background: #d7d7d7;
+	margin-top: 8px;
+	margin-left: 12px;
+}
+.iconfont {
+	font-family: "iconfont";
+}
+.snavInfo .service {
+	margin-top: 3px;
+}
+.serviceLink {
+	background: url(http://imagess-google.com/system/pc/other/service.gif);
+	color: #e4393c !important;
+	display: block;
+	background-position: 0 0;
+	height: 25px;
+	float: right;
+	width: 87px;
+	position: relative;
+	margin-left: 25px;
+}
+.serviceLink:hover {
+	background-position: -87px 0px;
+}
+.serviceLink:hover i {
+	background: #ca2528;
+}
+.serviceLink:hover:after {
+	border-right: 10px solid #ca2528;
+}
+.serviceLink:hover {
+	text-decoration: blink !important;
+	color: #f77e80 !important;
+}
+.service{
+	display:none
+}
+.logoCon {
+	background: white;
+}
+.logo {
+	height: 50px;
+	padding: 10px 0px;
+}
+
+.logoL {
+	float: left;
+}
+.logoR {
+	float: right;
+	line-height: 48px;
+	font-size: 14px;
+	color: #e4393c;
+	margin-top: 10px;
+}
+.logoR em {
+	margin-right: 10px;
+}
+.logoR em i {
+	padding-right: 4px;
+}
+.logoR a {
+	color: #e4393c;
+}
+.logoR i {
+	font-size: 22px;
+}
+.logoR span {
+	/* border: 1px solid; */ /* @include border-radius(20px; */ /* padding: 1px 5px; */ 
+	font-size: 12px;
+	line-height: 30px;
+	display: none;
+}
+

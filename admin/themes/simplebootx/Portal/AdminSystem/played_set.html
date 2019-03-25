@@ -1,0 +1,40 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+            <li><a href="{:U('Portal/AdminSystem/lottery_typeset')}">所有彩种</a></li>
+            <li class="active"><a href="#" >玩法配置</a></li>
+        </ul>
+		<form class="form-horizontal js-ajax-form" action="{:U('AdminSystem/played_setpost')}" method="post">
+			<fieldset>
+			<foreach name="group" item="one">
+				<div class="control-group">
+				<php>
+				if($one[top]!=0){
+					$map['id']=$one['top'];
+            		$top=M('played_group')->where($map)->find();
+            		$one['groupname']=$top['groupname'].'-'.$one['groupname'];
+				}
+				</php>
+					<label class="control-label">{$one['groupname']}</label>
+					<div class="controls">
+					<foreach name="list[$one[id]]" item="two">
+						<label class="radio inline" for="xz1">
+							<input type="checkbox" name="xzwf[]" value="{$two.id}" {$two.checked} >{$two.name}
+						</label>
+					</foreach>
+					</div>
+				</div>
+			</foreach>
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="id" value="{$post.id}"/>
+				<button type="submit" class="btn btn-primary">{:L('SAVE')}</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

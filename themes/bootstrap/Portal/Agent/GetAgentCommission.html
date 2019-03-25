@@ -1,0 +1,94 @@
+
+<div id="append_parent"></div>
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td>
+                <form method="post" action="/SttingsQuota/ModifyAgentBetTypeSetting" data-bind="submit:sub">
+                    <input type="hidden" name="formhash" value="d167814a" />
+                    <input type="hidden" name="g_levelid_parent_uid" value="0" />
+                    <input type="hidden" name="g_levelid" value="1" />
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+                        <thead>
+                            <tr class="header">
+                                <td width="5%"></td>
+                                <td width="10%">类　　别</td>
+                                <td width="8%">最小下注</td>
+                                <td width="19%">赔率上限(多个用/分开)</td>
+                                <td width="8%">单注上限</td>
+                                <td width="9%">单项上限</td>
+                                <!--ko if:!isMember()-->
+                                <td width="9%">拦货金额</td>
+                                <!--/ko-->
+                                <td width="8%">赚水(同&nbsp;<input type="checkbox" data-bind="checked:multiChange,disable:IsEditComm" style="vertical-align: middle;" />)</td>
+                                <td width="9%">赔率(多个用/分开)</td>
+
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach:list">
+                            <tr data-bind="if:title" class="hov">
+                                <td>&#12288;</td>
+                                <td data-bind="text:title"></td>
+                                <td>&#12288;</td>
+                                <td>&#12288;</td>
+                                <td>&#12288;</td>
+                                <td>&#12288;</td>
+                                <!--ko if:!$parent.isMember()-->
+                                <td>&#12288;</td>
+                                <!--/ko-->
+                                <td>&#12288;</td>
+                                <td>&#12288;</td>
+                            </tr>
+                            <!-- ko foreach:list -->
+                            <tr class="hov">
+                                <td>&#12288;</td>
+                                <td data-bind="text:BetTypeName"></td>
+                                <td class="lowest">
+                                    <input type="text" data-bind="textinput:MinLimitBetAmount,attr:{readOnly:$parents[1].IsEditOdds}" style="width:50px;" title="最小下注金额" />
+                                    
+                                    <label style="color:red;">
+                                        >=<label data-bind="text:PMinLimitBetAmount-0" />
+                                    </label>
+
+                                </td>
+                                <td>
+                                    <label class="LimitOdds" style="width:auto;" data-bind="text:$parents[1].join(PLimitOdds1-0,PLimitOdds2-0,PLimitOdds3-0,PLimitOdds4-0)" title="赔率上限" />
+                                </td>
+                                <td class="single-upper">
+                                    <input type="text" data-bind="textinput:MaxLimitSigleBet,attr:{readOnly:$parents[1].IsEditOdds}" style="width:50px;" title="单注上限" />
+                                    <label style="color:red;">
+                                        <=<label data-bind="text:PMaxLimitSigleBet-0" />
+                                    </label>
+                                </td>
+                                <td class="Indivi-upper">
+                                    <input type="text" data-bind="textinput:MaxLimitItemBet,attr:{readOnly:$parents[1].IsEditOdds}" style="width:50px;" title="单项上限" />
+                                    <label style="color:red;">
+                                        <=<label data-bind="text:PMaxLimitItemBet-0" />
+                                    </label>
+                                </td>
+                                <!--ko if:!$parents[1].isMember()-->
+                                <td class="Indivi-upper">
+                                    <label data-bind="text:MaxLimitStore" title="拦货金额">
+
+                                    </label>
+                                </td>
+                                <!--/ko-->
+                                <td>
+                                    <select class="form-control" title="赚水" id="ratioLen" data-bind="options:CommissionList,disable:$parents[1].IsEditComm,value:CommissionVal,event:{change:$parents[1].changeVal.bind($data,$parent)}"></select>
+
+                                </td>
+                                <td data-bind="text:$parents[1].join(Odds1(),Odds2(),Odds3(),Odds4())" title="赔率"></td>
+
+                            </tr>
+                            <!-- /ko -->
+                        </tbody>
+                    </table><br />
+                    <center>
+                        <input class="button" type="submit" name="addsubmit" value="提 交" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="button" type="button" name="addreturn" value="返 回" data-bind="click:back" />
+                    </center>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>

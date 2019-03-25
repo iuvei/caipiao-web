@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/basic.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/demo.css">
+<title>玩法说明</title>
+</head>
+
+<body class="bodyGray">
+<!--main-->
+<section>
+	<div class="container gameContent">
+    	<div class="gameTitleTxt">
+        	<img src="__TMPL__Public/bifa/images/game.jpg">
+        	<span>{$post.title}</span>
+        </div>
+    	<div class="gameShowinfo">
+            <h1>简介 <span>INTRODUCTION</span></h1>
+            <p>{$post.info}</p>
+        </div>
+        <div class="gameShowinfo">
+            <h1>玩法 <span>HOWTOPLAY</span></h1>
+            <table cellpadding="0" cellspacing="0" class="gameshowtab">
+            	<tr>
+                	<th>玩法群</th>
+                    <th>玩法组</th>
+                    <th>玩法</th>
+                    <th>玩法说明</th>
+                </tr>
+                <tr>
+                	<td rowspan="3">和值</td>
+                    <td>和值</td>
+                    <td>三个开奖号码相加的和，即为和值。</td>
+                    <td>如：下注12，开奖号码为246，即为中奖。</td>
+                </tr>
+                <tr>
+                    <td>和值大小</td>
+                    <td>三个开奖号码相加的和，3-10为小，11-18为大。</td>
+                    <td>如：下注小，开奖号码为113，即为中奖。</td>
+                </tr>
+                <tr>
+                    <td>和值单双</td>
+                    <td>三个开奖号码相加的和，3,5,7,9,11,13,15,17为单，4,6,8,10,12,14,16,18为双。</td>
+                    <td>如：下注双，开奖号码为116，即为中奖。</td>
+                </tr>
+                <tr>
+                	<td rowspan="2">三同号</td>
+                    <td>三同号通选</td>
+                    <td>开奖号码全部相同，即为三同号；对所有三同号进行投注，开出任意三同号，即为中奖。</td>
+                    <td>如：开奖号码为三个相同的号码，即为中奖。</td>
+                </tr>
+                <tr>
+                    <td>三同号单选</td>
+                    <td>对三同号中的任意一个进行投注，所选号码开出，即为中奖。</td>
+                    <td>如：下注111，开奖号码为111，即为中奖。</td>
+                </tr>
+                <tr>
+                	<td>三不同号</td>
+                    <td>三不同号</td>
+                    <td>开奖号码全部不相同，即为三不同号；从1-6中任选3个或3个以上的号码，所选号码与开奖号码的三个号码相同，即为中奖。</td>
+                    <td>如：下注123，开奖号码为123，即为中奖。</td>
+                </tr>
+                <tr>
+                	<td>三连号</td>
+                    <td>三连号通选</td>
+                    <td>对所有三个相连的号码（123,234，345,456）进行投注，开出任意相连号码，即为中奖。</td>
+                    <td>如：下注123，开奖号码为123，即为中奖。</td>
+                </tr>
+                <tr>
+                	<td rowspan="2">二同号</td>
+                    <td>二同号复选</td>
+                    <td>开奖号码有两个相同，即为二同号；对二同号中的任意一个进行投注，所选号码开出，即为中奖（不含豹子）</td>
+                    <td>如：下注11*，开奖号码为112、113、114、115、116，即为中奖。</td>
+                </tr>
+                <tr>
+                    <td>二同号单选</td>
+                    <td>选择1队二同号和1个不同号投注，选号和开奖号相同，即为中奖。</td>
+                    <td>如：下注112，开奖号码为112，即为中奖。</td>
+                </tr>
+                <tr>
+                    <td>二不同号</td>
+                    <td>二不同号</td>
+                    <td>至少选择两个不同的号码投注，开奖号码包含选中的2个不同号码，即为中奖。</td>
+                    <td>如：下注12，开奖号码为12*，即为中奖。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+<!--main Ending-->
+
+</body>
+</html>

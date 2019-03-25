@@ -1,0 +1,85 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://zw1.y95666.com/index.php?action=childuseradmin -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title></title>
+    <script type="text/javascript">var IMGDIR = './images/'; var attackevasive = '0';</script>
+    
+
+</head>
+<body leftmargin="10" topmargin="10">
+    <div id="append_parent"></div>
+       <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+         <tbody>
+            <tr>
+                <td>
+                    <style media="print">
+                        .Noprint {
+                            display: none;
+                        }
+                    </style> <table class="Noprint" width="100%" border="0" cellpadding="0" cellspacing="0"></table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder" style="table-layout: fixed">
+                        
+
+                        <tbody>
+                            <div class="add-top">&#12288;
+                                添加子账号
+                            </div>
+                            <div style="background:#fff;height: 40px; line-height: 40px; padding: 0 20px; ">
+                                
+                                <a href="/index.php/portal/agent/SubAccountAdd" style="width:70px;background: url(/Content/Default/Images/round.png) no-repeat 3px 10px;display:block;padding-left:30px;" data-bind="click:$root.open.bind($data,'SubAccount/add')">添加子账号</a>
+                            </div>
+                            <tr align="center" class="header">
+                                <td width="40">序号</td>
+                                <td width="10%">账　　号</td>
+                                <td width="10%">昵称</td>
+                                <td width="10%">修改时间</td>
+                                <td width="10%">修改者</td>
+                                <td width="10%">状态</td>
+                                
+                                <td width="10%">IP</td>
+                                <td width="*">操作</td>
+                            </tr>
+                        </tbody>
+                        <tbody data-bind="foreach:list">
+
+                            <tr>
+                                <td data-bind="text:$index() + 1"></td>
+                                <td data-bind="text:LoginName" class="altbg1"></td>
+                                <td data-bind="text:NickName"></td>
+                                <td data-bind="text:UpdateDt" class="altbg1"></td>
+                                <td data-bind="text:ParentName"></td>
+                                <td data-bind="text:CompanyStatus==0?'启用':CompanyStatus==1?'锁住':CompanyStatus==2?'禁用':'删除'" class="altbg1"></td>
+                                
+                                <td data-bind="text:LastLoginIP"> </td>
+                                <td class="altbg1">
+
+                                    <a href="#" style="color: #FF6600" data-bind="click:$parent.edit">编辑</a>
+                                    <a href="#" style="color: #FF6600" data-bind="click:$parent.changePwdSubAccount">修改密码</a>
+                                    <a href="#" style="color: #FF6600" data-bind="click:$parent.del,visible:CompanyStatus-0!==3">删除</a> 
+                                    <a href="#" style="color: #FF6600" id="SetThePermissionsShow" data-bind="click:$parent.SetThePermissions">子公司权限</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+    <div style="display:none" id="ACCOUNT-CHANGEPWD-SubAccount" title="修改密码">
+        <form>
+            <div class="form-group">
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;新密码:&nbsp;&nbsp;</label>
+                <input type="password" class="form-control" maxlength="15" name="pwd" placeholder="8-15位字母和数字" />
+            </div>
+            <div class="form-group">
+                <label>重复密码:&nbsp;&nbsp;</label>
+                <input type="password" class="form-control" maxlength="15" name="repwd" placeholder="8-15位字母和数字" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

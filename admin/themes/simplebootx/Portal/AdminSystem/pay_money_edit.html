@@ -1,0 +1,54 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">用户打款编辑</a></li>
+            
+		</ul>
+		<form class="form-horizontal js-ajax-form" action="{:U('Portal/AdminSystem/pay_money_edit')}" method="post">
+			<fieldset>
+                <div class="control-group" >
+					<label class="control-label">用户名</label>
+					<div class="controls" >
+                        <input type="text" style="color: red" name="user_login"value="{$post.user_login}" disabled="true">
+					</div>
+				</div>
+				<!-- <div class="control-group">
+					<label class="control-label">开关/关闭</label>
+					<div class="controls">
+						<php>$active_true_checked=($post['enable']==0)?"checked":"";</php>
+						<label class="radio inline" for="yes">
+							<input type="radio" name="enable" value="0" {$active_true_checked} id="yes"/>关
+						</label>
+						<php>$active_false_checked=($post['enable']==1)?"checked":"";</php>
+						<label class="radio inline" for="no">
+							<input type="radio" name="enable" value="1" id="no"{$active_false_checked}>开
+						</label>
+					</div>
+				</div> -->  
+				 <div class="control-group">
+                    <label class="control-label">打款金额</label>
+                    <div class="controls">
+                        <input type="number" name="number" value="{$post.number}" required>
+                    </div>
+                </div>                                                
+                <div class="control-group">
+                    <label class="control-label">用户备注</label>
+                    <div class="controls">
+                        <input type="text" name="remarks" value="{$post.remarks}" required>
+                    </div>
+                </div>
+                
+                
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="id" value="{$post.id}"/>
+				<button type="submit" class="btn btn-primary">{:L('SAVE')}</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

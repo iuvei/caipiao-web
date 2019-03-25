@@ -1,0 +1,107 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<div class="registHead">
+    <div class="container">
+        <div class="logo">
+            <a href="/">
+                <img id="Logo1" src="http://imagess-google.com/bifa/logo/logo1.png"  height="50" style="float:left;">
+            </a>
+            <span class="loginTxt">欢迎注册</span>
+            <span class="rightTologin">已有账号？<a href="{:U('Portal/index/login')}">请登录</a></span>
+        </div>
+    </div>
+</div>
+<!--header Ending-->
+<section>
+    <div class="container">
+    <style>
+    .userInput{
+        height: 40px !important;
+};
+    }
+    </style>
+        <!--aside regist-->
+        <form class="form-horizontal js-ajax-form" action="{:U('Portal/index/registerpost')}" method="post">
+        <ul class="submitContent regMain">
+            <li>
+                <span>邀请码：</span>
+                <input class="userInput" name="yqcode" type="text" value="{$id}" required>
+            </li>
+            <li>
+                <span>账号：</span>
+                <input class="userInput" name="user_login" type="text" required>
+            </li>
+            <li>
+                <span>昵称：</span>
+                <input class="userInput" name="user_nicename" type="text" required>
+            </li>
+            <li>
+                <span>设置密码：</span>
+                <input class="userInput" name="user_pass" type="password" id="user_pass" required>
+            </li>
+            <li>
+                <span>确认密码：</span>
+                <input class="userInput" name="user_pass_two" type="password" id="user_two_pass" onchange='yanzheng()' required>
+                <span id="tis" style="color: #f00"></span>
+            </li>
+
+            <li style="position:relative;">
+                <span>验证码：</span>
+                <input class="userInput shortText" name="verify" type="text" required>
+                    <div class="shortImg">
+                    {:sp_verifycode_img('length=4&font_size=14&width=100&height=34&charset=2345678&use_noise=1&use_curve=0')}
+                </div>
+            </li>
+            <li>
+                <span></span>
+                <p style="display: inline; margin-left: 0; font-size: 12px;color: #9a9a9a;">
+                <input style="width: inherit;margin-right: 5px;" checked="checked" name="RegLimit" type="checkbox" required>我已经年满18岁<span class="Validform_checktip"></span>
+                </p>
+            </li>
+            <li>
+            	<span></span>
+                <input class="mainColorBtn ClickShade loginSub submitBtnBig" type="submit"  value="注 册">
+                <input class="mainColorBtn ClickShade loginRes submitBtnBig" type="reset" value="重 置">
+            </li>
+        </ul>
+    </form>
+        <!--aside rregist Ending-->
+        <!--regist introduce-->
+        <div class="registTxt">
+        	<h2>用户注册</h2>
+            <p>赶紧加入吧！注册后系统将随机分配一张个性的头像。</p>
+        </div>
+        <!--regist introduce Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<footer>
+    <div class="container _about about">
+        <p class="fix"><a href="./about.html?41">关于我们</a>|
+                      <a href="./about.html?42">联系我们</a>|
+                      <a href="./about.html?43">商务合作</a>|
+                      <a href="./about.html?44">法律声明</a>|
+                      <a href="./about.html?45">隐私声明</a></p>
+        <p class="copyright">Copyright © <span class="siteName"></span> Reserved | 18+</p>
+    </div>
+</footer>
+<!--footer Ending-->
+<script type="text/javascript">
+function yanzheng(){
+    var user_two_pass=$('#user_two_pass').val();
+    var user_pass = $('#user_pass').val();
+    if(user_two_pass!=user_pass){
+        $('#tis').text('密码不同');
+    }else{
+        $('#tis').text('');
+    }
+}
+</script>
+</body>
+</html>

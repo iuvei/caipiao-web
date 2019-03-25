@@ -1,0 +1,104 @@
+
+
+<div class="pager_wrap">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder table-list" style="outline:none;">
+        <thead class="header">
+            <tr>
+                <td class="borderTop">级别查询</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    等级类别：
+                    <select data-bind="value:categoryGrade">
+                        <option value="0">公司</option>
+                        <option value="1">代理</option>
+                        <option value="2">会员</option>
+                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    账号：<input type="text" data-bind="textinput:loginName" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    昵称：<input type="text" data-bind="textinput:nickName" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="button" type="button" data-bind="click:SearchLevel" value="搜索级别" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder table-list">
+        <thead class="header">
+            <tr>
+                <th width="30px">序号</th>
+                <th>公司名称</th>
+                <th>直属会员</th>
+                <th>昵称</th>
+                <th>状态</th>
+                <th>占成(%)</th>
+                <th style="display:none">福利（‰）</th>
+                
+                <th>IP</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:list">
+
+            <tr class="hov">
+                <td data-bind="text:$index()+1"></td>
+                <td class="altbg1">
+                    <!--ko if:DownlineCount-0<=0-->
+                    <label data-bind="text:LoginName"></label>
+                    <!--/ko-->
+                    <!--ko if:DownlineCount-0>0-->
+                    <a href="#" data-bind="click:$parent.GetSubordinateList"><label style="cursor:pointer;color:blue;" data-bind="text:LoginName"></label></a>
+                    <!--/ko-->
+
+                </td>
+                <td class="altbg1">
+                    <!--ko if:MemCount-0<=0-->
+                    <label>0</label>
+                    <!--/ko-->
+                    <!--ko if:MemCount-0>0-->
+                    <a href="#" data-bind="click:$parent.GetMemCount"><label style="cursor:pointer;color:blue;" data-bind="text:MemCount"></label></a>
+                    <!--/ko-->
+
+                </td>
+                <td data-bind="text:NickName"></td>
+                <td data-bind="text:CompanyStatus==1?'启用':CompanyStatus==2?'禁用':CompanyStatus==3?'锁定':'删除'" class="altbg1">
+                    
+                </td>
+                <td data-bind="text:Ratio-0"></td>
+                <td data-bind="text:Welfare-0" class="altbg1" style="display:none"></td>
+                
+                <td data-bind="text:LastLoginIP"></td>
+                <td>
+                    <a href="#" data-bind="click:$parent.AddLowManage">新增代理</a>
+                    <a href="#" data-bind="click:$parent.AddDirectMember">新增会员</a>
+                    <a href="#" data-bind="click:$parent.Website,attr:{hidden:$parent.IsSuperCompany}" style="display:none">域名设定</a>
+                    <a href="#" data-bind="click:$parent.Basic">基本设置</a>
+                    <a href="#" data-bind="click:$parent.Level" style="display:none" >等级管理</a>
+                    <a href="#" data-bind="click:$parent.Edit">编辑</a>
+                    
+                    <a href="#" data-bind="click:$parent.changepwd">修改密码</a>
+                    <a href="#" data-bind="click:$parent.Delete">删除</a>
+                    <?php if($agent['IsSubAccount']!=1 || $agent['IsChildShowReport']==1){ ?>
+                    <a href="#" style="cursor: pointer;" data-bind="click:$parent.gotoMonthReport,style:{color:mayGotoMountReport?'blue':'#ccc'}">月报表</a>
+                    <?php } ?>
+                    <a href="#" data-bind="click:$parent.BatchOdds" style="display:none">定盘</a>
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="display:none" id="COMPANY-CHANGEPWD">
+    <form>
+        <div class="form-group" style="margin-bottom:5px;">
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;新密码：</label>
+            <input type="password" class="form-control nnn" maxlength="15" name="pwd" placeholder="8-15位字母和数字"> <span style="color:red" data-tip="tip">(8-15位字符和数字)</span>
+        </div>
+        <div style="height:30px;"></div>
+        <div class="form-group">
+            <label>重复密码：</label>
+            <input type="password" class="form-control nnn" maxlength="15" name="repwd" placeholder="8-15位字母和数字"> <span style="color:red" data-tip="tip">(8-15位字符和数字)</span>
+        </div>
+    </form>
+</div>

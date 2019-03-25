@@ -1,0 +1,149 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">方案详情</div>
+            <div class="DetailShow">
+                <div class="detailTopShow">
+                    <php>
+                    $bet=M('bets')->where($where)->select();
+                    $body='';
+                    foreach($bet as $one){
+                          if($body==''){
+                            $body=$one[actiondata];
+                          } 
+                          else{
+                            $body=$body.'#'.$one[actiondata];
+                          } 
+                    }
+                        $zt='等待中奖';
+                 if($betxx['isdelete']==1){
+                    $zt='已经撤单';
+                }
+                if($betxx['lotteryno']!=''){
+                    if($betxx['zbonus']>0){
+                        $zt='<span style="color:#e4393c">¥'.$betxx['zbonus'].'元</span>';
+                    }
+                    else{
+                        $zt='未中奖';
+                    }
+                }
+                else{
+                   $betxx['lotteryno']='----'; 
+                }
+                    </php>
+                    <h1>{$betxx.type|type=###}  </h1><!-- {$body} -->
+                    <ul class="detailT">
+                        <li>期号：<i>{$betxx[actionno]}</i></li>
+                        <li>投注时间：<i>{$betxx.actiontime|date='Y-m-d H:i:s',###}</i></li>
+                        <li>开奖号码：<i>{$betxx.lotteryno}</i></li>
+                        <li>投注单号：<i>TZ{$betxx.actiontime|date='Ymd',###}{$betxx.tzid}</i></li>
+                        <li>投注总金额：<em>¥{$betxx.zamount}元</em></li>
+                        <li>总奖金：<em>{$zt}</em></li>
+                    </ul>
+                </div>
+                <div class="detailList">
+                    <table class="ListContent">
+                        <tbody><tr>
+                            <th>玩法</th>
+                            <th>投注内容</th>
+                            <th>注数</th>
+                            <th>倍数</th>
+                            <th>投注金额</th>
+                            <th>模式</th>
+                            <th>奖金</th>
+                            <th>状态</th>
+                        </tr>
+                <foreach name="betlist" item="one">
+                        <tr>
+                <php>
+                         $zt='等待中奖';
+                 if($one['isdelete']==1){
+                    $zt='已经撤单';
+                }
+                if($one['lotteryno']!=''){
+                    if($one['bonus']>0){
+                        $zt='奖金<span style="color:#e4393c">'.$one['bonus'].'</span>';
+                    }
+                    else{
+                        $zt='未中奖';
+                    }
+                }
+                else{
+                   $one['lotteryno']='----'; 
+                }
+                $mode['2.000']='元';
+                $mode['0.200']='角';
+                $mode['0.020']='分';
+                    </php>
+                            <td>{$one.playedid|played=###}</td>
+                            <td>{$one.actiondata}</td>
+                            <td>{$one.actionnum}</td>
+                            <td>{$one.beishu}</td>
+                            <td>{$one[amount]*$one[beishu]*$one[actionnum]}</td>
+                            <td>{$mode[$one[mode]]}</td>
+                            <td>{$one['bonus']}</td>
+                            <td>{$zt}</td>
+                        </tr>
+                </foreach>
+                    </tbody></table>
+                </div>
+                <div class="page">
+                    <div id="pageNav" class="pageNav">
+                        <div class="pagenav">
+                        <ul class="pageList">
+                            {$page}
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/pikaday.css">
+
+<script type="text/javascript" src="__TMPL__Public/bifa/js/pikaday.min.js"></script>
+
+<script type="text/javascript">
+	var picker = new Pikaday({
+	field: document.getElementById('datepicker'),
+	firstDay: 1,
+	minDate: new Date('2010-01-01'),
+	maxDate: new Date('2020-12-31'),
+	yearRange: [2000,2020]
+	});
+	
+	var picker = new Pikaday({
+	field: document.getElementById('datepicker2'),
+	firstDay: 1,
+	minDate: new Date('2010-01-01'),
+	maxDate: new Date('2020-12-31'),
+	yearRange: [2000,2020]
+	});
+
+
+</script>
+</body>
+</html>

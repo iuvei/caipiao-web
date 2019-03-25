@@ -1,0 +1,122 @@
+        <php>
+                    $yin=M('pay_mode')->where(array('type'=>'0','state'=>'0'))->count();
+                    $ali=M('pay_mode')->where(array('type'=>'1','state'=>'0'))->count();
+                    $wei=M('pay_mode')->where(array('type'=>'2','state'=>'0'))->count();
+                    if($wei==0){
+                        echo '<script>alert("微信支付暂未开启");history.go(-1);</script>';
+                    }
+                </php>
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+        	<div class="userTitle">我要充值</div>
+            <div class="userMain allmain">
+                <div class="newTab fix">
+                    <if condition="$yin gt 0">
+                    <a class="" href="ebankPay.html">银行转账</a>
+                    </if>
+                    <if condition="$ali gt 0">
+                    <a class="" href="alipay.html">支付宝充值</a>
+                    </if>
+                    <if condition="$wei gt 0">
+                    <a class="curr" href="wechatPay.html">微信支付</a>
+                    </if>
+                </div> 
+                <div>
+                    <div class="row fix">
+                        <div class="colMd9">
+                            <div class="stepBox h200">
+                            	<em>1</em>
+                                <span>
+                                    <b>请用微信扫一扫以下二维码进行充值</b>
+                                    ，单笔最低
+                                    <ins>10</ins>
+                                    元，最高
+                                    <ins>0</ins>
+                                    元
+                                </span>
+                                <ul class="alipayee" style="margin: 20px 0px 0px; text-align: center;">
+                                    <li>
+                                    	<img src="{$list.logo}" alt="" style="width: 130px;">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                	<div class="stepBox">
+                    	<em>2</em>
+                        <span>
+                        	<b>请认真填写您的转账信息：</b>
+                        	请务必转账后再提交订单,否则无法及时查到您的款项！ 转账后请添加好友留言账号
+                        </span>
+                         <form method="post"  action="{:U('Portal/User/wechatPay')}">
+                        <ul class="stepBoxInput2">
+                            <li>
+                                <ins>
+                                    <b>您充值的金额：</b>
+                                    <input class="userInput" tag="充值金额" type="number" name="number" required>
+                                </ins>
+                                <ins>
+                                    <b>您的微信账号：</b>
+                                    <input class="userInput" tag="您的微信账号" type="text"  name="bank" required>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins>
+                                    <span>信息备注：&nbsp;&nbsp;</span>
+                                    <input class="userInput" tag="备注" type="text" name="remarks" required>
+                                </ins>
+                                
+                            </li>
+                        </ul>
+                        <h6 style="text-align: center;">
+                        	<input type="hidden" value="{$list.id}" name="pay_mode_id">
+
+                        	<input class="submitBtn" type="submit" value="提交充值订单" style="border:none">
+                        </h6>
+                    	</form>
+                        <div class="userTip">
+                            <p class="mgl20">
+                                ※ 温馨提示：
+                                <br>
+                                1、请转账完成后再提交充值订单。
+                                <br>
+                                2、请正确填写您的昵称和充值金额。
+                                <br>
+                                3、微信昵称并非微信账号，请注意区分。
+                                <br>
+                                4、转账1笔提交1次，请勿重复提交订单。
+                                <br>
+                                5、打款确认时间{$pay[user_play_wait_time]}分钟之后，如果没有到账或者账户余额错误，请联系QQ：{$pay[user_play_wait_qq]}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>
+

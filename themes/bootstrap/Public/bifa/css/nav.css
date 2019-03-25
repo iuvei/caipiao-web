@@ -1,0 +1,68 @@
+/* CSS Document */
+.nav {
+	background: #ac0019;
+	clear: both;
+	height:45px;
+}
+.navItems{
+	width:100%;
+	position:relative;
+}
+.navL li{
+	width:105px;
+	float:left;
+	line-height:45px;
+	font-size:14px;
+	text-align:center;
+}
+.navL li a{
+	color:#fff;
+	display:inherit;
+}
+.navIndex{
+	background:#d00b1d;
+}
+.navL li:hover{
+	background:#d00b1d;
+}
+.navR{
+	position:absolute;
+	right:0;
+	top:-3px;
+}
+.navR li{
+	width:120px;
+/*	background:#d91024;*/
+	float:left;
+	margin-left:10px;
+	height:48px;
+	text-align:center;
+	position:relative;
+}
+.navR li a{
+	color:#fff;
+	display:inherit;
+	line-height:49px;
+}
+.navR  li.accountIcon{
+	background:#d91024 url(../images/account.png) no-repeat 20px center;
+	padding-left:10px;
+}
+.navR  li.accountIcon:hover{
+	background:#dc4047 url(../images/account.png) no-repeat 20px center;
+}
+.sj{
+	position:absolute;
+	top:0;
+	left:-4px;
+	background:url(../images/sj.png) no-repeat left top;
+	width:4px;
+	height:4px;	
+}
+.navR  li.mobileIcon{
+	background:#d91024 url(../images/mobilePhone.png) no-repeat 20px center;
+	padding-left:10px;
+}
+.navR  li.mobileIcon:hover{
+	background:#dc4047 url(../images/mobilePhone.png) no-repeat 20px center;
+}

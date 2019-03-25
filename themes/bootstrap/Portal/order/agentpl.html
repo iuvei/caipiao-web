@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/basic.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/head.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/nav.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/demo.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/fontandreset.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/rebateDes.css">
+<script src="__TMPL__Public/bifa/js/jquery-1.11.1.min.js"></script>
+<title>玩法说明</title>
+</head>
+<script>
+var xz=0;
+function zkxx(id){
+    if(id==xz){
+        $('.zmmlx'+id).hide();
+        $('.isClass').show();
+        xz=0;
+    }
+    else{
+        $('.isClass').hide();
+        $('.zmmlx'+id).show();
+        xz=id;
+    }
+}
+</script>
+<body>
+<div class="rebateDes">
+    <div id="rebateNav" class="rebateNav fix">
+        <a <if condition="$id eq 1">class="curr"</if> href="{:U('Portal/order/agentpl/',array('id'=>1))}">快3</a>
+        <a <if condition="$id eq 2">class="curr"</if> href="{:U('Portal/order/agentpl/',array('id'=>2))}">时时彩</a>
+        <a <if condition="$id eq 3">class="curr"</if> href="{:U('Portal/order/agentpl/',array('id'=>3))}">11选5</a>
+    </div>
+
+	<div id="testShow" class="testShow" style="display:none">温馨提示：时时彩是基数2元一注的奖金模式，要换算成赔率，只需奖金除以2即可。</div>
+    <div class="rebateContent fix">
+        <ul id="rebateTitle" class="rebateTitle">
+            <li><i>玩法</i><span></span><em>返点</em></li>
+            <foreach name="list" item="one">
+                <if condition="$one[playedtpl] eq 'test'">
+                    <li>{$one[name]}大/小/单/双</li>
+                    <li>{$one[name]}3/18</li>
+                    <li>{$one[name]}4/17</li>
+                    <li>{$one[name]}5/16</li>
+                    <li>{$one[name]}6/15</li>
+                    <li>{$one[name]}7/14</li>
+                    <li>{$one[name]}8/13</li>
+                    <li>{$one[name]}9/12</li>
+                    <li>{$one[name]}10/11</li>
+                <else/>
+                <li>{$one[name]}</li>
+                </if>
+            </foreach>
+        </ul>
+    	<div id="rebateTableCon" class="rebateTableCon">
+        	<div id="rebateTable" class="rebateTable fix">
+                <php>
+                    $type[1]='k3';
+                    $type[2]='ssc';
+                    $type[3]='xw';
+                    $zmmkey=1;
+                    $bl=number_format($user[$type[$id]],1,".","");
+                    for($i=$bl;$i>=0;$i=number_format($i-0.1,1,".","")){
+                </php>
+                <ul class="zmmlx{$i|ceil=###} <php>if( $i-floor($i)==0 || $zmmkey==1){echo 'isClass" onclick="zkxx('.ceil($i).')"';$zmmkey=0;}else{echo 'noneed"';}</php>  >
+                    <li>{$i}</li>
+                     <foreach name="list" item="one">
+                    <if condition="$one[playedtpl] eq 'test'">
+                        <php>
+                        $maxlist=explode(',',$one['bonusprop']);
+                        $minlist=explode(',',$one['bonuspropbase']);
+                        foreach($maxlist as $key2=>$one2){
+                            $pl=($maxlist[$key2]-$minlist[$key2])/10*$i+$minlist[$key2];
+                            echo '<li>赔率'.round($pl,2).'</li>';
+                        }
+                        </php>
+                    <else/>  
+                    <php>
+                        $pl=($one['bonusprop']-$one['bonuspropbase'])/10*$i+$one['bonuspropbase'];
+                    </php>
+                    <li>赔率{$pl|round=###,2}</li>
+                    </if>
+                    </foreach>
+                </ul>
+                <php>
+                }
+                </php>
+        	</div>
+        </div>
+    </div>
+</div>
+<!--目标站js-->
+<!--<script type="text/javascript" src="js/rebateDes.js"></script>-->
+</body>
+</html>

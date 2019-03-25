@@ -1,0 +1,66 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('Portal/AdminSystem/played_list')}">所有玩法</a></li>
+            <li ><a href="{:U('Portal/AdminSystem/add_played')}" >添加玩法</a></li>
+        </ul>
+
+        <form method="post" class="js-ajax-form"  action="{:U('PortalAdminSystem/played_list')}"> 
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th align="center">ID</th>
+                        <th>玩法名称</th>
+                        <th style="vertical-align:middle; text-align:center;">状态</th>
+                        <th>所属类别</th>
+                        <th style="vertical-align:middle; text-align:center;">所属组别别</th>
+                        <th style="vertical-align:middle; text-align:center;">排序</th>
+                        <th style="vertical-align:middle; text-align:center;">降水金额</th>
+                        <th style="vertical-align:middle; text-align:center;">降水幅度</th>
+                        <th style="width:200px;" align="center">操作</th>
+                    </tr>
+                </thead>
+                <php>
+                    $state[0]='关';
+                    $state[1]='开';
+                    $lx[1]='快3';
+                    $lx[2]='时时彩';
+                    $lx[3]='11选5';
+                </php>
+                <tbody>
+                    <foreach name="list" item="vo">
+                    <tr>
+                    <php>
+                if($vo[type]==2){
+                    $map['id']=$vo['groupid'];
+                    $top1=M('played_group')->where($map)->find();
+                    $vo['name']=$top1['groupname'].'-'.$vo['name'];
+                    $map['id']=$top1['top'];
+                    $top2=M('played_group')->where($map)->find();
+                    $vo['name']=$top2['groupname'].'-'.$vo['name'];
+                }
+                </php>
+                        <td align="center">{$vo.id}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.name}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$state[$vo[enable]]}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$lx[$vo[type]]}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.groupid}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.sort}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.lowbonusamount|fix_decimal}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.lowbonusodds|fix_decimal}</td>
+                        <td align="center">
+                            <a href='{:U("AdminSystem/edit_played",array("id"=>$vo["id"]))}'>玩法设置</a> |
+                            <a class="js-ajax-delete" href='{:U("AdminSystem/del_played",array("id"=>$vo["id"]))}'>删除</a> 
+                        </td>
+                    </tr>
+                    </foreach>
+                </tbody>
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

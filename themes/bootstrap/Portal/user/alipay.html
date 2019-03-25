@@ -1,0 +1,153 @@
+        <php>
+                    $yin=M('pay_mode')->where(array('type'=>'0','state'=>'0'))->count();
+                    $ali=M('pay_mode')->where(array('type'=>'1','state'=>'0'))->count();
+                    $wei=M('pay_mode')->where(array('type'=>'2','state'=>'0'))->count();
+                    if($ali==0){
+                        echo '<script>alert("支付宝支付暂未开启");history.go(-1);</script>';
+                    }
+                </php>
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+        	<div class="userTitle">我要充值</div>
+            <div class="userMain allmain">
+                <div class="newTab fix">
+                    <if condition="$yin gt 0">
+                    <a class="" href="ebankPay.html">银行转账</a>
+                    </if>
+                    <if condition="$ali gt 0">
+                    <a class="curr" href="alipay.html">支付宝充值</a>
+                    </if>
+                    <if condition="$wei gt 0">
+                    <a class="" href="wechatPay.html">微信支付</a>
+                    </if>
+                </div> 
+                <div id="isShow">
+                    <div class="row fix">
+                        <div class="colMd8">
+                            <div class="stepBox topBox h150">
+                                <em>1</em>
+                                <span>
+                                    <b>请转账到以下支付宝账户：</b>
+                                    单笔最低
+                                    <ins>10</ins>
+                                    元，最高
+                                    <ins>50000</ins>
+                                    元
+                                </span>
+                                
+                                <ul class="alipayee">
+                                    <li>
+                                        <ins>收款支付宝姓名：</ins>
+                                        <ins>
+                                            <input class="code" type="text" id="username" value="{$list.username}">
+                                            <a class="copy_btn"  onClick="copyUrl2($('#username'))">复制</a>
+                                        </ins>
+                                    </li>
+                                    <li>
+                                        <ins>收款支付宝账号：</ins>
+                                        <ins>
+                                            <input class="code" type="text" id="account" value="{$list.account}">
+                                            <a class="copy_btn"  onClick="copyUrl2($('#account'))">复制</a>
+                                        </ins>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="colMd4">
+                        <div class="stepBox h150">
+                            <span style="display: block;" class="smTxt">扫码转账支付</span>
+                            <div class="erweima">
+                            	<img src="{$list.logo}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                     <script type="text/javascript">
+                    function copyUrl2(Url2)
+                    {
+                    
+                    Url2.select(); // 选择对象
+                    document.execCommand("Copy"); // 执行浏览器复制命令
+                    alert("已复制好，可贴粘。");
+                    }
+                    </script>
+                    <div class="stepBox">
+                    	<em>2</em>
+                        <span>
+                        	<b>请认真填写您的转账信息：</b>
+                        请务必转账后再提交订单,否则无法及时查到您的款项！
+                        </span>
+                        <form method="post" action="{:U('Portal/User/alipay')}">
+                        <ul class="stepBoxInput2">
+                            <li>
+                                <ins>
+                                    <b>您充值的金额：</b>
+                                    <input class="userInput" tag="充值金额" type="number"  name="number" required>
+                                </ins>
+                                <ins>
+                                    <b>您的支付宝账号：</b>
+                                    <input class="userInput" tag="支付宝姓名" type="text" name="bank" required>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins>
+                                    <span>信息备注：&nbsp;&nbsp;</span>
+                                    <input class="userInput" tag="备注" type="text" name="remarks" required>
+                                </ins>
+                                
+                            </li>
+                        </ul>
+                        <ul>
+                            <h6>
+                                <input type="hidden" value="{$list.id}" name="pay_mode_id">
+
+                            	<input class="submitBtn" type="submit" value="提交充值订单" style="border:none">
+                            </h6>
+                        </ul>
+                        </form>
+                        <div class="userTip">
+                            <p class="mgl20">
+                                ※ 温馨提示：
+                                <br>
+                                1、请转账完成后再提交充值订单。
+                                <br>
+                                2、请正确填写您的支付宝姓名和充值金额。
+                                <br>
+                                3、若提供的是银行账号，请使用支付宝转账到银行卡的方式进行转账。
+                                <br>
+                                4、转账1笔提交1次，请勿重复提交订单。
+                                <br>
+                                5、打款确认时间{$pay[user_play_wait_time]}分钟之后，如果没有到账或者账户余额错误，请联系QQ：{$pay[user_play_wait_qq]}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        </div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

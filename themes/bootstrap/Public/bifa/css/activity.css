@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* 椤甸潰瀹藉害 */
+/* 杈规鍜岄鑹� */
+/* 娣辫壊涓婚锛屼緥濡傚綋鍓嶉鏍间负缁胯壊 */
+/* 鑳屾櫙棰滆壊 */
+/* 鐧炬惌棰滆壊 */
+/* 鍥剧墖鏈嶅姟鍣ㄥ湴鍧€ */
+/* 鐢ㄦ埛涓績椤电殑绾㈣壊 */
+.activity { box-sizing: border-box;}
+.activity .show a i { transform: rotate(180deg); }
+
+.activity .floor:first-child { margin-top: 15px; }
+
+.floor { background: white; box-shadow: 0 4px 8px #c7c7c7; padding: 15px; }
+.floor .floorTitleImg { float: left; width: 680px; height: 170px; }
+.floor .floorRright { float: left; width: 290px; padding: 0 15px; box-sizing: border-box; }
+.floor .floorRright h2 { font-size: 28px; font-weight: 100; margin: 0; color: #e4393c; line-height: 30px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 100%; }
+.floor .floorRright p { font-size: 14px; padding: 12px 0; height: 72px; }
+.floor .floorRright a { font-size: 18px; display: block; line-height: 40px; width: 120px; background: #e4393c; color: white; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; text-align: center; padding-right: 18px; box-sizing: border-box; }
+.floor .floorRright a i { position: absolute; margin-top: 15px; margin-left: 8px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #f09394; transition: 0.1s; }
+
+.floorDetail { margin-top: 15px !important; border-top: 2px dashed #e6e6e6; overflow: hidden; display: none; width: 970px !important; clear: both; }
+.floorDetail p { margin: 10px 0; font-size: 14px; }
+.floorDetail table { text-align: center; table-layout: fixed; }
+.floorDetail table th { background-color: #4393be; color: white; border: 1px solid #e6e6e6; height: 40px; font-weight: 100; font-size: 14px; }
+.floorDetail table td { border: 1px solid #e6e6e6; height: 40px; font-size: 14px; }
+
+.floorLine { background: url(http://imagess-google.com/system/pc/activity/activityShaw.png) no-repeat; width: 100%; height: 15px; padding: 0 3px; margin-left: -3px; }
+
+.floorDetail em, .floorDetail i { font-size: 14px; }
+.floorDetail em { margin-right: 15px; }
+.floorDetail i { color: #f76727; }
+.floorDetail a { font-size: 16px; color: white; background: #e4393c; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; padding: 7px 18px; }
+.floorDetail h3 { display: block; background: #d2dbe0; width: 84px; text-align: center; line-height: 28px; font-size: 14px; margin-top: 30px; }
+.floorDetail h3 i { display: inline-block; border-top: 14px solid transparent; border-bottom: 14px solid transparent; border-left: 10px solid #d2dbe0; position: absolute; margin-left: 14px; }
+.floorDetail .disable { background: #d6d6d6; color: #999999; }
+
+.tbplus { position: relative; width: 145px; }
+.tbplus em { position: absolute; right: -10px; top: -2px; font-size: 14px; }
+.tbplus ins { border-bottom: 1px solid #7fbbdc; position: absolute; width: 147px; -ms-transform: rotate(15.2deg); transform: rotate(15.2deg); left: -1px; top: 19px; }
+.tbplus i { position: absolute; left: 12px; bottom: 3px; color: white; }
+
+.showDetail { cursor: pointer; }
+
+/*# sourceMappingURL=activity.css.map */

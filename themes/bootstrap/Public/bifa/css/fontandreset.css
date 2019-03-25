@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* 页面宽度 */
+/* 边框和颜色 */
+/* 深色主题，例如当前风格为绿色 */
+/* 背景颜色 */
+/* 百搭颜色 */
+/* 图片服务器地址 */
+/* 用户中心页的红色 */
+@font-face { font-family: 'iconfont';
+  /* project id 124914 */
+src: url("//at.alicdn.com/t/font_ax1azjzmaorpmn29.eot"); src: url("//at.alicdn.com/t/font_ax1azjzmaorpmn29.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_ax1azjzmaorpmn29.woff") format("woff"), url("//at.alicdn.com/t/font_ax1azjzmaorpmn29.ttf") format("truetype"), url("//at.alicdn.com/t/font_ax1azjzmaorpmn29.svg#iconfont") format("svg"); }
+html, body { font: 12px/1.4 "PingFang SC", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif, "Microsoft YaHei"; color: #14191e; min-width: 1000px; }
+
+html { box-sizing: border-box; }
+
+*, *:before, *:after { box-sizing: inherit; }
+
+body { background: #fff; color: #5e5e5e; font: 12px/2em Microsoft YaHei,SimSun,Arial; }
+
+ul, li { margin: 0; padding: 0; }
+
+ul { list-style: none; }
+
+a { text-decoration: none; cursor: pointer; }
+
+a, body { color: #666666; }
+
+i, em { font-style: normal; }
+
+ins { text-decoration: none; }
+
+.banner .hd ul:before, .banner .hd ul:after, .bonusTable ul:before, .bonusTable ul:after, .winnerList li:before, .winnerList li:after, .safeList li:before, .safeList li:after, .fix:before, .fix:after { content: ""; display: table; }
+.banner .hd ul:after, .bonusTable ul:after, .winnerList li:after, .safeList li:after, .fix:after { clear: both; overflow: hidden; }
+
+.iconfont { font-family: "iconfont"; }
+
+.textCenter { text-align: center; }
+
+.mg30 { margin: 30px; }
+
+.mgl20 { margin-left: 20px; }
+
+.mglr30 { margin: 0 30px; }
+
+.mgt40 { margin-top: 10px; }
+
+.mgt15 { margin-top: 15px !important; }
+
+.mgb10 { margin-bottom: 10px; }
+
+.dpn { display: none !important; }
+
+.dpb { display: block; }
+
+.pt15 { padding-top: 15px; }
+
+.pdr5 { padding-right: 5px; }
+
+.pd30 { padding: 30px; }
+
+.mgb10 { margin-bottom: 10px; }
+
+.w90 { width: 90px !important; }
+
+.h150 { height: 150px !important; }
+
+.lh50 li a { line-height: 50px !important; }
+
+.colMd4, .colMd8 { float: left; }
+
+.colMd4 { width: 33.33333333%; }
+
+.colMd8 { width: 66.66666666%; }
+
+.flr { float: right !important; }
+
+input { -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
+
+/*# sourceMappingURL=fontandreset.css.map */

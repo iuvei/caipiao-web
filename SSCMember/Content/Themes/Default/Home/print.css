@@ -1,0 +1,64 @@
+
+body, td{
+ margin: 0;
+ padding:0;
+ font: 12px Arial, Helvetica, sans-serif;
+ text-align: left;
+}
+
+td.print2, .print2 td {
+ font-family:Verdana, Arial, Helvetica, sans-serif;font-size:15px;
+ height:28px;line-height:19px;background: #FFFFFF;text-align:center;
+}
+td.print3, .print3 td {
+ font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;
+}
+td.print5, .print5 td {
+ font-family:Verdana, Arial, Helvetica, sans-serif;font-size:15px;
+ height:28px;line-height:19px;background: #FFFFFF;text-align:left;
+}
+
+
+.printIndex{ 
+ /*outline: 1px solid #660000;
+ border: 0 !important;*/
+ border: 1px solid #660000;
+ empty-cells: show;
+ /*order-collapse: separate !important;*/
+ border-collapse: collapse;
+ font-weight:700;
+width:100%;
+}
+.printIndex td { 
+ border-bottom: 1px solid #660000;
+ border-right: 1px solid #660000;
+ line-height: 20px;
+ height: 20px;
+ padding: 1px;
+ background: #FFFFFF;
+ text-align:center;
+}
+.printIndex td.hasBd { 
+    border-right:none;
+}
+.IsShowLottoryTrue{
+ height:auto;
+ overflow:visible;
+ text-align:center;
+ width:100%;
+ margin:0;
+ padding:0;
+} 
+.printTab td{font-size:15px;}
+.title td{font-size:16px;}
+
+.no-print, #_my97DP, .ui-popup-show {
+display: none;
+}
+
+/*@media screen and (-webkit-min-device-pixel-ratio:0){
+      body{ font-size:12px;} 
+      .printTab td.hasBd { 
+     border-right:none;
+    }
+}*/

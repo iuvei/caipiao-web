@@ -1,0 +1,162 @@
+.title {
+    background: url(../Images/bg_list.gif) repeat-x;
+    padding: 8px;
+    font: 14px/100% '黑体';
+    color: white;
+    /*font-weight:bold;*/
+    border-top: 1px solid #525C3D;
+    border-bottom: 1px solid #525C3D;
+}
+
+.query {
+    padding: 10px 10px;
+    background: #fff;
+}
+
+    .query span {
+        font-family: '微软雅黑';
+    }
+
+    .query input {
+        padding-left: 5px;
+        margin-left: 5px;
+    }
+
+    .query button, .per-footer button,.footer input {
+        padding: 0 4px;
+        border: 1px solid #268324;
+        background: url(../Images/bg_button.gif) repeat-x;
+        color: #000000;
+        vertical-align: middle;
+        cursor: pointer;
+        height: 26px;
+        *margin:0 5px;
+        font-size: 14px;
+    }
+
+.pagination a, .pagination button, .pagination span,.fanye a,.fanye span{
+    display: inline-block;
+    padding: 0 4px;
+    border: 1px solid #268324;
+    background: url(../Images/bg_button.gif) repeat-x;
+    color: #000000;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 0 3px;
+    height: 22px;
+    line-height: 20px;
+}
+
+.pagination span,.fanye span {
+    background: #FFF;
+}
+
+.manage table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+    .manage table thead {
+        color: #000000;
+        font-size: 12px;
+    }
+
+    .manage table th {
+        /* border-top: 1px solid #525C3D;*/
+        border-bottom: 1px solid #525C3D;
+        height: 30px;
+        color: #fff;
+        background: url(../Images/bg_list.gif) repeat-x;
+        /* border-right: 1px solid #fff;*/
+        padding-left: 5px;
+    }
+
+    .manage table td {
+        background: #fff;
+        /*border: 1px solid #BDF0BC;*/
+        border-top: none;
+        padding-left: 5px;
+    }
+
+    .manage table .operation a {
+        color: #FF7F14;
+        /* font-weight: 600;*/
+    }
+
+        .manage table .operation a:hover {
+            color: #F00;
+        }
+
+    .manage table .operation .disabled, .manage table .operation .delete {
+        color: #808080;
+        cursor: text;
+    }
+
+        .manage table .operation .disabled:hover, .manage table .operation .delete:hover {
+            color: #808080;
+            text-decoration: none;
+        }
+
+    .manage table tbody tr:hover td {
+        background: #FCFF28;
+    }
+
+
+
+.handle {
+    text-align: center;
+}
+
+    .handle input {
+        width: 48px;
+        height: 26px;
+        cursor: pointer;
+    }
+
+.add-info input {
+    height: 20px;
+    margin-left: 5px;
+}
+
+.tip-info {
+    width: 30%;
+    margin-left: 10px;
+    text-align: left;
+    color: #F00;
+}
+
+.per-footer {
+    float: left;
+    margin-left: 10px;
+}
+
+
+
+
+
+.pad td {
+    text-align: center;
+    padding: 2px;
+}
+
+.pad input {
+    width: 35px;
+    height: 24px;
+    text-align: center;
+}
+
+.kj-result .pad {
+    padding: 10px;
+}
+
+.kj-result .btm {
+    text-align: right;
+    border-top: 1px solid #525C3D;
+    padding: 10px 4px;
+}
+
+.btm button {
+    padding: 4px 10px;
+    vertical-align: bottom;
+}

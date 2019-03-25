@@ -1,0 +1,205 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+<script src="/public/js/city.js"></script>
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">绑定银行卡</div>
+            <div class="userMain">
+            	<!--安全中心部分-->
+                <form class="form-horizontal" action="{:U('Portal/User/setBankcard')}" method="post">
+                <ul class="submitContent setBankcard">
+                	<li>
+                    	<span>开户银行：</span>
+                        <select class="userInput" id="yinhangzz" name="post[bank_id]" style="width:220px" onchange="yinhangss()" required>
+                        	<option value="">请选择银行</option>
+                            <foreach name="bank" item="vo">
+                            <option value="{$vo.id}">{$vo.name}</option>
+                            </foreach>
+                            
+                        </select>
+                    </li>
+                    <li style="display:none" id="bzs">
+                        <span>备注：</span>
+                        <input class="userInput"  name="post[bz]" value="{$list.bz}" type="text"  placeholder="请填写银行名称" >
+                    </li>
+
+                    <li>
+                    	<span>开户省份：</span>
+                        <select name="post[sheng]" id="to_cn" onchange="set_city(this, document.getElementById('city'));" class="userInput" required> 
+                    <option value="">请选择</option> 
+                    <option value="北京">北京</option> 
+                    <option value="上海">上海</option> 
+                    <option value="天津">天津</option> 
+                    <option value="重庆">重庆</option> 
+                    <option value="河北省">河北省</option> 
+                    <option value="山西省">山西省</option> 
+                    <option value="辽宁省">辽宁省</option> 
+                    <option value="吉林省">吉林省</option> 
+                    <option value="黑龙江省">黑龙江省</option> 
+                    <option value="江苏省">江苏省</option> 
+                    <option value="浙江省">浙江省</option> 
+                    <option value="安徽省">安徽省</option> 
+                    <option value="福建省">福建省</option> 
+                    <option value="江西省">江西省</option> 
+                    <option value="山东省">山东省</option> 
+                    <option value="河南省">河南省</option> 
+                    <option value="湖北省">湖北省</option> 
+                    <option value="湖南省">湖南省</option> 
+                    <option value="广东省">广东省</option> 
+                    <option value="海南省">海南省</option> 
+                    <option value="四川省">四川省</option> 
+                    <option value="贵州省">贵州省</option> 
+                    <option value="云南省">云南省</option> 
+                    <option value="陕西省">陕西省</option> 
+                    <option value="甘肃省">甘肃省</option> 
+                    <option value="青海省">青海省</option> 
+                    <option value="内蒙古">内蒙古</option> 
+                    <option value="广西">广西</option> 
+                    <option value="西藏">西藏</option> 
+                    <option value="宁夏">宁夏</option> 
+                    <option value="新疆">新疆</option> 
+                    <option value="香港">香港</option> 
+                    <option value="澳门">澳门</option> 
+                    </select> 
+                    </li>
+                    <li>
+                        <span>开户市:</span>
+                        <select id="city" class="userInput"  name="post[shi]" required> 
+                            <option value="">请选择</option> 
+                        </select> 
+                    </li>
+
+                     <li>
+                    	<span>开户人姓名：</span>
+                        <input class="userInput" id="name0" name="post[user_name]" value="{$list.user_name}" type="text"  required>
+                    </li>
+                     <li>
+                    	<span>银行卡号：</span>
+                        <input class="userInput" id="one" name="post[card]" value="{$list.card}"   type="text" required>
+                        <span id="card1"></span>
+                    </li>
+                     <li>
+                    	<span>确认卡号：</span>
+                        <input  class="userInput" id="two"  name="card_two" type="text" required> <span id="tis"></span>
+                        <span id="card2"></span>
+                    </li>
+                     <li>
+                    	<span>安全密码：</span>
+                        <input class="userInput" name="maney_pass" type="password" required>
+                    </li>
+                    <li>
+                        <span></span>
+                        <input type="submit" class="submitBtn" value="提交" >
+                        <!-- <a class="submitBtn" href="javascript:;">提交</a> -->
+                    </li>
+                </ul>
+            </form>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<script type="text/javascript">
+
+function yinhangss(){
+    var leve = $('#yinhangzz option:selected').text();
+    if(leve=="其他银行"){
+        $('#bzs').css("display","block");
+    }
+    else{
+        $('#bzs').val('');
+        $('#bzs').css("display","none");
+    }
+}
+
+
+    /*function yanzheng1(code){
+        if(!code || !/([\d]{4})([\d]{4})([\d]{4})([\d]{4})([\d]{0,})?/.test(code)){
+                alert("银行系统未检索到该银行卡号码，请核对是否输入有误");
+                pass = false;
+                $('#one').val('');
+                return false;
+            }
+    }
+
+    function yanzheng2(code){
+         var one =$('#one').val();
+        if(one!=code){
+            alert("银行卡号输入错误");
+            $('#two').val('');
+            return false;
+        }
+    }*/
+
+    //光标离开验证用户名只能为汉字，去除非汉字并alert
+    $('#name0').blur(function(){
+        var name=$(this).val();
+        var exp=/[^\u4E00-\u9FA5]{1,5}/g;
+
+		if(name.length != 0 && exp.test(name)){
+			//if(exp.test(name)){
+				//$(this).val(name.replace(exp,''));
+				$(this).val('');
+				alert('请输入正确的汉字姓名！');
+			//}
+		}
+    });
+    
+	//银行卡号
+    $('#one').blur(function(){
+        var code=$(this).val();
+        //var exp=/[\W]/g;
+        if(code.length != 0){
+            //$(this).val(code.replace(exp,''));
+            //alert('只能输入英文字母和数字');
+			if(!code || !/([\d]{4})([\d]{4})([\d]{4})([\d]{4})([\d]{0,})?/.test(code)){
+                alert("银行卡号格式错误，请重新输入！");
+                pass = false;
+                $('#one').val('');
+                return false;
+            }
+        }
+        //yanzheng1(code);
+    });
+
+    $('#two').blur(function(){
+        var code=$(this).val();
+        if(code.length != 0){
+            if(!code || !/([\d]{4})([\d]{4})([\d]{4})([\d]{4})([\d]{0,})?/.test(code)){
+                alert("确认银行卡号格式错误，请重新输入！");
+                pass = false;
+                $('#two').val('');
+                return false;
+            }else{
+				var one =$('#one').val();
+				if(one!=code){
+				alert("两次输入的银行卡号不一致，请重新输入！");
+				$('#two').val('');
+				return false;
+				}
+			}
+        }
+    });
+</script>
+</body>
+</html>

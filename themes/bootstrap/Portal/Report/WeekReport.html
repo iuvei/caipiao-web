@@ -1,0 +1,60 @@
+
+
+<link rel="stylesheet" type="text/css" href="/SSCMember/Content/Themes/Default/BetList/Index.css?20160401654" />
+<body>
+    <div class="table-out" id="BETLIST-TPL">
+
+
+
+        <table class="tablecommon" cellpadding="0" width="100%" cellspacing="0" border="0">
+            <thead>
+                <tr class="title">
+                <td style="text-align:10px;width:200px"  >
+
+                    <a href="#" data-bind="click:GetLastMonth" id="LastMonth">上周</a>
+                    |
+                    <a href="#" data-bind="click:GeMonth" id="Month" class="red" >本周</a>
+                </td>
+                    <td   align="center"colspan="3" >
+                       
+                    <label> 周报表</label>
+                     </td>
+                </tr>
+                <tr class="tr-e">
+                    <td>笔数</td>
+                    <td>总投</td>
+                    <td>盈亏</td>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach:list">
+                <tr class="hover">
+                    <td data-bind="text:MemberBetCount-0,click:$parent.goBetHistory.bind($parent)" style="cursor:pointer"></td>
+                    <td data-bind="text:MemBetAmt-0"></td>
+                    <td data-bind="text:Utils.rounding(MemWL-0)"></td>
+                </tr>
+
+            </tbody>
+
+            <tbody data-bind="if:list().length===0">
+                <tr class="bet" id="IsHidden">
+                    <td colspan="11">还没有内容</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr class="tr-e">
+                     <!-- ko foreach:SumList -->
+                    <td style="position:relative;">
+                        <label style="position:absolute;left:0;top:0;line-height:26px;padding:0 10px;border-right:1px solid #F6D3BC;">合计</label>
+                        <label  data-bind="text:MemberBetCountSum"></label>
+                    </td>
+                    <td data-bind="text:MemBetAmtSum"></td>
+                    <td data-bind="text:MemWLSum"></td>
+                    <!--/ko-->
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</body>

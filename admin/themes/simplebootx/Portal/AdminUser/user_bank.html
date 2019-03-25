@@ -1,0 +1,45 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li ><a href="{:U('Portal/AdminUser/index')}">所有会员</a></li>
+            <li class="active"><a href="{:U('Portal/AdminUser/user_bank')}" >会员银行卡</a></li>
+        </ul>
+        <form method="post" class="js-ajax-form">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th align="center">ID</th>
+                        <th style="vertical-align:middle; text-align:center;">银行卡用户名</th>
+                        <th style="vertical-align:middle; text-align:center;">类型</th>
+                        <th style="vertical-align:middle; text-align:center;">开户行</th>
+                        <th style="vertical-align:middle; text-align:center;">银行卡号</th>
+                        <th style="vertical-align:middle; text-align:center;">备注</th>
+                        <th style="width:200px;" align="center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    <foreach name="user_bank" item="vo">
+                    <tr>
+                        <td align="center">{$vo.id}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.user_name}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.bank_name}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.city}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.card}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.bz}</td>
+                        <td align="center">
+                            <a class="js-ajax-delete" href="{:U('adminUser/user_bank_del',array('id'=>$vo['id']))}">删除</a>
+                         
+                        </td>
+                    </tr>
+                    </foreach>
+                </tbody>
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

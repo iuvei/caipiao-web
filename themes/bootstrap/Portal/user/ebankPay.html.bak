@@ -1,0 +1,155 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">我要充值</div>
+            <div class="userMain allmain">
+                <div class="newTab fix">
+                    <a class="curr" href="ebankPay.html">银行转账</a>
+                    <a class="" href="alipay.html">支付宝充值</a>
+                    <a class="" href="wechatPay.html">微信支付</a>
+                </div> 
+                <div id="isShow">
+                    <div class="stepBox">
+                        <em>1</em>
+                        <span>
+                            <b>请转账到以下银行账户：</b>
+                            单笔最低
+                            <ins>10</ins>
+                            元，最高
+                            <ins>5000000</ins>
+                        </span>
+                        <ul class="bankStyle">
+                            <li class="bankTable">
+                                <ins>收款银行：</ins>
+                                <ins>
+                                   
+                                    <div class="bankblockList fix" id="zzbanklist">
+                                         <foreach name="list" item="one">
+                                        <div class="rb <if condition="$key eq 0">rb_active</if>" data-username="{$one.username}" data-account="{$one.account}" data-name="{$one.name}" data-id="{$one.id}" onclick="$('#zzbanklist .rb').removeClass('rb_active');xz($(this));">
+                                            <i></i>
+                                            <span  checked="checked" style="padding-left: 0px ; "><img src="__ROOT__/data/upload/{$one.logo}" style="padding-top: 3px;" width="20" height="23">  {$one.name}</span>
+                                        </div>
+                                    </foreach>
+                                    </div>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins>银行账户：</ins>
+                                <ins>
+                                    <input class="code" type="text" value="{$list[0][username]}" id="data-username">
+                                    <a class="copy_btn"  onClick="copyUrl2($('#data-username'))">复制</a>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins class="leftIn">银行账号：</ins>
+                                <ins>
+                                    <input class="code" type="text" value="{$list[0][account]}" id="data-account">
+                                    <a class="copy_btn" onClick="copyUrl2($('#data-account'))">复制</a>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins class="leftIn">开户支行：</ins>
+                                <ins>
+                                    <input class="code" type="text" value="{$list[0][name]}" id="data-name">
+                                    <a class="copy_btn" onClick="copyUrl2($('#data-name'))">复制</a>
+                                </ins>
+                            </li>
+                        </ul>
+                    </div>
+                    <script>
+                    function xz(obj){
+                        obj.addClass('rb_active');
+                        $('#data-username').val(obj.attr('data-username'));
+                        $('#data-account').val(obj.attr('data-account'));
+                        $('#data-name').val(obj.attr('data-name'));
+                        $('#pay_mode_id').val(obj.attr('data-id'));
+
+                    }
+                    </script>
+                    <script type="text/javascript">
+                    function copyUrl2(Url2)
+                    {
+                    
+                    Url2.select(); // 选择对象
+                    document.execCommand("Copy"); // 执行浏览器复制命令
+                    alert("已复制好，可贴粘。");
+                    }
+                    </script>
+                   
+                    <div class="stepBox">
+                        <em>2</em>
+                        <span>
+                            <b>请认真填写您的转账信息：</b>
+                            请务必转账后再提交订单，否则无法及时查到您的款项！
+                        </span>
+                         <form method="post"   action="{:U('Portal/User/ebankPay')}">
+                        <ul class="stepBoxInput2">
+                            <li>
+                                <ins>
+                                    <span>充值金额：</span>
+                                    <input class="userInput" tag="充值金额" type="number" name="number" required>
+                                </ins>
+                                <ins>
+                                    <span>您的银行账户名：</span>
+                                    <input class="userInput" tag="银行账户名" type="text" name="bank" required>
+                                </ins>
+                            </li>
+                             <li>
+                                <ins>
+                                    <span>备注：&nbsp;&nbsp;</span>
+                                    <input class="userInput" tag="备注" type="text" name="remarks">
+                                </ins>
+                                
+                            </li>
+
+                        </ul>
+                        <ul>
+                            <h6>
+                                <input type="hidden" value="{$list[0][id]}" name="pay_mode_id" id="pay_mode_id">
+                                <input class="submitBtn" type="submit" value="提交充值订单" style="border:none">
+                            </h6>
+                        </ul>
+                        </form>
+                        <div class="userTip">
+                            <p>
+                                ※ 温馨提示：<br>
+                                1、打款确认时间{$pay[user_play_wait_time]}分钟之后，如果没有到账或者账户余额错误，请联系QQ：{$pay[user_play_wait_qq]}
+                                <br>
+                                2、请转账完成后再提交充值订单。
+                                <br>
+                                3、请正确填写您的户名和充值金额。
+                                <br>
+                                4、转账1笔提交1次，请勿重复提交订单。
+                                <br>
+                                5、转帐完成后请保留单据作为核对证明。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

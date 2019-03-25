@@ -1,0 +1,28 @@
+@media print {
+    body {
+        position: relative;
+        font: 12px/1.6 'Microsoft YaHei',Arial,Helvetica,sans-serif;
+        background: none;
+        min-width: 950px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .no-print, #_my97DP, .ui-popup-show {
+        display: none;
+    }
+
+    .print {
+        width: 1000px;
+        display: block;
+        margin: 0 auto;
+    }
+
+        .print td {
+            width: 1000px;
+            padding: 10px;
+        }
+}

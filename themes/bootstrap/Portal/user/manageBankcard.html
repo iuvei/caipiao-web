@@ -1,0 +1,67 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<style type="text/css">
+#logo{ 
+position:absolute; 
+width:20px; 
+height: 20px;
+} 
+.cardItem{
+    width: 256px;
+}
+</style>
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">银行卡管理</div>
+            <div class="userMain">
+                <!--安全中心部分-->
+                <div class="bindCard">
+                    <div id="cardBox" class="fix">
+                        <foreach name="list" item="vo">
+                        <div class="cardItem ClickShade" style="cursor: pointer;">
+                            <div class="bankName"><i><img src="__ROOT__{$vo.logo}" id="logo" ></i>{$vo.bank_name}</div>
+                            <div class="bankNum">尾号{$vo.card|intercept_num_right=###,4}</div>
+                            <div class="cardStyle">储蓄卡</div>
+                            <div class="cardTxt">
+                                <span>持卡人姓名：{$vo.user_name}</span>
+                                <span>手机号：<if condition="$vo[mobile] eq ''">未绑定<else />{$vo.mobile|intercept_num_right=###,4}</if></span>
+                            </div>
+                            <a herf="editBankcard/id/{$vo.id}.html"></a>
+                        </div>
+                        </foreach>
+                        <if condition="$sun lt 5">
+                        <div id="addCard" class="cardEmpty cardItem ClickShade" style="cursor: pointer;"><a href="setBankcard.html">立即添加银行卡</a></div>
+                        </if>
+                    </div>
+                </div>
+                <div class="userTip">
+                    <p>*温馨提示：已绑定<ins id="cardAmount">{$sun}</ins>张银行卡，一共可以绑定5张银行卡。为了您的资金安全，成功提现的银行卡会自动锁定，无法删除和修改。</p>
+                </div>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

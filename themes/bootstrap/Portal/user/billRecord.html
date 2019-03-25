@@ -1,0 +1,137 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">交易记录</div>
+            <!--搜索区-->
+            <form method="get" id="search">
+            <div class="searchBox">
+            	<ul class="inputSel">
+                	<!--<li>
+                        <span>账号：</span>
+                        <input type="text" name="account" class="userInput accountSearch">
+                    </li>-->
+                	<li>
+                        <span>摘要：</span>
+                        <select name="cpKind" class="bankSel cpKind userInput">
+                            <option value="0">全部摘要</option>
+                            <option value="1">充值入款</option>
+                            <option value="3">提现扣款</option>
+                            <option value="4">投注扣款</option>
+                            <option value="5">投注返点</option>
+                            <option value="2">奖金派送</option>
+                            <option value="6">提现退回</option>
+                            <option value="7">活动礼金</option>
+                            <option value="8">追号停止</option>
+                            <option value="9">误存提出</option>
+                            <option value="11">人工存入</option>
+                            <option value="12">其他优惠</option>
+                            <option value="17">投注撤单</option>
+                            <option value="30">代理明细</option>
+                        </select>
+                    </li>
+                	<li>
+                          <input type="text" class="userInput accountSearch datepicker" name="starttime" id="datepicker" value="{$get[starttime]}">
+                        <em>-</em>
+                        <input type="text" class="userInput accountSearch datepicker" name="endtime" id="datepicker2" value="{$get[endtime]}">
+                    </li>
+                    <li>
+                    	<a class="mainColorBtn ClickShade pwdBtn" href="javascript:void(0)" onclick="$('#search').submit()" >搜索</a>
+                    </li>
+                </ul>
+            </div>
+            </form>
+            <!--搜索区结束-->
+            <ul class="stateList">
+            	<li>状态：</li>
+            	<li><a href="{:U('/Portal/User/billRecord/',array('zt'=>0))}" class="<if condition="$get[zt] eq 0">on</if>">账户明细</a></li>
+                <li><a href="{:U('/Portal/User/billRecord/',array('zt'=>1))}" class="<if condition="$get[zt] eq 1">on</if>">收入记录</a></li>
+                <li><a href="{:U('/Portal/User/billRecord/',array('zt'=>2))}" class="<if condition="$get[zt] eq 2">on</if>">支出记录</a></li>
+            </ul>
+            <div class="thirdMain">
+            <!--shujubiaoti-->
+            	<div class="headLine">
+                	<ul class="billRecordList">
+                    	<li>流水号</li>
+                        <li>时间</li>
+                        <li>摘要</li>
+                        <li>收入金额</li>
+                        <li>支出金额</li>
+                        <li>可用余额</li>
+                        <li>备注</li>
+                    </ul>
+                </div>
+                <!--shuju-->
+                <div class="dataBox">
+                <foreach name="list" item="one">
+                    <ul class="billRecordData">
+                        <li>TZ{$one.actiontime|date='Ymd',###}{$one.id}</li>
+                        <li>{$one.actiontime|date='Y-m-d',###}</li>
+                        <li>{$one.info}</li>
+                        <li><if condition="$one[coin] gt 0">{$one[coin]}<else/>--</if></li>
+                        <li><if condition="$one[coin] lt 0">{-$one[coin]}<else/>--</if></li>
+                        <li>{$one.usercoin}</li>
+                        <li>{$one.info}</li>
+                    </ul>
+                    </foreach>
+                </div>
+                <!--fenye-->
+                <div class="page">
+                    <div id="pageNav" class="pageNav" style="float:right">
+                    	<div class="pagenav">
+                        <ul class="pageList">
+                           {$page}
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/pikaday.css">
+<script type="text/javascript" src="__TMPL__Public/bifa/js/pikaday.min.js"></script>
+
+<script type="text/javascript">
+	var picker = new Pikaday({
+	field: document.getElementById('datepicker'),
+	firstDay: 1,
+	minDate: new Date('2010-01-01'),
+	maxDate: new Date('2020-12-31'),
+	yearRange: [2000,2020]
+	});
+	
+	var picker = new Pikaday({
+	field: document.getElementById('datepicker2'),
+	firstDay: 1,
+	minDate: new Date('2010-01-01'),
+	maxDate: new Date('2020-12-31'),
+	yearRange: [2000,2020]
+	});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<admintpl file="header" />
+<style type="text/css">
+	.headImgContent {
+    float: left;
+    width: 360px;
+    padding: 5px;
+}
+.headImgContent img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #b1bac5;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+</style>
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('AdminOrder/paihanglog')}" >奖金排行列表</a></li>
+            <li class="active"><a href="javascript:;" target="_self">添加排行信息</a></li>
+		</ul>
+		<form class="form-horizontal" action="{:U('Portal/AdminOrder/edit_paihang')}" method="post">
+			<fieldset>
+                
+				<div class="control-group" >
+					<label class="control-label">用户名</label>
+					<div class="controls" >
+						
+                        <input type="text" style="color: red" name="post[username]"value="{$post.username}" required>
+					</div>
+				</div>
+				<div class="control-group" >
+					<label class="control-label">用户头像</label>
+					<div class="controls" >
+						<div id="titimg" class="headImgContent">
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/1.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/2.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/3.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/4.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/5.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/6.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/7.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/8.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/9.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/10.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/11.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/12.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/13.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/14.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/15.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/16.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/17.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/18.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/19.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/20.jpg" ></a> 
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/21.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/22.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/23.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/24.jpg" ></a>
+							<a href="javascript:;" ><img class="headImg" src="/Public/portrait/25.jpg" ></a>
+						</div>   
+					</div>
+					<div><img id="tou" class="headImg" src=""></div>
+					<input type="hidden" name="post[avatar]" value="{$post.avatar}" id="imgurl" />
+				</div>  
+				<script>
+				$(function(){
+				    $('#titimg img').click(function(){
+				       var url = $(this).attr('src');
+				       $('#tou').attr('src',url);
+				       $('#imgurl').val(url);
+				      })
+				})
+				</script>
+				<!-- <div class="control-group" >
+					<label class="control-label">中奖彩种</label>
+					<div class="controls" >
+                         <select name="post[type]" style="width: 120px;">
+			                <option value="">全部</option>
+			                <foreach name="typelist" item="one">
+			                <option value="{$one.id}">{$one.title}</option>
+			                </foreach>          
+			            </select>&nbsp; &nbsp;
+					</div>
+				</div> -->
+				
+				<div class="control-group">
+					<label class="control-label">中奖金额</label>
+					<div class="controls" >
+                       <input type="number" style="color: red" name="post[money]"value="{$post.money}" required>
+					</div>
+				</div>          
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="post[id]" value="{$post.id}">
+				<input type="submit" class="btn btn-primary">
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

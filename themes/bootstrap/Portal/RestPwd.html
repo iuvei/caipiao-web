@@ -1,0 +1,74 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<div class="registHead">
+    <div class="container">
+        <div class="logo">
+            <a href="/">
+                <img id="Logo1" src="http://imagess-google.com/bifa/logo/logo1.png"  height="50" style="float:left;">
+            </a>
+            <span class="loginTxt">找回密码</span>
+            <span class="rightTologin">已有账号？<a href="{:U('Portal/index/login')}">请登录</a></span>
+        </div>
+    </div>
+</div>
+<!--header Ending-->
+<section>
+    <div class="container">
+    <style>
+    .userInput{
+        height: 40px !important;
+};
+    }
+    </style>
+        <!--aside regist-->
+        <form class="form-horizontal js-ajax-form" action="{:U('Portal/index/RestPwd',array('id'=>$id,'restzmmpwd'=>$restzmmpwd))}" method="post">
+        <ul class="submitContent regMain">
+            <li>
+                <span>新密码：</span>
+                <input class="userInput" name="user_pass" type="password" onchange="yanzheng($(this).val())">
+                <input type="hidden" name="id" value="{$id}">
+                <input type="hidden" name="restzmmpwd" value="{$restzmmpwd}">
+            </li>
+            <li>
+            	<span></span>
+                <input class="mainColorBtn ClickShade loginSub submitBtnBig" type="submit"  value="确认">
+            </li>
+        </ul>
+    </form>
+        <!--aside rregist Ending-->
+        <!--regist introduce-->
+        <div class="registTxt">
+        	<h2>找回密码</h2>
+            <p>密码丢失不用急！按照步骤重新设置您的密码。</p>
+        </div>
+        <!--regist introduce Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<footer>
+    <div class="container _about about">
+        <p class="fix"><a href="./about.html?41">关于我们</a>|
+                      <a href="./about.html?42">联系我们</a>|
+                      <a href="./about.html?43">商务合作</a>|
+                      <a href="./about.html?44">法律声明</a>|
+                      <a href="./about.html?45">隐私声明</a></p>
+        <p class="copyright">Copyright © <span class="siteName"></span> Reserved | 18+</p>
+    </div>
+</footer>
+<!--footer Ending-->
+<script type="text/javascript">
+    function yanzheng($obj){
+            var dd=$obj.length;
+            if(dd<6){
+                alert('为了您的密码安全，请设置长度大于6的密码')
+            }
+    }
+</script>
+</body>
+</html>

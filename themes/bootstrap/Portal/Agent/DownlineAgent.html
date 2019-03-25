@@ -1,0 +1,24 @@
+<table border="0" cellpadding="0" cellspacing="0" class="tableborder" width="100%" style="table-layout: auto;">
+    <tbody>
+        <tr class="header">
+            
+
+            <td>序号</td>
+            <td>账号</td>
+            <td>代号</td>
+            <td>查看</td>
+        </tr>
+    <tbody data-bind="foreach:list">
+        <tr>
+            <td data-bind="text:$index() + 1"></td>
+            <td style="cursor: pointer; color: #FF6600;" data-bind="text:LoginName"></td>
+            <td data-bind="text:NickName"></td>
+            <td>
+                <a href="#" style="cursor: pointer; color: #FF6600;" data-bind="click:$parent.AgentNlineMonthReport">月报表</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<center><button class="button" data-bind="click:back">返回</button></center>
+<br>

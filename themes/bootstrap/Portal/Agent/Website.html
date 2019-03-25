@@ -1,0 +1,52 @@
+
+
+
+<form method="post" data-bind="submit:sub">
+    <div class="pager_wrap">
+        <div class="pager_tool">
+            
+        </div>
+        <style>
+            #WebList td.company-string div.tip{
+                display:none; width:200px; padding:5px; z-index:5; position:absolute;top:30px; left:0;background-color:#ffffff;
+            }
+        </style>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder table-list">
+            <thead class="header">
+                <tr>
+
+                    <th>序号</th>
+                    <th>公司</th>
+                    <th>域名</th>
+                    <th>状态</th>
+                    <th>皮肤</th>
+                    <th>站点类型</th>
+                    <th>皮肤类型</th>
+                </tr>
+            </thead>
+            <tbody id="WebList" data-bind="foreach:list">
+                <tr class="active">
+                    <td data-bind="text:$index()+1"></td>
+                    <td class="company-string" style="position:relative;" data-bind="event:{mouseover:$parent.companyStrMouse,mouseout:$parent.companyStrMouse}">
+                        <!--ko text:CompanyStr--><!--/ko-->
+                        <div class="tip" data-bind="text:CompanyStrArr.join(',')"></div>
+                    </td>
+                    <td data-bind="text:WebsiteURL"></td>
+                    <td>
+                        <select name="IsEnable" data-bind="options:$parent.selectList,optionsText:'text',optionsValue:'value',value:IsUsed">
+                            <option value="0">启用</option>
+                            <option value="1">禁用</option>
+                        </select>
+                    </td>
+                    <td data-bind="text:SkinName"></td>
+                    <td data-bind="text:MenuType"></td>
+                    <td data-bind="text:SiteType"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn_wrap clear" style="text-align:center">
+            <input type="submit" id="BTSAVE" class="btn" value="保存" />
+            <input type="button" class="btn" data-bind="click:$root.view.bind($data,'/CompanySetting/index','CompanySetting/index')" value="返回" />
+        </div>
+    </div>
+</form>

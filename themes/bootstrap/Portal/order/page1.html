@@ -1,0 +1,275 @@
+<tc_include file="Public:head" />
+<script type="text/javascript">
+    var sjc=Date.parse(new Date())/1000-<php>echo time();</php>;
+    var dzxs={$post.data_ftime};
+</script>
+<!--lunbo -->
+<link rel="stylesheet" href="__TMPL__Public/bifa/css/screen.css">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/k3.css">
+<script type="text/javascript" src="__TMPL__Public/bifa/js/sl.js"></script>
+<script type="text/javascript" src="__TMPL__Public/bifa/js/content.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	  	$.focus("#focus001");
+		$.focus("#focus002");
+	});
+</script>
+<title>{$site_name}</title>
+<script>
+userid={$user.id};
+wfid={$wfid};
+$(document).ready(function(){
+websocket.onopen = function(event) {
+        xztype({$post.id});
+}
+});
+</script>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<section>
+    <div class="container bet">
+        <div class="betTitle fix">
+        	<div class="betLogo">
+            	<h2 id="title">{$post.title}</h2>
+				<i class="iconfont L_K3"></i>
+            </div>
+            <div class="time">
+            	<div id="NowIssue" class="timeTitle">--
+                </div>
+            </div>
+            <div class="announced">
+                <div  id="OldIssue" class="announcedTitle">--
+            	</div>
+                <ul id="Results" class="announcedNo fix">
+                    --
+                </ul>
+            </div>
+        </div>
+		<div class="betContent fix">
+        	<div class="betLeft">
+            	<div class="betNavCon">
+                	<ul id="changtiao" class="betNav fix typelist" style="width: <php>echo 112*count($list);</php>px;left: 0px;position: relative;">
+                    <foreach name="list" item="one">
+                        <li class="ClickShade" id="type{$one[id]}" onclick="xztype({$one[id]})">{$one[title]}</li>
+                        <script><php>if($one[id]==$post[id]){
+                            $now=$key-5;
+                        } </php></script>
+                    </foreach>
+                    </ul>
+                </div>
+                <a class="betNavtab left" onclick="leftgo();">
+                	<span>
+                    	<em></em>
+                    </span>
+                </a>
+                <a class="betNavtab right" onclick="rightgo();">
+                	<span>
+                    	<em></em>
+                    </span>
+                </a>
+                <ul class="betFilter" id="wf">
+                </ul>
+                <div class="betTip">
+                	<i class="iconfont"></i>
+					<span id="bettip"></span>
+                </div>
+                <div class="checkNumber" id="checkNumber">
+                	
+                </div>
+                <div class="Panel" style="display: none;">
+                	<p class="betTotal">
+                    您选择了
+                    <em>0</em>
+                    注
+                    </p>
+                    <a class="betBtn ClickShade" style="float:none;height:auto;" onclick="qrxz();">确认选号</a>
+                </div>
+                <div class="checkedList">
+                	<table>
+                    	<tbody></tbody>
+                    </table>
+                </div>
+                <div class="Bet">
+                	<p class="betTotal">
+                    方案注数
+                    <em>0</em>
+                    注，金额
+                    <i class="money">￥0.00</i>
+                    元
+                    </p>
+                    <a class="sendBtn" onclick='tjbet()'>立即投注</a>
+                </div>
+            </div>
+            <form id="order" action="{:U('Portal/order/tjbet')}" style="display: none">
+            </form>
+			<div class="betRight">
+            	<div class="today box">
+                	<h3>今日开奖</h3>
+                    <div class="more">
+                    	<a id="chart" target="_blank" onclick="location.href='{:U('Portal/order/tender_chart')}/id/'+typeid">走势图</a>|
+						<a id="how2paly" href="{:U('Portal/order/wfsm/',array('id'=>$post[id]))}" style="border-left:none">玩法说明</a>
+                    </div>
+					<div id="ResultsList">
+                    	<table id="fn_getoPenGame" class="ty_table_gameBet curr" width="100%" cellspacing="0" cellpadding="0" border="0">
+                            
+</table>
+
+                    </div>
+                </div>
+                <div class="mybet box">
+                	<h3>我的投注</h3>
+                    <table class="_mybetContent" width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody id="orderlist">
+                            <tr>
+                                <th>期号</th>
+                                <th>投注金额</th>
+                                <th>奖金</th>
+                            </tr>
+                            <tr>
+                            	<td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                    <table class="more">
+                        <tbody>
+                            <tr>
+                                <td>
+                                <a href="{:U('/Portal/User/betRecord')}">更多>></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    <div class="winningList box" style="height:auto;">
+                    <h3 class="ClickShade" style="cursor: pointer;" onclick="$('.ClickShade').addClass('notSelect');$(this).removeClass('notSelect');$('#lotteryInfo2').hide();$('#lotteryInfo').show();">中奖信息</h3>
+                    <h3 class="notSelect ClickShade" style="cursor: pointer;" onclick="$('.ClickShade').addClass('notSelect');$(this).removeClass('notSelect');$('#lotteryInfo').hide();$('#lotteryInfo2').show();">昨日奖金榜</h3>
+                    <div id="Ranking" class="winnerListSlide" style="width:100%;box-sizing: content-box;">
+                        <div id="lotteryInfo" style="width:100%;">
+                            <table width="100%">
+                                <tbody>
+                                    <tr>
+                                        <th>中奖信息实时更新</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="bd">
+                               <!--  class="tempWrap" -->
+                                <div id='das'   style=" overflow:hidden; position:relative; height:510px;width: 100%;">
+                                    <ul class="winnerList" style="cursor: pointer; height: 1581px; position: relative; padding: 0px; margin: 0px; top: 10px;">
+                                        <foreach name="obtain" item="vo">
+                                            <li data-id="86631">
+                                                <img src="__ROOT__{$vo.avatar}">
+                                                <p>{$vo.username} 在{$vo.type|type=###}<br>喜中<span>￥{$vo.money}</span></p>
+                                            </li>
+                                        </foreach>
+                                    </ul>
+                                </div>   
+                            </div>
+                        </div>
+                        <div id="lotteryInfo2" style="width:100%;display:none">
+                            <table width="100%">
+                                <tbody>
+                                    <tr>
+                                        <th>昨日累计奖金排行榜</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="bd">
+                                <!--  class="tempWrap" -->
+                                <div id='das1'  style="overflow:hidden; position:relative; height:510px;width: 100%;">
+                                    <ul class="winnerList" style="cursor: pointer; height: 1581px; position: relative; padding: 0px; margin: 0px; top: 10px;">
+                                            <foreach name="paihang" item="vo">
+                                            <li data-id="86631" style="text-align:left">
+                                            <img src="__ROOT__{$vo.avatar}">
+                                            <p style="text-align:left;"><span>第{$key+1}</span>&nbsp;&nbsp;{$vo.username} <br>昨日奖金<span>￥{$vo.money}</span></p>
+                                            </li>
+                                            </foreach>
+                                    </ul>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<script  type="text/javascript">
+         $(document).ready(function(){
+       setInterval('autoScroll("#das")',3000)
+    })
+    function autoScroll(obj){
+        var n=$(obj).find("li").height();
+        $(obj).find("ul").animate({
+               marginTop:-n
+    },3000,function(){
+         $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+    }) 
+}
+
+</script>
+<script  type="text/javascript">
+         $(document).ready(function(){
+       setInterval('autoScroll("#das1")',3000)
+    })
+    function autoScroll(obj){
+        var n=$(obj).find("li").height();
+        $(obj).find("ul").animate({
+               marginTop:-n
+    },3000,function(){
+         $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+    }) 
+}
+
+</script>
+
+<script type="text/javascript">
+var zmmroll;
+zmmroll={$now};
+function leftgo(){
+    if(zmmroll==0){
+    layer.msg('已经到顶了');
+    }
+    else{
+        zmmroll=zmmroll-1;
+        gdd(zmmroll);
+    }
+
+}
+function rightgo(){
+    if(zmmroll>=<php>echo count($list);</php>-6){
+    layer.msg('已经到底了');
+    }
+    else{
+        zmmroll=zmmroll-(-1);
+        gdd(zmmroll);
+    }
+}
+function gdd(n){
+    if(n<0){
+        n=0;
+        zmmroll=0;
+    }
+    $('#changtiao').animate({left:'-'+n*112+'px'});
+}
+gdd(zmmroll);
+</script>
+</body>
+</html>

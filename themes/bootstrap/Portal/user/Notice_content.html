@@ -1,0 +1,44 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">网站公告</div>
+            <div class="userMain">
+            	<!--安全中心部分-->
+                <div class="announcementList">
+                    <ul>
+                       {$posts.post_content}
+                    </ul>
+                </div>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+
+        <!-- 内容 -->
+        
+        <!-- 内容 介绍 -->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

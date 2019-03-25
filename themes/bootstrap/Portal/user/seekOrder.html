@@ -1,0 +1,144 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">追号记录</div>
+            <!--搜索区-->
+            <form method="get" id="search">
+            <div class="searchBox">
+                <ul class="inputSel">
+                   <li>
+                        <span>彩种：</span>
+                        <select name="cpKind" class="bankSel cpKind userInput">
+                            <option value="0">全部</option>
+                            <foreach name="typelist" item="one">
+                            <option value="{$one.id}" <if condition="$get[cpKind] eq $one[id]">selected</if>>{$one.title}</option>
+                            </foreach>
+                        </select>
+                    </li>
+                    <li>
+                        <input type="text" class="userInput accountSearch datepicker" name="starttime" id="datepicker" value="{$get[starttime]}">
+                        <em>-</em>
+                        <input type="text" class="userInput accountSearch datepicker" name="endtime" id="datepicker2" value="{$get[endtime]}">
+                    </li>
+                    <li>
+                        <a class="mainColorBtn ClickShade pwdBtn" href="javascript:void(0)" onclick="$('#search').submit()" >搜索</a>
+                    </li>
+                </ul>
+            </div>
+            </form>
+            <!--搜索区结束-->
+            <ul class="stateList">
+                <li>状态：</li>
+                <li><a href="{:U('/Portal/User/seekOrder/',array('zt'=>0))}" class="<if condition="$get[zt] eq 0">on</if>">全部</a></li>
+                <li><a href="{:U('/Portal/User/seekOrder/',array('zt'=>1))}" class="<if condition="$get[zt] eq 1">on</if>">已中奖</a></li>
+                <li><a href="{:U('/Portal/User/seekOrder/',array('zt'=>2))}" class="<if condition="$get[zt] eq 2">on</if>">未中奖</a></li>
+                <li><a href="{:U('/Portal/User/seekOrder/',array('zt'=>3))}" class="<if condition="$get[zt] eq 3">on</if>">等待中奖</a></li>
+            </ul>
+            <div class="thirdMain">
+            <!--shujubiaoti-->
+                <div class="headLine">
+                    <ul class="seekOrderList">
+                        <li>追号</li>
+                        <li>彩种</li>
+                        <li>起始期号</li>
+                        <li>已追/总期数</li>
+                        <li>已投/总金额</li>
+                        <li>奖金状态</li>
+                        <li>追号时间</li>
+                        <li>操作项</li>
+                    </ul>
+                </div>
+                <!--shuju-->
+                <div class="dataBox">
+                 <foreach name="list" item="one">
+                 <php>
+                 $zt='等待中奖';
+                 if($one['isdelete']==1){
+                    $zt='已经撤单';
+                }
+                if($one['lotteryno']!=''){
+                    if($one['bonus']>0){
+                        $zt='奖金<span style="color:#e4393c">'.$one['bonus'].'</span>';
+                    }
+                    else{
+                        $zt='未中奖';
+                    }
+                }
+                else{
+                   $one['lotteryno']='----'; 
+                }
+                    </php>
+                    <ul class="seekOrderData">
+                        <li>{$one.id}</li>
+                        <li>{$one.type|type=###}</li>
+                        <li>{$one.qshm}</li>
+                        <li>{$one.syqs}/{$one.zqs}</li>
+                        <li>{$one.symoney}/{$one.money}</li>
+                        <li>{$zt}</li>
+                        <li>{$one.time|strtotime|date='Y-m-d',###}</li>
+                        <li><a class="alink" style="color:#e4393c" href="{:U('/Portal/User/orderDetail/',array('id'=>$one[id]))}">查看</a></li>
+                    </ul>
+                    </foreach>
+                </div>
+                <!--fenye-->
+                <div class="page">
+                    <div id="pageNav" class="pageNav">
+                        <div class="pagenav">
+                        <ul class="pageList">
+                            {$page}
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/pikaday.css">
+
+<script type="text/javascript" src="__TMPL__Public/bifa/js/pikaday.min.js"></script>
+
+<script type="text/javascript">
+    var picker = new Pikaday({
+    field: document.getElementById('datepicker'),
+    firstDay: 1,
+    minDate: new Date('2010-01-01'),
+    maxDate: new Date('2020-12-31'),
+    yearRange: [2000,2020]
+    });
+    
+    var picker = new Pikaday({
+    field: document.getElementById('datepicker2'),
+    firstDay: 1,
+    minDate: new Date('2010-01-01'),
+    maxDate: new Date('2020-12-31'),
+    yearRange: [2000,2020]
+    });
+
+
+</script>
+
+</body>
+</html>

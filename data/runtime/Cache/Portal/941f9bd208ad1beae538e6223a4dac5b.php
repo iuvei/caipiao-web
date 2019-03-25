@@ -1,0 +1,55 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+
+<div class="table-out">
+    <table class="tablecommon" cellpadding="0" width="100%" cellspacing="0"border="0">
+        <tr class="title">
+            <td>
+                <span>日期&nbsp;:</span>
+              
+                <input type="text" id="staDt" name="staDt" onfocus="WdatePicker({ readOnly: true, maxDate: '%y-%M-%d', dateFmt: 'yyyy/MM/dd' })" data-bind="value:isReport()?Utils.Cookie.get('RBeginDt'):'<?php echo date('Y/m/d',time()) ?>'"style="width:100px;" />至
+                <input type="text" id="endDt" name="endDt" onfocus="WdatePicker({ maxDate: '%y-%M-%d', readOnly: true, dateFmt: 'yyyy/MM/dd' })" data-bind="value:isReport()?Utils.Cookie.get('REndDt'):'<?php echo date('Y/m/d',time()) ?>'" style="width:100px;" />
+                <input type="button"value="查询" data-bind="click:SeachClick"/>
+            </td>
+            <td colspan="6"> 
+               
+            历史账单</td>
+
+        </tr>
+        <tr class="tr-e">
+            <td width="14%">日期</td>
+            <td width="14%">期号</td>
+            <td width="14%">笔数</td>
+            <td width="14%">金额</td>
+            <td width="14%">回水</td>
+            <td width="14%">中奖</td>
+            <td width="*">盈亏</td>
+        </tr>
+        <tbody data-bind="foreach:list">
+            <tr class="hover">
+                <td data-bind="text:OpenDt"></td>
+                <td><a href="#" data-bind="click:$parent.HistoryToBetList"><label style="color: red; cursor: pointer;" data-bind="text:PeriodsNumber"></label></a></td>
+                <td data-bind="text:BetCount"></td>
+                <td data-bind="text:Utils.rounding(BetAmountSum)"></td>
+                <td data-bind="text:Utils.rounding(SumBackComm)"></td>
+                <td data-bind="text:Utils.rounding(SumWinLoss)"></td>
+                <td data-bind="text:Utils.rounding(SumProfitAndLoss)"></td>
+            </tr>
+
+        </tbody> 
+        <tr class="tr-e">
+            <td width="14%">合计</td>
+            <td width="14%"><label id="HistoryLineNumber"/></td>
+            <td width="14%"><label id="HistoryBetCount"/></td>
+            <td width="14%"><label id="HistoryBetAmountSum"/></td>
+            <td width="14%"><label id="HistorySumCommission"/></td>
+            <td width="14%"><label id="HistorySumWinLoss"/></td>
+            <td width="*"><label id="HistorySumProfitAndLoss" /></td>
+        </tr>
+         <tr>
+             <td colspan="7" align="center">
+                 <input style="width:50px;height:30px" data-bind="click:goReport,visible:isReport()" type="button" value="返 回" />
+             </td>
+         </tr>
+    </table>
+    
+</div>

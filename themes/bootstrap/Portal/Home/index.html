@@ -1,0 +1,293 @@
+<tc_include file="Public:head" />
+
+<!--lunbo -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $.focus("#focus001");
+    $.focus("#focus002");
+  });
+</script>
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+  <div class="container">
+      <aside class="asideBox">
+          <ul class="asideList">
+          <foreach name="type1" item="one">
+              <li>
+              <a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                  <i class="cpImgL"><img src="__TMPL__Public/bifa/images/cp.png"></i>
+                    <div class="option-cp">
+                        <div class="cpTitle">{$one[title]}</div>
+                        <div class="cpEng">{$one[name]}</div>
+                    </div>
+                </a>
+            </li>
+        </foreach>
+        <foreach name="type2" item="one">
+              <li>
+              <a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                  <i class="cpImgL ssc"><img src="__TMPL__Public/bifa/images/cp1.png"></i>
+                    <div class="option-cp">
+                        <div class="cpTitle">{$one[title]}</div>
+                        <div class="cpEng">{$one[name]}</div>
+                    </div>
+                </a>
+            </li>
+        </foreach>
+        <foreach name="type3" item="one">
+              <li>
+              <a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                  <i class="cpImgL xuan5"><img src="__TMPL__Public/bifa/images/cp3.png"></i>
+                  <div class="option-cp">
+                        <div class="cpTitle">{$one[title]}</div>
+                        <div class="cpEng">{$one[name]}</div>
+                    </div>
+                </a>
+            </li>
+        </foreach>         
+            </ul>
+        </aside>
+
+
+<php>
+    $slides=sp_getslide1('1');
+</php>
+<!-- <foreach name="slides" item="vo"> -->
+    <!--{$vo.slide_id}幻灯片id-->
+    <!--{$vo.slide_cid}幻灯片分类id,对应于slide_cat表里的cid-->
+    <!--{$vo.slide_name}幻灯片名称-->
+    <!--{$vo.slide_pic}幻灯片图片路径相对于upload文件夹/data/upload/-->
+    <!--{$vo.slide_url}幻灯片链接地址-->
+    <!--{$vo.slide_des}幻灯片描述-->
+    <!--{$vo.slide_content}幻灯片内容-->
+<!--     <a href="{$vo.slide_url}" target="_blank" title="{$vo.slide_content}">
+        <img src="/data/upload/{$vo.slide_pic}"/>
+    </a>
+</foreach> -->
+
+        <div class="main">
+            <div class="focus bannerC" id="focus001" data-time="{$bonus['index_lunbo_time']}">
+                <ul>
+                    <foreach name="slides" item="vo">
+                    <li><a href="{$vo.slide_url}" target="_blank"><img src="/data/upload/{$vo.slide_pic}" /></a></li>
+                   
+                    </foreach>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <!--彩票区域-->
+            <div class="autoTab">
+                <div class="slideTxtBox">
+                    <div class="hd">
+                        <ul class="fix">
+                            <li class="on">{$type1[0][title]}</li>
+                            <li>{$type2[0][title]}</li>
+                            <li>{$type3[0][title]}</li>
+                        </ul>
+                    </div>
+                    <div class="bd" id="kjxx">
+                        <ul style="display: none;">
+                        </ul>
+                        <ul>
+                        </ul>
+                        <ul style="display: none;">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--彩票区域结束--->
+            <!--中奖发布-->
+            <div class="winningList slideTxtBox">
+              <div class="hd">
+                    <ul class="fix">
+                        <li class="on">中奖信息</li>
+                        <li>今日排行</li>
+                    </ul>
+                </div>
+                <div class="bd" id='das'style="height: 204px;overflow: hidden; width: 258px;">
+                  <ul class="winnerList">
+                    <foreach name="obtain" item="vo">
+                        <li data-id="86631">
+                            <img src="__ROOT__{$vo.avatar}">
+                            <p>{$vo.username}在{$vo.type|type=###}<br>喜中<span>￥{$vo.money}</span></p>
+                        </li>
+                    </foreach>
+                       
+                    </ul>
+                    <ul class="winnerList" style="display:none">
+                        <foreach name="paihang" item="vo">
+                        <li data-id="86631" style="text-align:left">
+                            <img src="__ROOT__{$vo.avatar}">
+                            <p style="text-align:left;">{$vo.username}<br>昨日奖金<span>￥{$vo.money}</span></p>
+                        </li>
+                    </foreach>
+                    </ul>
+                </div>
+            </div>
+
+
+
+      </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<script  type="text/javascript">
+         $(document).ready(function(){
+       setInterval('autoScroll("#das")',3000)
+    })
+
+
+    function autoScroll(obj){
+    
+        var n=$(obj).find("li").height();
+
+        $(obj).find("ul").animate({
+               marginTop:-n
+    },3000,function(){
+         $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+    })
+    
+  
+        
+}
+
+</script>
+
+<script type="text/javascript">
+var websocket;
+var url = 'bf.jjvsmm.com';
+websocket = new WebSocket("ws://"+url+":8585");
+websocket.onmessage = function(event) {
+        zdata=JSON.parse(event.data);
+        console.log(zdata);
+        window[zdata.act](zdata.msg);
+};
+$(document).ready(function(){
+websocket.onopen = function(event) {
+        indextype({$type1[0][id]});
+        indextype({$type2[0][id]});
+        indextype({$type3[0][id]});
+}
+});
+function indextype(id){
+    var fs = {};
+  fs.id=id;
+  fs.act='indextype';
+  var jsonStr = JSON.stringify(fs);
+  websocket.send(jsonStr);
+}
+function kjtz(data){
+  var fs = {};
+  fs.id=data;
+  fs.act='indexkjtz';
+  var jsonStr = JSON.stringify(fs);
+  websocket.send(jsonStr);
+}
+function kjxx2(data){
+        var a=data.sj;
+        var html='<li class="cqssc fix">';
+        html=html+'<div class="number">';
+        html=html+'<em>'+a[0]+'</em>';
+        html=html+'<em>'+a[1]+'</em>';
+        html=html+'<em>'+a[2]+'</em>';
+        html=html+'<em>'+a[3]+'</em>';
+        html=html+'<em>'+a[4]+'</em>';
+        html=html+'</div>';
+        html=html+'<a class="mainColorBtn MustLogin" href="';
+        html=html+'/index.php/Portal/order/page/id/'+data.type+'">立即投注</a>';
+        html=html+'</li><li class="text"><p><span>当前期：第';
+        html=html+'<i>'+data.number+'</i>期</span><span>开奖号码：<i>'+data.data+'</i></span></p></li>';
+        $('#kjxx ul').eq(1).html(html);
+}
+function kjxx3(data){
+        var a=data.sj;
+        var html='<li class="cqssc fix">';
+        html=html+'<div class="number">';
+        html=html+'<em>'+a[0]+'</em>';
+        html=html+'<em>'+a[1]+'</em>';
+        html=html+'<em>'+a[2]+'</em>';
+        html=html+'<em>'+a[3]+'</em>';
+        html=html+'<em>'+a[4]+'</em>';
+        html=html+'</div>';
+        html=html+'<a class="mainColorBtn MustLogin" href="';
+        html=html+'/index.php/Portal/order/page/id/'+data.type+'">立即投注</a>';
+        html=html+'</li><li class="text"><p><span>当前期：第';
+        html=html+'<i>'+data.number+'</i>期</span><span>开奖号码：<i>'+data.data+'</i></span></p></li>';
+        $('#kjxx ul').eq(2).html(html);
+}
+function kjxx1(data){
+    var a=data.sj;
+    var hz=a[0]-(-a[1])-(-a[2]);
+    var ds;
+    var dx;
+    if(hz>10){
+        dx='大';
+    }
+    else{
+        dx='小';
+    }
+    if(hz%2==0){
+        ds='双';
+    }
+    else{
+        ds='单';
+    }
+    var html='<li class="jsk3">';
+        html=html+'<div class="dice" align="center">';
+        html=html+'<span class="sz'+a[0]+'"></span>';
+        html=html+'<i>+</i>';
+        html=html+'<span class="sz'+a[1]+'"></span>';
+        html=html+'<i>+</i>';
+        html=html+'<span class="sz'+a[2]+'"></span>';
+        html=html+'<i>=</i>';
+        html=html+'<em>'+hz+'</em>';
+        html=html+'</div>';
+        html=html+'</li>';
+        html=html+'<li class="text">';
+        html=html+'<p>';
+        html=html+'<span>当前期：第<i>'+data.number+'</i>期</span>';
+        html=html+'<span>开奖号码：<i>'+data.data+'</i></span>';
+        html=html+'<span>和值：<i>'+hz+'</i></span>';
+        html=html+'<span>形态：<a>'+dx+'</a><a>'+ds+'</a></span>';
+        html=html+'</p>';
+        html=html+'</li>';
+  $('#kjxx ul').eq(0).html(html);
+}
+</script>
+<style type="text/css">
+.dice .sz1{
+    background-position:0 0px;
+}
+.dice.sz2{
+    background-position:0 -61px;
+}
+.dice .sz3{
+    background-position:0 -122px;
+}
+.dice .sz4{
+    background-position:0 -183px;
+}
+.dice .sz5{
+    background-position:0 -244px;
+}
+.dice .sz6{
+    background-position:0 -305px;
+}
+</style>>
+</body>
+</html>

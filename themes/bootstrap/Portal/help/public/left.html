@@ -1,0 +1,17 @@
+<div class="helpSlider">
+    <h2>帮助中心</h2>
+<php>
+    $i=0;
+$posts=sp_sql_posts('post_type:1;order:listorder asc');
+</php>
+    <ul class="helpMenu">
+
+        <foreach name="list" item="vo"> 
+            <li><a class="{$vo.post_keywords}" href="/index.php/Portal/Help/index/id/{$i++}">{$vo.post_title}</a></li>     
+        </foreach>
+    </ul>
+
+
+
+</div>
+

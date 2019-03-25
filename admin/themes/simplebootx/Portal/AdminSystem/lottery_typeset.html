@@ -1,0 +1,59 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('Portal/AdminSystem/lottery_typeset')}">所有彩种</a></li>
+            <li ><a href="{:U('Portal/AdminSystem/add_lottery_typeset')}" >添加彩种</a></li>
+        </ul>
+
+        <form method="post" class="js-ajax-form"  action="{:U('PortalAdminSystem/edit_lottery_typeset')}"> 
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th align="center">ID</th>
+                        <th>彩种名称</th>
+                        <th style="vertical-align:middle; text-align:center;">彩种简称</th>
+                        <th>彩种类别</th>
+                        <th style="vertical-align:middle; text-align:center;">停止投注时间</th>
+                        <th style="vertical-align:middle; text-align:center;">状态</th>
+                        <th style="vertical-align:middle; text-align:center;">排序</th>
+                        <th style="vertical-align:middle; text-align:center;">彩种期数</th>
+                        <th style="width:200px;" align="center">操作</th>
+                    </tr>
+                </thead>
+                <php>
+                    $state[0]='关';
+                    $state[1]='开';
+                    $lx[1]='快3';
+                    $lx[2]='时时彩';
+                    $lx[3]='11选5';
+                </php>
+                <tbody>
+                    <foreach name="list" item="vo">
+                    <tr>
+                        <td align="center">{$vo.id}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.title}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.name}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$lx[$vo[type]]}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.data_ftime}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$state[$vo[enable]]}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.sort}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.num}</td>
+                        <td align="center">
+                            <a href='{:U("AdminSystem/edit_lottery_typeset",array("id"=>$vo["id"]))}'>基础设置</a> |
+                            <a href='{:U("AdminSystem/played_set",array("id"=>$vo["id"]))}'>玩法配置</a> |
+                            <a href='{:U("AdminSystem/data_set",array("id"=>$vo["id"]))}'>时间配置</a> |
+                            <a href='{:U("AdminSystem/cjlist",array("id"=>$vo["id"]))}'>采集配置</a> |
+                            <a class="js-ajax-delete" href='{:U("AdminSystem/del_lottery_typeset",array("id"=>$vo["id"]))}'>删除</a> 
+                        </td>
+                    </tr>
+                    </foreach>
+                </tbody>
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

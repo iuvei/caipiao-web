@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* 页面宽度 */
+/* 边框和颜色 */
+/* 深色主题，例如当前风格为绿色 */
+/* 背景颜色 */
+/* 百搭颜色 */
+/* 图片服务器地址 */
+/* 用户中心页的红色 */
+.whereToSend { padding: 10px 0; }
+.whereToSend i { font-size: 22px; padding-right: 5px; vertical-align: bottom; }
+.whereToSend a { color: #666; border: 1px solid #ddd; padding: 6px 15px; float: right; margin-right: 10px; font-size: 14px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+
+.sendList table tr th { background: #f8f8f8; text-align: left; border-bottom: 1px solid #e3e3e3; font-size: 14px; font-weight: normal; color: #555; padding: 3px; }
+.sendList table tr td { padding: 10px 3px; border-bottom: 1px dotted #e3e3e3; color: #666; }
+.sendList table tr td a { margin: 0 5px; cursor: pointer; color: #333; font-weight: bolder; }
+.sendList table tr td a:hover { color: #e4393c; text-decoration: underline; }
+.sendList table tr td .read { color: inherit; font-weight: normal; }
+.sendList table tr .td1 { text-align: center; }
+.sendList table tr .td2 { width: 65%; }
+
+.msgControl { padding: 10px; }
+.msgControl input[type='checkbox'] { cursor: pointer; vertical-align: middle; margin-right: 5px; }
+.msgControl input[type='button'] { background: #ccc; padding: 5px 10px; color: #666; border: 0px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; margin: 0 5px; }
+.msgControl input[type='button']:hover { background: #009900; color: #fff; }
+
+.msgDetail table { border-top: 1px solid #e3e3e3; border-left: 1px solid #e3e3e3; }
+.msgDetail tr th { background: #f8f8f8; text-align: center; border-bottom: 1px solid #e3e3e3; font-size: 14px; font-weight: normal; color: #555; padding: 8px; border-right: 1px solid #e3e3e3; }
+.msgDetail tr td { padding: 5px; border-right: 1px solid #e3e3e3; border-bottom: 1px solid #e3e3e3; text-align: center; }
+
+.msgCon { padding: 0 10px; margin-top: 10px; border-top: 1px dotted #ccc; }
+
+/*# sourceMappingURL=msg.css.map */

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* 页面宽度 */
+/* 边框和颜色 */
+/* 深色主题，例如当前风格为绿色 */
+/* 背景颜色 */
+/* 百搭颜色 */
+/* 图片服务器地址 */
+/* 用户中心页的红色 */
+/**  reset */
+html, body { margin: 0; font-family: "Microsoft YaHei"; }
+
+*, *:before, *:after { box-sizing: inherit; }
+
+body { background: #e6e6e6; }
+
+ul { margin: 0; padding: 0; }
+
+li { list-style: none; }
+li::selection { background: transparent; }
+
+.fix:before, .fix:after { content: ""; display: table; }
+.fix:after { clear: both; overflow: hidden; }
+
+/**  玩法说明 */
+.rebateDes { width: 1200px; min-height: calc(100vh - 20px); background: white; margin: 10px auto; }
+.rebateDes .notContent { padding: 35vh 0 !important; font-size: 16px; }
+
+.rebateNav { background: linear-gradient(to right, #56585f 0%, #68686e 50%, #4b4e56 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#56585f', endColorstr='#4b4e56',GradientType=0 ); height: 65px; padding: 0 20px; position: relative; }
+.rebateNav a { width: 143px; height: 44px; display: block; position: absolute; text-align: center; background: url(http://imagess-google.com/system/pc/other/rebateBtn.png) no-repeat;; top: 21px; line-height: 50px; font-size: 16px; color: #333; text-shadow: 1px 1px 0px #c3c3c3; }
+.rebateNav a:nth-child(1) { left: 20; z-index: 8; }
+.rebateNav a:nth-child(2) { left: 135px; z-index: 7; }
+.rebateNav a:nth-child(3) { left: 250px; z-index: 6; }
+.rebateNav a:nth-child(4) { left: 365px; z-index: 5; }
+.rebateNav a:nth-child(5) { left: 480px; z-index: 4; }
+.rebateNav a:nth-child(6) { left: 595px; z-index: 3; }
+.rebateNav a:nth-child(7) { left: 710px; z-index: 2; }
+.rebateNav a:nth-child(8) { left: 825px; z-index: 1; }
+.rebateNav .curr { background: url(http://imagess-google.com/system/pc/other/rebateBtnChecked.png) no-repeat;; z-index: 99 !important; }
+
+.rebateContent { padding: 20px; position: relative; }
+.rebateContent .isClass { position: relative; }
+.rebateContent .isClass li:first-child { cursor: pointer; font-weight: bold; }
+.rebateContent .isClass li:first-child:before { content: "展开"; position: absolute; right: 0; top: -10px; color: #aaa; font-size: 12px; font-weight: 400; }
+.rebateContent .isClass:hover { background: #fcfcfc; }
+.rebateContent .isClass:last-child:before { display: none !important; }
+.rebateContent .show li:first-child:before { content: "收回"; }
+.rebateContent ul { width: 99px; float: left; }
+.rebateContent ul:last-child li:first-child { cursor: initial; }
+.rebateContent ul:last-child li:first-child:before { display: none; }
+.rebateContent ul li { height: 40px; width: 100%; line-height: 40px; font-size: 12px; white-space: nowrap; overflow: hidden; text-align: center; border-top: 1px solid #ddd; }
+.rebateContent ul li:last-child { border-bottom: 1px solid #ddd; }
+
+.rebateTitle { border-left: 1px solid #ddd; font-weight: bold; }
+.rebateTitle li { width: 100% !important; }
+.rebateTitle li:first-child { position: relative; }
+.rebateTitle li:first-child i { position: absolute; left: 15px; bottom: -6px; z-index: 2; }
+.rebateTitle li:first-child em { position: absolute; right: 15px; top: -6px; z-index: 2; }
+.rebateTitle li:first-child:before { position: absolute; top: 0px; right: 0; left: 0; bottom: 0; border-bottom: 40px solid #ddd; border-right: 144px solid transparent; content: ""; z-index: 1; }
+.rebateTitle li:first-child:after { position: absolute; left: 0; right: 1px; top: 1px; bottom: 0; border-bottom: 39px solid white; border-right: 140px solid transparent; content: ""; z-index: 1; }
+
+.rebateTableCon { position: relative;width: 1101px;}
+.rebateTableCon li:first-child { background: #f8f8f8; text-align: center; font-size: 16px; }
+.rebateTableCon em, .rebateTableCon i { position: absolute; width: 21px; height: 40px; top: 21px; cursor: pointer; background: #f8f8f8; z-index: 2; display: none; }
+.rebateTableCon em:before, .rebateTableCon i:before { content: ""; width: 0; height: 0; position: absolute; left: 6px; top: 14px; }
+.rebateTableCon em { left: 148px; }
+.rebateTableCon i { right: 21px; }
+
+.rebateTable { border-right: 1px solid #ddd;}
+.rebateTable ul { width: 100px;}
+.rebateTable ul li { border-left: 1px solid #ddd; }
+
+.notice { display: none; }
+
+.testShow { margin: 16px auto -10px 20px; }
+
+/*# sourceMappingURL=rebateDes.css.map */
+.noneed{
+	display:none;
+}

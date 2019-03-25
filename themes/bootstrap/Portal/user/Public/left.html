@@ -1,0 +1,24 @@
+<?php
+    if($user[user_type]==0){
+	$effected_id="main-menu";
+  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
+  	$foldertpl="<h3>&nbsp;&nbsp;&nbsp;&nbsp;\$label <b class='caret'></b></h3>";
+  	$ul_class="sildeSession" ;
+  	$li_class="" ;
+  	$style="accountAside";
+  	$showlevel=6;
+  	$dropdown='dropdown';
+  	echo sp_get_menu("2",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+  	}
+  	else{
+  		$effected_id="main-menu";
+  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
+  	$foldertpl="<h3>&nbsp;&nbsp;&nbsp;&nbsp;\$label <b class='caret'></b></h3>";
+  	$ul_class="sildeSession" ;
+  	$li_class="" ;
+  	$style="accountAside";
+  	$showlevel=6;
+  	$dropdown='dropdown';
+  	echo sp_get_menu("4",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+  	}
+?>

@@ -1,0 +1,85 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('Portal/AdminOrder/index')}">返回列表</a></li>
+        </ul>
+        <form class="well form-search" method="get" action="/index.php/Portal/AdminOrder/index2">
+            投注号码:
+            <input type="text" name="betnumber" style="width: 200px;" value="{$get.betnumber}" placeholder="投注号码">
+            <input type="hidden" name="uid" value="{$_GET['uid']}" />
+            <input type="hidden" name="BetInfoID" value="{$_GET['BetInfoID']}" />
+            <input type="submit" class="btn btn-primary" value="搜索" />
+        </form>
+        <form class="js-ajax-form" action="" method="post">
+            <table class="table table-hover table-bordered table-list">
+                <thead>
+                <tr>    
+                <th width="50">ID</th>
+                <th>用户id</th>
+                <th>用户名</th>
+                <th>玩法</th>
+                <th>投注金额</th>
+                <th>赔率</th>
+                <th>投注号码</th>
+                <th>开奖号码</th>
+
+                <th>奖金状态</th>
+                <th>
+                    修改: 
+                    <a href="{:U('Portal/AdminOrder/xgzd',array('BetInfoID'=>$BetInfoID,'uid'=>$uid,'batch'=>1))}">普通批量</a>
+                    <a href="{:U('Portal/AdminOrder/xgzd2',array('BetInfoID'=>$BetInfoID,'uid'=>$uid))}">快选批量
+                        <php>
+                            if ($bz_info['is_editable'] !== true) {
+                                echo '(<span style="color:#f03;">不支持</span>)';
+                            } else {
+                                echo '(<span>支持</span>)';
+                            }
+                        </php>
+                    </a>
+                </th>
+                </tr>
+                </thead>
+
+                <foreach name="posts" item="vo">
+                    <tr>
+                    <php>
+                        $zt='等待中奖';
+                         if($vo['sftm']==1){
+                            $zt='已经退码';
+                        }
+                        if($vo['zt']==1){
+                            if($vo['winloss']>0){
+                                $zt='奖金<span style="color:#e4393c">'.$vo['winloss'].'</span>';
+                            }
+                            else{
+                                $zt='未中奖';
+                            }
+                        }
+                        else{
+                           $vo['lotteryno']='--'; 
+                        }
+                        $uid=I('get.uid');
+                    </php>
+                    <td><b>{$vo.id}</b></td>
+                    <td>{$bet.uid}</td>
+                    <td>{$bet.uid|user_login=###}</td>
+                    <td>{$vo.playedid|played=###}</td>
+                    <td>{$vo[betamount]}</td>
+                    <td>{$vo[odds]}</td>
+                    <td>{$vo[betnumber]}</td>
+                    <td>{$bet[lotteryno]}</td>
+                    <td>{$zt}</td>
+
+                    <td><a href="{:U('Portal/AdminOrder/xgzd',array('BetInfoID'=>$vo[betinfoid],id=>$vo['id'],'uid'=>$uid))}">修改注单</a></td>
+                    </tr>
+                </foreach>
+               
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

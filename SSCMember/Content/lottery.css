@@ -1,0 +1,54 @@
+.lottery-container{
+    
+    display: inline-block;
+    position: fixed;
+    /*right: -100%;*/
+    top: 30px;
+    right: 100%;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: white;
+    z-index: 999;
+}
+
+.lottery-container .lottery-container-inner {
+    padding: 30px;
+    overflow: hidden;
+}
+.lottery-container .title{
+    height:40px;
+    line-height: 40px;
+    background: url(../../../../Images/Default/Main/bg_list_left.gif) repeat-x;
+    background-size: 100% 100%;
+    color:white;
+    padding-left: 30px;
+}
+.lottery-container .item {
+    width:88px;
+    height:80px;
+    overflow: hidden;
+    margin-left: 20px;
+    border: 1px solid black;
+    float: left;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+.lottery-container .item .inner {
+    position: absolute;
+    top: 0;
+}
+.lottery-container .item .inner1 {
+    top:0;
+}
+.lottery-container .item .inner2 {
+    top: 800px;
+}
+.lottery-container .item .number {
+    text-align: center;
+    height:80px;
+    line-height: 80px;
+    font-size: 70px;
+    width: 100%;
+    float: left;
+}

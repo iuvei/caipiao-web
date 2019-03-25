@@ -1,0 +1,130 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">我要提现</div>
+            <div class="userMain">
+                <!--安全中心部分-->
+                <ul class="submitContent setBankcard withdrawalList">
+                <form method="post"   action="{:U('Portal/User/coll_money')}">
+                    <li>
+                        <span>账户余额：</span>
+                        <i>{$user.money}元</i>
+                    </li>
+                    <li>
+                        <span>可提现金额：</span>
+                        <i>{$ketixian}元</i>
+                    </li>
+                    <li>
+                        <span>今天剩余提现次数：</span>
+                        <i>{$tx_cishu}次</i>
+                    </li>
+                    <li>
+
+                        <span>选择银行：</span>
+                        <div class="selectBankCon">
+                            <div class="selectBank bankABC" style="padding:0px; text-align: center;" id="popBank">
+                                <span id="xzxx">请选择提现账户</span>
+                               
+                                <ins></ins>
+                                <div class="downArrow" style="margin-top: 10px; margin-right: 5px; float: right;"></div>
+                            </div>
+                            
+                            <ul class="bankList fix " id="bankBox">
+                                <foreach name="list" item="vo">
+                                <li index="" data-bank="{$vo.id}" data-bank-name="{$vo.bank_name}" data-card="{$vo.card|intercept_num_right=###,4}" onclick="$('#xzxx').html('银行：'+$(this).attr('data-bank-name')+'&nbsp;|&nbsp;卡号:'+$(this).attr('data-card'));$('#bankBox').hide();$('#bank_id').val($(this).attr('data-bank'));">
+                                    <em class="iconBank bankABC"></em>
+                                    <ins>
+                                    开户人姓名：{$vo.user_name}
+                                    <br>
+                                    银行名称：{$vo.bank_name}
+                                    <br>
+                                    银行卡号：{$vo.card|intercept_num_right=###,4}
+                                    </ins>
+                                </li>
+                                </foreach>
+                            </ul>
+                        
+                        </div>
+                    </li>
+                    <li>
+                        <span>提现金额：</span>
+                        <input class="userInput" name="number" type="number" onchange="yanzheng($(this))" required >
+                    </li>
+                     <li>
+                        <span>安全密码：</span>
+                        <input class="userInput" name="maney_pass" type="password" required>
+                    </li>
+                    <li>
+                        <span></span>
+                         <input type="hidden" name="user_bank_id" value="" id="bank_id">
+                        <input class="submitBtn" type="submit" value="提交" style="    border: none;">
+                        <if condition="$istixing eq 1" >
+                        <input class="submitBtn" onclick="tixing()" value="提醒管理员" style="margin-left: 12px;  border: none; width:100px;">
+                        </if>
+                    </li>
+                </form>
+                </ul>
+                <!--安全中心部分 结束-->
+                <div class="userTip">
+                    <p>
+                        ※ 温馨提示：<br>
+                        1、可提现金额=有效投注×2(此项需达到充值金额的30%才计入)+奖金+活动礼金
+                        <br>
+                        2、单笔提现：最低{$min_coll_money}元，最高500000元
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<script>
+    function yanzheng(obj){
+        var money=obj.val();
+        if(money<{$min_coll_money} || money>'500000'){
+            alert('单笔提现金额最低'+{$min_coll_money}+'元，最高500000元');
+        }
+        if(money>{$ketixian}){
+            alert('提现金额不能大于'+{$ketixian}+'元');
+        }
+    }
+    function tixing(){
+        var url = "/index.php/Portal/User/tixing/type/tixian";
+        $.get(url,function(data){
+                alert(data);
+                location.replace(location.href);
+        })
+        
+    }
+
+
+	$(function(){
+		return $("#bankBox").hide(), $(document).click(function(){
+			return event.srcElement.id == "popBank" ? $("#bankBox").show() : $("#bankBox").hide();
+		});
+	});
+</script>
+</body>
+</html>

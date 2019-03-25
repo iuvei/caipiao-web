@@ -1,0 +1,151 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <ul class="nav nav-tabs">
+            <li><a href="{:U('Portal/AdminSystem/played_list')}">所有玩法</a></li>
+            <li class="active"><a href="{:U('Portal/AdminSystem/add_played')}" >添加玩法</a></li>
+        </ul>
+        <form class="form-horizontal js-ajax-form" action="{:U('Portal/AdminSystem/add_playedpost')}" method="post">
+            <fieldset>
+                <div class="control-group" >
+                    <label class="control-label">玩法名称</label>
+                    <div class="controls" >
+                        <input type="text" style="color: red" name="name"value="{$post.name}" required>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">开关/关闭</label>
+                    <div class="controls">
+                        <php>$active_true_checked=($post['enable']==0)?"checked":"";</php>
+                        <label class="radio inline" for="yes">
+                            <input type="radio" name="enable" value="0" {$active_true_checked} id="yes"/>关
+                        </label>
+                        <php>$active_false_checked=($post['enable']==1)?"checked":"";</php>
+                        <label class="radio inline" for="no">
+                            <input type="radio" name="enable" value="1" id="no"{$active_false_checked}>开
+                        </label>
+                    </div>
+                </div>
+
+                <div class="control-group" style="display:none">
+                    <label class="control-label">彩种类别</label>
+                    <div class="controls">
+                        <php>$active_checked=($post['type']==1)?"checked":"";</php>
+                        <label class="radio inline" for="xz1">
+                            <input type="radio" name="type" value="1" {$active_checked} id="xz1"  onchange="group(1)" />快3
+                        </label>
+                        <php>$active_checked=($post['type']==2)?"checked":"";</php>
+                        <label class="radio inline" for="xz2" >
+                            <input type="radio" name="type" value="2" id="xz2" checked onchange="group(2)"/>时时彩
+                        </label>
+                        <php>$active_checked=($post['type']==3)?"checked":"";</php>
+                        <label class="radio inline" for="xz3">
+                            <input type="radio" name="type" value="3" id="xz3" {$active_checked} onchange="group(3)"/>11选5
+                        </label>
+                        <php>$active_checked=($post['type']==4)?"checked":"";</php>
+                        <label class="radio inline" for="xz4">
+                            <input type="radio" name="type" value="4" id="xz4" {$active_checked} onchange="group(4)"/>其他                     
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group" >
+                    <label class="control-label">betTypeId</label>
+                    <div class="controls">
+                        <input type="number" name="betTypeId" value="{$post.bettypeid}" required>
+                    </div>
+                </div>                                                    
+                <div class="control-group">
+                    <label class="control-label">排序</label>
+                    <div class="controls">
+                        <input type="number" name="sort" value="{$post.sort}" required>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">赔率上限</label>
+                    <div class="controls">
+                        <input type="text" name="bonusProp" value="{$post.bonusprop}" required>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">赔率变化(x100)</label>
+                    <div class="controls">
+                        <input type="text" name="cbonusProp" value="{$post.cbonusprop}" required>
+                    </div>
+                </div>     
+                <div class="control-group">
+                    <label class="control-label">玩法组</label>
+                    <div class="controls">
+                    <select name="groupId" required id='grouplx'>
+                            {$html}
+                    </select>
+                    </div>
+                </div> 
+                <div class="control-group">
+                    <label class="control-label">中奖规则函数</label>
+                    <div class="controls">
+                       <input type="text" name="ruleFun" value="{$post.rulefun}" required>
+                    </div>
+                </div>   
+                <div class="control-group">
+                    <label class="control-label">单项上限</label>
+                    <div class="controls">
+                       <input type="text" name="maxCount" value="{$post.maxcount}" >
+                    </div>
+                </div> 
+                <div class="control-group">
+                    <label class="control-label">单注上限</label>
+                    <div class="controls">
+                       <input type="text" name="maxBet" value="{$post.maxbet}" >
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">最小下注</label>
+                    <div class="controls">
+                       <input type="text" name="minAmount" value="{$post.minamount}" >
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">最大退水</label>
+                    <div class="controls">
+                       <input type="text" name="Commission" value="{$post.commission}" >
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">降水金额</label>
+                    <div class="controls">
+                       <input type="text" name="LowBonusAmount" value="{$post.lowbonusamount}" placeholder="每达到此金额降一次水">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">降水幅度</label>
+                    <div class="controls">
+                       <input type="text" name="LowBonusOdds" value="{$post.lowbonusodds}" placeholder="每次降水的赔率减少值，如0.1">
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-actions">
+                <input type="hidden" name="id" value="{$post.id}"/>
+                <button type="submit" class="btn btn-primary">{:L('SAVE')}</button>
+                <a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+            </div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script>
+        function group(id){
+                $.ajax({
+             type: "post",
+             url: "{:U('AdminSystem/qq_played')}",
+             data: {type:id},
+             dataType: "html",
+             success: function(data){
+                            //console.log(data);
+                         $('#grouplx').html(data);
+                      }
+            });
+        }
+        group(2);   
+    </script>
+</body>
+</html>

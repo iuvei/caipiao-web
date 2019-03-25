@@ -1,0 +1,346 @@
+@charset "UTF-8";
+/* 椤甸潰瀹藉害 */
+/* 杈规鍜岄鑹� */
+/* 娣辫壊涓婚锛屼緥濡傚綋鍓嶉鏍间负缁胯壊 */
+/* 鑳屾櫙棰滆壊 */
+/* 鐧炬惌棰滆壊 */
+/* 鍥剧墖鏈嶅姟鍣ㄥ湴鍧€ */
+/* 鐢ㄦ埛涓績椤电殑绾㈣壊 */
+/** variable */
+.betSort { background: #e6e6e6; }
+.betSort #Hi { cursor: pointer; }
+.betSort ins, .betSort .betNavMore { display: inline; }
+.betSort ins { margin: 0 4px; }
+
+.bet { background: white; border: 1px solid #ccc; position: relative; }
+
+.betHeader { margin-bottom: 15px; }
+.betHeader .userName img { height: 24px; width: 24px; }
+.betHeader .snav { background: #232323; color: white; height: 40px; line-height: 40px; }
+.betHeader .snav a { color: white; }
+.betHeader .snav .accountList a { color: #333333; }
+.betHeader .snav .messageShow a { color: #333333; }
+.betHeader .service { margin-top: 7px; }
+.betHeader .service span { margin-top: -5px; }
+.betHeader .snavInfo { height: 40px; }
+.betHeader .snavAll a:first-child:after { content: "杩斿洖棣栭〉"; margin-left: 2px; font-family: "Microsoft YaHei"; }
+.betHeader .snavAll a:hover { color: #e4393c; text-decoration: underline; }
+
+/**  */
+.betTitle { padding: 15px; }
+.betTitle .betLogo h2, .betTitle .time .timeTitle, .betTitle .announced .announcedTitle { text-align: center; margin: 15px 0; font-size: 14px; color: #333; font-weight: bold; }
+.betTitle .timeTitle b, .betTitle .announcedTitle b { color: #f00; margin: 0 5px; }
+.betTitle .betLogo, .betTitle .time, .betTitle .announced { background: url(http://imagess-google.com/system/pc/k3/betBg.png); float: left; height: 140px; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+.betTitle .betLogo { width: 284px; margin-right: 10px; text-align: center; }
+.betTitle .betLogo h2 { font-size: 24px; }
+.betTitle .betLogo i { font-size: 60px; line-height: 70px; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; padding: 4px; position: relative; top: -15px; }
+.betTitle .betLogo i:before { position: absolute; z-index: 2; left: -25px; top: 20px; }
+.betTitle .betLogo i:after { content: ''; position: absolute; display: block; height: 1px; /*width: 36px;*/ /*box-shadow: 0 0 10px 2px #b7a4a4;*/ background: #dac9c9; z-index: 1; left: 13px; bottom: 3px; }
+.betTitle .time { width: 380px; text-align: center; margin-right: 10px; }
+.betTitle .time em { display: inline-block; height: 52px; color: white; font-size: 38px; line-height: 52px; font-family: "Microsoft Yahei"; margin-top: 6px; width: 200px; background: #455467; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; text-shadow: 0 1px 1px black; }
+.betTitle .announced { width: 284px; text-align: center; position: relative; }
+.betTitle .announced .announcedTitle { margin-bottom: 0; }
+.betTitle .announced .announcedNo li { width: 60px; height: 60px; line-height: 60px; text-align: center; margin: 19px 22px 0 0; float: left; background: url(http://imagess-google.com/system/pc/k3/open_num.png) no-repeat center 0px; }
+.betTitle .announced .announcedNo li:last-child { margin-right: 0; }
+.betTitle .announced img { margin-top: 9px; }
+.betTitle .announced .announcedNo { display: inline-block; margin: 0 auto; margin-top: 2px; }
+.betTitle .announced .announcedNo img + img { margin-left: 22px; }
+
+.betTitle #Results .announcedNo1 { background-position: 0 0; }
+.betTitle #Results .announcedNo2 { background-position: 0 -61px; }
+.betTitle #Results .announcedNo3 { background-position: 0 -122px; }
+.betTitle #Results .announcedNo4 { background-position: 0 -183px; }
+.betTitle #Results .announcedNo5 { background-position: 0 -244px; }
+.betTitle #Results .announcedNo6 { background-position: 0 -305px; }
+
+/**  */
+.betContent { border-top: 1px solid #ddd; }
+.betContent .betLeft { float: left; width: 740px; min-height: 500px; position: relative; }
+.betContent .betRight { float: left; width: 258px; min-height: 500px; border-left: 1px solid #ddd; box-sizing: border-box; }
+.betContent .mybet table img { margin: 46px 0; }
+
+/**  */
+.betRight .box h3 { border-bottom: 1px solid #ddd; background: #455467; color: white; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; display: inline-block; margin: 15px 0 6px 8px; text-align: center; height: 26px; line-height: 26px; font-weight: 100; font-size: 12px; padding: 0 6px; }
+.betRight .box .notSelect { background: #d6d6d6; color: #666666; cursor: pointer; }
+.betRight .box table { text-align: center; }
+.betRight .box table tr:hover { background: #f8f8fa; }
+.betRight .box table th { background: #f2f4f7; height: 28px; line-height: 28px; text-align: center; font-weight: normal; color: #666; border-bottom: 1px solid #ddd; }
+.betRight .box table .sum { font-weight: bold; }
+.betRight .box table td { height: 24px; line-height: 24px; text-align: center; color: #666; border-right: 1px dotted #ebebeb; border-bottom: 1px dashed #ebebeb; }
+.betRight .box table td em { width: 18px; height: 18px; display: inline-block; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; color: white; vertical-align: middle; line-height: 18px; }
+.betRight .box table td em + em { margin-left: 6px; }
+.betRight .box table td .shuang, .betRight .box table td .xiao { background: #ff9726; }
+.betRight .box table td .da, .betRight .box table td .dan { background: #5691d7; }
+.betRight .box table td:first-child, .betRight .box table td:first-child a { color: #555; }
+.betRight .box table .win, .betRight .box table .money { color: #ff9600; }
+.betRight .box .more { width: 100%; }
+.betRight .box .more td { text-align: right; padding-right: 15px; }
+.betRight .box .more td a { color: #f37036; }
+.betRight .winnerListSlide { height: 539px; }
+.betRight .winnerListSlide li { border-bottom: 1px dotted #ddd; padding-top: 5px; }
+.betRight .winnerListSlide li:hover { background: #f8f8fa; }
+.betRight .today { /**  */ }
+.betRight .today table td:nth-child(2) { color: #ff9600; }
+.betRight .today .more { display: inline-block; width: 156px !important; margin: 0 8px; height: 26px; text-align: right; }
+.betRight .today .more a { background: white; display: inline-block; line-height: 13px; color: #555; padding-right: 5px; }
+.betRight .today .more a:last-child { padding-left: 5px; background: white; border-left: 1px solid #555; }
+.betRight .today .more a:hover { color: #f37036; text-decoration: underline; }
+.betRight .winningList .bd, .betRight .winningList .bd .tempWrap { width: 100%; padding: 0; }
+.betRight .winningList .tempWrap { vertical-align: initial; }
+.betRight .winningList table tr:nth-child(2) td:nth-child(3), .betRight .winningList table tr:nth-child(3) td:nth-child(3), .betRight .winningList table tr:nth-child(4) td:nth-child(3) { overflow: hidden; font-size: 0; }
+.betRight .winningList table tr:nth-child(2) td:nth-child(3) { background: url(http://imagess-google.com/system/pc/k3/ko1.png) no-repeat center; }
+.betRight .winningList table tr:nth-child(3) td:nth-child(3) { background: url(http://imagess-google.com/system/pc/k3/ko2.png) no-repeat center; }
+.betRight .winningList table tr:nth-child(4) td:nth-child(3) { background: url(http://imagess-google.com/system/pc/k3/ko3.png) no-repeat center; }
+.betRight .winningList table td:nth-child(2) { color: #cc0a2f; width: 40px; text-align: center; }
+.betRight .winningList table td:nth-child(2):before { background: radial-gradient(circle at 100px 100px, #5cabff, #000000); }
+.betRight .winningList table td:nth-child(3) { width: 46px; text-align: center; font-size: 14px; }
+.betRight .winningList table td { text-align: left; padding: 7px 15px; padding-right: 12px; border-right: none; }
+.betRight .winningList table td img { height: 36px; width: 36px; float: left; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; margin-right: 9px; transition: 0.5s; }
+.betRight .winningList table td p { margin: 0; margin-top: 0px; line-height: 1.7; height: 36px; }
+.betRight .winningList table td p i { color: red; }
+.betRight .winningList table td:hover img { opacity: 0.8; }
+.betRight .winningList table td:nth-child(1) { width: 280px; }
+.betRight .winningList div { float: left; width: 78%; line-height: 1.5; }
+
+.winningList ins { display: block; width: 25px; height: 25px; margin: 0 auto; color: #555; }
+.winningList tbody tr:nth-child(2) ins { background: #c12f33; background: radial-gradient(circle at 25px 25px, #c12f33, #ca9293); color: white; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; text-align: center; line-height: 25px; }
+.winningList tbody tr:nth-child(3) ins { background: #53b0fe; background: radial-gradient(circle at 25px 25px, #2b82cc, #53b0fe); color: white; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; text-align: center; line-height: 25px; }
+.winningList tbody tr:nth-child(4) ins { background: #f8a968; background: -ms-radial-gradient(circle at 25px 25px, #c57532, #f8a968); background: -webkit-radial-gradient(circle at 25px 25px, #c57532, #f8a968); background: radial-gradient(circle at 25px 25px, #c57532, #f8a968); color: white; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; text-align: center; line-height: 25px; }
+
+#moneyList { width: 100%; }
+
+.betNavCon { width: 100%; overflow: hidden; }
+
+.betNav { height: 38px; margin: 0 34px; -webkit-transition: .6s; transition: .6s; width: 3000px; overflow: hidden; }
+.betNav > li { display: inline-block; width: 112px; float: left; text-align: center; box-sizing: border-box; font-size: 16px; line-height: 38px; background: #fff; cursor: pointer; color: #333; }
+.betNav > li + li { border-left: 1px solid #ddd; }
+.betNav .active { background: #ea6a31; color: white; }
+
+.betNavtab { height: 38px; position: absolute; right: 0; top: 0; background: #ececec; width: 35px; background: -webkit-linear-gradient(#ffffff 2%, #ececec 100%); background: linear-gradient(#ffffff 2%, #ececec 100%); border-left: 1px solid #ddd; cursor: initial; }
+.betNavtab.left { left: 0; border-right: 1px solid #ddd; border-left: none; }
+.betNavtab.left em { -ms-transform: rotate(90deg); -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); margin-left: 3px; }
+.betNavtab:active { background: -webkit-linear-gradient(#ececec 2%, #ffffff 100%); background: linear-gradient(#ececec 2%, #ffffff 100%); }
+.betNavtab span { display: block; width: 16px; height: 16px; border-radius: 8px; border: 1px solid; margin: 11px 9.5px; cursor: pointer; }
+.betNavtab em { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; display: block; margin: 5px 3px; transition: 0.5s; -ms-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -webkit-transform: rotate(-90deg); transform: rotate(-90deg); margin-left: 4px; }
+.betNavtab em:before { content: ""; display: block; width: 38px; height: 35px; position: absolute; margin-left: -19px; margin-top: -21px; }
+
+/**  */
+.betFilter { text-align: left; width: 739px; box-sizing: border-box; padding: 10px 15px; border-bottom: 1px solid #ddd; background: #f2f4f7; border-top: 1px solid #ddd; height: 52px; }
+.betFilter li { display: inline; padding: 4px 5px; line-height: 30px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; cursor: pointer; text-align: center; color: #555; font-size: 14px; margin-right: 13px; margin-bottom: 5px; }
+.betFilter li:hover { background: #ff9726; color: white; }
+.betFilter .curr { background: #ff9726; color: white; }
+
+/**  */
+.betTip { padding: 3px 15px; color: #555; background: #fdfdfd; }
+.betTip i { font-size: 14px; margin-right: 3px; }
+.betTip ins, .betTip i { color: #ff9831; }
+.betTip ins { color: #ff0000; }
+
+/**  */
+.checkNumber span { color: #333; }
+.checkNumber .B a, .checkNumber .E a { padding: 0 14px; line-height: 46px; }
+.checkNumber .C a { padding: 0 8px; }
+.checkNumber .G { padding: 0 30px; }
+.checkNumber ul { text-align: center; }
+.checkNumber ul li { display: inline-block; margin: 12px 15px; vertical-align: top; }
+.checkNumber ul li a { box-shadow: 0 1px 5px #d4d4d4; display: block; background: -ms-linear-gradient(to bottom, #ffffff 0%, #f1efef 90%, #f7f7f7 100%); background: linear-gradient(to bottom, #ffffff 0%, #f1efef 90%, #f7f7f7 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f7f7',GradientType=0 ); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid #c0c5d2; height: 50px; line-height: 50px; font-size: 30px; color: #000000; text-align: center; min-width: 52px; }
+.checkNumber ul li a em { padding-left: 8px; padding-right: 10px; }
+.checkNumber ul li a em + em { padding-left: 10px; padding-right: 8px; border-left: 1px dashed #cccccc; }
+.checkNumber ul li a span { color: #111; }
+.checkNumber ul li a i { padding: 0 15px; }
+
+.buyNumberFilter a:hover, .buyNumberFilter .curr, .checkNumber a:hover, .checkNumber .active a, .buyNumber a:hover, .buyNumber .curr { background: linear-gradient(to bottom, #d64b15 30%, #ea6a31 100%); background: -ms-linear-gradient(to bottom, #d64b15 30%, #ea6a31 100%); background: -moz-linear-gradient(to bottom, #d64b15 30%, #ea6a31 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d64b15', endColorstr='#ea6a31',GradientType=0 ); border: 1px solid #d24c10; color: white; text-decoration: blink; box-shadow: inherit; }
+
+/**  */
+.checkedList { border: 1px solid #ddd; margin: 15px; padding: 10px; height: 188px; overflow-y: auto; margin-top: 40px; background: white; }
+.checkedList table { width: 100%; }
+.checkedList table tr { background: #f4f4f4; }
+.checkedList table tr td { padding: 5px 10px; }
+.checkedList table tr + tr td { border-top: 10px solid white; }
+.checkedList .eachPrice { width: 70px; height: 23px; padding: 4px 5px; border: 1px solid #ddd; margin: 0px 3px; }
+.checkedList .orderMoney { color: #ff0000; }
+.checkedList .orderCancel { color: #ff9600; cursor: pointer; }
+.checkedList .order_type { display: inline-block; max-width: 180px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; vertical-align: top; }
+
+/**  */
+.betTotal { padding: 10px; text-align: center; font-size: 16px; }
+.betTotal em, .betTotal i { color: #f37036; }
+.betTotal ._totalMoney, .betTotal ._betMoney, .betTotal ._chaseMoneyTotal { color: red; }
+.betTotal input[type=number], .betTotal input[type=tel], .betTotal select { border: 1px solid #cecece; height: 30px; padding: 0px 5px; text-align: center; margin: 0 5px; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; vertical-align: baseline; }
+.betTotal select { padding: 0 5px; }
+.betTotal input[type=tel] { width: 60px; }
+.betTotal input[type="radio"] { display: none; }
+.betTotal .money { color: #ff0000; }
+
+/**  */
+.betBtn { display: block; margin: 0 auto; line-height: 44px; font-size: 20px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; width: 150px; text-align: center; background: #ea6a31; color: white; margin-bottom: 40px; }
+.betBtn:hover { text-decoration: blink; color: white; background-color: #d95019; background: linear-gradient(to bottom, #d64c15 0%, #ea6a31 100%); }
+
+/**  */
+.lotteryConfirm { width: 450px; height: 300px; background: white; padding: 20px 25px; font-size: 14px; line-height: 2.5; }
+.lotteryConfirm .textarea { border: 1px solid #ccc; padding: 5px; -moz-border-radius: 2px 5px; -webkit-border-radius: 2px 5px; border-radius: 2px 5px; display: inline-block; font-size: 12px; width: 310px; height: 120px; overflow: auto; vertical-align: top; }
+.lotteryConfirm .textarea p { margin: 0; }
+.lotteryConfirm span { margin-right: 5px; }
+.lotteryConfirm em em { color: red; margin: 5px; }
+
+.ssc .buyNumber a { filter: none; }
+.ssc .buyNumberFilter a:hover, .ssc .buyNumberFilter .curr, .ssc .checkNumber a:hover, .ssc .checkNumber .active a, .ssc .buyNumber a:hover, .ssc .buyNumber .curr { *background: #ea6a31; background: #ea6a31\0; }
+.ssc .betNav > li:last-child { border-right: 1px solid #ddd; }
+.ssc .betLeft { border-right: 1px solid #ddd; }
+.ssc .betRight { border-left: none; }
+.ssc .roundNo img { margin: 0 5px; }
+
+.roundNo { text-align: center; margin-top: 26px; }
+.roundNo li { display: inline-block; width: 42px; height: 48px; margin: 0 5px; position: relative; background: url(http://imagess-google.com/system/pc/ssc/ballOpenBg.png) no-repeat;; font-size: 22px; line-height: 42px; color: #a12836; text-shadow: 1px 1px 1px whitesmoke; }
+
+.sscCheckNumber { padding: 15px 0 !important; }
+.sscCheckNumber ul li { display: table; margin: 10px 0; }
+
+.betFilterAnd { padding: 10px 15px; font-size: 12px; border-bottom: 1px solid #ccc; line-height: 2.2; }
+.betFilterAnd li { margin: 4px 0; }
+.betFilterAnd span { display: inline-block; font-weight: bold; color: #555; width: 64px; position: relative; margin-left: 22px; }
+.betFilterAnd span:before { content: ""; display: block; width: 1px; height: 54px; background: #e7e7e8; position: absolute; top: -14px; left: -16px; }
+.betFilterAnd span:after { background: #ffffff; border: 1px solid #e7e7e8; border-radius: 50%; content: ""; display: block; height: 11px; left: -22px; position: absolute; top: 4px; width: 11px; }
+.betFilterAnd div { display: inline-block; }
+.betFilterAnd div a { color: #555; margin-right: 15px; padding: 4px 6px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.betFilterAnd div .curr, .betFilterAnd div a:hover { background: #ff9726; color: white; }
+
+.buyNumberTitle, .buyNumber, .buyNumberFilter { display: block; float: left; }
+
+.buyNumberTitle { width: 63px; height: 26px; background: #455467; color: white; text-align: center; font-size: 14px; line-height: 26px; -moz-border-radius: 0 3px 3px 0; -webkit-border-radius: 0 3px 3px 0; border-radius: 0 3px 3px 0; margin: 11px 0; margin-right: 25px; position: relative; }
+.buyNumberTitle i { position: absolute; display: block; right: -5px; top: 8px; border-top: 5px solid transparent; border-left: 5px solid #455467; border-bottom: 5px solid transparent; }
+
+.buyNumber { min-width: 500px; text-align: center; margin: 5px 0; }
+.buyNumber a { display: inline-block; width: 38px; height: 38px; margin: 0 3px; background: #cecece; border: 1px solid #c0c5d2; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; line-height: 38px; font-size: 18px; color: #000000; box-shadow: 0 1px 3px #d4d4d4, 0 -1px 5px #fff inset; text-align: center; background: -webkit-linear-gradient(to bottom, #ffffff 0%, #ececec 100%); background: -moz-linear-gradient(to bottom, #ffffff 0%, #ececec 100%); background: -ms-linear-gradient(to bottom, #ffffff 0%, #ececec 100%); background: linear-gradient(to bottom, #ffffff 0%, #ececec 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ececec',GradientType=0 ); *background: #f7f7f7; background: #f7f7f7\0; }
+
+.odd { text-align: left; padding: 0 30px; }
+.odd a { margin: 6px; }
+
+.sscCheckNumber, .checkNumber { margin: 24px 15px; padding: 25px 0; background: url(http://imagess-google.com/system/pc/k3/betBg.png); -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+
+.buyNumberFilter { width: 100px;/* padding: 0 20px; */}
+.buyNumberFilter a { display: block; float: left; width: 21px; height: 21px; background: white; border: 1px solid #c1c6d2; margin: 2px 3px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; text-align: center; line-height: 18px; box-shadow: 0 -1px 5px #fff inset; background: -webkit-linear-gradient(to bottom, #ffffff 0%, #ececec 100%); background: -moz-linear-gradient(to bottom, #ffffff 0%, #ececec 100%); background: -ms-linear-gradient(to bottom, #ffffff 0%, #ececec 100%); background: linear-gradient(to bottom, #ffffff 0%, #ececec 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ececec',GradientType=0 ); }
+
+/** radio 鍔熻兘 */
+.radioLabel { cursor: pointer; display: inline-block; padding-left: 30px; position: relative; }
+
+.radioLabel:before { content: "\e628"; display: inline; color: #e4393c; margin-left: -20px; position: absolute; width: 16px; font-family: "iconfont"; font-size: 12px; }
+
+.radio .radioLabel:before { -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+
+input[type="radio"]:checked + label:before { content: "\e629"; transform: translateY(2px); }
+
+/* 
+.randomSelect{ text-align: center; a{ display:inline-block; width:104px; height:35px; border: 1px solid #ccc; padding: 5px; @include border-radius(4px); margin: 0 6px; background: white; &:hover{ border-color:#f37036; i{ background: #f37036; } } } i{ display: inline-block; width: 20px; height: 20px; background: #cccccc; @include border-radius(50%); color: white; line-height: 20px; margin-right:4px; } a:last-child i{ font-family: "iconfont"; font-size:14px; }
+} */
+.textareaNumber { padding: 0 15px; }
+
+.numberImport { display: inline; margin-left: 4px; }
+.numberImport a { margin-right: 10px; position: relative; font-size: 13px; color: #ff9831; text-decoration: underline; }
+.numberImport a:hover { text-decoration: underline; }
+.numberImport a:hover p { display: table; }
+.numberImport a p { display: none; position: absolute; left: 54px; top: -12px; background: #2e4158; color: white; padding: 3px 6px; text-align: left; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; z-index: 2; }
+.numberImport .submitBtn { background: #f37036; color: white; text-decoration: initial; }
+
+.numberTextarea { position: relative; height: 180px; }
+.numberTextarea textarea { height: 180px; background: none; border: 0px; resize: none; width: 710px; padding: 10px; color: #666; background: #f9f9f9; border: 1px solid #cacaca; }
+.numberTextarea p { position: absolute; left: 0; top: 0; color: #666; line-height: 26px; cursor: text; height: 155px; width: 630px; padding: 0 10px; padding-left: 64px; }
+
+.numberBtn .submitBtn { background: initial; color: #666; border: 1px solid #cacaca; line-height: 28px; }
+.numberBtn a:hover { background: #f37036; color: white; border-color: #f37036; }
+
+/** single pages custom */
+/** chase number */
+.chase { margin: 15px; border: 1px solid #ddd; }
+.chase ._col5 th, .chase ._col5 td { padding: 0; }
+.chase ._col5 th:nth-child(1), .chase ._col5 td:nth-child(1) { width: 60px; padding-left: 14px; }
+.chase ._col5 th:nth-child(2), .chase ._col5 td:nth-child(2) { width: 186px; }
+.chase ._col5 th:nth-child(3), .chase ._col5 td:nth-child(3) { width: 120px; }
+.chase ._col5 th:nth-child(4), .chase ._col5 td:nth-child(4) { width: 180px; }
+.chase ._col5 th:nth-child(5), .chase ._col5 td:nth-child(5) { width: 160px; }
+.chase ._col7 th, .chase ._col7 td { padding: 0; }
+.chase ._col7 th:nth-child(1), .chase ._col7 td:nth-child(1) { width: 46px; padding-left: 14px; }
+.chase ._col7 th:nth-child(2), .chase ._col7 td:nth-child(2) { width: 152px; }
+.chase ._col7 th:nth-child(3), .chase ._col7 td:nth-child(3) { width: 93px; padding-right: 0; }
+.chase ._col7 th:nth-child(4), .chase ._col7 td:nth-child(4) { width: 104px; }
+.chase ._col7 th:nth-child(5), .chase ._col7 td:nth-child(5) { width: 104px; }
+.chase ._col7 th:nth-child(6), .chase ._col7 td:nth-child(6) { width: 104px; }
+
+.chaseSort { height: 38px; line-height: 38px; background: #fafafa; border-bottom: 1px solid #ddd; }
+.chaseSort li { float: left; width: 94px; height: 38px; border-right: 1px solid #ddd; text-align: center; font-size: 14px; }
+.chaseSort label { float: right; margin-right: 10px; cursor: pointer; }
+.chaseSort label i { color: #ff9726; font-weight: bold; }
+.chaseSort .curr { background: white; }
+.chaseSort input[type=checkbox] { transform: translateY(2px); }
+
+.ordinaryChase { padding: 10px 15px; }
+.ordinaryChase input { vertical-align: middle; height: 30px; width: 50px; margin-right: 4px; text-align: center; border: 1px solid #ddd; }
+
+.chaseLonger { display: inline-block; vertical-align: middle; background: #f4f4f4; height: 30px; line-height: 30px; border: 1px solid #ddd; }
+.chaseLonger li { float: left; width: 45px; text-align: center; font-weight: bold; }
+.chaseLonger .curr { color: #f37036; }
+
+.chaseListCon { height: 350px; overflow: auto; }
+
+.advancedChase td { height: 38px; padding-left: 14px; }
+.advancedChase td:nth-child(1) { width: 312px; border-right: 1px dashed #e3e3e3; }
+.advancedChase td span { margin-right: 15px; }
+.advancedChase input { height: 30px; line-height: 30px; vertical-align: middle; text-align: center; }
+.advancedChase input[type=number] { width: 80px; background: white; border: 1px solid #ddd; }
+.advancedChase select { width: 170px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; border: 1px solid #ddd; }
+.advancedChase .noCurr input { background: #fafafa; }
+.advancedChase table { table-layout: fixed; width: 312px; margin: 14px 0; float: left; }
+.advancedChase table:nth-child(2) { width: 384px; }
+.advancedChase table:nth-child(2) tr td { border: none; }
+.advancedChase hr { border: 1px solid #ddd; border-top: none; clear: both; }
+.advancedChase a { margin: 10px auto; width: 100px; height: 32px; font-size: 14px; line-height: 32px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+
+.chaseList { table-layout: fixed; width: 100%; }
+.chaseList input[type=tel] { display: inline-block; width: 60px; height: 22px; border: 1px solid #cecece; padding: 0 4px; }
+.chaseList input[type=checkbox] { margin-right: 5px; }
+.chaseList tr:last-child td { border: none; }
+.chaseList td, .chaseList th { padding: 0 14px; text-align: left; }
+.chaseList td:nth-child(1), .chaseList th:nth-child(1) { width: 54px; }
+.chaseList td:nth-child(2), .chaseList th:nth-child(2) { width: 186px; }
+.chaseList td:nth-child(3), .chaseList th:nth-child(3) { width: 90px; }
+.chaseList td:nth-child(4), .chaseList th:nth-child(4) { width: 84px; }
+.chaseList td:nth-child(5), .chaseList th:nth-child(5) { width: 84px; }
+.chaseList td { height: 34px; line-height: 34px; border-bottom: 1px dotted #ddd; }
+.chaseList td em { color: #f37036; }
+.chaseList th { height: 38px; line-height: 38px; font-weight: 100; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+
+.generalTable td, .generalTable th { padding: 0 14px; text-align: left; }
+.generalTable td:nth-child(1), .generalTable th:nth-child(1) { width: 34px; }
+.generalTable td:nth-child(2), .generalTable th:nth-child(2) { width: 84px; }
+.generalTable td:nth-child(3), .generalTable th:nth-child(3) { width: 54px; }
+.generalTable td:nth-child(4), .generalTable th:nth-child(4) { width: 74px; }
+.generalTable td:nth-child(5), .generalTable th:nth-child(5) { width: 84px; }
+
+.inputAdd { display: inline-block; vertical-align: bottom; margin: 0 5px; }
+.inputAdd i { background: #f4f4f4; height: 30px; line-height: 28px; width: 21px; text-align: center; float: left; border: 1px solid #e3e4e6; color: #686869; user-select: none; cursor: pointer; }
+.inputAdd i:nth-child(1) { border-right: none; }
+.inputAdd i:last-child { border-left: none; }
+.inputAdd input { margin: 0 !important; float: left; color: #686869; }
+.inputAdd input:focus { outline: none; }
+.inputAdd .off { color: #c3c8d3; cursor: default; }
+
+
+
+.sendBtn{
+	width:140px;
+	height:30px;
+	display:inherit;
+	color:#fff;
+	background:#ff8400;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	box-shadow:0 1px 2px rgba(0,0,0,0.5);
+	line-height:30px;
+	margin:30px auto;
+	font-size:16px;
+	text-align:center;
+}
+
+/*# sourceMappingURL=k3.css.map */
+#TimeBar { min-width:300px; }

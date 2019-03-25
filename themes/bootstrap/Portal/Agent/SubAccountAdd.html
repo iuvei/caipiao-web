@@ -1,0 +1,120 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0051)http://zw1.y95666.com/index.php?action=childuseradd -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <title></title>
+    
+</head>
+<body leftmargin="10" topmargin="10">
+    <div id="append_parent"></div>
+    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td>
+                    <script language="JavaScript">
+ 
+                    </script>
+                    <style media="print">
+                        .Noprint {
+                            display: none;
+                        }
+                    </style> <table class="Noprint" width="100%" border="0" cellpadding="0" cellspacing="0">
+                       
+                    </table>
+                   
+                    <form method="post"  action="/SubAccount/AddSubAccount" data-bind="submit:sub">
+                        <input type="hidden" name="formhash" value="1228b73f">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+                            <tbody>
+                                <tr class="header"><td colspan="2"><small> <span data-bind="text:isEdit?'编辑':'添加'"></span>子账号</small></td></tr>
+
+                                <tr>
+                                    <td class="altbg1">账　　号:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="text" class="form-control" maxlength="15" placeholder="只能是字母和数字，且字母开头，长度为3-12位" data-bind="textinput:account,visible:!isEdit" />
+                                        <label data-bind="text:account,visible:isEdit"></label>
+                                        <font style="font-size:14px;" data-bind="visible:!isEdit" color="red">(只能是字母和数字，并字母开头，长度为3-12位)</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">昵称:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="text" class="form-control" placeholder="1-10个字符" maxlength="10" data-bind="textinput:nickname">
+                                        <font style="font-size:14px;" color="red">(1-10个字符)</font>
+                                    </td>
+                                </tr>
+                                <tr id="TRAssociatedSubsidiary">
+                                    <td class="altbg1">关联子公司:</td>
+                                    <td align="right" class="altbg2" id="AssociatedSubsidiary">
+                                        <div class="col-sm-5" data-bind="foreach:Subsidiarylist">
+                                            <div>
+                                                <input type="checkbox" data-bind="value:LoginName" name="SubsidiaryName" />
+                                                <label data-bind="text:LoginName"></label>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">权限:</td>
+                                    <td align="right" class="altbg2" id="SubMenu-Jurisdiction">
+                                        <div class="col-sm-5" id="JurisdictionHtml" data-bind="foreach:list">
+                                            <div><input type="checkbox" data-bind="value:MenuInfo.ID+'',checked:$parent.menuid,attr:{id:'ck-'+MenuInfo.ID}" subaccountvalue="Subvalue" name="parent" /><label data-bind="text:MenuInfo.MenuName,attr:{'for':'ck-'+MenuInfo.ID}"></label></div>
+                                            <div data-bind="foreach:DropListMenus" style="margin-left:2em;" name="child">
+                                                <input type="checkbox" subaccountvalue="Subvalue" data-bind="value:ID+'',checked:$parents[1].menuid,disable:ko.utils.arrayIndexOf($parents[1].menuid,ParentMenuID+'')===-1,attr:{id:'ck-'+ID}" /><label data-bind="text:MenuName,attr:{'for':'ck-'+ID}"></label>
+                                              
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-bind="visible:!isEdit">
+                                    <td class="altbg1">密　　码:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="password" class="form-control" maxlength="15" placeholder="由数字及字母组成" data-bind="textinput:password">
+                                        <font style="font-size:14px;" color="red">(必须由数字及字母组成,密码区分大小写)</font>
+                                    </td>
+                                </tr>
+                                <tr data-bind="visible:!isEdit">
+                                    <td class="altbg1">确认密码:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="password" class="form-control" maxlength="15" placeholder="由数字及字母组成" data-bind="textinput:repassword">
+                                        <font style="font-size:14px;" color="red">(确认密码与密码必须保持一致)</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">账户状态:</td>
+                                    <td align="right" class="altbg2">
+                                        <select class="form-control" data-bind="options:statusList,optionsText:'name',optionsValue:'value',value:status"></select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">是否查看下级报表:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="checkbox" name="IsChildShowReport" data-bind="checked:IsChildShowReport" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">备注:</td>
+                                    <td align="right" class="altbg2">
+                                        <textarea class="form-control" rows="3" maxlength="255" data-bind="textinput:remark"></textarea>
+                                    </td>
+                                </tr> 
+                            </tbody>
+                        </table><br>
+                        <center>
+                            <input class="button" type="submit" name="addsubmit" value="提 交">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input class="button" type="button" name="return" data-bind="click:goback" value="返 回" />
+                        </center>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+
+</body>
+</html>
+ 

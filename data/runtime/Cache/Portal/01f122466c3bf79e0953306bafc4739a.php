@@ -1,0 +1,71 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+<style type="text/css">
+    .operator .select {
+        background: red;
+    }
+    .tblock {
+        width: 19%;
+        float: left;
+        border: 1px solid #333;
+        font-weight: bold;
+    }
+    .tblock .title{
+        text-align: center;
+        background: #FFFFC4;
+        height:35px;
+        line-height: 35px;
+        border-bottom:1px solid black;
+    }
+    .tblock td {
+        border-bottom:1px solid black;
+    }
+    .tblock tr{
+        height: 35px;
+        font-size: 15px;
+        padding:0;
+    }
+    .tblock .operator {
+        padding: 10px 0; 
+        overflow: hidden;
+        text-align: center;
+    }
+    .tblock .operator div{
+        float: left;
+        border: 1px solid #333;
+        margin-left: 20px;
+        width:24px;
+        height:24px;
+        line-height: 24px;
+        text-align: center;
+    }
+    .operator div {
+        cursor: pointer;
+    }
+    .tblock .big, .tblock .little{
+        float: right;
+    }
+     .tblock .operator div:first-child{
+        margin-left: 10px;
+     }
+</style>
+<div class="table-out">
+    <table class="tablecommon" cellpadding="0" width="100%" cellspacing="0" border="0">
+        <tr>
+            <td style="text-align: center;color:#FFFF00;background: url(/SSCMember/Images/Default/Main/bg_nav.gif) repeat-x;">
+                笔数：<span data-bind="text: Count"></span>
+                总金额：<span data-bind="text: AllMoney"></span>
+            </td>
+        </tr>
+        <tr>
+            <td data-bind="template:modelTpl"></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <span style='color:red;'>金额</span>
+                <input class="btn" id="Money" data-bind="textinput:Money,click:getMoney,event:{keyup:disableEnterFixTwo,blur:countMoney}" type="text" />
+                <input class="btn" type="button" data-bind="click:submit" value="确定" />
+                <input class="btn" type="button" data-bind="click:reset" value="取消" />
+            </td>
+        </tr>
+    </table>
+</div>

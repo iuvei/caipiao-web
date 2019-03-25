@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* 椤甸潰瀹藉害 */
+/* 杈规鍜岄鑹� */
+/* 娣辫壊涓婚锛屼緥濡傚綋鍓嶉鏍间负缁胯壊 */
+/* 鑳屾櫙棰滆壊 */
+/* 鐧炬惌棰滆壊 */
+/* 鍥剧墖鏈嶅姟鍣ㄥ湴鍧€ */
+/* 鐢ㄦ埛涓績椤电殑绾㈣壊 */
+.helpSlider { background: white; width: 200px; float: left; min-height: 500px; }
+.helpSlider h2 { background-color: #e4393c; height: 40px; line-height: 40px; text-align: center; font-size: 18px; color: #fff; font-weight: 100; margin: 0; }
+
+.helpMenu > li { border-top: 1px solid #EFF0F1; line-height: 35px; font-size: 14px; }
+.helpMenu > li a { padding-left: 25px; display: block; }
+.helpMenu .curr a { color: #e4393c; border-left: 3px solid; }
+
+.helpContent { width: 780px; float: left; background: white; min-height: 500px; margin-left: 20px; padding: 30px; box-sizing: border-box; }
+.helpContent h4 { font-size: 18px; height: 40px; line-height: 40px; border-bottom: 1px solid #FCE1E6; margin-top: 30px; color: #333; font-family: '寰蒋闆呴粦',Arial; margin: 0; }
+.helpContent p { /* text-align: justify; */ /* line-height: 26px; */ font-size: 14px; }
+
+.helpArtical { margin-top: 5px; }
+.helpArtical * { font-family: "Microsoft YaHei" !important; font-size: 12px; }
+.helpArtical table { border: 1px solid #e6e6e6 !important; }
+.helpArtical table strong { font-weight: 100; }
+.helpArtical table tr:first-child td { background: #4393be; color: white; font-size: 14px !important; }
+.helpArtical table tr:first-child td strong { font-size: 14px; }
+.helpArtical table td { min-width: 80px; padding: 10px 0; }
+
+/*# sourceMappingURL=help.css.map */

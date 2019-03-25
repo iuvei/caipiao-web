@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* 页面宽度 */
+/* 边框和颜色 */
+/* 深色主题，例如当前风格为绿色 */
+/* 背景颜色 */
+/* 百搭颜色 */
+/* 图片服务器地址 */
+/* 用户中心页的红色 */
+.wrapL { width: 232px; background: #fffdf3; border: 1px solid #e6c9a0; border-top: 3px solid #e6c9a0; float: left; height: 468px; }
+
+.subnav li a { display: block; height: 100%; }
+.subnav li img { width: 44px; height: 44px; vertical-align: middle; }
+.subnav li .sortName, .subnav li .des { margin-right: 5px; margin-bottom: 10px; vertical-align: top; font-size: 14px; color: #333; font-weight: bold; }
+.subnav li .des { color: #999; font-size: 12px; font-weight: 100; }
+.subnav li:hover { background: #fff9dd; }
+.subnav li:hover i { transition: 0.5s; transform: rotate(360deg); transform-origin: 17px 25px; }
+
+.subnav li { height: 46px; line-height: 46px; border-bottom: 1px #ddd dashed; padding: 0px 8px; }
+.subnav li i { font-size: 38px; margin: 0 5px; width: 38px; height: 38px; display: inline-block; }
+.subnav li:last-child { border: none; }
+
+.wrapC { width: 488px; margin-left: 13px; float: left; }
+.wrapC .banner { height: 251px; background: #eee; overflow: hidden; }
+.wrapC .banner .hd ul { padding: 2px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+.wrapC .banner img { width: 488px; height: 250px; }
+
+.autoTab { height: 204px; margin-top: 13px; border: 1px solid #d7e2f7; box-sizing: border-box; }
+
+.wrapR { float: left; width: 252px; height: 472px; margin-left: 13px; }
+.wrapR .slide { border: 1px solid #dce1e5; margin-top: 13px; /*         .slideCon{ padding-top: 12px; list-style: initial; margin-left: 12px; padding: 6px 15px; color: rgb(205,205,205); height: 124px; li{ height: 22px; line-height:22px; clear: both; a{ width:170px; text-overflow: ellipsis; white-space: nowrap; line-height: 25px; display: inline-block; overflow: hidden; vertical-align: middle; &:hover{ color:$commonColor; text-decoration:underline; } } span{ float:right; } } } */ }
+.wrapR .slide .help { height: 36px; background: #f8f8f8; border-top: 1px #dce1e5 solid; line-height: 35px; color: #999; padding-left: 12px; text-align: left; }
+.wrapR .slide .help a:hover { color: #e4393c; text-decoration: underline; }
+
+.loginRegister { height: 44px; }
+.loginRegister a { display: inline-block; width: 119.5px; text-align: center; background: #fff9dd; line-height: 42px; color: #e4393c; font-size: 16px; font-weight: bold; border: 1px #ebd4b3 solid; box-sizing: border-box; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
+.loginRegister a i { padding-right: 5px; }
+.loginRegister a + a { margin-left: 13px; }
+.loginRegister a:hover { background: #f9f0c0; }
+
+.winningList h6, .slide h6 { margin: 0; padding: 0 8px; line-height: 30px; border-bottom: 1px solid #eee; font-size: 14px; /*         padding-left: 32px; */ }
+
+.winningList { margin-top: 13px; border: 1px solid #dce1e5; height: 204px; overflow: hidden; }
+.winningList .tempWrap { padding: 15px 0; }
+.winningList .winnerList { margin-top: -7px !important; }
+.winningList .winnerList li { padding: 6px 15px; }
+.winningList .winnerList li:hover { background: #fbfbfb; }
+
+.logined { padding: 0 15px; height: 44px; background: #fffdf3; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; border: 1px #ebd4b3 solid; border-top: 3px #ebd4b3 solid; position: relative; }
+.logined h3 { line-height: 26px; text-align: center; margin: 7px; }
+.logined h3 i { color: #e4393c; font-size: 16px; }
+.logined h3 b { color: #3366cc; }
+.logined > a { width: 45px; height: 15px; display: inline-block; cursor: pointer; border: none; position: absolute; z-index: 2; top: 6px; right: 10px; line-height: 15px; padding-left: 5px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
+.logined > a em { color: #fffdf3; }
+.logined > a:hover { background: #d8d8d8; color: white; }
+
+.cqssc img, .cqssc .number, .cqssc .a { float: left; }
+.cqssc .number { padding-top: 45px; padding-left: 40px; }
+.cqssc .number em { background: #e84245; border: 1px solid #b13032; background: linear-gradient(to bottom, #e46062 2%, #c72c2e 100%); font-size: 30px; color: white; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; width: 41px; height: 41px; display: inline-block; line-height: 41px; text-align: center; font-weight: 100; margin: 0 5px; cursor: pointer; }
+.cqssc a { margin-top: 51px; margin-left: 32px; }
+
+.text { margin-top: 20px; }
+.text i { color: red; margin: 0 3px; }
+.text span { margin-right: 14px; }
+.text span:last-child { margin: 0; }
+.text a { display: inline-block; width: 18px; height: 18px; line-height: 18px; color: white; background: #ff9726; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; margin-right: 6px; }
+.text a + a { background: #5691d7; }
+
+.sh11x5 em { font-size: 25px !important; }
+
+.dice { margin-top: 32px; }
+.dice span { display: inline-block; background: url(http://imagess-google.com/system/pc/k3/open_num.png); width: 60px; height: 60px; vertical-align: middle; }
+.dice i { font-size: 25px; vertical-align: middle; color: #999; margin: 10px; }
+.dice em { font-size: 25px; color: #333; vertical-align: middle; margin: 3px; }
+
+.slideTxtBox p { text-align: center; }
+
+/*# sourceMappingURL=index.css.map */

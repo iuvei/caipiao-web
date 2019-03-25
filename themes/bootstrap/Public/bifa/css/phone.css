@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* 椤甸潰瀹藉害 */
+/* 杈规鍜岄鑹� */
+/* 娣辫壊涓婚锛屼緥濡傚綋鍓嶉鏍间负缁胯壊 */
+/* 鑳屾櫙棰滆壊 */
+/* 鐧炬惌棰滆壊 */
+/* 鍥剧墖鏈嶅姟鍣ㄥ湴鍧€ */
+/* 鐢ㄦ埛涓績椤电殑绾㈣壊 */
+.mobileCon { background: url(http://imagess-google.com/system/pc/mobile/bg.jpg) center no-repeat; width: 100%; height: 655px; overflow: hidden; -moz-user-select: none; /*鐏嫄*/ -webkit-user-select: none; /*webkit娴忚鍣�*/ -ms-user-select: none; /*IE10*/ -khtml-user-select: none; /*鏃╂湡娴忚鍣�*/ user-select: none; }
+
+.mobile { position: relative; height: 620px; padding-top: 56px; padding-left: 162px; }
+
+.mobileSlide { position: absolute; width: 650px; height: 680px; right: -135px; top: 30px; }
+
+.mobileText { position: absolute; left: 8px; top: 270px; -webkit-transition-duration: 1s; -ms-transition-duration: 1s; -moz-transition-duration: 1s; transition-duration: 1s; width: 375px; z-index: 2; }
+.mobileText h1, .mobileText h2, .mobileText span, .mobileText em, .mobileText p { display: block; }
+.mobileText h1 { font-size: 45px; color: #e4393c; width: 500px; display: none; }
+.mobileText h2 { font-size: 30px; color: #e4393c; -moz-user-select: text; /*鐏嫄*/ -webkit-user-select: text; /*webkit娴忚鍣�*/ -ms-user-select: text; /*IE10*/ -khtml-user-select: text; /*鏃╂湡娴忚鍣�*/ user-select: text; margin: 12px 0; position: absolute; margin-top: 212px; }
+.mobileText > img { margin-left: 458px; margin-top: -44px; }
+.mobileText .ios { margin-top: -99px; margin-left: 11px; }
+.mobileText .android { margin-top: -100px; margin-left: 179px; }
+
+.slideTxtBox { position: absolute; top: 42px; left: 32px; }
+.slideTxtBox .hd { position: relative; }
+.slideTxtBox .hd ul { float: left; position: absolute; left: 20px; top: -1px; height: 32px; }
+.slideTxtBox .bd li { position: absolute; top: 0; left: 0; }
+
+.mobileAnimate { top: 5px !important; transform: translateY(5px) !important; /* left: 60px; */ }
+
+.mobileTextAnimate { right: -20px; opacity: 1; }
+
+.mgt40 { margin: 0 !important; }
+
+.dontTouch { width: 500px; position: absolute; height: 590px; z-index: 99; margin-left: 300px; }
+
+/*# sourceMappingURL=mobile.css.map */

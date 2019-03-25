@@ -1,0 +1,110 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('Portal/AdminUser/index')}">所有会员</a></li>
+            <li ><a href="{:U('Portal/AdminUser/add_user')}" >添加会员</a></li>
+        </ul>
+        <form class="well form-search" method="post" action="{:U('Portal/AdminUser/soUser')}">
+            用户名:
+            <input type="text" name="user_login" style="width: 200px;" value="{:I('request.user_login/s','')}" placeholder="请输入用户名">
+            <!--            邮箱:
+                        <input type="text" name="user_email" style="width: 100px;" value="{:I('request.user_email/s','')}" placeholder="请输入{:L('EMAIL')}">-->
+            <input type="submit" class="btn btn-primary" value="搜索" />
+            <!--<a class="btn btn-danger" href="{:U('User/index')}">清空</a>-->
+        </form>
+        <form class="well form-search" method="post" action="{:U('AdminUser/index')}">
+            用户ID： 
+            <input type="text" name="uid" style="width: 100px;" value="{:I('request.uid')}" placeholder="请输入用户ID">
+            关键字： 
+            <input type="text" name="keyword" style="width: 200px;" value="{:I('request.keyword')}" placeholder="用户名/昵称/邮箱">
+            <input type="submit" class="btn btn-primary" value="搜索" />
+            <a class="btn btn-danger" href="{:U('AdminUser/index')}">清空</a>
+        </form>
+        <form method="post" class="js-ajax-form">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th align="center">ID</th>
+                        <th>用户名</th>
+                        
+                        <!-- <th>头像</th> -->
+                        
+                        <th style="vertical-align:middle; text-align:center;">类型</th>
+                        <th style="vertical-align:middle; text-align:center;">可用|冻结</th>
+                        <th style="vertical-align:middle; text-align:center;">积分|等级</th>
+                        <th style="vertical-align:middle; text-align:center;">中奖|返点</th>
+                        <th style="vertical-align:middle; text-align:center;">投注|盈亏</th>
+                        <th style="vertical-align:middle; text-align:center;">返点<span style="color:#E95D4E">|</span>不定点</th>
+                        <th>最后登录时间</th>
+                        <th>最后登录IP</th>
+                        <th>状态</th>
+                        <th style="width:200px;" align="center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <php>
+                        $user_statuses=array(
+                        "0"=>'限制登录',
+                        "1"=>'正常',
+                        "2"=>'封号');
+
+                        $user_type=array(
+                        "0"=>'代理',
+                        "1"=>'会员');
+                    </php>
+                    <foreach name="list" item="vo">
+                    <<tr></tr>>
+                        <td align="center">{$vo.id}</td>
+                        <td >{$vo['user_login']?$vo['user_login']:($vo['mobile']?$vo['mobile']:L('THIRD_PARTY_USER'))}</td>
+
+                        <!-- <td><img width="25" height="25" src="{:U('user/public/avatar',array('id'=>$vo['id']))}" /></td> -->
+
+                        <td style="vertical-align:middle; text-align:center;">{$user_type[$vo['user_type']]}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.money}<span style="color:#E95D4E">|</span>{$vo.money_frozen}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.score}<span style="color:#E95D4E">|</span>{$vo.level}</td>
+                        <td style="vertical-align:middle; text-align:center;">  <span style="color:#E95D4E">|</span>   </td>
+                        <td style="vertical-align:middle; text-align:center;">  <span style="color:#E95D4E">|</span>   </td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.rebate}%<span style="color:#E95D4E">|</span>{$vo.rebate_uncertain}%</td>
+                        <td>{$vo.last_login_time}</td>
+                        <td>{$vo.last_login_ip}</td>
+                        <td>{$user_statuses[$vo['user_status']]}</td>
+                        <td align="center">
+                            <a href='{:U("AdminUser/edit",array("id"=>$vo["id"]))}'>修改</a> |
+                            <a class="js-ajax-delete" href="{:U('adminUser/delete',array('id'=>$vo['id']))}">删除</a> |
+                           <!--  <neq name="vo.id" value="1">
+                                <a href="{:U('AdminUser/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="您确定要拉黑此用户吗？">拉黑</a>|
+                                <a href="{:U('AdminUser/edit',array('id'=>$vo['id']))}" class="iframe" id="iframe" >编辑</a>|
+                                <a href="{:U('AdminUser/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="您确定要启用此用户吗？">启用</a>
+                            <else/>
+                                <a style="color: #ccc;">拉黑</a>|
+                                <a style="color: #ccc;">启用</a>
+                            </neq>
+                             <if condition="$vo['is_grade'] eq 1">
+                                <a href='{:U("AdminUser/relationship",array("id"=>$vo["id"]))}'>子账号</a> |
+                            </if>
+                                <a href='{:U("AdminUser/edit",array("id"=>$vo["id"]))}'>{:L('EDIT')}</a> |
+                                <a class="js-ajax-delete" href="{:U('adminUser/delete',array('id'=>$vo['id']))}">{:L('DELETE')}</a> |
+                                <if condition="$vo['user_status'] eq 0">
+                                    <a href="{:U('adminUser/disable',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确认封号">封号</a>
+                                    <else />
+                                    <a href="{:U('adminUser/unDisable',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确认解封">解封</a>
+                                </if>
+                            <if condition="$vo['user_status'] eq 0">
+                                 | <a href="{:U('adminUser/Limit',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确认激活">限制登录</a>
+                                 <else />
+                                 <a href="{:U('adminUser/unLimit',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确认解封">解除限制</a>
+                            </if>
+                                <a href='{:U("AdminUser/Recharge",array("id"=>$vo["id"]))}' target="_blank">充值</a> -->
+                        </td>
+                    </tr>
+                    </foreach>
+                </tbody>
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

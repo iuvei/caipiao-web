@@ -1,0 +1,72 @@
+<style>
+    .table-result {
+        width: 100%;
+    }
+    .rule-list{
+        margin-left:1em;
+    }.rule-list li {
+        list-style: decimal;
+    }
+</style>
+<div class="table-out">
+   <form onsubmit="return false">
+       <table class="tablecommon tablecommon1 break" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-left: 2px;">
+           <tr class="title">
+               <td colspan="3">快译</td>
+           </tr>
+           <tr class="t-left">
+               
+               <td style="padding:5px;">
+                   <div style="border:1px #ccc solid;padding:2px;">
+                       <textarea rows="12" style="text-align:left;resize:none;width:100%;border:none;" name="kuaiyi" id="CleverTxt"></textarea>
+                   </div>
+               </td>
+               <td width="20%" style="text-align:left;">
+                   <div>重要提示:</div>
+                   <ul class="rule-list">
+                       <li>本公司推出“快译”是为了方便客户分析下注，为了避免给自己带来没有必要的损失，敬请各位客户务必检查确认后再下注！由于精确度没有做到百分百（我们一直在努力！）， <font color="Red">公司 一切以下注明细为准</font>，如有不便，希望各位会员谅解！</li>
+                       <li><a id="A1" target="_blank" href="/index.php/Portal/FastTranslate/KYRule" style="text-decoration:underline;"><font color="Red"> 快译规则说明</font></a></li>
+                       <li>每条规则中会去掉重复的号码</li>
+                       <li><b>五星</b>（前二、后二、首尾）请在输入的每行内容前面添加字母“<font color="Red">w</font>”</li>
+                   </ul>
+               </td>
+           </tr>
+           <tr>
+               <td data-bind="html:tips" style="color:red;"></td>
+           </tr>
+           <tr>
+               <td colspan="4" align="center" class="inputW" data-bind="visible:count()>0">
+                   <input type="text" data-bind="textinput:amount,visible:!isAmountMode()" />
+                   <button type="button" data-bind="click:submit,text:isSubmitting()?'正在下注中...':'立即下注'"></button>
+                   <button type="reset" data-bind="click:reset">清空</button>
+                   <span>总注数 <b data-bind="text:count"></b>，</span>
+                   <span>总投注金额 <b data-bind="text:isAmountMode()?totalAmount:(count()*amount()).toFixed(4)-0"></b></span>
+               </td>
+           </tr>
+           
+
+       </table>
+   </form>
+    <br />
+    <table class="tablecommon table-border-center" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-left:5px;" data-bind="visible:count()>0">
+        <tbody>
+            <tr class="title">
+                <td colspan="12">生成号码明细</td>
+            </tr>
+            <tr>
+                <td style="padding:0;" id="ResultBox"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="inputW" data-bind="visible:count()>48">
+                    <input type="text" data-bind="textinput:amount,visible:!isAmountMode()" />
+                    <button type="button" data-bind="click:submit,text:isSubmitting()?'正在下注中...':'立即下注'"></button>
+                    <span>总注数 <b data-bind="text:count"></b>，</span>
+                    <span>总投注金额 <b data-bind="text:isAmountMode()?totalAmount:(count()*amount()).toFixed(4)-0"></b></span>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <br />
+</div>

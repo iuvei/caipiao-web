@@ -1,0 +1,101 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+    	<!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+
+        <div class="userRight">
+            <div class="userTitle">设置密保问题</div>
+            <div class="userMain">
+            	<!--安全中心部分-->
+                <form class="form-horizontal" action="{:U('Portal/User/setQuestion')}" method="post">
+                <ul class="submitContent setQue">
+                	<li>
+                    	<span>问题一：</span>
+                        <select name="wt1" class="que bankSel" required>
+                            <option value="您的小学班主任是谁？">您的小学班主任是谁？</option>
+                            <option value="您的初中班主任是谁？">您的初中班主任是谁？</option>
+                            <option value="您的高中班主任是谁？">您的高中班主任是谁？</option>
+                            <option value="您最最喜欢的人是谁？">您最最喜欢的人是谁？</option>
+                            <option value="您喜欢的宠物叫什么？">您喜欢的宠物叫什么？</option>
+                            <option value="您的出生地点在哪里？">您的出生地点在哪里？</option>
+                            <option value="您配偶的姓名叫什么？">您配偶的姓名叫什么？</option>
+                            <option value="您爷爷的姓名叫什么？">您爷爷的姓名叫什么？</option>
+                            <option value="您爸爸的姓名叫什么？">您爸爸的姓名叫什么？</option>
+                            <option value="您妈妈的姓名叫什么？">您妈妈的姓名叫什么？</option>
+                        </select>
+                    </li>
+                    <li>
+                    	<span>答案：</span>
+                        <input type="text" name="daan1" class="userInput" required>
+                    </li>
+                    <li>
+                    	<span>问题二：</span>
+                        <select name="wt2" class="que bankSel" required>
+                            <option value="您的小学班主任是谁？">您的小学班主任是谁？</option>
+                            <option value="您的初中班主任是谁？">您的初中班主任是谁？</option>
+                            <option value="您的高中班主任是谁？">您的高中班主任是谁？</option>
+                            <option value="您最最喜欢的人是谁？">您最最喜欢的人是谁？</option>
+                            <option value="您喜欢的宠物叫什么？">您喜欢的宠物叫什么？</option>
+                            <option value="您的出生地点在哪里？">您的出生地点在哪里？</option>
+                            <option value="您配偶的姓名叫什么？">您配偶的姓名叫什么？</option>
+                            <option value="您爷爷的姓名叫什么？">您爷爷的姓名叫什么？</option>
+                            <option value="您爸爸的姓名叫什么？">您爸爸的姓名叫什么？</option>
+                            <option value="您妈妈的姓名叫什么？">您妈妈的姓名叫什么？</option>
+                        </select>
+                    </li>
+                    <li>
+                    	<span>答案：</span>
+                        <input type="text" name="daan2" class="userInput" required>
+                    </li>
+                    <li>
+                    	<span>问题三：</span>
+                        <select name="wt3" class="que bankSel" required>
+                            <option value="您的小学班主任是谁？">您的小学班主任是谁？</option>
+                            <option value="您的初中班主任是谁？">您的初中班主任是谁？</option>
+                            <option value="您的高中班主任是谁？">您的高中班主任是谁？</option>
+                            <option value="您最最喜欢的人是谁？">您最最喜欢的人是谁？</option>
+                            <option value="您喜欢的宠物叫什么？">您喜欢的宠物叫什么？</option>
+                            <option value="您的出生地点在哪里？">您的出生地点在哪里？</option>
+                            <option value="您配偶的姓名叫什么？">您配偶的姓名叫什么？</option>
+                            <option value="您爷爷的姓名叫什么？">您爷爷的姓名叫什么？</option>
+                            <option value="您爸爸的姓名叫什么？">您爸爸的姓名叫什么？</option>
+                            <option value="您妈妈的姓名叫什么？">您妈妈的姓名叫什么？</option>
+                        </select>
+                    </li>
+                    <li>
+                    	<span>答案：</span>
+                        <input type="text" name="daan3" class="userInput" required>
+                    </li>
+                    <li>
+                        <span></span>
+                        <input type="submit" class="mainColorBtn ClickShade pwdBtn" value="保存" />
+                    </li>
+                </ul>
+                </form>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

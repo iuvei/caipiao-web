@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/app.css">
+<script src="__TMPL__Public/bifa/js/jquery-1.11.1.min.js"></script>
+<title>{$site_name}</title>
+</head>
+
+<body>
+<div class="chartContent Trend_chart">
+
+
+<div  class="select-section clearfix"><div  class="select-function"> </div> <div  id="select_lottery"><h3  class="select-title">彩种：{$post.title}</h3> <ul  class="select-list"><li  class="current"><a >基本走势</a></li></ul></div> </div>
+
+
+<div  class="chart_control_cont"><div  class="title">基本走势图</div> <div  class="function"><label  for="trend" class="label" style="display: none;"><input  name="trend" type="checkbox">走势</label></div> <div  id="periods-data" class="time">
+
+<a  href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'30'))}" class="<if condition="$_GET[page] eq 30">fb</if>">近30期</a> 
+<a  href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'50'))}" class="<if condition="$_GET[page] eq 50">fb</if>">近50期</a> 
+<a  href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'200'))}" class="<if condition="$_GET[page] eq 200">fb</if>">近200期</a>
+
+</div></div>
+    <div class="clearfix"></div>
+    <div class="chart-section">
+    <table class="chart-table" cellspacing="0" cellpadding="0" width="100%">
+        <thead class="thead">
+        <tr  class="title-text">
+            <th  rowspan="2" colspan="3" class="border-bottom border-right">期号</th> 
+            <th  colspan="3" rowspan="2" class="border-right border-bottom">开奖号码</th> 
+            <th  colspan="13" class="border-right">第一位</th>
+            <th  colspan="13" class="border-right">第二位</th>
+            <th  colspan="13" class="border-right">第三位</th>
+            <th  colspan="13" class="border-right">第四位</th>
+            <th  colspan="13" class="border-right">第五位</th>
+            <th  colspan="13" class="border-right">号码分布</th>
+            <th  colspan="3" rowspan="2" class="border-right border-bottom">单双比</th>
+            <th  colspan="3" rowspan="2" class="border-bottom">中位数</th>
+        </tr>
+        <tr  class="title-number"><th  class="ball-none border-bottom-header"></th> <th  class="border-bottom-header"><i  class="ball-noraml">1</i></th><th  class="border-bottom-header"><i  class="ball-noraml">2</i></th><th  class="border-bottom-header"><i  class="ball-noraml">3</i></th><th  class="border-bottom-header"><i  class="ball-noraml">4</i></th><th  class="border-bottom-header"><i  class="ball-noraml">5</i></th><th  class="border-bottom-header"><i  class="ball-noraml">6</i></th><th  class="border-bottom-header"><i  class="ball-noraml">7</i></th><th  class="border-bottom-header"><i  class="ball-noraml">8</i></th><th  class="border-bottom-header"><i  class="ball-noraml">9</i></th><th  class="border-bottom-header"><i  class="ball-noraml">10</i></th><th  class="border-bottom-header"><i  class="ball-noraml">11</i></th> <th  class="ball-none border-bottom-header border-right"></th><th  class="ball-none border-bottom-header"></th> <th  class="border-bottom-header"><i  class="ball-noraml">1</i></th><th  class="border-bottom-header"><i  class="ball-noraml">2</i></th><th  class="border-bottom-header"><i  class="ball-noraml">3</i></th><th  class="border-bottom-header"><i  class="ball-noraml">4</i></th><th  class="border-bottom-header"><i  class="ball-noraml">5</i></th><th  class="border-bottom-header"><i  class="ball-noraml">6</i></th><th  class="border-bottom-header"><i  class="ball-noraml">7</i></th><th  class="border-bottom-header"><i  class="ball-noraml">8</i></th><th  class="border-bottom-header"><i  class="ball-noraml">9</i></th><th  class="border-bottom-header"><i  class="ball-noraml">10</i></th><th  class="border-bottom-header"><i  class="ball-noraml">11</i></th> <th  class="ball-none border-bottom-header border-right"></th><th  class="ball-none border-bottom-header"></th> <th  class="border-bottom-header"><i  class="ball-noraml">1</i></th><th  class="border-bottom-header"><i  class="ball-noraml">2</i></th><th  class="border-bottom-header"><i  class="ball-noraml">3</i></th><th  class="border-bottom-header"><i  class="ball-noraml">4</i></th><th  class="border-bottom-header"><i  class="ball-noraml">5</i></th><th  class="border-bottom-header"><i  class="ball-noraml">6</i></th><th  class="border-bottom-header"><i  class="ball-noraml">7</i></th><th  class="border-bottom-header"><i  class="ball-noraml">8</i></th><th  class="border-bottom-header"><i  class="ball-noraml">9</i></th><th  class="border-bottom-header"><i  class="ball-noraml">10</i></th><th  class="border-bottom-header"><i  class="ball-noraml">11</i></th> <th  class="ball-none border-bottom-header border-right"></th><th  class="ball-none border-bottom-header"></th> <th  class="border-bottom-header"><i  class="ball-noraml">1</i></th><th  class="border-bottom-header"><i  class="ball-noraml">2</i></th><th  class="border-bottom-header"><i  class="ball-noraml">3</i></th><th  class="border-bottom-header"><i  class="ball-noraml">4</i></th><th  class="border-bottom-header"><i  class="ball-noraml">5</i></th><th  class="border-bottom-header"><i  class="ball-noraml">6</i></th><th  class="border-bottom-header"><i  class="ball-noraml">7</i></th><th  class="border-bottom-header"><i  class="ball-noraml">8</i></th><th  class="border-bottom-header"><i  class="ball-noraml">9</i></th><th  class="border-bottom-header"><i  class="ball-noraml">10</i></th><th  class="border-bottom-header"><i  class="ball-noraml">11</i></th> <th  class="ball-none border-bottom-header border-right"></th><th  class="ball-none border-bottom-header"></th> <th  class="border-bottom-header"><i  class="ball-noraml">1</i></th><th  class="border-bottom-header"><i  class="ball-noraml">2</i></th><th  class="border-bottom-header"><i  class="ball-noraml">3</i></th><th  class="border-bottom-header"><i  class="ball-noraml">4</i></th><th  class="border-bottom-header"><i  class="ball-noraml">5</i></th><th  class="border-bottom-header"><i  class="ball-noraml">6</i></th><th  class="border-bottom-header"><i  class="ball-noraml">7</i></th><th  class="border-bottom-header"><i  class="ball-noraml">8</i></th><th  class="border-bottom-header"><i  class="ball-noraml">9</i></th><th  class="border-bottom-header"><i  class="ball-noraml">10</i></th><th  class="border-bottom-header"><i  class="ball-noraml">11</i></th> <th  class="ball-none border-bottom-header border-right"></th><th  class="ball-none border-bottom-header"></th> <th  class="border-bottom-header"><i  class="ball-noraml">1</i></th><th  class="border-bottom-header"><i  class="ball-noraml">2</i></th><th  class="border-bottom-header"><i  class="ball-noraml">3</i></th><th  class="border-bottom-header"><i  class="ball-noraml">4</i></th><th  class="border-bottom-header"><i  class="ball-noraml">5</i></th><th  class="border-bottom-header"><i  class="ball-noraml">6</i></th><th  class="border-bottom-header"><i  class="ball-noraml">7</i></th><th  class="border-bottom-header"><i  class="ball-noraml">8</i></th><th  class="border-bottom-header"><i  class="ball-noraml">9</i></th><th  class="border-bottom-header"><i  class="ball-noraml">10</i></th><th  class="border-bottom-header"><i  class="ball-noraml">11</i></th> <th  class="ball-none border-bottom-header border-right"></th></tr>
+        </thead>
+        <tbody class="chart table-guides" id="J-chart-content">
+            <foreach name="list" item="one">
+                <php>
+                    $num=explode(',',$one[data]);
+                    $dan=0;
+                    $shuang=0;
+                </php>
+                <tr>
+                    <td  class="ball-none"></td> 
+                    <td  class="issue-numbers">{$one.number}</td> 
+                    <td  class="ball-none border-right"></td> 
+                    <td  class="ball-none"></td> 
+                    <td  class="">
+                    <span  class="lottery-numbers">{$one.data}</span>
+                    </td> 
+                    <foreach name="num" item="two">
+                    <td  class="ball-none border-right"></td> 
+                    <td  class="ball-none"></td>
+                    <php>
+                        if($two%2==0){
+                                $shuang=$shuang+1;
+                        }
+                        else{
+                                $dan=$dan+1;
+                        }
+                        for($i=1;$i<12;$i++){
+                            if($two==$i){
+                                 $class='openNo';
+                                 $sj=$i;       
+                            }
+                            else{
+                                $class='';
+                                $sj='';
+                            }                    
+                    </php> 
+                    <td  class=""><i  class="ball-noraml {$class}">{$sj}</i></td>
+                    <php>
+                        }                   
+                    </php> 
+                    </foreach> 
+                    <td  class="ball-none border-right"></td>
+                    <td  class="ball-none"></td> 
+
+                    <php>
+                        for($i=1;$i<12;$i++){
+                            if($i==$num[0]||$i==$num[1]||$i==$num[2]||$i==$num[3]||$i==$num[4]){
+                                 $class='openNo-1';
+                                 $sj=$i;       
+                            }
+                            else{
+                                $class='';
+                                $sj='';
+                            }                    
+                    </php> 
+                    <td  class=""><i  class="ball-noraml {$class}">{$sj}</i></td>
+                     <php>
+                        }                   
+                    </php>
+                    <td  class="ball-none border-right"></td>
+                    <td  colspan="3" class="ball-none _bili border-right">
+                        <i  class="ball-noraml">{$dan}:{$shuang}</i></td> 
+                    <td  class="ball-none"></td> 
+                    <php>
+                        asort($num);
+                    </php>
+                    <td  class=""><i  class="ball-noraml">{$num[2]}</i></td> 
+                    <td  class="ball-none border-right"></td></tr>
+            </foreach>
+        </tbody>
+</table>
+</div>
+</div>
+<script>
+function toggleBox(){
+    var x =document.getElementById("toggleBoxData");
+    if($(x).is(':hidden')){
+        $(x).show();
+    }else{ 
+        $(x).hide();
+    }
+}
+</script>
+</body>
+</html>

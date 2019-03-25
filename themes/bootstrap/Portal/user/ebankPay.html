@@ -1,0 +1,197 @@
+                <php>
+                    $yin=M('pay_mode')->where(array('type'=>'0','state'=>'0'))->count();
+                    $ali=M('pay_mode')->where(array('type'=>'1','state'=>'0'))->count();
+                    $wei=M('pay_mode')->where(array('type'=>'2','state'=>'0'))->count();
+                    if($yin+$ali+$wei==0){
+                        echo '<script>alert("平台暂未开启任何支付通道");history.go(-1);</script>';
+                    }
+                    elseif($yin==0&&$ali!=0){
+                        echo '<script>location.href="alipay.html"</script>';
+                    }
+                    elseif($yin==0&&$wei!=0){
+                        echo '<script>location.href="wechatPay.html"</script>';
+                    }
+                </php>
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">我要充值</div>
+            <div class="userMain allmain">
+                <div class="newTab fix">
+                    <if condition="$yin gt 0">
+                    <a class="curr" href="ebankPay.html">银行转账</a>
+                    </if>
+                    <if condition="$ali gt 0">
+                    <a class="" href="alipay.html">支付宝充值</a>
+                    </if>
+                    <if condition="$wei gt 0">
+                    <a class="" href="wechatPay.html">微信支付</a>
+                    </if>
+                </div> 
+                <div id="isShow">
+                    <div class="stepBox">
+                        <em>1</em>
+                        <span>
+                            <b>请转账到以下银行账户：</b>
+                            单笔最低
+                            <ins>{$pay[bank_pay_min]}</ins>
+                            元，最高
+                            <ins>{$pay[bank_pay_max]}。</ins>
+                        </span>
+                        <ul class="bankStyle">
+                            <li class="bankTable">
+                                <ins>收款银行：</ins>
+                                <ins>
+                                   
+                                    <div class="bankblockList fix" id="zzbanklist">
+                                         <foreach name="list" item="one">
+                                        <div class="rb <if condition="$key eq 0">rb_active</if>" data-username="{$one.username}" data-account="{$one.account}" data-name="{$one.name}" data-id="{$one.id}" onclick="$('#zzbanklist .rb').removeClass('rb_active');xz($(this));">
+                                            <i></i>
+                                            <span  checked="checked" style="padding-left: 0px ; "><img src="{$one.logo}" style="padding-top: 3px;" width="20" height="23"> {$one.name}</span>
+                                        </div>
+                                    </foreach>
+                                    </div>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins>银行账户：</ins>
+                                <ins>
+                                    <input class="code" type="text" value="{$list[0][username]}" id="data-username" readonly>
+                                    <a class="copy_btn"  readonly onClick="copyUrl2($('#data-username'))">复制</a>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins class="leftIn">银行账号：</ins>
+                                <ins>
+                                    <input class="code" type="text" value="{$list[0][account]}" id="data-account" readonly>
+                                    <a class="copy_btn" onClick="copyUrl2($('#data-account'))" >复制</a>
+                                </ins>
+                            </li>
+                            <li>
+                                <ins class="leftIn">开户支行：</ins>
+                                <ins>
+                                    <input class="code" type="text" value="{$list[0][name]}" id="data-name" readonly>
+                                    <a class="copy_btn" onClick="copyUrl2($('#data-name'))" >复制</a>
+                                </ins>
+                            </li>
+                        </ul>
+                    </div>
+                    <script>
+                    function xz(obj){
+                        obj.addClass('rb_active');
+                        $('#data-username').val(obj.attr('data-username'));
+                        $('#data-account').val(obj.attr('data-account'));
+                        $('#data-name').val(obj.attr('data-name'));
+                        $('#pay_mode_id').val(obj.attr('data-id'));
+
+                    }
+                    </script>
+                    <script type="text/javascript">
+                    function copyUrl2(Url2)
+                    {
+                    
+                    Url2.select(); // 选择对象
+                    document.execCommand("Copy"); // 执行浏览器复制命令
+                    alert("已复制好，可贴粘。");
+                    }
+                    </script>
+                   
+                    <div class="stepBox">
+                        <em>2</em>
+                        <span>
+                            <b>请认真填写您的转账信息：</b>
+                            请务必转账后再提交订单，否则无法及时查到您的款项！
+                        </span>
+                         <form method="post"   action="{:U('Portal/User/ebankPay')}">
+                        <ul class="stepBoxInput2">
+                            <li>
+                                <ins>
+                                    <span>充值金额：</span>
+                                    <input class="userInput" tag="充值金额" type="number" name="number" onchange="jine($(this))" required>
+                                </ins>
+                                <ins>
+                                    <span>您的银行账号：</span>
+                                    <input class="userInput" tag="银行账号" type="text" name="bank" required>
+                                </ins>
+                            </li>
+                             <li>
+                                <ins>
+                                    <span>户主名称：&nbsp;&nbsp;</span>
+                                    <input class="userInput" tag="户主名称" type="text" name="remarks" required>
+                                </ins>
+                                
+                            </li>
+
+                        </ul>
+                        <ul>
+                            <h6>
+                                <input type="hidden" value="{$list[0][id]}" name="pay_mode_id" id="pay_mode_id">
+                                <input class="submitBtn" type="submit" value="提交充值订单" style="border:none">
+                                <if condition="$istixing eq 1" >
+                                <input class="submitBtn" type="button" onclick="tixing()"  value="提醒管理员" style="border:none">
+                                </if>
+                            </h6>
+                        </ul>
+                        </form>
+                        <script type="text/javascript">
+                        function jine(obj){
+                            var jine=obj.val();
+                            if(jine<{$pay[bank_pay_min]} || jine>{$pay[bank_pay_max]}){
+                                alert('单笔充值最低 '+{$pay[bank_pay_min]}+' 元，最高 '+{$pay[bank_pay_max]}+'。');
+                            }
+                        }
+                        </script>
+                        <div class="userTip">
+                            <p>
+                                ※ 温馨提示：<br>
+                                1、请转账完成后再提交充值订单。
+                                <br>
+                                2、转账1笔提交1次，请勿重复提交订单。
+                                <br>
+                                3、请正确填写您的户名和充值金额。
+                                <br>
+                                4、转帐完成后请保留单据作为核对证明。
+                                <br>
+                                5、打款确认时间{$pay[user_play_wait_time]}分钟之后，请刷新账号余额。
+                                <br>如果没有到账或者账户余额错误，请联系QQ：{$pay[user_play_wait_qq]}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<script>
+    function tixing(){
+        var url = "/index.php/Portal/User/tixing/type/congzi";
+        $.get(url,function(data){
+                alert(data);
+                location.replace(location.href);
+        })
+        
+    }
+</script>
+</body>
+</html>

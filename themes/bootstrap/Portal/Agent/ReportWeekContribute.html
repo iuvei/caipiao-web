@@ -1,0 +1,70 @@
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="tableborder" width="100%" style="table-layout: fixed">
+
+    <tr class="header">
+        <td colspan="7" data-bind="attr:{Colspan:isClickContrbution()?8:7}">
+            
+        周贡献度  &nbsp;&nbsp;
+            时间范围：
+            
+            <input type="text" id="staDt" name="staDt" data-bind="textinput:StartDate" onfocus="WdatePicker({ readOnly: true})" style="width:100px;">~
+            <input type="text" id="endDt" name="endDt" data-bind="textinput:EndDate" onfocus="WdatePicker({readOnly: true})" style="width:100px;">
+            &nbsp;&nbsp;
+            <input class="button" type="submit" name="addsubmit" data-bind="click:Setday.LastWeek" value="上 周">&nbsp;&nbsp;
+            <input class="button" type="submit" name="addsubmit" data-bind="click:Setday.ThisWeek" value="本 周">&nbsp;&nbsp;
+            <input class="button" type="submit" name="addsubmit" data-bind="click:Seach" value="查 询">
+    </td>
+        
+            
+            
+
+        
+    </tr>
+
+    <tr class="reportTop">
+                
+        <td data-bind="text:TimeOrPeriods()?'日期':NextName"></td>
+       
+        <td data-bind="text:td3()">贡献金额</td>
+        <td data-bind="text:td4()">贡献总金额</td>
+        <td data-bind="text:td5()">占成总盈亏</td>
+        <td data-bind="text:td6()">百分比贡献盈亏</td>
+        <td data-bind="text:td7()">实际贡献盈亏</td>
+        <!--ko if:!(CompanyType()==0||CompanyType()==1)-->
+        <td data-bind="text:td8()">贡献度</td>
+        <!--/ko-->
+        <td data-bind="text:td9()">贡献度</td>
+    </tr>
+    <tbody data-bind="foreach:list">
+        <tr class="hover">
+            
+            <td style="cursor:pointer" data-bind="text:$parent.TimeOrPeriods()?PeriodsTime:LoginName+'('+($data.AgentLevel===-2?'会员':NickName) +')',click:$parent.NextLevel"></td>
+
+            <td data-bind="text:Math.ceil(PercentageAmt)">贡献金额</td>
+            <td data-bind="text:Math.ceil(PercentageTotal)">总金额</td>
+            <td data-bind="text:Math.ceil(WinLossTotal)">总盈亏</td>
+            <td data-bind="text:Math.ceil(PercentRatioWL) - 0">百分比贡献盈亏</td>
+            <td data-bind="text:Math.ceil(WinLoss)">实际贡献盈亏</td>
+            <!--ko if:!($parent.CompanyType()==0||$parent.CompanyType()==1)-->
+            <td data-bind="text:Math.ceil(Percents) - 0"></td>
+            <!--/ko-->
+            <td data-bind="text:Contribute.toFixed(2) - 0+'%'">贡献度</td>
+        </tr>
+    </tbody>
+    <tr class="reportFooter">
+        <td style="text-align:center">合计</td>
+        
+        <td data-bind="text:CountPercentageAmt"></td>
+        <td ></td>
+        <td ></td>
+        <td data-bind="text:CountPercentWinLossAndCountibution"></td>
+        <td data-bind="text:CountWinLoss"></td>
+        <!--ko if:!(CompanyType()==0||CompanyType()==1)-->
+        <td></td> 
+        <!--/ko-->
+        <td data-bind="text:CountContibution"></td> 
+    </tr>
+
+</table>
+<center> <!--ko if:isBack--> <input class="button" type="submit" data-bind="click:GoBack" value=" 返回" /><!--/ko--></center>

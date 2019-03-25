@@ -1,0 +1,144 @@
+<?php if (!defined('THINK_PATH')) exit();?><script src="/SSCMember/scripts/jquery-1.8.2.js"></script> 
+<div class="table-out"> 
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td width="49.5%" style="vertical-align:top;">
+                    <table class="tablecommon table-border" width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tr class="title-left">
+                            <td colspan="2">会员资料</td>
+                        </tr>
+                        <tr>
+                            <td width ="49.5%">账　　号:</td>
+                            <td width="49.5%"><span id="MemberLoginNo"></span></td>
+                        </tr>
+                        <tr>
+                            <td>昵　　称:</td>
+                            <td><span id="MemberName"></span></td>
+                        </tr>
+                        <tr>
+                            <td>信用额度:</td>
+                            <td><span id="MemberDefaultCredit"></span></td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="1%">&#12288;</td>
+                <td width="49.5%" style="vertical-align:top;">
+
+                    <table class="tablecommon table-border" width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tr class="title-left">
+                            <td colspan="6">录码模式</td>
+                        </tr>
+                        <tr>
+                            <td width="25%">自动:</td> 
+                            <td width="8.2%"><input type="radio" name="IsEnter" data-bind="checked:IsEnter,value:false" /></td>
+                            <td width="25%">小票打印:</td>
+                            <td width="8.2%"><input type="radio" name="IsShowLottory" data-bind="checked:IsShowLottory,value:false" /> </td>
+                            <td width="25%">实际赔率:</td>
+                            <td width="*"><input type="radio" name="IsOddsUse" data-bind="checked:IsOddsUse,value:false" /></td>
+                        </tr>
+                        <tr>
+                            <td>回车:</td>
+                            <td><input type="radio" name="IsEnter" data-bind="checked:IsEnter,value:true" /></td>
+                            <td>显示彩种:</td>
+                            <td><input type="radio" name="IsShowLottory" checked data-bind="checked:IsShowLottory,value:true" /> </td>
+                            <td>转换赔率:</td>
+                            <td><input type="radio" name="IsOddsUse"     checked data-bind="checked:IsOddsUse,value:true"/> </td>
+                        </tr>
+                        <tr>
+                            <td>&#12288;</td>
+                            <td>&#12288;</td>
+                            <td>&#12288;</td>
+                            <td>&#12288;</td>
+                            <td>&#12288;</td>
+                            <td>&#12288;</td>
+                        </tr>
+                    </table>
+
+
+                </td>
+            </tr>
+        </table><br />
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" style="font-size:14px;">
+            <tr>
+                <td align="center"><button type="button" class="button" name="editsubmit" id="editsubmit" value="true">提交</button></td>
+            </tr>
+            <tr>
+                <td>&#12288;<span class="red"> 1、小票打印请使用系统自带浏览器</span><img src="/SSCMember/Images/Default/Main/ie7.png" /></td>
+            </tr>
+            <tr>
+                <td>&#12288;<span class="red"> 2、提示:+号代表x号。</span></td>
+            </tr>
+            <tr>
+                <td>&#12288;<span class="red"> 3、小票打印处，增加了分页，每页显示500笔。</span></td>
+            </tr>
+            <tr>
+                <td>&#12288;<span class="red"> 4、小票打印处内容超过500笔，再次下单后，系统会自动清空之前小票打印内容，请注意使用。 </span></td>
+            </tr>
+        </table><br />
+    
+
+    <table class="tablecommon" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td style="padding:0;border:none;">
+                    <form id="BetTypeSettingForm" method="post">
+                        <input type="hidden" name="formhash" value="d167814a" />
+                        <input type="hidden" name="g_levelid_parent_uid" value="0" />
+                        <input type="hidden" name="g_levelid" value="1" />
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder ">
+                            <thead>
+                                <tr class="title border-w">
+                                    <td width="5%">&#12288;</td>
+                                    <td width="10%">类　　别</td>
+                                    <td width="8%">最小下注</td>
+                                    <td width="10%">赔率上限(多个用/分开)</td>
+                                    <td width="8%">单注上限</td>
+                                    <td width="9%">单项上限</td>
+                                    <td width="8%">交易回水</td>
+                                    <td width="9%" style="border-right:none;">赔率</td>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach:list">
+                                <tr data-bind="if:title" class="hover">
+                                    <td>&#12288;</td>
+                                    <td class="blue" data-bind="text:title"></td>
+                                    <td>&#12288;</td>
+                                    <td>&#12288;</td>
+                                    <td>&#12288;</td>
+                                    <td>&#12288;</td>
+                                    <td>&#12288;</td>
+                                    <td>&#12288;</td>
+                                </tr>
+                                <!-- ko foreach:list -->
+                                <tr class="hover">
+                                    <td>&#12288;</td>
+                                    <td data-bind="text:BetTypeName"></td>
+                                    <td class="lowest" data-bind="text:MinLimitBetAmount">
+                                    </td>
+                                    <td>
+                                        <label class="LimitOdds" style="width:auto;" data-bind="text:$parents[1].join(PLimitOdds1-0,PLimitOdds2-0,PLimitOdds3-0,PLimitOdds4-0)" title="赔率上限" />
+                                    </td>
+                                    <td class="single-upper" data-bind="text:MaxLimitSigleBet">                                     
+                                    </td>
+                                    <td class="Indivi-upper" data-bind="text:MaxLimitItemBet">
+                                    </td>
+                                    <td>
+                                        <select class="form-control" title="交易回水" id="ratioLen" data-bind="options:CommissionList,value:CommissionVal,event:{change:$parents[1].changeVal.bind($data,$parent)}"></select>
+
+                                    </td>
+                                    <td>
+                                        
+                                        <label data-bind="text:$parents[1].join(Odds1(),Odds2(),Odds3(),Odds4())"></label>
+                                    </td>
+
+                                </tr>
+                                <!-- /ko -->
+                            </tbody>
+                        </table><br />
+                        
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

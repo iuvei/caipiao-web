@@ -1,0 +1,132 @@
+
+ 
+<head>
+     <title></title>
+    
+</head>
+<body leftmargin="10" topmargin="10">
+    <div id="append_parent"></div>
+    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td>
+                   
+                    <style media="print">
+                        .Noprint {
+                            display: none;
+                        }
+                    </style> 
+                   <table id="LineOfCredit" width="100%" border="0" cellpadding="0" cellspacing="0" style="display:none" class="tableborder">
+                        <tbody>
+                            <tr class="header">
+                                <td>
+                                    <div style="float:left; margin-left:0px; padding-top:8px">
+                                        <a href="#">信息提示</a>
+                                    </div>
+                                    <div style="float:right; margin-right:4px; padding-bottom:9px">
+                                        <a href="#">
+                                            <img id="menuimg_tip" src="/SSCCompany/Content/Default/Images/menu_reduce.png" border="0" />
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody id="menu_tip" >
+                            
+                        </tbody>
+                    </table>
+                    <form method="post" data-bind="submit:sub">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed;">
+                            <tr><td><input type="hidden" name="formhash" value="d167814a" /></td></tr>
+                        </table>
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+                                <tbody data-bind="foreach:list" id="SuperCompany" title="总公司信息">
+                                    <tr class="header">
+                                        <td colspan="4">基本资料</td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td class="altbg1">账　　号:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:LoginName" id="SuperCompanyLoginName" /> 
+                                            
+                                            <input type="hidden" data-bind="textinput:CompanyType" id="CompanyType" disabled="" />
+                                            <input type="hidden" data-bind="textinput:CompanyID" id="CompanyId" disabled="" />
+                                        </td>
+                                        <td class="altbg1">昵    称:</td>
+                                        <td align="right" class="altbg2"><input type="text" data-bind="textinput:NickName" id="SuperCompanyNickName" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="altbg1">大股东数量:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:ChildCount"></label>
+                                        
+                                        </td>
+
+                                        <td class="altbg1">账户状态:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:CompanyStatus==0?'启用':CompanyStatus==1?'锁住':CompanyStatus==2?'禁用':'删除'"></label>                                       
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="Company" data-bind="foreach:list" title="大股东">
+                                    <tr>
+                                        <td class="altbg1">账　　号:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:LoginName" id="CompanyLoginName"></label>                                            
+                                        </td>
+                                        <td class="altbg1">昵    称:</td>
+                                        <td align="right" class="altbg2"><input type="text" data-bind="textinput:NickName" id="CompanyNickName" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="altbg1">占成 :</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:Ratio-0"></label>                                       
+                                        </td>
+                                        <td class="altbg1">账户状态:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:CompanyStatus==0?'启用':CompanyStatus==1?'锁住':CompanyStatus==2?'禁用':'删除'"></label>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+
+                                <tbody id="Agent" data-bind="foreach:list" title="代理">
+                                    <tr>
+                                        <td class="altbg1">账　　号:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:LoginName"  id="AgentLoginName"></label>                                            
+                                        </td>
+                                        <td class="altbg1">昵    称:</td>
+                                        <td align="right" class="altbg2"><input type="text" data-bind="textinput:NickName" id="AgentNickName" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="altbg1">占成 :</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:Ratio-0"></label> </td>
+                                        <td class="altbg1">账户状态:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind="text:CompanyStatus==0?'启用':CompanyStatus==1?'锁住':CompanyStatus==2?'禁用':'删除'"></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="altbg1">信用额度:</td>
+                                        <td align="right" class="altbg2">
+                                            <label data-bind ="text:DefaultCredit-0"></label>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                     
+                                        </td>
+                                    </tr>
+                                </tbody>               
+                        </table>
+                        <br />
+                        <center>
+                            <input class="button" type="submit" name="addsubmit" value="提 交"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </center>
+                        <br />
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>

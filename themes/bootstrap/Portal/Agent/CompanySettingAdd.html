@@ -1,0 +1,78 @@
+
+
+<form method="post" enctype="multipart/form-data" data-bind="submit:sub">
+    <div class="pager_wrap">
+        <div class="pager_tool"></div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+            <thead class="header">
+                <tr>
+                    <th colspan="4">&nbsp;&nbsp;&nbsp;基本资料</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="altbg1">账号</td>
+                    <td class="ch"><input type="text" id="LoginName" name="LoginName" maxlength="12" data-bind="textinput:LoginName,disable:IsEdit" placeholder="长度为3-12位"><span id="ShowLoginName" data-bind="text:LoginName,visible:IsEdit"></span><span id="LoginTip" class="Remarkstyle" style="color:red;">(账号只能是字母和数字，并由字母开头)</span></td>
+                    <td class="altbg1">昵称</td>
+                    <td class="ch"><input type="text" name="NickName" placeholder="1-20个字符" maxlength="20" data-bind="textinput:NickName"><span class="Remarkstyle">(1-20个字符)</span></td>
+                </tr>
+                <tr id="trPass">
+                    <td class="altbg1">密码</td>
+                    <td class="ch"><input type="password" name="LoginPwd" maxlength="15" placeholder="8-15字符" data-bind="textinput:LoginPwd"><span class="Remarkstyle" style="color:red;">(必须由数字及字母组成,密码区分大小写,8-15个字符)</span></td>
+                    <td class="altbg1">高级密码</td>
+                    <td class="ch"><input type="password" name="AdvancePwd" maxlength="15" placeholder="8-15字符" data-bind="textinput:AdvancePwd"><span class="Remarkstyle" style="color:red;">(必须由数字及字母组成,密码区分大小写,8-15个字符)</span></td>
+                </tr>
+
+                <tr>
+                    <td class="altbg1" style="display:none">福利(‰)</td>
+                    <td class="ch" style="display:none"><input type="text" class="change" name="Welfare" data-bind="textinput:Welfare" placeholder="0-1000" title="0-1000" maxlength="4" onkeyup="value=value.replace(/[^\d.]/g,'')" value="0"><span class="Remarkstyle">(0-1000)</span></td>
+                    <td class="altbg1">占成(%)</td>
+                    <td align="right" class="ch">
+                        <select class="form-control" id="ratioLen" data-bind="options:rationlist,optionsText:'RatioName',optionsValue:'Ratio',value:CompanySettingRatio"></select>
+                        
+                        
+                    </td>
+
+                    <td class="altbg1">用户状态</td>
+                    <td>
+                        <span class="control-box">
+                            <label><input type="radio" name="CompanyStatus" checked data-bind="checked:CompanyStatus" value="1" />启用</label>
+                        </span>
+                        <span class="control-box">
+                            <label><input type="radio" name="CompanyStatus" data-bind="checked:CompanyStatus" value="2" />禁用</label>
+                        </span>
+                        <span class="control-box">
+                            <label><input type="radio" name="CompanyStatus" data-bind="checked:CompanyStatus" value="3" />锁定</label>
+                        </span>
+
+                        
+                    </td>
+                    <td class="altbg1" style="display:none">帐户类型</td>
+                    <td style="display:none">
+                        <!--ko if:IsEdit-->
+                        <span data-bind="text:['信用账号','现金账号','现金信用账号'][0]"></span>
+                        <!--/ko-->
+                        <!--ko ifnot:IsEdit-->
+                        <select data-bind="value:CreditType">
+                            <option value="0">信用账号</option>
+                        </select>
+                        <!--/ko-->
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="altbg1">备注</td>
+                    <td colspan="3"><textarea name="Describe" data-bind="value:Describe,value:Describe" placeholder="输入0-50字符"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn_wrap clear" style="text-align:center;">
+            <input type="submit" id="BTSAVE"  class="btn" value="保存并返回">
+            <input type="submit" id="Next" class="btn" data-bind="click:Next.bind($data,true)" value="保存并下一步">
+            <input type="button" class="btn" data-bind="click:$root.view.bind($data,'/index.php/agent/CompanySetting/index','CompanySetting/index')" value="返回" />
+            <!--a href="#" class="btn" data-bind="submit:sub" ></a>
+        <a href="CompanyBasicSettings.html" class="btn">保存并下一步</a>
+        <a href="" class="btn">取消</a-->
+        </div>
+    </div>
+</form>

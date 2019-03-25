@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/css/app.css">
+<script src="__TMPL__Public/bifa/js/jquery-1.11.1.min.js"></script>
+<title>{$site_name}</title>
+</head>
+
+<body>
+<div class="chartContent Trend_chart">
+
+
+<div  class="select-section clearfix"><div  class="select-function"> </div> <div  id="select_lottery"><h3  class="select-title">彩种：{$post.title}</h3> <ul  class="select-list"><li  class="current"><a >基本走势</a></li></ul></div> </div>
+
+
+<div  class="chart_control_cont"><div  class="title">基本走势图</div> <div  class="function"><label  for="trend" class="label" style="display: none;"><input  name="trend" type="checkbox">走势</label></div> <div  id="periods-data" class="time">
+
+<a  href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'30'))}" class="<if condition="$_GET[page] eq 30">fb</if>">近30期</a> 
+<a  href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'50'))}" class="<if condition="$_GET[page] eq 50">fb</if>">近50期</a> 
+<a  href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'200'))}" class="<if condition="$_GET[page] eq 200">fb</if>">近200期</a>
+
+</div></div>
+
+    <!--<div class="chartbtnContent" id="toggleBoxData">
+    	<ul>
+        	<li>基本走势图</li>
+            <li><a href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'30'))}">近30期</a></li>
+            <li><a href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'50'))}">近50期</a></li>
+            <li><a href="{:U('Portal/order/tender_chart',array('id'=>$post[id],'page'=>'200'))}">近200期</a></li>
+        </ul>
+    </div>-->
+    <div class="clearfix"></div>
+    <div class="chart-section">
+    <table class="chart-table" cellspacing="0" cellpadding="0" width="100%">
+    	<thead class="thead">
+        <tr class="title-text">
+        <th rowspan="2" colspan="3" class="border-bottom border-right">期号</th> 
+        <th  colspan="3" rowspan="2" class="border-right border-bottom">开奖号码</th> 
+        <th  colspan="8" class="border-right">号码走势</th>
+        <th  colspan="18" class="border-right">和值</th>
+        <th  colspan="12" class="border-right border-bottom">和值组合形态</th>
+        <th  colspan="6" class="border-bottom">号码形态</th></tr> 
+        <tr  class="title-number">
+        <th  class="ball-none border-bottom-header"></th> 
+        <th  class="border-bottom-header"><i  class="ball-noraml">1</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">2</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">3</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">4</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">5</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">6</i></th> 
+        <th  class="ball-none border-bottom-header border-right"></th> 
+        <th  class="ball-none border-bottom-header"></th> 
+        <th  class="border-bottom-header"><i  class="ball-noraml">3</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">4</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">5</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">6</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">7</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">8</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">9</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">10</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">11</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">12</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">13</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">14</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">15</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">16</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">17</i></th>
+        <th  class="border-bottom-header"><i  class="ball-noraml">18</i></th> 
+        <th  class="ball-none border-bottom-header border-right"></th> 
+        <th  class="ball-none border-bottom-header"></th> 
+        <th  class="border-bottom-header"><i  class="ball-noraml hezhixingtai">小奇</i></th> 
+        <th  class="ball-none border-bottom-header border-right"></th>
+        <th  class="ball-none border-bottom-header"></th> 
+        <th  class="border-bottom-header"><i  class="ball-noraml hezhixingtai">小偶</i></th> 
+        <th  class="ball-none border-bottom-header border-right"></th>
+        <th  class="ball-none border-bottom-header"></th> 
+        <th  class="border-bottom-header"><i  class="ball-noraml hezhixingtai">大奇</i></th> 
+        <th  class="ball-none border-bottom-header border-right"></th>
+        <th  class="ball-none border-bottom-header"></th> 
+        <th  class="border-bottom-header"><i  class="ball-noraml hezhixingtai">大偶</i></th> 
+        <th  class="ball-none border-bottom-header border-right"></th> 
+        <th  class="border-bottom-header  border-right"><i  class="ball-noraml haomaxingtai">三同号</i></th>
+        <th  class="border-bottom-header  border-right"><i  class="ball-noraml haomaxingtai">三不同号</i></th>
+        <th  class="border-bottom-header  border-right"><i  class="ball-noraml haomaxingtai">三连号</i></th>
+        <th  class="border-bottom-header  border-right"><i  class="ball-noraml haomaxingtai">二同号(复)</i></th>
+        <th  class="border-bottom-header  border-right"><i  class="ball-noraml haomaxingtai">二同号(单)</i></th>
+        <th  class="border-bottom-header  border-right"><i  class="ball-noraml haomaxingtai">二不同号</i></th></tr>
+        </thead>
+        <tbody class="chart table-guides" id="J-chart-content">
+            <foreach name="list" item="one">
+        	<tr>
+            	<td class="ball-none"></td>
+                <td class="issue-numbers">{$one.number}</td>
+                <td class="ball-none border-right"></td>
+                
+                <td class="ball-none "></td>
+                <td class=""><span class="lottery-numbers">{$one.data}</span></td>
+                <td class="ball-none border-right"></td>
+                <td class="ball-none "></td>
+                <php>
+                    $num=explode(',',$one[data]);
+                    $cs=array_count_values($num);
+                    $hz=$num[0]+$num[1]+$num[2];
+                    for($i=1;$i<=6;$i++){
+                    if($cs[$i]){
+                        $class="KuaiSan_OpenNo";
+                        $class2="openNo-0";
+                        $sz=$i;
+                        if($cs[$i]>1){
+                            $sz=$sz.'<em class="chonghao">'.$cs[$i].'</em>';
+                        }
+                    }
+                    else{
+                        $class='';
+                        $class2="";
+                        $sz='';
+                    }
+                </php>
+                <td class="{$class}"><i class="ball-noraml {$class2}">{$sz}</i></td>
+                <php>
+                    }
+                </php>
+                <td class="ball-none border-right"></td>
+
+                <td class="ball-none"></td>
+
+                <php>
+                   for($i=3;$i<=18;$i++){
+                    if($i==$hz){
+                        $class="KuaiSan_OpenNo";
+                        $class2="openNo-0";
+                        $sz=$i;
+                    }
+                    else{
+                        $class='';
+                        $class2="";
+                        $sz='';
+                    }
+                </php>
+                    <td class="{$class}"><i class="ball-noraml {$class2}">{$sz}</i></td>
+                <php>
+                    }
+                </php>
+                <td class="ball-none border-right"></td>
+                <php>
+                    if(!($hz<=10 && $hz%2==1)){
+                </php>
+                <td class="ball-none"></td>
+                <td class=""><i class="ball-noraml hezhixingtai"></i></td>
+                <td class="ball-none border-right"></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td colspan="3" class="isSHow border-right"><i  class="ball-noraml hezhixingtai">小奇</i></td>
+                <php>
+                    }
+                    if(!($hz<=10 && $hz%2==0)){
+                </php>
+                <td class="ball-none"></td>
+                <td class=""><i class="ball-noraml hezhixingtai"></i></td>
+                <td class="ball-none border-right"></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td colspan="3" class="isSHow border-right"><i  class="ball-noraml hezhixingtai">小偶</i></td>
+                <php>
+                    }
+                    if(!($hz>10 && $hz%2==1)){
+                </php>
+                <td class="ball-none"></td>
+                <td class=""><i class="ball-noraml hezhixingtai"></i></td>
+                <td class="ball-none border-right"></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td colspan="3" class="isSHow border-right"><i  class="ball-noraml hezhixingtai">大奇</i></td>
+                <php>
+                    }
+                    if(!($hz>10 && $hz%2==0)){
+                </php>
+                <td class="ball-none"></td>
+                <td class=""><i class="ball-noraml hezhixingtai"></i></td>
+                <td class="ball-none border-right"></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td colspan="3" class="isSHow border-right"><i  class="ball-noraml hezhixingtai">大偶</i></td>
+                <php>
+                    }
+                    if($num[0]==$num[1] && $num[1]==$num[2]){
+                </php>
+                <td class="border-right isSHow"><i class="ball-noraml haomaxingtai">三同号</i></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td  class="border-right"><i class="ball-noraml haomaxingtai"></i></td>
+
+                <php>
+                    }
+                    if($num[0]!=$num[1] && $num[1]!=$num[2] && $num[0]!=$num[2]){
+                </php>
+                <td class="border-right isSHow"><i class="ball-noraml haomaxingtai">三不同号</i></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td  class="border-right"><i class="ball-noraml haomaxingtai"></i></td>
+
+
+                <php>
+                    }
+                    if($num[0]!=$num[1] && $num[1]!=$num[2] && $num[0]!=$num[2] && $num[0]-$num[2]<3 && $num[2]-$num[0]<3 && $num[1]-$num[0]<3 && $num[0]-$num[1]<3 && $num[2]-$num[1]<3 && $num[1]-$num[2]<3){
+                </php>
+                <td class="border-right isBaozi"><i class="ball-noraml haomaxingtai">三连号</i></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td class="border-right"><i class="ball-noraml haomaxingtai"></i></td>
+
+
+                <php>
+                    }
+                    if($num[0]==$num[1]||$num[0]==$num[2]||$num[1]==$num[2]){
+                </php>
+                <td class="border-right isHmxt"><i class="ball-noraml haomaxingtai">二同号(复)</i></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td  class="border-right"><i class="ball-noraml haomaxingtai"></i></td>
+
+                <php>
+                    }
+                    if($num[0]==$num[1]||$num[0]==$num[2]||$num[1]==$num[2]){
+                </php>
+                <td class="border-right isHmxt"><i class="ball-noraml haomaxingtai">二同号(单)</i></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td  class="border-right"><i class="ball-noraml haomaxingtai"></i></td>
+                
+
+                <php>
+                    }
+                if(!($num[0]==$num[1]&&$num[0]==$num[2]&&$num[1]==$num[2])){
+                </php>
+                <td class="border-right isHmxt"><i class="ball-noraml haomaxingtai">二不同号</i></td>
+                <php>
+                    }
+                    else{
+                </php>
+                <td  class="border-right"><i class="ball-noraml haomaxingtai"></i></td>
+                <php>
+                    }
+                </php> 
+            </tr>
+            </foreach>
+        </tbody>
+</table>
+</div>
+</div>
+<script>
+function toggleBox(){
+	var x =document.getElementById("toggleBoxData");
+	if($(x).is(':hidden')){
+		$(x).show();
+	}else{ 
+		$(x).hide();
+	}
+}
+</script>
+</body>
+</html>

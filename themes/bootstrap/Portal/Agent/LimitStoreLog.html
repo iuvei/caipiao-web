@@ -1,0 +1,46 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0" >
+    
+</table>
+<form method="post" action="http://fw5.b789b.com/index.php?action=settings&action=basic">
+    <input type="hidden" name="formhash" value="d167814a">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+        <tbody>
+            <tr class="header">
+                <td width="8%">操作账号</td>
+                <td width="60%">操作内容</td>
+                <td width="10%">操作时间</td>
+                <td width="8%">操作IP</td>
+            </tr>
+
+        </tbody>
+        <tbody data-bind="foreach:list">
+            <tr>
+                <td data-bind="text:LoginName"></td>
+                <!--ko if:DescribeCount-0<=1-->
+                <td data-bind="text:Describe"></td>
+                <!--/ko-->
+                <!--ko if:DescribeCount-0>1-->
+                <td>  <a data-bind="click:$parent.more" class="guide" style="border:none;cursor:pointer">更多...</a> </td>
+                <!--/ko-->
+                <td data-bind="text:CreateDt"></td>
+                <td data-bind="text:OperateIP"></td>
+            </tr>
+            <tr style="display:none">
+                <td colspan="10">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tbody data-bind="foreach:Describe">
+                            <tr data-bind="foreach:$data">
+                                <td data-bind="text:$data"> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <center>
+      
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <input class="button" type="button" name="button" value="返 回" data-bind="click:back,visible:isNewSubordinateClick()" />
+    </center>
+</form>

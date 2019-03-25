@@ -1,0 +1,38 @@
+
+
+.table td {
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.b_cen {
+    BACKGROUND-COLOR: #ffffff;
+    TEXT-ALIGN: center;
+}
+
+.b_tab {
+    PADDING-RIGHT: 2px;
+    PADDING-LEFT: 2px;
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 3px;
+    BACKGROUND-COLOR: #f37999;
+}
+
+.b_tline_bk {
+    BACKGROUND-COLOR: #f8b0c3;
+    TEXT-ALIGN: center;
+}
+
+.style1 {
+    color: #FF00CC;
+    font-weight: bold;
+}
+
+.style3 {
+    color: #000000;
+    font-weight: bold;
+}
+
+.style2 {
+    color: #FF00CC;
+}

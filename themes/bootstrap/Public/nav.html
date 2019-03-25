@@ -1,0 +1,30 @@
+<div class="nav">
+    <div class="container fix">
+        <div class="navItems">
+          <!-- <ul class="navL">
+            <li id="navIndex" class="curr"><a href="/" class="navIndex">首页</a></li>
+            <li id="navLottery"><a href="lottery.html">购彩大厅</a></li>
+            <li id="navActivity"><a href="activity.html">活动中心</a></li>
+            <li id="navHelp"><a href="help.html">帮助指南</a></li>
+          </ul> -->
+          <?php
+            $effected_id="main-menu";
+              $filetpl="<a href='\$href' target='\$target'>\$label</a>";
+              $foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='caret'></b></a>";
+              $ul_class="" ;
+              $li_class="" ;
+              $style="navL";
+              $showlevel=6;
+              $dropdown='dropdown';
+              echo sp_get_menu("1",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+          ?>
+
+          <ul class="navR">
+            <li class="accountIcon"><i class="sj"></i><a href="{:U('Portal/User/user')}">我的账户</a></li>
+            <li class="mobileIcon"><i class="sj"></i><a href="{:U('Portal/Help/mobile')}">我的手机</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+

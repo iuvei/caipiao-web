@@ -1,0 +1,108 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Portal/AdminSystem/lottery_typeset')}">所有彩种</a></li>
+            <li class="active"><a href="{:U('Portal/AdminSystem/edit_lottery_typeset')}" >修改彩种</a></li>
+		</ul>
+		<form class="form-horizontal js-ajax-form" action="{:U('Portal/AdminSystem/edit_lottery_typesetpost')}" method="post">
+			<fieldset>
+                <div class="control-group" >
+					<label class="control-label">彩种名称</label>
+					<div class="controls" >
+                        <input type="text" style="color: red" name="title"value="{$post.title}" required>
+					</div>
+				</div>
+				<div class="control-group" >
+					<label class="control-label">彩种简称(字母)</label>
+					<div class="controls" >
+                        <input type="text" style="color: red" name="name" value="{$post.name}" required>
+					</div>
+				</div>
+				<div class="control-group" >
+					<label class="control-label">彩种简介</label>
+					<div class="controls" >
+                        <textarea type="text" name="info" required>{$post.info}</textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">停止投注时间间隔</label>
+					<div class="controls" >
+                        <input type="number" style="color: red" name="data_ftime"  value="{$post.data_ftime}" required>
+					</div>
+				</div>
+			
+				<div class="control-group">
+					<label class="control-label">开关/关闭</label>
+					<div class="controls">
+						<php>$active_true_checked=($post['enable']==0)?"checked":"";</php>
+						<label class="radio inline" for="yes">
+							<input type="radio" name="enable" value="0" {$active_true_checked} id="yes"/>关
+						</label>
+						<php>$active_false_checked=($post['enable']==1)?"checked":"";</php>
+						<label class="radio inline" for="no">
+							<input type="radio" name="enable" value="1" id="no"{$active_false_checked}>开
+						</label>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">彩种类别</label>
+					<div class="controls">
+						<php>$active_checked=($post['type']==1)?"checked":"";</php>
+						<label class="radio inline" for="xz1">
+							<input type="radio" name="type" value="1" {$active_checked} id="xz1"/>快3
+						</label>
+						<php>$active_checked=($post['type']==2)?"checked":"";</php>
+						<label class="radio inline" for="xz2">
+							<input type="radio" name="type" value="2" id="xz2" {$active_checked}>时时彩
+						</label>
+						<php>$active_checked=($post['type']==3)?"checked":"";</php>
+						<label class="radio inline" for="xz3">
+							<input type="radio" name="type" value="3" id="xz3" {$active_checked}>11选5
+						</label>
+					</div>
+				</div>                            
+                      
+                <div class="control-group">
+                    <label class="control-label">排序</label>
+                    <div class="controls">
+                        <input type="number" name="sort" value="{$post.sort}" required>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">期数</label>
+                    <div class="controls">
+                        <input type="number" name="num" value="{$post.num}" required>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">期号函数</label>
+                    <div class="controls">
+               			<select name="onGetNoed" required>
+               				<option value="timelx" <if condition="$post[ongetnoed] eq 'timelx'">selected</if>>时间类</option>
+               				<option value="addlx" <if condition="$post[ongetnoed] eq 'addlx'">selected</if>>增长类</option>
+               			</select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">期号参数</label>
+                    <div class="controls">
+                        <input type="text" name="oncs" value="{$post.oncs}" required>
+                    </div>
+                </div>
+                           
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="id" value="{$post.id}"/>
+				<button type="submit" class="btn btn-primary">{:L('SAVE')}</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

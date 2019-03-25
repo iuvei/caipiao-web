@@ -1,0 +1,118 @@
+
+
+
+<form method="post" data-bind="submit:sub">
+    <div class="pager_wrap">
+        <div class="pager_tool"></div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder" >
+            <thead class="header">
+                <tr>
+                    <th colspan="6">当前基本设置账号：<span class="red" data-bind="text:LoginName"></span></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="reportTop">
+                    <td colspan="6" class="fc_blue">前台设置</td>
+                </tr>
+                <tr>
+                    <td class="altbg1">退码</td>
+                    <td class="active"> 投注 <input type="text" name="CancelBet" maxlength="3" placeholder="0-999" title="0-999" data-bind="value:CancelBet" onkeyup="value=value.replace(/[^\d]/g,'')" />  <span> 分钟内可以退码</span><span style="color:red;">(0-999)</span></td>
+                    <td class="altbg1">二字定提前封盘</td>
+                    <td class="active">离停盘 <input type="text" name="SecondStopEarly" maxlength="3" placeholder="0-999" title="0-999" data-bind="value:SecondStopEarly" class="w24" onkeyup="value=value.replace(/[^\d]/g,'')" /><span>分钟禁止下注</span><span style="color:red;"> (0-999)</span></td>
+                    <td class="altbg1">赔率</td>
+                    <td class="active">
+                        <span class="control-box">
+                            <label><input type="radio" name="IsOddsUse" checked data-bind="checked:IsOddsUse" value="0" /> 实际赔率</label>
+                            <label><input type="radio" name="IsOddsUse" checked data-bind="checked:IsOddsUse" value="1" /> 转换赔率</label>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="active" >
+                    <span class="control-box">
+                        <label><input type="radio" name="IsShowLottory" checked data-bind="checked:IsShowLottory" value="0" /> 小票打印</label>
+                        <label><input type="radio" name="IsShowLottory" checked data-bind="checked:IsShowLottory" value="1" /> 显示彩种</label>
+                        </span>
+                    </td>
+                    <td class="active">
+                        <span class="control-box">
+                            <label><input type="radio" name="IsSingleBack" checked data-bind="checked:IsSingleBack" value="0" /> 批量退码</label>
+                            <label><input type="radio" name="IsSingleBack" checked data-bind="checked:IsSingleBack" value="1" /> 单个退码</label>
+                        </span>
+                    </td>
+                    <td class="altbg1">查看上级报表</td>
+                    <td class="active">
+                        <span class="control-box">
+                            <label><input type="radio" name="IsCheckUper" checked data-bind="checked:IsCheckUper" value="1" /> 是</label>
+                            <label><input type="radio" name="IsCheckUper" checked data-bind="checked:IsCheckUper" value="0" /> 否</label>
+                        </span>
+                    </td>
+                    <td class="altbg1"></td>
+                    <td class="active">
+                        
+                    </td>
+                </tr>
+                <tr class="reportTop">
+                    <td colspan="6" class="fc_red">后台设置</td>
+                </tr>
+                <tr>
+                    <td class="altbg1">公司类型</td>
+                    <td class="active"><input type="checkbox" name="IsDirectCompany " data-bind="checked:IsDirectCompany" />是否是直属公司 </td>
+                    <td class="altbg1">新增会员信用额限制</td>
+                    <td class="active">￥<input type="text" class="w24" name="CreditLimit " maxlength="10" title="0-2147483647" placeholder="0-2147483647" data-bind="textinput:CreditLimit" onkeyup="value=value.replace(/[^\d]/g,'')" /><span style="color:red;"> (0-2147483647)</span></td>
+                    <td class="altbg1">下级赚水</td>
+                    <td class="active"> <label> <input type="checkbox" name="DownlineCommEdit" data-bind="checked:IsDownlineCommEdit" /> 是否允许修改 </label>  </td>
+                </tr>
+                <tr style="display:none">
+                    <td class="altbg1">期数管理</td>
+                    <td class="active"><label> <input type="checkbox" name="IsInheritPeriods" data-bind="checked:IsInheritPeriods,disable:IsInheritPeriodsUpdate" /> 开启期数继承 </label> </td>
+                    <td class="altbg1">定盘类型</td>
+                    <td class="active"><input type="checkbox" name="IsInheritComm  " data-bind="checked:IsInheritComm,disable:IsInheritCommUpdate" /> 是否继承定盘 &nbsp;&nbsp; <label style="color:red">(不继承定盘总公司将不占成)</label> </td>
+                    <td class="altbg1" >操盘类型</td>
+                    <td class="active" ><input type="checkbox" name="IsInheritTrading " data-bind="checked:IsInheritTrading,disable:IsInheritTradingUpdate" /> 是否继承操盘</td>
+
+                </tr>
+                <tr>
+                    <td class="altbg1">下级结算后查看报表</td>
+                    <td class="active"><input type="checkbox" name="IsControlReport" data-bind="checked:IsControlReport" />是否控制   </td>
+                    <td class="altbg1">下级月报表显示</td>
+                    <td class="active"><input type="text" data-bind="textinput:ReportShowCount" onkeyup="value=value.replace(/[^\d]/g,'')" style="width:24px">期,0或空为无限制。  </td>
+                    <td class="altbg1">批量创建</td>
+                    <td class="active"><input type="text" data-bind="textinput:PeriodDays" onkeyup="value=value.replace(/[^\d]/g,'')" style="width:24px">天 </td>
+
+
+                </tr>
+                <tr>
+                    <td class="altbg1">是否允许下级修改占成</td>
+                    <td class="active">
+                         <input type="checkbox" name="IsDLUpdateRatio" data-bind="checked:IsDLUpdateRatio" /> &nbsp;&nbsp;
+                         <label data-bind="visible:IsDLUpdateRatio">开始时间<input type="text" id="RBeginDtInt" onfocus="WdatePicker({ readOnly: true, maxDate: '%y-%M-%d', dateFmt: 'H:mm' })" style="width:45px"></label>
+                         <label data-bind="visible:IsDLUpdateRatio">结算时间<input type="text" id="REndDtInt" onfocus="WdatePicker({ readOnly: true, maxDate: '%y-%M-%d', dateFmt: 'H:mm' })" style="width:45px"></label>
+                    </td>
+                    <td class="altbg1">是否允许下级修改拦货</td>
+                    <td class="active">
+                        <input type="checkbox" name="IsDLUpdateLimitStore" data-bind="checked:IsDLUpdateLimitStore" />&nbsp;&nbsp;
+                        <label data-bind="visible:IsDLUpdateLimitStore">开始时间<input type="text" id="LSBeginDtInt" onfocus="WdatePicker({ readOnly: true, maxDate: '%y-%M-%d', dateFmt: 'H:mm' })" style="width:45px"></label>
+                        <label data-bind="visible:IsDLUpdateLimitStore">结算时间<input type="text" id="LSEndDtInt" onfocus="WdatePicker({ readOnly: true, maxDate: '%y-%M-%d', dateFmt: 'H:mm' })" style="width:45px"></label>
+
+                      </td>
+                    <td class="altbg1"></td>
+                    <td class="active"></td>
+
+                </tr>
+                
+                <tr>
+                    <td class="altbg1">备注</td>
+                    <td colspan="5" class="fc_red"> <textarea name="CustomeContent" maxlength="50" placeholder="0-50个字符" data-bind="textinput:CustomeContent"></textarea> </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn_wrap clear" style="text-align:center;">
+            <input type="submit" id="BTSAVE" class="btn" value="保存并返回" />
+            <input type="submit" class="btn" data-bind="click:Next" id="Next" value="保存并下一步" />
+            <input type="button" class="btn" data-bind="click:$root.view.bind($data,'/index.php/agent/CompanySetting/index','CompanySetting/index')" value="返回" />
+        </div>
+    </div>
+</form>

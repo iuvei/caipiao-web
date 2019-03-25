@@ -1,0 +1,34 @@
+
+
+<form method="post" data-bind="submit:sub">
+    <div class="pager_wrap">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder table-list">
+            <thead class="header">
+                <tr>
+                    <th></th>
+                    <th>等级名称</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach:list" id="LIST">
+                <tr data-bind="css:IsEnable==='True'?'active':''">
+                    <td data-bind="text:$index()+1"></td>
+                    <td><input type="text" class="w80p" name="LevelName" data-bind="textinput:LevelName,id:'N'+$index()+1,disable:IsEnable==='False'" /></td>
+                    <td>
+                        <!--ko if:$index()<=3-->
+                        <label>启用</label>                        
+                        <!--/ko-->
+                        <!--ko if:$index()>3-->
+                        <select class="form-control" data-bind="value:IsEnable,disable:$parent.GetAgentLevel(AgentLevel)||IsDisabled(),options:accountStatus,optionsText:'name',optionsValue:'value',event:{change:$parent.change}"></select>
+                        <!--/ko-->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn_wrap clear" style="text-align:center;">
+            <input type="submit" id="BTSAVE" class="btn" value="保存并返回" />
+            <input type="submit" class="btn" data-bind="click:Next" id="Next" value="保存并下一步" />
+            <input type="button" class="btn" data-bind="click:$root.view.bind($data,'/CompanySetting/index','CompanySetting/index')" value="返回" />
+        </div>
+    </div>
+</form>

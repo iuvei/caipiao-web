@@ -1,0 +1,65 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<div class="registHead">
+    <div class="container">
+        <div class="logo">
+            <a href="/">
+                <img id="Logo1" src="http://imagess-google.com/bifa/logo/logo1.png"  height="50" style="float:left;">
+            </a>
+            <span class="loginTxt">找回密码</span>
+            <span class="rightTologin">已有账号？<a href="{:U('Portal/index/login')}">请登录</a></span>
+        </div>
+    </div>
+</div>
+<!--header Ending-->
+<section>
+    <div class="container">
+    <style>
+    .userInput{
+        height: 40px !important;
+};
+    }
+    </style>
+        <!--aside regist-->
+        <form class="form-horizontal js-ajax-form" action="{:U('Portal/index/RestMoneyPwd',array('id'=>$id))}" method="post">
+            <div class="changePwd">
+                <ul class="pwdList">
+                    <li>
+                        <span>安全密码：</span>
+                        <input type="password" class="pwdInput" name="money_pass" type="password" required>
+                    </li>
+                   
+                    <li>
+                        <span></span>
+                        <input type="submit" class="mainColorBtn ClickShade pwdBtn" value="确认" />
+                    
+                    </li>
+                </ul>
+            </div>
+    </form>
+        <!--aside rregist Ending-->
+        <!--regist introduce-->
+        
+        <!--regist introduce Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<footer>
+    <div class="container _about about">
+        <p class="fix"><a href="./about.html?41">关于我们</a>|
+                      <a href="./about.html?42">联系我们</a>|
+                      <a href="./about.html?43">商务合作</a>|
+                      <a href="./about.html?44">法律声明</a>|
+                      <a href="./about.html?45">隐私声明</a></p>
+        <p class="copyright">Copyright © <span class="siteName"></span> Reserved | 18+</p>
+    </div>
+</footer>
+<!--footer Ending-->
+</body>
+</html>

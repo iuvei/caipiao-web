@@ -1,0 +1,70 @@
+<footer>
+  <div class="ftadCon">
+      <div class="container">
+          <ul class="ftad  fix">
+              <li><a id="dafaCloud">
+                  <p>技术支持<i>Technical support</i></p>
+                    <div class="technicalSupport">
+                      <img src="http://imagess-google.com/yifa/../system/common/other/dafayun.png" alt="大发云">
+                        <p>
+                           赢创彩票系统 <br>专业的彩票系统平台
+                        </p>
+                        <i></i>
+                    </div>
+                </a></li>
+                <li>
+                  <p>服务体验<i>Service experience</i></p>
+                     <ul class="serviceExperience">
+                      <li>昨日充值到账平均时间
+                          <p class="footBar">
+                                <span></span>
+                            </p>
+                            <em>00</em><i>秒</i>
+                        </li>
+                        <li>昨日提现到账平均时间
+                          <p class="footBar">
+                                <span></span>
+                            </p>
+                            <em id="timer">00</em><i>秒</i>
+                        </li>
+                     </ul>
+                </li>
+                <li>
+                  <p>充值方式<i>Recharge method</i></p>
+                    <div class="rechargeMethod">
+                      <i class="wechat"></i>
+                        <i class="alipay"></i>
+                        <i class="cup"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container _about about">
+        <p class="fix">
+<php>
+  $i=0;
+$posts=sp_sql_posts('cid:5;field:post_title,post_content;order:listorder asc');
+</php>
+
+<foreach name="posts" item="vo">  
+  <a href="/index.php/Portal/about/index/id/{$i++}">{$vo.post_title }</a>|
+</foreach>
+
+
+
+          <!-- <a href="#">关于我们</a>|
+            <a href="#">联系我们</a>|
+            <a href="#">商务合作</a>|
+            <a href="#">法律声明</a>|
+            <a href="#">隐私声明</a></p> -->
+        <p class="copyright">Copyright © <span class="siteName"></span> Reserved | 18+</p>
+    </div>
+</footer>
+<!--footer Ending-->
+<script src="__TMPL__Public/bifa/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="__TMPL__Public/bifa/js/billboard.js"></script>
+<script src="__TMPL__Public/bifa/js/indexNew.js" type="application/javascript"></script>
+
+</body>
+</html>

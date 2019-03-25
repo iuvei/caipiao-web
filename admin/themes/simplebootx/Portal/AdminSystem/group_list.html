@@ -1,0 +1,68 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('Portal/AdminSystem/group_list')}">所有组别</a></li>
+            <li ><a href="{:U('Portal/AdminSystem/add_group')}" >添加组别</a></li>
+        </ul>
+        <form class="well form-search" method="post" action="{:U('Portal/AdminSystem/group_list')}">
+            所属类别:
+            <select name="type" style="width: 120px;">
+                <option value="">全部</option>
+                <!--<option value="1" <if condition="$get['type'] eq  1">selected</if>>快3</option>-->
+                <option value="2" <if condition="$get['type'] eq  2">selected</if>>时时彩</option>
+                <!--<option value="3" <if condition="$get['type'] eq  3">selected</if>>11选5</option>-->
+            </select>&nbsp; &nbsp;
+            
+             状态:
+            <select name="enable" style="width: 120px;">
+                <option value="">全部</option>
+                <option value="1" <if condition="$get['enable'] eq  1">selected</if>>开</option>
+                <option value="2" <if condition="$get['enable'] eq  2">selected</if>>关</option>        
+            </select>&nbsp; &nbsp;
+            组别:
+            <input type="text" name="groupname" style="width: 200px;" value="{$get.groupname}" placeholder="请输入组别名"> 
+            <input type="submit" class="btn btn-primary" value="搜索" />
+        </form>
+        <form method="post" class="js-ajax-form"  action="{:U('Portal/AdminSystem/group_list')}"> 
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th align="center">ID</th>
+                        <th>主别名称</th>
+                        <th style="vertical-align:middle; text-align:center;">状态</th>
+                        <th>所属类别</th>
+                        <th style="vertical-align:middle; text-align:center;">排序</th>
+                        <th style="width:200px;" align="center">操作</th>
+                    </tr>
+                </thead>
+                <php>
+                    $state[0]='关';
+                    $state[1]='开';
+                    $lx[1]='快3';
+                    $lx[2]='时时彩';
+                    $lx[3]='11选5';
+                </php>
+                <tbody>
+                    <foreach name="list" item="vo">
+                    <tr>
+                        <td align="center">{$vo.id}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.groupname}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$state[$vo[enable]]}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$lx[$vo[type]]}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.sort}</td>
+                        <td align="center">
+                            <a href='{:U("AdminSystem/edit_group",array("id"=>$vo["id"]))}'>组别设置</a> |
+                            <a class="js-ajax-delete" href='{:U("AdminSystem/del_group",array("id"=>$vo["id"]))}'>删除</a> 
+                        </td>
+                    </tr>
+                    </foreach>
+                </tbody>
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

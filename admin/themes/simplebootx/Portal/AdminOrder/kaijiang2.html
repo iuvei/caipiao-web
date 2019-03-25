@@ -1,0 +1,58 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <form class="well form-search" method="post" action="{:U('Portal/AdminOrder/kaijiang')}">
+            <input type="submit" class="btn btn-primary" value="返回"/>
+        </form>
+        <ul class="nav nav-tabs">
+            <foreach name="yl" item="one">
+                <li onclick="xztype({$key})" id="type{$key}"><a href="javascript:;">{$key|type=###}({$one|count=###})</a></li>
+            </foreach>
+        </ul>
+          <foreach name="yl" item="one">
+            <table class="table table-hover table-bordered table-list" style="display:none" id="table{$key}">
+                <thead>
+                <tr>    
+                <th>彩种</th>
+                <th>期号</th>
+                <th>开奖时间</th>
+                <th>操作项</th>
+                </tr>
+                </thead>
+
+                <foreach name="one" item="vo">
+                    <tr>
+                    <td>{$vo.type|type=###}</td>
+                    <td>{$vo.number}</td>
+                    <td>{$vo.kjtime}</td>
+                    <td>
+                        <a href="{:U('Portal/AdminOrder/add_kaijiang',array('type'=>$vo['type'],'number'=>$vo['number'],'kjtime'=>$vo['kjtime']))}" >添加开奖</a>
+						<a href="{:U('Portal/AdminOrder/add_tuima',array('type'=>$vo['type'],'number'=>$vo['number'],'kjtime'=>$vo['kjtime']))}" >退码</a>
+                    </td>
+                    </tr>
+                </foreach>
+            </table>
+            </foreach>
+    </div>
+    <style>
+    .nav-tabs>.active>a, .nav-tabs>.active>a:hover, .nav-tabs>.active>a:focus {
+    color: #95a5a6;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    }
+    </style>
+    <script>
+     function xztype(id){
+        $('.table-list'). hide();
+        $('.nav-tabs li'). removeClass('active');
+        $('#table'+id). show();
+        $('#type'+id). addClass('active');
+     }
+     $('.table-list').eq(0). show();
+    $('.nav-tabs li').eq(0). addClass('active');
+    </script>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

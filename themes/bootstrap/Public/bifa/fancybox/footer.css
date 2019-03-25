@@ -1,0 +1,8 @@
+.footer { width: 100%; overflow: hidden; background: white; box-sizing: border-box; }
+.footer > div > p { color: #999; margin: 0; margin: 10px 5px; text-align: center; }
+.footer > div > p a { color: #333; padding: 0 10px; line-height: 1.4; margin: 5px 0; }
+.footer > div > p a:first-child { padding-left: 0; }
+.footer .container { height: 100px; }
+.footer .about { padding: 10px 0 20px 0; }
+
+/*# sourceMappingURL=footer.css.map */

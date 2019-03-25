@@ -1,0 +1,71 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">修改支付密码</div>
+            <div class="userMain">
+            	<!--安全中心部分-->
+                <form class="form-horizontal js-ajax-form" action="{:U('Portal/User/securityPwd')}" method="post">
+                <div class="changePwd">
+                	<ul class="pwdList">
+                    	<li>
+                        	<span>登录密码：</span>
+                            <input type="password" class="pwdInput" name="user_pass" required>
+                        </li>
+                        <li>
+                        	<span>设置支付密码：</span>
+                            <input type="password" class="pwdInput" name="post[maney_pass]" id='new' onchange="yanzheng($(this).val())" required>
+                        </li>
+                        <li>
+                        	<span>确认密码：</span>
+                            <input type="password" class="pwdInput" name="maney_pass_two" onchange="xiangtong($(this).val())" required>
+                        </li>
+                        <li>
+                        	<span></span>
+                            <input type="submit" class="mainColorBtn ClickShade pwdBtn" value="保存" />
+                            <!-- <a class="mainColorBtn ClickShade pwdBtn" href="#" >保存</a> -->
+                        </li>
+                    </ul>
+                </div>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<script type="text/javascript">
+    function yanzheng($obj){
+            var dd=$obj.length;
+            if(dd<6){
+                alert('为了您的密码安全，请设置长度大于6的密码')
+            }
+    }
+    function xiangtong($obj){
+        var ne=$('#new').val();
+        if(ne!=$obj){
+            alert('输入的两次新密码不相同')
+        }
+    }
+</script>
+</body>
+</html>

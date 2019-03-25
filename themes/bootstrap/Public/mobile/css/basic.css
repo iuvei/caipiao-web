@@ -1,0 +1,131 @@
+/**
+*css公共层
+*Author:RQQ
+*Date:2017-01-09
+**/
+@charset "utf-8";
+
+/*手机站不同设备字体em基准
+@media screen and (min-width: 320px) and (max-width: 360px){ 
+  body{
+  	font-size:13.5px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 480px){ 
+  body{
+  	font-size:15px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 700px){ 
+  body{
+  	font-size:22.5px;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1000px){ 
+  body{
+  	font-size:28px;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px){ 
+  body{
+  	font-size:32px;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px){ 
+  body{
+  	font-size:40px;
+  }
+}
+@media screen and (min-width: 1400px){ 
+  body{
+  	font-size:50px;
+  }
+}
+*/
+body,html{
+	overflow-x:hidden;
+	}
+/*body默认设置*/
+body{ font:12px/24px '微软雅黑';
+	text-align:center;   /*容器内部填充物默认居中*/
+	background:#eeeeee;  /* 公共层唯一需要修改的*/
+	
+}
+.wrap{ text-align:left;}
+
+table{border-collapse:collapse;}
+
+/* 全局标签 内外间距清零*/
+*{ margin:0px; padding:0px;}
+/*li标签 样式清零*/
+ul,li{ list-style:none;}
+/* a标签下划线去除*/
+a{ text-decoration:none;}
+/*不同浏览器的容器居中*/
+  .w930{ width:930px; margin:0 auto; }
+  .w960{ width:960px; margin:0 auto; }
+  .w980{ width:980px; margin:0 auto; }
+  .w990{ width:990px; margin:0 auto; }          
+  .w1000{ width:1000px; margin:0 auto; }
+  .w1210{ width:1210px; margin:0 auto; }
+  .w1280{ width:1280px; margin:0 auto; }
+	
+/*浮动产生塌陷的兼容性*/
+.clearfix{zoom:1;}
+.clearfix:before,.clearfix:after{display:table;line-height:0;content:"";}
+.clearfix:after{clear:both;}
+
+/*图片边框*/
+img{ border:none;}
+
+.container{
+	 width:80%;
+	 margin:0 auto;
+	 }
+/*-------------select下拉框样式--------------*/
+select {
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  background:none;
+}
+
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand { display: none; }
+
+i,em{ font-style:normal;}
+
+
+
+
+
+input::-webkit-input-placeholder {
+	color: #3c3c3c !important;
+}
+textarea::-webkit-input-placeholder {
+	color: #3c3c3c !important;
+}
+input[type='button'],input[type='text'],input[type='search'], input[type='submit'], input[type='reset'],input[type='date'],input[type='time'],input[type='number'],input[type="file"],input[type="date"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+}
+select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;	
+}
+textarea{ 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+
+

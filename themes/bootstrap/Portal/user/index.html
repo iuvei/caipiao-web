@@ -1,0 +1,223 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+<link rel="stylesheet" type="text/css" href="__TMPL__Public/bifa/fancybox/fancybox.css" />
+<script type="text/javascript" src="__TMPL__Public/bifa/fancybox/jquery.fancybox-1.3.1.pack.js"></script>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<script type="text/javascript">
+$(function(){
+    $("#iframe").fancybox({
+        'width':640,
+        'height':450,
+        'autoScale':false,
+        'type':'iframe'
+    });
+});
+function imggb(url){
+    $('.headImg').attr('src',url);
+}
+</script>
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">个人信息</div>
+            <div class="userMain">
+                <div class="personalTop">
+                    <a href="#" class="on">个人资料</a>
+                    <a href="#">等级头衔</a>
+                </div>
+                <div class="fix tapli">
+                    <form class="form-horizontal js-ajax-form" action="{:U('Portal/User/edit_post')}" method="post">
+                    <div class="selectHeadImg">
+                        <div class="demo">
+
+                                <img class="headImg" src="{$user.avatar}" alt="" data-url="0A472675E5E5AF50.jpg" width="100" height="100">
+                            <!-- <a href="javascript:showHeadImg();">修改头像</a> -->
+                            <p><a id="iframe" class="iframe" href="{:U('Portal/User/portrait')}" title="">修改头像</a></p>
+                            
+                        </div>
+                      
+                    </div>
+                   <!--  <input style="display:none" name="id" value="{$user.id}"> -->
+                    <ul class="personalInfo submitContent">
+                        <li>
+                            <span>账号：</span>
+                            <ins id="userName">{$user.user_login}</ins>
+                        </li>
+                        <li>
+                            <span>等级：</span>
+                            <ins id="UserGrade">VIP{$user.level}</ins>
+                        </li>
+                        <li>
+                            <span>头衔：</span>
+                            <ins id="UserTitle">{$user.level|level=###}</ins>
+                        </li>
+                        <li>
+                            <span>昵称：</span>
+                            <input class="userInput CanNull" placeholder="昵称为1-5位汉字，设置后不能修改" name="post[user_nicename]" value="{$user.user_nicename}" type="text" required id="nickName" /> 
+                            <em class="verifyright dpn"></em>
+                        </li>
+                        <li>
+                            <span>手机：</span>
+                            <input class="userInput" name="" value="{$user.mobile}" disabled="disabled" type="text">
+                            <a id="changeMobile" notsubmit="yes" href="setMobile.html">绑定</a>
+                        </li>
+                        <li>
+                            <span>邮箱：</span>
+                            <input class="userInput" name="" value="{$user.user_email}" disabled="disabled" type="text">
+                            <a id="changeMail" notsubmit="yes" href="setMail.html">绑定</a>
+                        </li>
+                        <li>
+                            <span>QQ：</span>
+                            <input class="userInput CanNull" name="post[user_qq]" value="{$user.user_qq}" type="number">
+                            <em class="verifyright dpn">
+                                <i></i>
+                                <ins></ins>
+                            </em>
+                        </li>
+                        <li>
+                            <span>性别：</span>
+                            <php>$active_false_checked=($user['sex']==1)?"checked":""; </php>
+                            <label class="radio inline" for="male">
+                            <input type="radio" name="post[sex]" id="male" {$active_false_checked} value="1">男
+                            </label>
+                            <php>$active_false_checked=($user['sex']==2)?"checked":""; </php>
+                            <label class="radio inline" for="girl">
+                            <input type="radio" name="post[sex]" id="girl" {$active_false_checked} value="2">女
+                            </label>
+                            <php>$active_false_checked=($user['sex']==0)?"checked":""; </php>
+                            <label type="radio inline" for="secrecy">
+                            <input type="radio" name="post[sex]" id="secrecy" {$active_false_checked} value="0">保密
+
+                        </li>
+
+                        <li>
+                            <span></span>
+                            <input type="submit" class="submitBtn" value="保存">
+                            <!-- <a class="submitBtn" href="javascript:;">保存</a> -->
+                        </li>
+                    </ul>
+                </form>
+                </div>
+                
+                <div class="evCall fix tapli"  style="display: none">
+                    <div class="selectHeadImg">
+                        <img class="headImg" src="{$user.avatar}" alt="" data-url="0A472675E5E5AF50.jpg" width="100" height="100">
+                            <!-- <a href="javascript:showHeadImg();">修改头像</a> -->
+                           <!--  <p><a id="iframe" class="iframe" href="{:U('Portal/User/portrait')}" title="">修改头像</a></p> -->
+                    </div>
+                    <ul class="evCallInfo">
+                        <li>
+                            <em>账</em>号：
+                            <span id="userName2">{$user.user_login}</span>
+                        </li>
+                        <li>
+                            <em>等</em>级：
+                            <span id="UserGrade2">VIP{$user.level}</span>
+                        </li>
+                        <li>
+                            <em>头</em>衔：
+                            <span id="UserTitle2">{$user.level|level=###}</span>
+                        </li>
+                        <li>
+                            成长值：
+                            <span id="UserGradeGrow2">{$user.coin}分</span>
+                        </li>
+                        <li style="color: #999999">每充值1元加1分</li>
+                    </ul>
+                    <php>
+                        $max=$user_level['grow']-$user[coin];
+                        $user1=$user['level']+1;
+                        $aa=$user[coin]/$user_level['grow']*100;
+                    </php>
+                    <div class="levelBar">
+                        <p class="u-progress">
+                            <span id="progress" class="pgbar" style="width: {$aa}%;">
+                                <span class="pging"></span>
+                            </span>
+                        </p>
+                        <em id="UserGradeGrow" class="point">{$aa}%</em>
+
+                        <div class="levelBarInfo">
+                            <em id="GradeStatr">VIP{$user.level}</em>
+                            <p id="GradeUp">
+                                <span style="color:#f14241">{$user.coin}</span>/{$user_level.grow} 距离下一级还要{$max}分
+                            </p>
+                            <i id="GradeEnd">VIP{$user1}</i>
+                        </div>
+                    </div>
+                    <h6>等级机制</h6>
+                    <table id="Gradelist" width="80%">
+                        <tbody>
+                            <tr>
+                                <th>等级</th>
+                                <th>头衔</th>
+                                <th>成长积分</th>
+                                <th>晋级奖励(元)</th>
+                                <th>跳级奖励(元)</th>
+                            </tr>
+                            <foreach name="level" item="vo">
+                            <tr>
+                                <td>VIP{$vo.level}</td>
+                                <td>{$vo.title}</td>
+                                <td>{$vo.grow}</td>
+                                <td>{$vo.one_reward}</td>
+                                <td>{$vo.many_reward}</td>
+                            </tr>
+                            </foreach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<script>
+$(function(){
+	$('.personalTop a').click(function(){
+		$(this).addClass('on').siblings().removeClass('on')
+		var num =$(this).index()
+		$('.tapli').eq(num).show().siblings('.tapli').hide()
+	})
+});
+
+$('#nickName').blur(function(){
+	var name=$(this).val();
+	var exp=/[^\u4E00-\u9FA5]{1,5}/g;
+
+	if(name.length != 0 && exp.test(name)){
+		$(this).val('');
+		alert('请输入正确的汉字姓名！');
+	}
+});
+
+</script>
+
+<script src="__TMPL__Public/assets/js/bootstrap.min.js"></script>
+<script src="__TMPL__Public/assets/webuploader/webuploader.css"></script>
+<script src="__TMPL__Public/assets/webuploader/webuploader.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)http://fw5.b789b.com/index.php?action=leveladd -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title></title>
+
+    <style type="text/css">
+        .lezhu99 {
+            color: gray;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="append_parent"></div>
+    <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td>
+
+                    <style media="print">
+                        .Noprint {
+                            display: none;
+                        }
+                    </style> <table class="Noprint" width="100%" border="0" cellpadding="0" cellspacing="0"></table>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" data-bind="visible:!IsSubsidiary">
+                        <tbody>
+                            
+                            <tr class="header">
+                                <td style=" border-top: 1px solid #525c3d;">
+                                    <div style="float: left; margin-left: 0px; padding-top: 0px;">
+                                        <a href="#">信息提示</a>
+                                    </div>
+                                    <div style="float:right; margin-right:4px; padding-bottom:9px">
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            
+                            <tr>
+                                <td style="height:50px;background:#fff;">
+                                    <ul>
+                                        <li>
+                                            &nbsp;<span data-bind="text:CreditTitle,click:back" style="cursor: pointer; color: blue; ">  </span> &nbsp;&nbsp;
+                                            可用额度：<label data-bind="text:NewDefaultCredit"></label> &nbsp;&nbsp;&nbsp;&nbsp;
+                                            
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="add-top">&#12288;
+                        <label data-bind="text:getTitle"></label>
+                        <label data-bind="text:AgentLable"></label>                        
+                    </div>
+                    <form method="post" action="/LowManage/AddLowManage" data-bind="submit:sub">
+
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder">
+                            <tbody>
+
+                                <tr>
+                                    <td class="altbg1">账　　号:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="text" maxlength="12" id="accountStyle" data-bind="textinput:account,visible:!isEdit" placeholder="长度为3-12位" />
+                                        <input class="button" type="button" name="chenck" value="账号检查"  data-bind="click:GetCheckRepeatAccount,visible:!isEdit" />
+                                        <label data-bind="text:account,visible:isEdit"></label>
+                                        <font style="font-size:14px;" data-bind="visible:!isEdit" color="red">(只能是字母和数字，并字母开头，长度为3-12位)</font>
+                                    </td>
+                                </tr>
+                                <tr data-bind="visible:!isEdit">
+                                    <td class="altbg1">密　　码:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="password" data-bind="textinput:password" placeholder="长度为8-15位" />
+                                        <font style="font-size:14px;" color="red">  (密码的长度必须在8-15位之间,并且包含字母和数字)</font>
+                                    </td>
+                                </tr>
+                                <tr data-bind="visible:!isEdit">
+                                    <td class="altbg1">确认密码:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="password" data-bind="textinput:repassword" placeholder="长度为8-15位" />
+                                        <font style="font-size:14px;" color="red" data-bind="text:tip"></font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">昵　　称:</td>
+                                    <td align="right" class="altbg2"><input type="text" data-bind="textinput:nickname" placeholder="长度为1-20位" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">信用额度:</td>
+                                    <td align="right" class="altbg2">
+                                        <input type="text" data-bind="textinput:DefaultCredit" maxlength="8"   placeholder="长度为1-8位" />
+                                        <label data-bind="text:DefaultCreditChinese"></label>
+                                        <input type="button" value="下级归零" data-bind="click:SubordinateMakeZeroTrue,visible:isEdit" />
+                                        <label style="color:red;" id="CreditLimitTip"data-bind="visible:isEdit&&AgentLevel" >
+                                        提示：信用额度不能超过上级信用额度
+                                        
+                                        </label>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">拦货占成上限:</td>
+                                    <td align="right" class="altbg2">
+                                        <label   data-bind="text:RationLable"></label>
+                                        <select class="form-control" id="ratioLen" data-bind="options:rationlist,optionsText:'RatioName',optionsValue:'Ratio',value:CurrentLevelRatio"></select>
+                                        <label data-bind="text:AgentLable"></label>
+                                        <select class="form-control" id="downLen" data-bind="options:Agentlist,optionsText:'AgentName',optionsValue:'Agent',value:DownLevelRatio"></select>
+                                      &nbsp;
+                                         <label style="color:red;" data-bind="visible:isEdit&&IsDLUpdateRatio()">
+                                         提示：  从开始时间[<label data-bind="text:RBeginDtInt" />]至结束时间[<label data-bind="text:REndDtInt" />]内可以修改
+                                       </label>
+                                       
+                                        <br />
+                                        （设置占成，需要在“设置”中添加<label style="color:red;"> 拦货金额</label>才生效）。<label style="color:red;">提示</label>:如果庄家先吃满,则不以所设成数来分配,以实际分配到拦货中金额为准。
+                                    </td>
+                                </tr>
+                                <tr data-bind="visible:isShowContributeRatio">
+                                    <td class="altbg1">贡献度占成上限:</td>
+                                    <td align="right" class="altbg2">
+                                        
+                                        <select class="form-control" data-bind="options:ContributeRatioList,optionsText:'name',optionsValue:'value',value:ContributeRatio"></select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">状　　态:</td>
+                                    <td align="right" class="altbg2">
+
+                                        <select class="form-control" data-bind="options:statusList,optionsText:'name',optionsValue:'value',value:status"></select>
+                                    </td>
+                                </tr>
+                                <tr style="display:none;"> 
+                                    <td class="altbg1">等　　级:</td>
+                                    <td>
+                                        <select class="form-control" disabled="disabled" data-bind="options:list,optionsText:'AgentLevelName',optionsValue:'AgentLevel',value:LevelID"></select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="altbg1">备注:</td>
+                                    <td align="right" class="altbg2">
+                                        <textarea class="form-control" rows="3" maxlength="255" data-bind="textinput:remark"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table><br />
+                        <center>
+                            <input class="button" type="submit" name="addsubmit" value="提 交" />
+                            &nbsp; &nbsp; &nbsp; &nbsp;
+                            <input class="button" type="button" name="button" value="返 回" data-bind="click:back" />
+                        </center>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

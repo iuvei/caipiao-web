@@ -1,0 +1,327 @@
+<script type="text/javascript">
+    var sjc=Date.parse(new Date())/1000-<php>echo time();</php>;
+</script>
+<tc_include file="Public:head" />
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.focus("#focus001");
+        $.focus("#focus002");
+    });
+var idlist={};
+</script>
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<php>
+    $slides=sp_getslide1('2');
+</php>
+
+<section>
+    <div class="container">
+        <div class="lotteryHead fix">
+        <!--goupiaodating banner-->
+            <div class="focus2" id="focus001" data-time="{$bonus['caigou_lunbo_time']}">
+                <ul>
+                    <foreach name="slides" item="vo">
+                    <li><a href="{$vo.slide_url}" target="_blank"><img src="/data/upload/{$vo.slide_pic}" /></a></li>
+                   
+                    </foreach>
+                </ul>
+            </div>
+            <!--goupiaodating banner Ending-->
+            <!--fengyunbang-->
+            <div class="winnerListCon">
+                <h3>风云榜</h3>
+                <ul></ul>
+                <div class="winnerListSlide">
+                    <div class="bd">
+                        <div class="tempWrap" id='das' style="overflow:hidden; position:relative; height:180px;">
+                            <ul class="winnerList">
+                                <foreach name="obtain" item="vo">
+                                <li data-id="84036">
+                                    <img src="{$vo.avatar}">
+                                    <p>{$vo.username} 在{$vo.type|type=###}<br>喜中<span>￥{$vo.money}</span></p>
+                                </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--fengyunbang Ending-->
+        </div>
+        <div class="clearfix"></div>
+<!--main Ending-->
+<script  type="text/javascript">
+         $(document).ready(function(){
+       setInterval('autoScroll("#das")',3000)
+    })
+    function autoScroll(obj){
+        var n=$(obj).find("li").height();
+        $(obj).find("ul").animate({
+               marginTop:-60
+    },3000,function(){
+         $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+    }) 
+}
+
+</script>
+
+        <!--cp option-->
+        <div class="lotteryContent slideTabBox">
+            <ul class="lotteryNav hd fix">
+                <li class="ClickShade cur"><a>热门</a></li>
+                <li class="ClickShade"><a>全部</a></li>
+                <li class="ClickShade"><a>快3</a></li>
+                <li class="ClickShade"><a>时时彩</a></li>
+                <li class="ClickShade"><a>11选5</a></li>
+                <li class="ClickShade"><a>低频彩</a></li>
+            </ul>
+            <ul class="lotteryList fix">
+            <foreach name="list0" item="one">
+                <li class="ClickShade"><a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                    <i class="cpIcon"><img src="__TMPL__Public/bifa/images/cp.png"></i>
+                    <div class="lotteryDetail typexx{$one[id]}" >
+                        <h4>{$one[title]}</h4>
+                         <span>距<i class="qs">--</i>期投注结束还有：</span>
+                         <div class="djstime">
+                        <em class="timeh">--</em>
+                        <i>:</i>
+                        <em class="timem">--</em>
+                        <i>:</i>
+                        <em class="times">--</em>
+                        </div>
+                        <div class="ysqtime" style="display:none;">
+                            <em class="ysq" style="    width: 120px;
+    letter-spacing: 3px;">预售中</em>
+                        </div>
+                    </div>
+                    <div class="betBtn">立即投注</div>
+                </a></li>
+                <script>
+                idlist['{$one[id]}']={$one[id]};
+                </script>
+            </foreach>
+            </ul>
+            <ul class="lotteryList fix " style="display:none">
+                <foreach name="list" item="one">
+                <li class="ClickShade"><a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                <if condition="$one['type'] eq 1">
+                    <i class="cpIcon"><img src="__TMPL__Public/bifa/images/cp.png"></i>
+                </if>
+                <if condition="$one['type'] eq 2">
+                    <i class="cpIcon ssc"><img src="__TMPL__Public/bifa/images/cp1.png"></i>
+                </if>
+                <if condition="$one['type'] eq 3">
+                    <i class="cpIcon xuan5"><img src="__TMPL__Public/bifa/images/cp3.png"></i>
+                </if>
+                    <div class="lotteryDetail typexx{$one[id]}" >
+                        <h4>{$one[title]}</h4>
+                         <span>距<i class="qs">--</i>期投注结束还有：</span>
+                         <div class="djstime">
+                        <em class="timeh">--</em>
+                        <i>:</i>
+                        <em class="timem">--</em>
+                        <i>:</i>
+                        <em class="times">--</em>
+                        </div>
+                        <div class="ysqtime" style="display:none;">
+                            <em class="ysq" style="    width: 120px;
+    letter-spacing: 3px;">预售中</em>
+                        </div>
+                    </div>
+                    <div class="betBtn">立即投注</div>
+                </a></li>
+                <script>
+                idlist['{$one[id]}']={$one[id]};
+                </script>
+                </foreach>
+            </ul>
+            <ul class="lotteryList fix " style="display:none">
+                <foreach name="list1" item="one">
+                <li class="ClickShade"><a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                    <i class="cpIcon"><img src="__TMPL__Public/bifa/images/cp.png"></i>
+                    <div class="lotteryDetail typexx{$one[id]}" >
+                        <h4>{$one[title]}</h4>
+                         <span>距<i class="qs">--</i>期投注结束还有：</span>
+                         <div class="djstime">
+                        <em class="timeh">--</em>
+                        <i>:</i>
+                        <em class="timem">--</em>
+                        <i>:</i>
+                        <em class="times">--</em>
+                        </div>
+                        <div class="ysqtime" style="display:none;">
+                            <em class="ysq" style="    width: 120px;
+    letter-spacing: 3px;">预售中</em>
+                        </div>
+                    </div>
+                    <div class="betBtn">立即投注</div>
+                </a></li>
+                <script>
+                idlist['{$one[id]}']={$one[id]};
+                </script>
+                </foreach>
+            </ul>
+            <ul class="lotteryList fix " style="display:none">
+                    <foreach name="list2" item="one">
+                <li class="ClickShade"><a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                    <i class="cpIcon ssc"><img src="__TMPL__Public/bifa/images/cp1.png"></i>
+                    <div class="lotteryDetail typexx{$one[id]}" >
+                        <h4>{$one[title]}</h4>
+                         <span>距<i class="qs">--</i>期投注结束还有：</span>
+                         <div class="djstime">
+                        <em class="timeh">--</em>
+                        <i>:</i>
+                        <em class="timem">--</em>
+                        <i>:</i>
+                        <em class="times">--</em>
+                        </div>
+                        <div class="ysqtime" style="display:none;">
+                            <em class="ysq" style="    width: 120px;
+    letter-spacing: 3px;">预售中</em>
+                        </div>
+                    </div>
+                    <div class="betBtn">立即投注</div>
+                </a></li>
+                <script>
+                idlist['{$one[id]}']={$one[id]};
+                </script>
+                </foreach>
+            </ul>
+            <ul class="lotteryList fix " style="display:none">
+                <foreach name="list3" item="one">
+                <li class="ClickShade"><a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                   <i class="cpIcon xuan5"><img src="__TMPL__Public/bifa/images/cp3.png"></i>
+                    <div class="lotteryDetail typexx{$one[id]}" >
+                        <h4>{$one[title]}</h4>
+                         <span>距<i class="qs">--</i>期投注结束还有：</span>
+                         <div class="djstime">
+                        <em class="timeh">--</em>
+                        <i>:</i>
+                        <em class="timem">--</em>
+                        <i>:</i>
+                        <em class="times">--</em>
+                        </div>
+                        <div class="ysqtime" style="display:none;">
+                            <em class="ysq" style="    width: 120px;
+    letter-spacing: 3px;">预售中</em>
+                        </div>
+                    </div>
+                    <div class="betBtn">立即投注</div>
+                </a></li>
+                <script>
+                idlist['{$one[id]}']={$one[id]};
+                </script>
+                </foreach>
+            </ul>
+            <ul class="lotteryList fix " style="display:none">
+                    <foreach name="list4" item="one">
+                <li class="ClickShade"><a href="{:U('Portal/order/page',array('id'=>$one[id]))}">
+                    <i class="cpIcon"><img src="__TMPL__Public/bifa/images/cp.png"></i>
+                    <div class="lotteryDetail typexx{$one[id]}" >
+                        <h4>{$one[title]}</h4>
+                         <span>距<i class="qs">--</i>期投注结束还有：</span>
+                         <div class="djstime">
+                        <em class="timeh">--</em>
+                        <i>:</i>
+                        <em class="timem">--</em>
+                        <i>:</i>
+                        <em class="times">--</em>
+                        </div>
+                        <div class="ysqtime" style="display:none;">
+                            <em class="ysq" style="    width: 120px;
+    letter-spacing: 3px;">预售中</em>
+                        </div>
+                    </div>
+                    <div class="betBtn">立即投注</div>
+                </a></li>
+                <script>
+                idlist['{$one[id]}']={$one[id]};
+                </script>
+                </foreach>
+            </ul>
+        <!--cp option Ending-->
+    </div>
+    </div>
+</section>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+<script>
+var jsq={};
+var url = 'bf.jjvsmm.com';
+$(function(){
+  $('.lotteryNav li').click(function(){
+      $(this).addClass('cur').siblings().removeClass('cur')
+      var num =$(this).index()
+      $('.lotteryList').eq(num).show().siblings('.lotteryList').hide()
+      })
+  })
+$(document).ready(function(){
+  websocket = new WebSocket("ws://"+url+":8585");
+websocket.onmessage = function(event) {
+        zdata=JSON.parse(event.data);
+        console.log(zdata);
+        window[zdata.act](zdata.msg);
+};
+websocket.onopen = function(event) {
+        for (x in idlist)
+        {
+            qshm(idlist[x]);
+        }
+}
+});
+function kjtz(){
+}
+function qshm(id){
+    var fs = {};
+    fs.id=id;
+    fs.act='qshm';
+    var jsonStr = JSON.stringify(fs);
+    websocket.send(jsonStr);
+}
+function typeqs(data){
+    clearTimeout(jsq[data.id]);
+    $('.typexx'+data.id+' .qs').html(data.qs);
+    jsq[data.id]=setTimeout('data={};data.time='+data.time+';data.id="'+data.id+'";djs(data);',1000);
+}
+function djs(data){
+    var sj=data.time-Date.parse(new Date())/1000+sjc;
+  if(sj<=0){
+    clearTimeout(jsq[data.id]);
+    qshm(data.id);
+    return;
+  }
+  else if(sj>3600){
+        $('.typexx'+data.id+' .djstime').hide();
+        $('.typexx'+data.id+' .ysqtime').show();
+  }
+  else{
+    $('.typexx'+data.id+' .djstime').show();
+    $('.typexx'+data.id+' .ysqtime').hide();
+    var h=parseInt(sj/3600);
+    var m=parseInt((sj-h*3600)/60);
+    var s=sj-h*3600-60*m;
+    if(h<10){h='0'+h}
+    $('.typexx'+data.id+' .timeh').html(h);
+    if(m<10){m='0'+m}
+    $('.typexx'+data.id+' .timem').html(m);
+    if(s<10){s='0'+s}
+    $('.typexx'+data.id+' .times').html(s);
+  }
+  jsq[data.id]=setTimeout('data={};data.time='+data.time+';data.id="'+data.id+'";djs(data);',1000);
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* 页面宽度 */
+/* 边框和颜色 */
+/* 深色主题，例如当前风格为绿色 */
+/* 背景颜色 */
+/* 百搭颜色 */
+/* 图片服务器地址 */
+/* 用户中心页的红色 */
+/* header样式  */
+.header { font-size: 12px; }
+
+.snav { height: 30px; line-height: 30px; color: #666; background: #F8F8F8; border-bottom: 1px solid #e8e8e8; }
+.snav a { color: #666; }
+
+.snavAll { float: left; padding-right: 20px; }
+.snavAll #Hi { cursor: default; }
+.snavAll ins, .snavAll .betNavMore { display: none; }
+.snavAll i { font-size: 12px; padding-left: 3px; }
+.snavAll table { position: absolute; margin: 0; font-size: 14px; color: #ff9600; display: block !important; background: #fff; padding: 10px; border: 1px solid #ccc; line-height: 30px; width: 330px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; cursor: default; }
+.snavAll table th { width: 30%; margin: 0; padding: 0; float: left; text-align: center; line-height: 100px; border-bottom: 1px dashed #ccc; }
+.snavAll table td { width: 68%; float: left; margin: 0; padding: 0; border-bottom: 1px dashed #ccc; }
+.snavAll table td a { color: #333; padding: 5px 10px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; margin-bottom: 5px; display: inline-block; height: 20px; line-height: 20px; float: left; background: #fff; border: 1px solid #ececec; width: 80px; margin-right: 10px; }
+
+.snavIndexLink { float: left; }
+
+.snavInfo { float: right; height: 30px; /* overflow: hidden; */ }
+.snavInfo li { display: inline-block; padding-left: 20px; cursor: pointer; }
+.snavInfo .service { margin-top: 3px; }
+
+.userName { position: relative; }
+.userName a { line-height: 30px; display: inline-block; }
+.userName img { width: 22px; height: 22px; vertical-align: middle; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; margin-right: 5px; margin-bottom: 3px; }
+.userName span { background: #ffba00; margin-left: 10px; padding: 2px 7px; text-shadow: 1px 1px 1px #333; font-size: 13px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; color: white; }
+
+.nav { background: #e4393c; clear: both; }
+.nav h3 { float: left; padding: 0; margin: 0; margin-right: 10px; }
+.nav h3 a { font-size: 0; }
+.nav h3 a img { margin-top: 1px; display: none; }
+
+.navItem { float: left; }
+.navItem li { float: left; text-align: center; width: 100px; }
+.navItem li a { display: block; font-size: 14px; color: white; padding: 0px 20px; line-height: 40px; }
+.navItem li a:hover { background: #f34649; }
+.navItem .curr a { background: #f34649; }
+
+.logoCon { background: white; }
+
+.serviceLink { background: url(http://imagess-google.com/system/pc/other/service.gif); color: #e4393c !important; display: block; background-position: 0 0; height: 25px; float: right; width: 87px; position: relative; margin-left: 25px; }
+.serviceLink:hover { background-position: -87px 0px; }
+.serviceLink:hover i { background: #ca2528; }
+.serviceLink:hover:after { border-right: 10px solid #ca2528; }
+.serviceLink:hover { text-decoration: blink !important; color: #f77e80 !important; }
+
+.accountList, .messageShow { box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3); }
+.accountList i, .messageShow i { position: absolute; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid white; margin-left: 36px; margin-top: -10px; }
+
+.accountList { position: absolute; background: #fff; color: #333; border: 1px solid #ccc; padding: 5px; margin-left: -16px; display: none; z-index: 2; }
+.accountList a { color: #666; display: block; padding: 0 5px; width: 80px; text-align: center; line-height: 24px; }
+
+.messageShow i { margin-left: 114px; margin-top: -15px; }
+
+.messageShow { background: #fff; padding: 10px; position: absolute; color: #333; width: 260px; line-height: 20px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; display: none; border: 1px solid #ddd; right: -119px; box-sizing: border-box; z-index: 2; }
+.messageShow dl { margin: 0; }
+.messageShow dt { width: 100%; overflow: hidden; border-bottom: 1px dotted #ccc; padding-bottom: 5px; }
+.messageShow dt p { width: 100px; float: left; margin: 0; }
+.messageShow dt p small { font-weight: bold; color: #F06701; font-size: 13px; }
+.messageShow dt p + a { line-height: 20px; }
+.messageShow dt a { color: #333; float: right; }
+.messageShow dd { padding-top: 5px; margin: 0; }
+.messageShow dd p { margin: 0; }
+.messageShow dd p a { color: #F06701; }
+
+.showMoney, .getMoney { border: 1px dotted #6b6b6b; display: inline-block; box-sizing: border-box; line-height: 18px; padding: 0 3px; }
+.showMoney i, .getMoney i { display: inline-block; }
+
+/** 登陆注册的竖线 */
+.vertical { position: absolute; height: 15px; width: 1px; background: #d7d7d7; margin-top: 8px; margin-left: 12px; }
+
+/**  */
+.pingLink { padding-left: 5px; }
+.pingLink:hover { text-decoration: underline; }
+.pingLink:before { content: ""; display: inline-block; vertical-align: middle; margin-right: 2px; background: url(http://imagess-google.com/system/common/other/greenball.png) no-repeat;; height: 12px; width: 12px; background-size: 11px; transform: translateY(-1px); }
+
+/*# sourceMappingURL=header.css.map */

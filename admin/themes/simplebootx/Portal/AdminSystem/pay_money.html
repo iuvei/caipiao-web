@@ -1,0 +1,69 @@
+<admintpl file="header" />
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="{:U('Portal/AdminSystem/pay_mode')}">用户打款</a></li>
+            <!-- <li ><a href="{:U('Portal/AdminSystem/pay_mode_add')}" >添加方式</a></li> -->
+        </ul>
+        <form class="well form-search" method="post" action="{:U('Portal/AdminSystem/pay_money')}">  
+            确认状态:
+            <select name="term" style="width: 120px;">
+                <option value="">全部</option>
+                <option value="1"  <if condition="$_GET['term'] eq  1">selected</if>>已确认</option>
+                <option value="0"  <if condition="$_GET['term'] eq  0">selected</if>>未确认</option>       
+            </select>&nbsp; &nbsp;
+            用户名:
+            <input type="text" name="user_login" style="width: 200px;" value="{$get.user_login}" placeholder="请输入用户名">
+            时间：
+            <input type="text" name="start_time" class="js-datetime" value="{$get.start_time|default=''}" style="width: 120px;" autocomplete="off">-
+            <input type="text" class="js-datetime" name="end_time" value="{$get.end_time|default=''}" style="width: 120px;" autocomplete="off"> &nbsp; &nbsp;
+
+            <input type="submit" class="btn btn-primary" value="搜索" />
+        </form>
+
+        <form method="post" class="js-ajax-form" > 
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th align="center">ID</th>
+                        <th>用户名</th>
+                        <th style="vertical-align:middle; text-align:center;">打款方式</th>
+                        <!-- <th style="vertical-align:middle; text-align:center;">打款账号</th> -->
+                        <th style="vertical-align:middle; text-align:center;">打款金额</th>
+                        <th style="vertical-align:middle; text-align:center;">收款方式</th>
+                        <th style="vertical-align:middle; text-align:center;">打款时间</th>
+                        <th style="vertical-align:middle; text-align:center;">备注</th>
+                        <th style="width:200px;" align="center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <foreach name="list" item="vo">
+                    <tr>
+                        <td align="center">{$vo.id}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.user_login}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.bank}</td>
+                        <!-- <td style="vertical-align:middle; text-align:center;">{$vo.bank_card}</td> -->
+                        <td style="vertical-align:middle; text-align:center;">{$vo.number}</td>
+
+                        <td style="vertical-align:middle; text-align:center;">{$vo.pay_mode_id|pay_mode_name=###}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.add_time}</td>
+                        <td style="vertical-align:middle; text-align:center;">{$vo.remarks}</td>
+
+                        <td align="center">
+                        	<if condition="$vo['status'] eq 0 ">
+                            <a class="js-ajax-dialog-btn" href='{:U("AdminSystem/pay_money_conf",array("id"=>$vo["id"]))}'>确认</a>
+                            </if>
+                            <a class="js-ajax" href='{:U("AdminSystem/pay_money_edit",array("id"=>$vo["id"]))}'>编辑</a>
+                            <a class="js-ajax-delete" href='{:U("AdminSystem/pay_money_del",array("id"=>$vo["id"]))}'>删除</a> 
+                        </td>
+                    </tr>
+                    </foreach>
+                </tbody>
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

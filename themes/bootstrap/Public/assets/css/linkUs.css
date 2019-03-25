@@ -1,0 +1,15 @@
+.w400{
+	max-width: 400px;
+}
+#msg .form-control{
+	border-radius: 0px!important;
+}
+#msg{
+	padding-top: 20px;
+}
+.mar_b50{
+	margin-bottom: 50px;
+}
+.content{
+	overflow:hidden; 
+}

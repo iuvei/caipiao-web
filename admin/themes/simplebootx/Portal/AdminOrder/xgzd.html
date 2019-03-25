@@ -1,0 +1,38 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<form class="form-horizontal" action="{:U('Portal/AdminOrder/xgzd_post')}" method="post">
+        	<foreach name="zdxx" item="vo">
+			<fieldset>
+                <div class="control-group" >
+					<label class="control-label">玩法</label>
+					<div class="controls" >
+                        {$vo.playedid|played=###}
+					</div>
+				</div>
+				<div class="control-group" >
+					<label class="control-label">投注号码</label>
+					<div class="controls" >
+                        <input type="text" id="betnumber" style="color: red" name="data[{$vo.id}][betnumber]" value="{$vo.betnumber}" required>
+					</div>
+				</div>
+				<div class="control-group" >
+					<label class="control-label">赔率</label>
+					<div class="controls" >
+                        <input type="text"  id="odds" style="color: red" name="data[{$vo.id}][odds]" readonly value="{$vo.odds}" required >用,隔开
+					</div>
+				</div>   
+                <input type="hidden" name="data[{$vo.id}][id]" value="{$vo.id}"/>        
+			</fieldset>
+            </foreach>
+			<div class="form-actions">
+				 <input type="hidden" name="uid" value="{$uid}"/>
+				<input type="submit" class="btn btn-primary">
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

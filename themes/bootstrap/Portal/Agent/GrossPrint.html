@@ -1,0 +1,67 @@
+
+   
+<!-- <link rel="stylesheet" href="/SSCCompany/Content/SSkin/Style/common.css?v=20160412180533" type="text/css" /> -->
+<link href="/SSCCompany/Content/SSkin/Style/all.css?v=20160119" rel="stylesheet" />
+<link href="/SSCCompany/Scripts/Lib/artDialog/ui-dialog.css?v=20160119" rel="stylesheet" />
+<script type="text/javascript" src="/SSCCompany/Scripts/jquery-1.8.2.js"></script>
+<script src="/SSCCompany/Scripts/Lib/artDialog/dialog-plus-min.js"></script>
+<script src="/SSCCompany/Scripts/Lib/knockout-3.3.0.debug.js"></script>
+<script src="/SSCcompany/scripts/Default/utils.js"></script>
+
+<script src="/SSCCompany/Scripts/Default/Gross/GrossPrint.js"></script>
+<!-- <script src="/Scripts/Lib/My97DatePicker/WdatePicker.js"></script> -->
+<script src="/SSCCompany/Scripts/Default/ko/ko.page.js"></script>
+  <!--print startGrossPrint-->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" id="PrintTable" class="tableborder ie7Top">
+  
+
+    <tr class="header">
+        <td colspan="10" align="center" style="text-align:center;"><label data-bind="text:getGrossPrintTitle"></label> 总货明细 </td>
+    </tr>
+
+    <tr class="reportTop">
+        <td width="8%">注单编号</td>
+        <td width="10%">会员</td>
+        <td width="10%">下单时间</td>
+        <td width="6%">号码</td>
+        <td width="7%">下注金额</td>
+        <td width="7%">赔率</td>
+        <td width="7%">中奖</td>
+        <td width="7%">状态</td>
+        <td width="7%">路径</td>
+    </tr>
+
+    <tbody data-bind="foreach:list">
+
+        <tr>
+            <td data-bind="text:BetIdentifier" align="center"></td>
+            <td data-bind="text:LoginName"></td>
+            <td class="altbg2" data-bind="text:BetDt">下单时间</td>
+            <td class="altbg1"><span data-bind="text:BetNumber"></span> <b><span class="soon_b_f3" data-bind="text:BetTypeID>=14?'现':''">号码</span></b></td>
+            <td class="altbg2"><b data-bind="text:BetAmount">下注金额</b></td>
+            <td class="altbg1" data-bind="text:Odds">赔率</td>
+            <td class="altbg2" data-bind="text:WinLoss">中奖</td>
+            <td data-bind="text:BetStatus===0?'成功':BetStatus===1?'退码':BetStatus===2?'结算':'删除'"></td>
+            <td class="altbg2" data-bind="text:BetWayID">路径</td>
+
+        </tr>
+
+    </tbody>
+    <tr class="reportFooter">
+        <td colspan="2" style="text-align:center">合计</td>
+        <td data-bind="text:CountMember">统计会员</td>
+        <td>&#12288;</td>
+        <td data-bind="text:CountAmt">统计下注金额</td>
+        <td>&#12288;</td>
+        <td data-bind="text:CountWinorLoss()">统计中奖</td>
+        <td></td>
+        <td></td>
+    </tr>
+   
+    <tr>
+        <td width="*" colspan="10" style="text-align:center;"><input class="button" type="button" name="printsubmit" data-bind="click:Print" value="打印"></td>
+    </tr>
+</table> 
+ <!--print endGrossPrint-->
+<br />
+ <div class="footer fanye"  data-bind="page:currentPage"></div>

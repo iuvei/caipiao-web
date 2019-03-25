@@ -1,0 +1,56 @@
+/*右下角对话框*/
+#model-dialog {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    width: 250px;
+    font-size: 13px;
+    color: white;
+    font-family: '微软雅黑';
+    border-radius: 4px;
+    overflow: hidden;
+    _position: absolute;
+    _bottom: auto;
+    _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+
+    #model-dialog .head {
+        width: 94%;
+        _width: auto;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        border-radius: 4px 4px 0 0/4px 4px 0 0;
+        box-shadow: 0 3px 4px #ccc;
+        white-space: nowrap;
+        background: url(../../../../Images/Default/Main/bg_list_left.gif) repeat-x;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #model-dialog .close {
+        float: right;
+        /* border: 1px solid #cccccc;*/
+        display: inline-block;
+        width: auto;
+        height: 25px;
+        line-height: 25px;
+        margin-top: 1px;
+        text-align: center;
+        /*border-radius: 3px;*/
+        cursor: pointer;
+        *margin-top: -28px;
+    }
+
+    #model-dialog .content {
+        height: 75%;
+        border: 1px solid #cccccc;
+        color: #616161;
+        padding: 10px 10px;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        word-wrap: break-word;
+    }

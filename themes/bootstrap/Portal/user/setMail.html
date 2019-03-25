@@ -1,0 +1,108 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">绑定邮箱</div>
+            <div class="userMain">
+            	<!--安全中心部分-->
+                <form class="form-horizontal js-ajax-form" action="{:U('Portal/User/setMail')}" method="post">
+                <div class="changePwd" id="tel_mobile">
+                	<ul class="pwdList">
+                    	<li>
+                        	<span>邮箱：</span>
+                            <input type="text" class="pwdInput" name="mobile" onKeyUp="value=value.replace(/[\u4e00-\u9fa5]/g,'')" required/>
+                        </li>
+                        <li style="position:relative;">
+                        	<span>验证码：</span>
+                            <input type="text" class="pwdInput" name="code" required/>
+                            <span class="btn SendCode">
+                            	<a class="ClickShade" onClick="send_sms_reg_code()" id="count_down">发送验证码</a>
+                            </span>
+                        </li>
+                        <li>
+                        	<span></span>
+                            <input type="submit" class="mainColorBtn ClickShade pwdBtn" value="保存"/>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<script>
+     function send_sms_reg_code(){
+
+        var mobile = $('#tel_mobile').find('input[name="mobile"]').val();
+        if(!checkMail(mobile)){
+            alert('请输入正确的电子邮箱', {icon: 2});// alert('请输入正确的手机号码');
+            return;
+        }
+        var url = "/index.php/Portal/User/send_sms_code/?mobile="+mobile;
+        $.get(url,function(data){
+            obj = $.parseJSON(data);
+            if(obj.status == 1)
+            {
+                $('#count_down').attr("disabled","disabled");               
+                intAs = 60; // 手机短信超时时间
+                jsInnerTimeout('count_down',intAs);                   
+            }
+            layer.msg(obj.msg);
+            
+        })
+    }
+function checkMail(tel) {
+    var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+    if (reg.test(tel)) {
+        return true;
+    }else{
+        return false;
+    };
+}
+    function jsInnerTimeout(id,intAs)
+    {
+
+
+        var codeObj=$("#"+id);
+        //var intAs = parseInt(codeObj.attr("IntervalTime"));
+
+        intAs--;
+        if(intAs<=-1)
+        {
+            codeObj.removeAttr("disabled");
+//            codeObj.attr("IntervalTime",60);
+            codeObj.text("发送");
+            return true;
+        }
+
+        codeObj.text(intAs+'秒');
+//        codeObj.attr("IntervalTime",intAs);
+
+        setTimeout("jsInnerTimeout('"+id+"',"+intAs+")",1000);
+    };
+
+</script>
+<!--footer Ending-->
+</body>
+</html>

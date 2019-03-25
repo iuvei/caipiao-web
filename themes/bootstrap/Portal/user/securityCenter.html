@@ -1,0 +1,109 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">安全中心</div>
+            <div class="userMain">
+                <!--安全中心部分-->
+                <div class="safeTop">
+                    <div id="safeji" class="star">
+                        安全级别：
+                        <i class="iconfont <if condition='$i egt 1'>curr</if>">❤</i>
+                        <i class="iconfont <if condition='$i egt 2'>curr</if>">❤</i>
+                        <i class="iconfont <if condition='$i egt 3'>curr</if>">❤</i>
+                        <i class="iconfont <if condition='$i egt 4'>curr</if>">❤</i>
+                        <i class="iconfont <if condition='$i egt 5'>curr</if>">❤</i>
+                        <php>
+                        $jb[0]='低';
+                        $jb[1]='低';
+                        $jb[2]='中';
+                        $jb[3]='中';
+                        $jb[4]='中';
+                        $jb[5]='高';
+                        </php>
+                        <span>您的账号安全级别为<em>{$jb[$i]}</em>，可以通过完善安全信息提高级别。</span>
+                    </div>
+                    
+                    <p>上次登录：<ins id="lastLoginTime">{$user.last_login_time}</ins>，<ins id="lastLoginPlace">{$area.country}</ins>　|　不是我登录？<a class="alink" href="{:U('Portal/User/verifyPwd')}">修改密码</a></p>
+                </div>
+                <ul id="safeList" class="safeList">
+                    <li >
+                        <span class="iconfont tyIcon"><img src="__TMPL__Public/bifa/images/safa.png"></span> 
+                        <span class="text">
+                            <strong class="curr">登陆密码</strong>
+                            <p>建议您使用字母和数字的组合、混合大小写、在组合中加入下划线等符号。</p>
+                        </span>
+                        <span class="btn">
+                            <a href="verifyPwd.html">修改密码</a>
+                        </span>
+                    </li>
+                    <li id="maney_pass" <if condition="$stu['maney_pass'] neq 1">class="noSet"</if>>
+                        <span class="iconfont tyIcon"><img src="__TMPL__Public/bifa/images/yaoshi.png"></span>
+                        <span class="text">
+                            <strong class="curr">设置安全密码</strong>
+                            <p>安全密码用于提现、绑定银行卡等操作，可保障资金安全。</p>
+                        </span>
+                        <span class="btn">
+                            <a href="securityPwd.html">修改密码</a>
+                        </span>
+                    </li>
+                    <li id="mobile" <if condition="$stu['mobile'] neq 1">class="noSet"</if>>
+                        <span class="iconfont shouji"><img src="__TMPL__Public/bifa/images/shouji.png"></span>
+                        <span class="text">
+                            <strong class="curr">绑定密保手机</strong>
+                            <p>密保手机可以增加账户安全性，快速找回帐号密码。</p>
+                        </span>
+                        <span class="btn">
+                            <a href="setMobile.html">绑定手机</a>
+                        </span>
+                    </li>
+                    <li id="answer"  <if condition="$stu['wt1'] neq 1">class="noSet"</if>>
+                        <span class="iconfont mibao"><img src="__TMPL__Public/bifa/images/mibao.png"></span>
+                        <span class="text">
+                            <strong class="curr"><if condition="$stu['wt1'] eq 1">已<else />未</if>设置密保问题</strong>
+                            <p>密保问题可以增加账户安全性，快速找回帐号密码。</p>
+                        </span>
+                        <span class="btn">
+                            <a href="setQuestion.html">设置密保</a>
+                        </span>
+                    </li>
+                    <li id="user_email" <if condition="$stu['user_email'] neq 1">class="noSet"</if>>
+                        <span class="iconfont email"><img src="__TMPL__Public/bifa/images/youxiang.png"></span>
+                        <span class="text">
+                            <strong class="curr"><if condition="$stu['user_email'] eq 1">已<else />未</if>绑定密保邮箱</strong>
+                            <p>绑定邮箱可以增加账户安全性，快速找回帐号密码。</p>
+                        </span>
+                        <span class="btn">
+                            <a href="setMail.html">绑定邮箱</a>
+                        </span>
+                    </li>
+                </ul>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+
+</body>
+</html>

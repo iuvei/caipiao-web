@@ -1,0 +1,58 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">网站公告</div>
+            <div class="userMain">
+                <!--安全中心部分-->
+                <php>
+                    $i=0;
+                </php>
+                <div class="announcementList">
+                    <ul>
+                        <foreach name="posts" item="vo">
+                        <li class="news_li">
+                            <div class="demo">
+                            <a href="{:U('Portal/User/Notice_content',array('id'=>$i++))}" id="iframe" class="iframe" >{$vo.post_title}</a>
+                            <span class="CreatTime">{$vo.post_modified}</span>
+                            </div>
+                        </li>
+                        </foreach>
+                    </ul>
+                </div>
+                <!--安全中心部分 结束-->
+            </div>
+        </div>
+        <!--right Ending-->
+
+        <!-- 内容 -->
+        <div style="display:none">
+            <div id="inline" class="helpContent" >
+            <div class="_content helpArtical">{$content.post_content}<br></div>
+            </div>
+        </div>
+        <!-- 内容 介绍 -->
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+<!--footer Ending-->
+</body>
+</html>

@@ -1,0 +1,342 @@
+
+2019-03-25 00:01:34	GET	127.0.0.1	127.0.0.1	433148.708	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.68660"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15440","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.038834,"namelookup_time":0.012178,"connect_time":0.012415,"pretransfer_time":0.012443,"size_upload":0,"size_download":76,"speed_download":1957,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.038809,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":38218}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 00:11:34	GET	127.0.0.1	127.0.0.1	433749.100	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.31306"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15441","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.280111,"namelookup_time":0.253416,"connect_time":0.25366,"pretransfer_time":0.253686,"size_upload":0,"size_download":76,"speed_download":271,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.280083,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":34776}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 00:21:43	GET	127.0.0.1	127.0.0.1	434357.259	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.76878"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15442","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.281221,"namelookup_time":0.253471,"connect_time":0.253733,"pretransfer_time":0.253761,"size_upload":0,"size_download":76,"speed_download":270,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.281191,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":34534}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 00:31:34	GET	127.0.0.1	127.0.0.1	434949.085	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.78374"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15443","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.280167,"namelookup_time":0.253483,"connect_time":0.253777,"pretransfer_time":0.253811,"size_upload":0,"size_download":76,"speed_download":271,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.280137,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":33888}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 00:41:35	GET	127.0.0.1	127.0.0.1	435549.153	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.27213"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15444","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.039157,"namelookup_time":0.012211,"connect_time":0.012421,"pretransfer_time":0.012442,"size_upload":0,"size_download":77,"speed_download":1966,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.039132,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":52014}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.053KB
+                    [result_data] => -1<br>总计开奖0, 用时1秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 00:51:33	GET	127.0.0.1	127.0.0.1	436147.807	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.40936"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15445","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.030007,"namelookup_time":0.004128,"connect_time":0.004333,"pretransfer_time":0.004357,"size_upload":0,"size_download":76,"speed_download":2532,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.029979,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":49326}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 01:01:32	GET	127.0.0.1	127.0.0.1	436746.163	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.46381"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15446","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.040046,"namelookup_time":0.012154,"connect_time":0.012395,"pretransfer_time":0.012425,"size_upload":0,"size_download":77,"speed_download":1922,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.040017,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":39518}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.053KB
+                    [result_data] => -1<br>总计开奖0, 用时1秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 01:11:37	GET	127.0.0.1	127.0.0.1	437351.394	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.28211.1553010145.97260"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15447","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.030129,"namelookup_time":0.004108,"connect_time":0.004343,"pretransfer_time":0.004368,"size_upload":0,"size_download":76,"speed_download":2522,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.030104,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":33872}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 01:21:36	GET	127.0.0.1	127.0.0.1	236.430	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.69547"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15448","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.280426,"namelookup_time":0.252566,"connect_time":0.252908,"pretransfer_time":0.252948,"size_upload":0,"size_download":76,"speed_download":271,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.280354,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":50626}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 01:31:36	GET	127.0.0.1	127.0.0.1	836.902	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.81890"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15449","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.278331,"namelookup_time":0.252547,"connect_time":0.252772,"pretransfer_time":0.252798,"size_upload":0,"size_download":76,"speed_download":273,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.278303,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":46848}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 01:41:33	GET	127.0.0.1	127.0.0.1	1433.161	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.97382"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15450","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.535586,"namelookup_time":0.50883,"connect_time":0.509122,"pretransfer_time":0.509151,"size_upload":0,"size_download":76,"speed_download":141,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.535555,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":34292}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 01:51:38	GET	127.0.0.1	127.0.0.1	2038.344	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.59210"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15451","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.278847,"namelookup_time":0.252542,"connect_time":0.252775,"pretransfer_time":0.252806,"size_upload":0,"size_download":76,"speed_download":272,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.278817,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":58332}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 02:01:38	GET	127.0.0.1	127.0.0.1	2638.269	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.39998"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15452","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.537078,"namelookup_time":0.50882,"connect_time":0.509085,"pretransfer_time":0.509119,"size_upload":0,"size_download":76,"speed_download":141,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.537049,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":47100}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 02:11:39	GET	127.0.0.1	127.0.0.1	3239.189	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.57702"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15453","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.28017,"namelookup_time":0.25255,"connect_time":0.252788,"pretransfer_time":0.252815,"size_upload":0,"size_download":76,"speed_download":271,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.280144,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":42714}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 02:21:33	GET	127.0.0.1	127.0.0.1	3833.933	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.15012"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15454","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.031039,"namelookup_time":0.004108,"connect_time":0.004322,"pretransfer_time":0.00435,"size_upload":0,"size_download":76,"speed_download":2448,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.031014,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":60070}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 02:31:41	GET	127.0.0.1	127.0.0.1	4441.391	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.40107"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15455","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.054036,"namelookup_time":0.028204,"connect_time":0.028438,"pretransfer_time":0.028463,"size_upload":0,"size_download":76,"speed_download":1406,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.054011,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":56492}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 02:41:42	GET	127.0.0.1	127.0.0.1	5042.493	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.12054"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15456","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.279295,"namelookup_time":0.252541,"connect_time":0.252752,"pretransfer_time":0.252781,"size_upload":0,"size_download":76,"speed_download":272,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.279267,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":44030}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 02:51:38	GET	127.0.0.1	127.0.0.1	5638.395	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.45643"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15457","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.281156,"namelookup_time":0.252558,"connect_time":0.252827,"pretransfer_time":0.252864,"size_upload":0,"size_download":76,"speed_download":270,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.281125,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":35800}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)
+
+2019-03-25 03:01:33	GET	127.0.0.1	127.0.0.1	6233.203	Array
+(
+    [0] => 
+    [1] => Array
+        (
+            [config] => {"cookie":"","header_ext":[],"connect_ip":"","timeout":300,"write_log":5,"empty_retry_times":0,"proxy":"","follow_location":true,"collect_cookie":"","request_method":"GET","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","compress_algorithm":"gzip","request_id":"2130706433.5955.1553447859.82544"}
+            [header] => ["User-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36","Cache-Control: max-age=0","Connection: keep-alive","Host: 38yf-jvjb-dl.1733269.com"]
+            [curl_info] => {"url":"http://38yf-jvjb-dl.1733269.com/index.php/Portal/Date/kj/id/15458","content_type":"text/html;charset=utf-8","http_code":200,"header_size":402,"request_size":304,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":0.03273,"namelookup_time":0.004112,"connect_time":0.004345,"pretransfer_time":0.004366,"size_upload":0,"size_download":76,"speed_download":2322,"speed_upload":0,"download_content_length":-1,"upload_content_length":0,"starttransfer_time":0.0327,"redirect_time":0,"redirect_url":"","primary_ip":"47.244.166.94","certinfo":[],"primary_port":80,"local_ip":"172.31.110.247","local_port":46764}
+            [customered_info] => Array
+                (
+                    [result_size] => 0.052KB
+                    [result_data] => 0<br>总计开奖0, 用时0秒, 奖金放发完毕。
+                )
+
+        )
+
+)

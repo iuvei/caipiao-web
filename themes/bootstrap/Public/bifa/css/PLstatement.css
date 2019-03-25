@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* 椤甸潰瀹藉害 */
+/* 杈规鍜岄鑹� */
+/* 娣辫壊涓婚锛屼緥濡傚綋鍓嶉鏍间负缁胯壊 */
+/* 鑳屾櫙棰滆壊 */
+/* 鐧炬惌棰滆壊 */
+/* 鍥剧墖鏈嶅姟鍣ㄥ湴鍧€ */
+/* 鐢ㄦ埛涓績椤电殑绾㈣壊 */
+.plCon { margin: 15px; }
+.plCon .balance { width: 282px; height: 90px; }
+.plCon .balance span { font-size: 30px; color: #e4393c; font-family: arial; }
+.plCon .balance span i { font-family: '寰蒋闆呴粦'; font-size: 26px; }
+.plCon .balance p { margin: 10px 0; }
+.plCon .balance p a { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #ddd; margin: 0 3px; padding: 2px 10px; }
+.plCon .balance p a:nth-child(2) { margin-left: 28px; }
+.plCon .balance p i { font-size: 16px; margin-right: 5px; }
+.plCon .plTotal, .plCon .calculate { width: 239px; height: 90px; }
+.plCon .plTotal .iconfont, .plCon .calculate .iconfont { color: white; background: #fb4046; padding: 16px; font-size: 28px; display: block; height: 60px; width: 60px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; line-height: 28px; float: left; }
+.plCon .plTotal .detail, .plCon .calculate .detail { display: block; width: 145px; height: 50px; float: left; padding-left: 10px; line-height: 1.4; }
+.plCon .plTotal .detail p, .plCon .calculate .detail p { margin: 0; margin-left: 10px; }
+.plCon .plTotal .detail em, .plCon .calculate .detail em { font-size: 28px; color: #e4393c; font-family: arial; line-height: 2; }
+.plCon .plTotal .detail em i, .plCon .calculate .detail em i { font-family: '寰蒋闆呴粦'; font-size: 24px; }
+.plCon .plTotal .detail ins, .plCon .calculate .detail ins { margin-left: 10px; color: #e4393c; display: block; margin-top: 18px; }
+.plCon .balance, .plCon .plTotal, .plCon .calculate { float: left; padding: 15px; }
+.plCon > div + div { margin-left: 15px; }
+
+.balance, .plTotal, .calculate, .plMore { /* background: #f8f8f8; */ border: 1px solid #ddd; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+
+/*# sourceMappingURL=PLstatement.css.map */

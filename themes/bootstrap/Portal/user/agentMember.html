@@ -1,0 +1,109 @@
+<tc_include file="Public:head" />
+<title>{$site_name}</title>
+</head>
+
+<body>
+<!--header-->
+<tc_include file="Public:headUser" />
+<!--header Ending-->
+<!--nav-->
+<tc_include file="Public:nav" />
+<!--nav Ending-->
+<!--main-->
+<section>
+    <div class="container fix">
+        <!--left-->
+        <tc_include file="Portal/user/Public:left" />
+        <!--left Ending-->
+        <!--right-->
+        <div class="userRight">
+            <div class="userTitle">会员管理</div>
+            <!--搜索区-->
+        <form method="get" id="searchform">
+            <div class="searchBox">
+            	<ul class="inputSel">
+                	<li>
+                        <span>账号：</span>
+                        <input type="text" name="user_login" class="userInput accountSearch" value="{$get.user_login}">
+                    </li>
+                	<li>
+                        <span>用户类型：</span>
+                        <select name="type" class="bankSel cpKind userInput">
+                            <option value="0" <if condition="$get[type] eq 0">selected</if>>全部</option>
+                            <option value="1" <if condition="$get[type] eq 1">selected</if>>代理</option>
+                            <option value="2" <if condition="$get[type] eq 2">selected</if>>玩家</option>
+                        </select>
+                    </li>
+                    <li>
+                    	<a class="mainColorBtn ClickShade pwdBtn" href="javascript:void(0)" onclick="$('#searchform').submit();">搜索</a>
+                    </li>
+                </ul>
+            </div>
+            </form>
+            <div class="thirdMain">
+            <!--shujubiaoti-->
+            	<div class="headLine">
+                	<ul class="memberList">
+                    	<li>账号</li>
+                        <li>用户类型</li>
+                        <li>下级人数</li>
+                        <li>余额</li>
+                        <li>最后登录</li>
+                        <li>操作</li>
+                    </ul>
+                </div>
+                <!--shuju-->
+                <php>
+                $type[0]=代理;
+                $type[1]=玩家;
+                </php>
+                <div class="dataBox">
+                <foreach name="list" item="one">
+                    <ul class="memberData">
+                        <li>{$one.user_login}</li>
+                        <li>{$type[$one[user_type]]}</li>
+                        <li>{$one.id|xjnum=###}</li>
+                        <li>{$one.money}</li>
+                        <li>{$one.last_login_time}</li>
+                        <li>
+                            <a href="/index.php/Portal/User/agentBetRecord/user_login/{$one.user_login}" class="bianji" title="投注明细" alt="投注明细"><img src="__TMPL__Public/bifa/images/betIcon.png"></a>
+                            <a href="/index.php/Portal/User/agentBillRecord/user_login/{$one.user_login}" class="bianji" title="交易明细" alt="交易明细"><img src="__TMPL__Public/bifa/images/tradingIcon.png"></a>
+                            <a href="#" title="查看返点" class="bianji" onclick="dkxx({$one.k3},{$one.ssc},{$one.xw})"><img src="__TMPL__Public/bifa/images/bianji.png"></a>
+                        </li>
+                    </ul>
+                </foreach>
+                    
+                </div>
+                <!--fenye-->
+                <div class="page">
+                    <div id="pageNav" class="pageNav">
+                    	<div class="pagenav">
+                        <ul class="pageList">
+                           {$page}
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--right Ending-->
+    </div>
+</section>
+<script type="text/javascript">
+function dkxx(k3,ssc,xw){
+    layer.open({
+  type: 0,
+  title:'详情',
+  skin: 'layui-layer-rim', //加上边框
+  area: ['600px', '400px'], //宽高
+  content: '<div  id="Detail" class="bonusTable" style="padding: 0px;"><ul data-v-a961bf6c="" class="InviteW"><ul class="InviteW"><li>快3</li> <li><input type="text" name="K3" disabled="disabled" class="userInput mgl20" value="'+k3+'">&nbsp;<span>（自身返点：{$user[k3]}）</span></li></ul><ul class="InviteW"><li>时时彩</li> <li><input type="text" name="SSC" disabled="disabled" class="userInput mgl20" value="'+ssc+'">&nbsp;<span>（自身返点：{$user[ssc]}）</span></li></ul><ul class="InviteW"><li>11选5</li> <li><input type="text" name="XW" disabled="disabled" class="userInput mgl20" value="'+xw+'">&nbsp;<span>（自身返点：{$user[xw]}）</span></li></ul></div>'
+});
+}
+</script>
+<div class="clearfix"></div>
+<!--main Ending-->
+<!--footer-->
+<tc_include file="Public:footer" />
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.personalInfo { margin: 30px 20px; margin-bottom: 0; float: left; min-width: 450px; margin-left: 8px; }
+.personalInfo .diyselect { width: 73px; }
+
+.selectHeadImg { display: inline-block; position: relative; float: left; margin: 30px; margin-right: 0; width: 100px; }
+.selectHeadImg a { position: absolute; bottom: 0; left: 0; text-align: center; display: inline-block; width: 100%; background: rgba(0, 0, 0, 0.16); line-height: 25px; color: white; }
+.selectHeadImg a:hover { background: rgba(0, 0, 0, 0.5); }
+
+.headImgList { width: 557px; height: 394px; overflow: hidden; }
+
+.headImgListTitle { background: #d7d7d7; font-size: 14px; padding: 0 10px; line-height: 34px; }
+.headImgListTitle a { float: right; background-position: 4px -36px; position: initial; width: 20px; height: 20px; margin: 7px 0; }
+
+.headImgContent { float: left; width: 360px; padding: 5px; }
+.headImgContent .curr img { border: 1px solid #53a8f1; box-shadow: 0 0 5px #53a8f1; }
+.headImgContent a { display: block; float: left; padding: 5px; line-height: 0; }
+.headImgContent a:hover img { border: 1px solid #53a8f1; box-shadow: 0 0 5px #53a8f1; }
+.headImgContent img { width: 60px; height: 60px; border: 1px solid #b1bac5; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+
+.headImgView { float: left; width: 196px; text-align: center; padding: 5px; padding-right: 10px; }
+.headImgView img { width: 102px; height: 102px; border: 1px solid #b1bac5; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.headImgView h5, .headImgView p { margin: 0; }
+.headImgView h5 { font-size: 14px; }
+.headImgView .button { margin-top: 130px; }
+.headImgView .button a { line-height: 25px; height: 25px; }
+.headImgView .button a:last-child { margin: 0; }
+
+.cancel { background: #d6d6d6 !important; color: #666666 !important; }
+.cancel:hover { background: #c5c5c5 !important; }
+
+.headImg { vertical-align: top; width: 100px; height: 100px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+
+.evCall { clear: both; }
+.evCall .levelBar { margin: 10px 30px; width: 80%; height: 48px; }
+.evCall h6 { margin: 0 30px; }
+.evCall table { table-layout: fixed; margin: 0 30px; text-align: center; margin-bottom: 30px; }
+.evCall table th, .evCall table td { border: 1px solid #e6e6e6; height: 32px; }
+.evCall table th { background-color: #f2f7ff; }
+
+.evCallInfo { float: left; margin: 25px 30px; line-height: 22px; margin-bottom: 30px; }
+.evCallInfo em { letter-spacing: 12px; }
+
+.levelBar { clear: both; position: relative; margin-bottom: 18px; /*     .left,.right{ display: inline-block; width: 14px; height: 14px; position: absolute; top: -2px; background: #4aa9db; @include border-radius(50%); border: 4px solid white; box-shadow: 0 0 1px 1px #4aa9db; } .left { left: -3px; } .right{ background-position: -20px 0px; right: -3px; background: #666666; box-shadow: 0 0 1px 1px #909090; } */ }
+.levelBar .BTN { background-color: #e74a4a; border-color: #b91616; border-bottom: 0.25em solid #b91616 !important; }
+.levelBar .u-progress ins { display: block; width: 100%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.levelBar p { margin: 0; }
+.levelBar > em { position: absolute; width: 100%; top: 0; left: 0; height: 16px; text-align: center; font-size: 14px; line-height: 16px; color: white; }
+
+.levelBarInfo { position: relative; margin: 2px 0; }
+.levelBarInfo p { text-align: center; }
+.levelBarInfo em, .levelBarInfo i { position: absolute; top: 6px; line-height: 15px; text-align: center; font-size: 14px; }
+.levelBarInfo > em { left: 0; }
+.levelBarInfo > i { right: 0; }
+
+/** 进度条 */
+.u-progress { height: 16px; /* background: #e7e7e7; */ position: relative; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; background: #ddd; /* border: 1px solid #b6b6b6; */ overflow: hidden; }
+
+.u-progress .pgbar, .u-progress .pging { display: block; width: 100%; background: linear-gradient(to right, #fd7430 0%, #e4393c 100%); height: 16px; -moz-border-radius: 8px 0 0 8px; -webkit-border-radius: 8px 0 0 8px; border-radius: 8px 0 0 8px; }
+
+.pging { position: relative; }
+
+/*# sourceMappingURL=personalInfo.css.map */

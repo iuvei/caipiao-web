@@ -1,0 +1,36 @@
+
+
+.search input{
+	width:50px;
+    vertical-align:middle;
+    text-align:left;
+
+}
+.search select{
+    /*height:20px;*/
+    border:1px solid #006699;
+    color:#006699;}
+.search td{
+	text-align:left;
+}
+.footer{
+	width:100%;
+    text-align:center;
+}
+.bet td{
+	background:#FFFFC4;
+    border:1px solid #F6D3BC;
+    border-left:none;
+    border-top:none;
+    text-align:center;
+    color:red;
+}
+.yellowIsHotNum td{
+    background-color:yellow;
+    border: 1px solid #F6D3BC;
+    border-left: none;
+    border-top: none; 
+    text-align: center;
+    line-height: 30px;
+    padding: 0;
+}

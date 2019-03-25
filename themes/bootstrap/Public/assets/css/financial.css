@@ -1,0 +1,30 @@
+.hpanel .panel-body {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #e4e5e7;
+    border-radius: 2px;
+    padding: 0px;
+    position: relative;
+}
+.bg1{
+	background: #ea5c4e;
+}
+.bg2{
+	background: #f4a624;
+}
+.bg3{
+	background: #1ccdab;
+}
+.hpanel {
+	color: #fff!important;
+}
+.btn-info {
+    color: #fff;
+    background-color: #689ded!important;
+    border-color: #649bee!important;
+}
+@media screen and (max-width: 768px) {
+    .content {  
+       padding: 50px 0;
+    }
+   
+}

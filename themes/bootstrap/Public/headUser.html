@@ -1,0 +1,98 @@
+<div class="header head5">
+    <div class="snav">
+        <div class="container">
+            <div class="snavAll">
+                <a id="Hi">Hi，欢迎来到800彩票！</a>
+                <ins> | </ins>
+                <a class="betNavMore" href="javascript:;">全部彩票</a>
+            </div>
+          <a class="snavIndexLink" href="#"></a>
+            <ul class="snavInfo">
+                <if condition="empty($_SESSION['uid'])">
+                <li>
+                    <a href="{:U('Portal/index/login')}">亲，请登录</a>
+                </li>
+                <li>
+                  <a href="{:U('Portal/index/register')}">用户注册</a>
+                </li>
+                <else />
+
+
+                 <li class="userName MsgShow">
+                <a class = "_personalInfo" href="{:U('Portal/User/user')}">
+                    <img alt="" src="{$user[avatar]}">
+                    <i>{$user[user_login]}</i>
+                </a>
+                <span id = "unreadMsgNum" onclick="window.location='letter.html'">0</span>
+                <div class="messageShow MessageShowContent">
+                    <i></i>
+                    <dl>
+                    <dt> <p onclick="window.location='{:U('Portal/User/letter')}'">我的未读消息(<small>0</small>)</p> <a href="{:U('Portal/User/letter')}">更多</a> </dt>
+                    </dl>
+                </div>
+            </li>
+            <li class="HoverShow"><a href="{:U('Portal/User/securityCenter')}">我的账户 <i class="downArrow"></i></a>
+                <div class="accountList HoverShowContent">
+                    <i></i>
+                    <a href="{:U('Portal/User/betRecord')}">投注记录</a>
+                    <a href="{:U('Portal/User/billRecord')}">交易记录</a>
+                    <a href="{:U('Portal/User/user')}">个人信息</a>
+                    <a href="{:U('Portal/User/securityCenter')}">安全中心</a>
+                    <if condition="$user[user_type] eq 0">
+                    <a href="{:U('Portal/User/agentIntro')}">代理中心</a>
+                    </if>
+                </div>
+            </li>
+            
+            <li>余额：
+                <span class="ShowMoney showMoney">已隐藏&nbsp;<i>显示</i></span>
+                <span class="GetMoney getMoney" style="display: none;" >
+                    <em id="user_money">{$user[money]}</em>
+                    <!--<i class="iconfont" id = "icon" onclick="usermoney()">&#xe645;</i>-->
+					<img id="loadingIcon" src="/themes/bootstrap/Public/bifa/images/loading52.jpg" onclick="usermoney()" />
+                    <i>隐藏</i>
+                </span>
+            </li>
+            <script type="text/javascript">
+        function usermoney(){
+        var url = "/index.php/Portal/User/money/";
+
+		$('#loadingIcon').attr("src","/themes/bootstrap/Public/bifa/images/loading52.gif");
+		
+        $.get(url,function(data){
+                $('#user_money').html(data);
+				$('#loadingIcon').attr("src","/themes/bootstrap/Public/bifa/images/loading52.jpg");
+        });
+        }
+
+    </script>
+            <li><a href="{:U('Portal/User/ebankPay')}">充值</a></li>
+            <li><a href= "{:U('Portal/User/coll_money')}">提现</a></li>
+            <li><a href= "{:U('Portal/index/logout')}">退出</a></li>
+              </if>
+             
+              <script type="text/javascript"></script>
+              <a class="service serviceLink ServiceBtn">
+                    <i class="iconfont"></i>
+                    <span></span>
+              </a>
+            </ul>
+        </div>
+    </div>
+    <div class="logoCon">
+        <div class="logo container fix">
+            <div class="logoL">
+                <a href="/">
+                  <img id="Logo1" src="http://imagess-google.com/bifa/logo/logo1.png"  height="50" style="display: block;">
+                </a>
+            </div>
+            <div class="logoR">
+                <a class="serviceLink ServiceBtn">
+                    <i class="iconfont"></i>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

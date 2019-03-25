@@ -1,0 +1,31 @@
+<!-- <link rel="stylesheet" href="/SSCCompany/Content/SSkin/Style/common.css?v=20160119" type="text/css" /> -->
+   
+<table width="100%" border="0" cellpadding="0" cellspacing="0" id="PrintTable" class="tableborder ie7Top">
+    <tbody>
+        <tr class="header">
+            <td colspan="14">实货白单数据</td>
+        </tr>
+
+        <tr class="reportTop">
+            <td width="20%">文件名</td>
+            <td width="5%">版本</td>
+            <td width="5%">时间</td>
+            <td width="5%">类型</td>
+            <td width="5%">尺寸</td>             
+        </tr>
+    </tbody>
+    <tbody data-bind="foreach:list">
+        <tr class="hover" title="成功" align="center" >
+            
+            <td class="altbg2" ><a data-bind="text:Name,attr:{href:Url}"></a></td>
+            <td class="altbg2" ></td>
+            <td class="altbg2" data-bind="text:Time"></td>
+            <td class="altbg2" >压缩备份</td>
+            <td class="altbg2" data-bind="text:Size.toFixed(2)+'KB'"></td>
+            
+        </tr>
+    </tbody>
+     
+</table> 
+<br /> 
+ 

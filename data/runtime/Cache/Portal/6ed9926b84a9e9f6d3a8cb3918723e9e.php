@@ -1,0 +1,226 @@
+<?php if (!defined('THINK_PATH')) exit();?><table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableborder" style="outline:none">
+    <tbody>
+        <tr class="header">
+            <td colspan="19" class="borderTop">查询 </td>
+        </tr>
+        <tr>
+            <td width="85"data-bind="visible:!IsDisablePeriodsOrDay()">
+         
+                <input type="checkbox" name="IsPeriodsOrDay" data-bind="checked:IsPeriodsOrDay,disable:IsDisablePeriodsOrDay">日总货明细
+             </td>
+            <td  width="140" data-bind="visible:IsDisablePeriodsOrDay()">
+                大股东<select id="companyIDVal" data-bind="options:CompanyList,optionsText:'LoginName',optionsValue:'ID'"></select>
+            </td>
+            <td width="140">查账号<input type="text" name="s_username" id="UserName"  data-bind="textinput:UserName,event:{keyup:grossEnter}" maxlength="20" value="" style="width:90px"></td>
+            <td width="55">查号码 </td>
+            <td width="100"><input type="text" name="s_number" id="BetNumber" data-bind="textinput:BetNumber,event:{keyup:grossEnter}" maxlength="5" value="" style="width:90px"></td>
+            <td width="10">现 </td>
+            <td width="20"><input type="checkbox" id="IsShow" name="sizixian" data-bind="valueUpdate:IsShow,value:IsShow,checked:IsShow"></td>
+            <td width="30">列出</td>
+            <td width="40">
+                <select name="soclass" data-bind="value:QueryStatus" id="AmtOrOdds">
+                    <option value="0">金额</option>
+                    <option value="1">赔率</option>
+                    <option value="2">退码</option>
+                </select>
+            </td>
+            <td width="60"><input type="text" name="s_money" id="BeginNum" data-bind="textInput:BeginNum,event:{keyup:grossEnter}" style="width:60px"></td>
+            <td width="10">至</td>
+            <td width="60"><input type="text" name="s_money_end" id="EndNum" data-bind="textInput:EndNum,event:{keyup:grossEnter}" style="width:60px"></td>
+
+            <td width="40">分类</td>
+            <td width="80">
+                <select name="s_classid" id="BetTypeID" data-bind="value:BetTypeID">
+                    <option value="0">全部</option>
+                    <!-- 新增：一定位 -->
+                    <option value="-101">一定位</option>
+                    <option value="17">口XXX</option>
+                    <option value="18">X口XX</option>
+                    <option value="19">XX口X</option>
+                    <option value="20">XXX口</option>
+                    <option value="21">XXXX口</option>
+                    <!-- 二定位 -->
+                    <option value="-102">二定位</option>
+                    <option value="1">口口XX</option>
+                    <option value="2">口X口X</option>
+                    <option value="3">口XX口</option>
+                    <option value="4">X口X口</option>
+                    <option value="5">X口口X</option>
+                    <option value="6">XX口口</option>
+                    <!-- 四五二定位 -->
+                    <option value="-1021">四五二定位</option>
+                    <option value="7">XXX口口</option>
+                    <option value="8">口XXX口</option>
+                    <!-- <option value="20">XX口X口</option> -->
+                    <!-- 三定位 -->
+                    <option value="-103">三定位</option>
+                    <option value="9">口口口X</option>
+                    <option value="10">口口X口</option>
+                    <option value="11">口X口口</option>
+                    <option value="12">X口口口</option>
+                    <!-- 其他 -->
+                    <option value="13">四定位</option>
+                    <option value="14">二字现</option>
+                    <option value="15">三字现</option>
+                    <!-- 
+                    <option value="16">四字现</option>
+                    <option value="-201">一定</option>
+                    <option value="-1">二定</option>
+                    <option value="-2">快打</option>
+                    <option value="-3">快选</option>
+                    <option value="-4">导入</option>
+                    <option value="-5">快译</option>
+                     -->
+                </select>
+            </td>
+            <td width="160"> 
+                    <label data-bind="text:IsPeriodsOrDay()?'日期':'期数'"></label>
+                    <select id="periodsnumber" data-bind="options:periodslist,optionsText:'PeriodsNumber',optionsValue:'PeriodsNumber',visible:!IsPeriodsOrDay()"></select>   
+                    
+                    <select id="betdateVal" data-bind="options:BetDateList,optionsText:'Datetimes',optionsValue:'Time',visible:IsPeriodsOrDay"></select>
+               
+               
+            </td>
+            <td width="50"><input class="button" type="submit" name="addsubmit" data-bind="click:Search" value="提 交"></td>
+            <td width="*">
+                 <input class="button" type="button" name="printsubmit" data-bind="click:Print" value="打印"> &nbsp;
+                 <input class="button" type="button" name="printsubmit" data-bind="click:GetIsWin,visible:isShowWin" value="中奖明细">
+            </td>
+            <!--<td width="50"><input class="button" type="button" name="downloadsubmit" data-bind="click:DownloadGross,visible:IsShowDownload" value="下载"></td>-->
+        </tr>
+    </tbody>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" id="PrintTable" class="tableborder ie7Top">
+    <tbody>
+        <tr class="header">
+            <td colspan="14">总货明细(<span class="red">红色为退码</span>)</td>
+        </tr>
+
+        <tr class="reportTop">
+            <td width="8%">注单编号</td>
+            <td width="10%">会员</td>
+            <td width="10%">下单时间</td>
+            <td width="6%">号码</td>
+            <td width="7%">下注金额</td>
+            <td width="7%" id="bsxxss">赔率</td>
+            <td width="7%">中奖</td>
+            <td width="7%">下线回水</td>
+            <td width="7%">实收下线</td>
+            <td width="7%">自己回水</td>
+            <td width="7%">实付上线</td>
+            <td width="7%">赚水</td>
+            <td width="7%">路径</td>
+            <td width="10%">IP</td>
+        </tr>
+    </tbody>
+    <tbody data-bind="foreach:list">
+        
+        <tr data-bind="css:(BetStatus-0)==1?'hover3':(IsHotNum)?'yellowIsHotNum':'hover'">
+            <td class="altbg2" data-bind="text:BetIdentifier">注单编号</td>
+            <td class="altbg1"><span data-bind="text:LoginName">会员</span><span class="nickname" data-bind="text:NickName==''?'('+NickName+')':''">(丽)</span></td>
+            <td class="altbg2" data-bind="text:BetDt">下单时间</td>
+            <td class="altbg1"><a href="#" class="dvJsViewDetail" data-bind="text:BetNumber==-1?'查看详情':BetNumber,click:$parent.detail;"></a> <b><span class="soon_b_f3" data-bind="text:(BetTypeID>=14&&BetTypeID<=16)?'现':''">号码</span></b></td>
+            <td class="altbg2"><b data-bind="text:BetAmount">下注金额</b></td>
+            <td class="altbg1">
+            <a href="#" data-bind="text:BetNumber==-1?count:Odds,click:$parent.detail;"></a> 
+            </td>
+            <td class="altbg2"><a  href="#" data-bind="text:WinLoss,click:$parent.zdetail;">中奖</a></td>
+            <td class="altbg1"><a  href="#" data-bind="text:BetNumber==-5?'返回查看':BackComm,click:$parent.detail;">下线回水</a></td>
+            <td class="altbg2"><a href="#"  data-bind="text:BetNumber==-5?'返回查看':(BetAmount-BackComm).toFixed(4)-0,click:$parent.detail;">实收下线</a></td>
+            <td class="altbg1"><a  href="#"  data-bind="text:BetNumber==-5?'返回查看':SelfBackComm,click:$parent.detail;">自己回水</a></td>
+            <td class="altbg2"><a href="#"  data-bind="text:BetNumber==-5?'返回查看':(BetAmount - SelfBackComm).toFixed(4)-0,click:$parent.detail;">实付上线</a></td>
+            <td class="altbg1"><a href="#"  data-bind="text:BetNumber==-5?'返回查看':Commission-0,click:$parent.detail;">赚水</a></td>
+            <td class="altbg2"><a href="#"  data-bind="text:BetNumber==-5?'返回查看':BetWayID,click:$parent.detail;">路径</a></td>
+            <td class="altbg1">
+                <span data-bind="text:BetIP"></span><br /><span data-bind="text:BetStatus===1?'退'+BackBetIP:''"></span>
+                
+            </td>
+        </tr>
+    </tbody>
+    <tr class="reportFooter">
+        <td colspan="2" style="text-align:center">合计</td>
+        <td data-bind="text:CountMember">统计会员</td>
+        <td>&#12288;</td>
+        <td data-bind="text:CountAmt">统计下注金额</td>
+        <td>&#12288;</td>
+        <td data-bind="text:CountWinorLoss().toFixed(4)-0">统计中奖</td>
+        <td data-bind="text:CountBackComm().toFixed(4)-0">统计回水</td>
+        <td data-bind="text:CountRealyAmount().toFixed(4)-0">统计实收下限</td>
+        <td data-bind="text:CountSelftComm().toFixed(4)-0">统计自己回水</td>
+        <td data-bind="text:CountPayAmount().toFixed(4)-0">统计实付上线</td>
+        <td data-bind="text:CountCommission().toFixed(4)-0">统计赚水</td>
+        <td>&#12288;</td>
+        <td>&#12288;</td>
+    </tr>
+</table>
+<div style="height: 0; width: 100%; overflow: hidden; display: none;">
+<!--print start-->
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" id="PrintTable" class="tableborder ie7Top">
+        <tbody>
+            <tr class="header">
+                <td colspan="14">总货明细</td>
+            </tr>
+            <tr class="reportTop">
+                <td width="8%">注单编号</td>
+                <td width="10%">会员</td>
+                <td width="10%">下单时间</td>
+                <td width="6%">号码</td>
+                <td width="7%">下注金额</td>
+                <td width="7%">赔率</td>
+                <td width="7%">中奖</td>
+                <td width="7%">下线回水</td>
+                <td width="7%">实收下线</td>
+                <td width="7%">自己回水</td>
+                <td width="7%">实付上线</td>
+                <td width="7%">赚水</td>
+                <td width="7%">路径</td>
+                <td width="10%">IP</td>
+            </tr>
+        </tbody>
+        <tbody data-bind="foreach:printList">
+            <tr class="hover" title="成功" align="center" data-bind="css:PBetStatus===1?'hover3':'hover'">
+                <td class="altbg2" data-bind="text:PBetIdentifier">注单编号</td>
+                <td class="altbg1"><span data-bind="text:PLoginName">会员</span><span class="nickname" data-bind="text:PNickName==''?'('+PNickName+')':''"></span></td>
+                <td class="altbg2" data-bind="text:PBetDt">下单时间</td>
+                <td class="altbg1"><span data-bind="text:PBetNumber"></span> <b><span class="soon_b_f3" data-bind="text:PBetTypeID-0>=14&&PBetTypeID-0<=16?'现':''">号码</span></b></td>
+                <td class="altbg2"><b data-bind="text:PBetAmount">下注金额</b></td>
+                <td class="altbg1" data-bind="text:POdds">赔率</td>
+                <td class="altbg2" data-bind="text:PWinLoss">中奖</td>
+                <td class="altbg1" data-bind="text:PBackComm">下线回水</td>
+                <td class="altbg2" data-bind="text:(PBetAmount-PBackComm).toFixed(4)-0">实收下线</td>
+                <td class="altbg1" data-bind="text:PSelfBackComm">自己回水</td>
+                <td class="altbg2" data-bind="text:(PBetAmount - PSelfBackComm).toFixed(4)-0">实付上线</td>
+                <td class="altbg1" data-bind="text:PCommission.toFixed(4)-0">赚水</td>
+                <td class="altbg2" data-bind="text:PBetWayID">路径</td>
+                <td class="altbg1">
+                    <span data-bind="text:PBetIP"></span>
+                    IP
+                </td>
+            </tr>
+        </tbody>
+        <tr class="reportFooter">
+            <td colspan="2" style="text-align:center">合计</td>
+            <td data-bind="text:CountMember">统计会员</td>
+            <td>&#12288;</td>
+
+            <td data-bind="text:CountAmt">统计下注金额</td>
+            <td>&#12288;</td>
+            <td data-bind="text:CountWinorLoss().toFixed(4)-0">统计中奖</td>
+            <td data-bind="text:CountBackComm().toFixed(4)-0">统计回水</td>
+            <td data-bind="text:CountRealyAmount().toFixed(4)-0">统计实收下限</td>
+            <td data-bind="text:CountSelftComm().toFixed(4)-0">统计自己回水</td>
+            <td data-bind="text:CountPayAmount().toFixed(4)-0">统计实付上线</td>
+            <td data-bind="text:CountCommission().toFixed(4)-0">统计赚水</td>
+            <td>&#12288;</td>
+            <td>&#12288;</td>
+        </tr>
+    </table>
+
+    <!--print end-->
+  </div>
+    <br />
+    <!--ko if:FromRrport-->
+    <center><button class="button" data-bind="click:back">返回</button></center>
+    <!--/ko-->
+    <div class="footer fanye" data-bind="page:currentPage"></div>

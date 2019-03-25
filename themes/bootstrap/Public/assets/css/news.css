@@ -1,0 +1,38 @@
+
+.content{
+	padding-left:3em; 
+	position: relative;
+	}
+.title{
+	border:none!important;
+}
+.mar10{
+	margin-right: 10px;
+}
+.newsBox{
+	position: relative;
+}
+.newsBox:before{
+	content: '';
+    position: absolute;
+    left: 1.2em;
+    width: 2px;
+    height: 100%;
+    background: #60db94;
+}
+@media screen and (max-width: 768px) {
+    .content {	
+       padding: 50px 0;
+    }
+   
+    .newsBox{
+   	padding: 0 5px;
+   }
+}
+@media screen and (max-width: 969px) {
+    
+   .newsBox:before{
+   	background: #fff;
+   }
+   
+}
