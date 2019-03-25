@@ -251,7 +251,7 @@
                                     </ul>
                                 </div>
                 </td>
-                <td width="300" style="color: #fff">
+                <td style="width:300px;position:absolute;right:0;color: #fff">
                     <div style="background: #74bf6a;height: 29px;text-align: center;line-height: 29px;font-size: 18px">最新开奖号码</div>
                     <div style="background: #91cc88;height: 29px">
                         <div style="float: left;width: 149px;text-align: center;line-height: 29px;font-size: 16px;border-right:1px solid #aadba4">期号</div>

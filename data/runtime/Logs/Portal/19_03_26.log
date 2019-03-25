@@ -1,0 +1,42 @@
+[ 2019-03-26T00:00:05+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529602215
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+
+[ 2019-03-26T00:00:17+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529613714
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+
+[ 2019-03-26T00:00:22+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529619191
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+
+[ 2019-03-26T00:00:32+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529629375
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+
+[ 2019-03-26T00:01:46+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529703727
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+
+[ 2019-03-26T00:02:06+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529723739
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+
+[ 2019-03-26T00:02:19+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529735617
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+

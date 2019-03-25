@@ -2799,6 +2799,8 @@ define(function (require, exports, module) {
         this.flag = ko.observable('1');
         this.thiNum = ko.observable(0);
         this.render = function () {
+            $$('#beat_left_part').hide()
+            $$('#choose_left_part').show()
             var content = $$('#content');
             if (content.find('td').length !== 0) {
                 if (confirm('上次生成的数据还没有下注完成,确定要重新生成吗？')) {
@@ -2938,7 +2940,10 @@ define(function (require, exports, module) {
                         cancel: function () { return false },
                         cancelValue: '正在提交中..'
                     });
+                    // $$('#beat_left_part').show()
                     d.showModal();
+                    $$('#beat_left_part').show()
+                    $$('#choose_left_part').hide()
                     $$('.ui-dialog-grid .ui-dialog-button button').attr('disabled', true);
                     var logs = '金额：' + self.amount() + '，笔数：' + __ss.__selectnumbertotal + ', ' + __ss.__logString;
                     //console.log(__ss.__curType);

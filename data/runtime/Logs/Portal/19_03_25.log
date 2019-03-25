@@ -10,3 +10,9 @@ ERR: 无法加载控制器:Index
 [ 2019-03-25T15:20:56+08:00 ] ::1 /index.php?s=/portal/index/login
 ERR: 无法加载控制器:Index
 
+[ 2019-03-25T23:59:55+08:00 ] ::1 /index.php/Home/GetUserLoginNoticeByType?Ticks=&_=1553529591700
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jz_term_relationships`
+ERR: 1146:Table 'qxc_sdc.jz_term_relationships' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jz_term_relationships` WHERE `term_id` = '9' ORDER BY object_id desc LIMIT 1  
+
