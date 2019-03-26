@@ -233,7 +233,10 @@
                                         <marquee behavior="scroll" scrollamount="3"><a href="javascript:void(0)"><label id="Detail"></label></a></marquee>
 
                                     </div>
-                                    <div class="stoptime"></div>  
+                                    <div class="stoptime" style="margin-right:20px"></div>
+                                    <div class="kaijiang" style="display: none;color: #fff">
+                                        最新开奖号码 期号<span id="kaijiang_time"></span> 号码<span id="kaijiang_num" style="margin-left:20px;color:red;font-weight:bold"></span>
+                                    </div>
                                     
                                 </div>
                     <div class="menu">
@@ -255,7 +258,7 @@
                                     </ul>
                                 </div>
                 </td>
-                <td style="width:300px;position:absolute;right:0;color: #fff">
+                <td id="kaijiang" style="width:300px;position:absolute;right:0;color: #fff">
                     <div style="background: #74bf6a;height: 29px;text-align: center;line-height: 29px;font-size: 18px">最新开奖号码</div>
                     <div style="background: #91cc88;height: 29px">
                         <div style="float: left;width: 149px;text-align: center;line-height: 29px;font-size: 16px;border-right:1px solid #aadba4">期号</div>
@@ -759,15 +762,24 @@
         }  
         var that = this; 
             /**查询停压号码:这里返回二类数据，包含删除数据*******************************/
-            var ajaxRequest = $.ajax({
+            
+    var ajaxRequest = $.ajax({
                 url: "/index.php/Portal/FastBeat/GetTopEightPeriodsNumber",
                 cache: false,
                 dataType: "json", 
                 success: function (json) {
                     var time = json[0].c_t
                     var number = json[0].c_r.replace(/,/g,'')
-                    $('#bonus_time').text(time)
-                    $('#bonus_number').text(number)
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                        $('.mar').hide()
+                        $('#kaijiang').hide()
+                        $('.kaijiang').find('#kaijiang_time').text(time)
+                        $('.kaijiang').find('#kaijiang_num').text(number)
+                        $('.kaijiang').show()
+                    }else{
+                        $('#bonus_time').text(time)
+                        $('#bonus_number').text(number)
+                    }
                     // $.each(json, function (index, value) {
 
                     //     value.c_r = value.c_r.replace(/,/g, ' ');
@@ -776,6 +788,11 @@
                     // that.TopEightList(json);
                 }
             });
+            
+
+
+
+
     </script>
 
 </body>
