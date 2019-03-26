@@ -167,7 +167,7 @@ seajs.config({
             var hash = location.hash;
             if (!/^#\$\d+/.test(hash)) {
                 framework.view("/index.php/Portal/FastChoose/Index", "BetPanel/FastChoose/Index", undefined, true);
-                location.hash = "$2"; /// 1 为默认菜单的索引值
+                location.hash = "$3"; /// 1 为默认菜单的索引值
             }
         });
     });

@@ -227,6 +227,7 @@
      *@method appendBetInfoForLeftInfo 添加及时注单操作(左边下注信息)
      */
     extend.appendBetInfoForLeftInfo = function (betInfo, isPrint) {
+        console.log('1111')
         isPrint = !!isPrint;
         if ($.isPlainObject(betInfo)) {
             betInfo = [betInfo];

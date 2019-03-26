@@ -406,7 +406,7 @@
                         <table width="100%" cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <td align="center" colspan="4">
-                                    <input class="btn" type="button" value="生成" data-bind="click:render;" />
+                                    <input class="btn" type="button" value="生成" data-bind="click:render" />
                                     <input class="btn" type="reset" value="复位" id="reset" />
                                 </td>
                             </tr>

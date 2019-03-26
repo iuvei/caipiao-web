@@ -4,6 +4,7 @@ define(function (require, exports, module) {
         return document.getElementById(id);
     }
 
+
     function testClassID7(number) {
         number = '' + number;
         if (/^\dXX\d$/i.test(number) || /^XX\d\d$/i.test(number)) {
@@ -2780,6 +2781,7 @@ define(function (require, exports, module) {
         this.flag = ko.observable('1');
         this.thiNum = ko.observable(0);
         this.render = function () {
+            alert('222')
             var content = $$('#content');
             if (content.find('td').length !== 0) {
                 if (confirm('上次生成的数据还没有下注完成,确定要重新生成吗？')) {
@@ -2916,9 +2918,9 @@ define(function (require, exports, module) {
                         title: '请稍后......',
                         content: '正在处理数据,请稍后。。。',
                         cancel: function () { return false },
-                        cancelValue: '正在提交中..'
+                        cancelValue: '1正在提交中..'
                     });
-                    d.showModal();
+                    // d.showModal();
                     $$('.ui-dialog-grid .ui-dialog-button button').attr('disabled', true);
                     var logs = '金额：' + self.amount() + '，笔数：' + __ss.__selectnumbertotal + ', ' + __ss.__logString;
 
