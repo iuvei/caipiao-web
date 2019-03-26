@@ -227,15 +227,15 @@
                             <li><a href="/index.php/portal/index/login" class="icon icon_signOut" data-bind="click:signOut">退出</a></li>
                         </ul>
                     </div>
-                    <div class="marquee">
+                    <div class="marquee" style="font-size:17px;margin-bottom:3px">
                                     <div class="mar">
                                         
                                         <marquee behavior="scroll" scrollamount="3"><a href="javascript:void(0)"><label id="Detail"></label></a></marquee>
 
                                     </div>
-                                    <div class="stoptime" style="margin-right:20px"></div>
+                                    <div class="stoptime" style="margin-right:20px;margin-left:0"></div>
                                     <div class="kaijiang" style="display: none;color: #fff">
-                                        最新开奖号码 期号<span id="kaijiang_time"></span> 号码<span id="kaijiang_num" style="margin-left:20px;color:red;font-weight:bold"></span>
+                                        最新开奖 期号<span id="kaijiang_time"></span> 号码<span id="kaijiang_num" style="margin-left:5px;color:red;font-weight:bold"></span>
                                     </div>
                                     
                                 </div>
@@ -259,14 +259,14 @@
                                 </div>
                 </td>
                 <td id="kaijiang" style="width:300px;position:absolute;right:0;color: #fff">
-                    <div style="background: #74bf6a;height: 29px;text-align: center;line-height: 29px;font-size: 18px">最新开奖号码</div>
-                    <div style="background: #91cc88;height: 29px">
-                        <div style="float: left;width: 149px;text-align: center;line-height: 29px;font-size: 16px;border-right:1px solid #aadba4">期号</div>
-                        <div style="float: left;width: 149px;text-align: center;line-height: 29px;font-size: 16px;border-left:1px solid #aadba4">号码</div>    
+                    <div style="background: #74bf6a;height: 30px;text-align: center;line-height: 30px;font-size: 18px">最新开奖号码</div>
+                    <div style="background: #91cc88;height: 30px">
+                        <div style="float: left;width: 149px;text-align: center;line-height: 30px;font-size: 16px;border-right:1px solid #aadba4">期号</div>
+                        <div style="float: left;width: 149px;text-align: center;line-height: 30px;font-size: 16px;border-left:1px solid #aadba4">号码</div>    
                     </div>
-                    <div style="background: #acd7a1;height: 32px">
-                        <div style="float: left;width: 149px;text-align: center;line-height: 32px;font-size: 16px;border-right:1px solid #baeab5;color: black"><span id="bonus_time"></span></div>
-                        <div style="float: left;width: 149px;text-align: center;line-height: 32px;font-size: 16px;border-left:1px solid #baeab5;color: #e52018;font-weight: bold"><span id="bonus_number"></span></div>
+                    <div style="background: #acd7a1;height: 30px">
+                        <div style="float: left;width: 149px;text-align: center;line-height: 30px;font-size: 16px;border-right:1px solid #baeab5;color: black"><span id="bonus_time"></span></div>
+                        <div style="float: left;width: 149px;text-align: center;line-height: 30px;font-size: 16px;border-left:1px solid #baeab5;color: #e52018;font-weight: bold"><span id="bonus_number"></span></div>
                     </div>
                 </td>
                 <td width="1"></td>
