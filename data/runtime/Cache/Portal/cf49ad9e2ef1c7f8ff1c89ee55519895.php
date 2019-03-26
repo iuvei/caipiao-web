@@ -29,9 +29,10 @@
 </style>
 <div class="table-out">
     <div id="beat_left_part" style="width: 40%" >
-            <!-- <div id="IFRAME">
-                    <iframe src="/index.php/Portal/FastBeat/Index" frameborder="0"></iframe>
-            </div> -->
+           <iframe src="/index.php/Home/Main#$3" scrolling="no"></iframe>
+
+
+        <!-- <div data-bind="component($data,'/index.php/Portal/FastBeat/Index','BetPanel/FastBeat/Index',2)"></div> -->
         <!-- <table class="tablecommon table-border" style="width: 100%"  width="100%" cellspacing="0" cellpadding="0" border="0">
             <tr class="title">
                 <td colspan="7">下注框<input type="hidden" value="2017/12/01 01:23:20" id="ServerDateTM" /></td>

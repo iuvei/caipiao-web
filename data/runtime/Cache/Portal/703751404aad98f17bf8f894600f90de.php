@@ -241,8 +241,12 @@
                                         <li class="active"><a href="/BetPanel/FixOne/Index" data-hide="IFRAME" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/FixOne/Index','FixOne/Index',0)">一字定</a></li>
                                         
                                         <li><a href="/BetPanel/FixTwo/Index" data-hide="IFRAME" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/FixTwo/Index','FixTwo/Index',1)">二字定</a></li>
-                                        <li><a href="/BetPanel/FastBeat/Index" data-hide="IFRAME" data-exclude="true" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/FastBeat/Index','BetPanel/FastBeat/Index',2)">快打</a></li>
-                                        <li><a href="/BetPanel/FastChoose/Index" data-hide="IFRAME" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/FastChoose/Index','FastChoose/Index',3)">快选</a></li>
+            
+                                        <li>
+                                            <a href="/BetPanel/FastChoose/Index" data-hide="IFRAME" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/FastChoose/Index','FastChoose/Index',3)" style="display: none">快选</a>
+                                        </li>
+                                        <li><a href="/BetPanel/FastBeat/Index" data-hide="IFRAME" data-exclude="true" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/FastBeat/Index','BetPanel/FastBeat/Index',2)" style="display: none">快打</a></li>
+                                        
                                         <li><a href="/BetPanel/FastTranslate/Index" data-hide="IFRAME" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/FastTranslate/Index','FastTranslate/Index',4)">快译</a></li>
                                         <li><a href="/BetPanel/Mo/Index" data-hide="IFRAME" data-exclude="true" data-bind="click:$root.tabmenu.bind($data,'/index.php/Portal/Mo/Index','Mo/Index',5)">赔率变动表</a></li>
                                         <li><a href="/BetPanel/InportTxt/Index" data-show="IFRAME" data-bind="click:$root.clear.bind($data)">txt导入</a></li>
@@ -380,7 +384,7 @@
                 </div> -->
             </div>
         </div>
-        <div class="no-print minW1024 container">
+        <div class="no-print minW1024 container" data-bind="css: { kuaida : location.href.indexOf('$2')>-1 , kuaixuan:  !(location.href.indexOf('$2')>-1)}">
             <div id="IFRAME" style="display: none;">
                 <iframe src="/index.php/Home/InportTxt" frameborder="0"></iframe>
             </div>
@@ -748,7 +752,30 @@
         *随后可以使用 Utils.sound.paly() 播放
         */
         Utils.sound.create({ path: baseUrl + '/Content/sound/', filename: 'sound', times: 1 });
+        console.log(location.href)
+        if(location.href.indexOf('$3')>-1){
+            $('#print_box').hide()
+            $('#sideScrollContainer').hide()
+        }  
+        var that = this; 
+            /**查询停压号码:这里返回二类数据，包含删除数据*******************************/
+            var ajaxRequest = $.ajax({
+                url: "/index.php/Portal/FastBeat/GetTopEightPeriodsNumber",
+                cache: false,
+                dataType: "json", 
+                success: function (json) {
+                    var time = json[0].c_t
+                    var number = json[0].c_r.replace(/,/g,'')
+                    $('#bonus_time').text(time)
+                    $('#bonus_number').text(number)
+                    // $.each(json, function (index, value) {
 
+                    //     value.c_r = value.c_r.replace(/,/g, ' ');
+                    // });
+
+                    // that.TopEightList(json);
+                }
+            });
     </script>
 
 </body>

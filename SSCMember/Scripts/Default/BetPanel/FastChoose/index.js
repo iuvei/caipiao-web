@@ -4,7 +4,6 @@ define(function (require, exports, module) {
         return document.getElementById(id);
     }
 
-
     function testClassID7(number) {
         number = '' + number;
         if (/^\dXX\d$/i.test(number) || /^XX\d\d$/i.test(number)) {

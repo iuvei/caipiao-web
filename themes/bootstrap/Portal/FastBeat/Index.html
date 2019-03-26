@@ -1,5 +1,8 @@
 <!-- 减去请求 -->
 <style type="text/css">
+    .kuaixuan.container{
+        margin-left:0
+    }
     div.container {
         overflow: hidden;
     }
@@ -89,10 +92,10 @@
 <div class="table-out">
     <div style="margin-left: 5px;">
 
-        <div class="no-print con-out">
+        <div class="no-print con-out" style="width: 60%">
 
             <!--ko if:periodsStatus()-->
-            <table class="tablecommon table-border" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <table class="tablecommon table-border" width="98%" cellspacing="0" cellpadding="0" border="0">
                 <tr class="title">
                     <td colspan="7">下注框<input type="hidden" value="2017/12/01 01:23:20" id="ServerDateTM" /></td>
                 </tr>
@@ -183,8 +186,8 @@
             </table>
             <!--/ko-->
         </div>
-        <div class="rightside2"></div>
-        <div class="rightside">
+        <!-- <div class="rightside2"></div> -->
+        <!-- <div class="rightside">
             <table class="tablecommon table-border no-print" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr class="title">
                     <td>开奖号码</td>
@@ -216,7 +219,6 @@
             <br />
 
 
-            <!--print startStopList-->
             <table class="tablecommon table-border print" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr class="title">
                     <td colspan="2">
@@ -258,7 +260,6 @@
                     <td colspan="2">&#12288;</td>
                 </tr>
             </table>
-            <!--print endStopList-->
             <div style="height:0;width:100%;overflow:hidden;display:none" title="打印押停号码">
                 <table class="tablecommon table-border" width="100%" cellspacing="0" cellpadding="0" border="0">
                     <tr class="title">
@@ -296,6 +297,6 @@
                 </tr>
             </table><br />
             
-        </div>
+        </div> -->
     </div>
 </div>

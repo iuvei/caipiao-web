@@ -6,7 +6,48 @@ define(function (require, exports, module) {
     exports.StopNumber = ko.observableArray();
     exports.childList = ko.observableArray();
     exports.menuName = ko.observable('规则说明');
+    exports.tabmenu1 = function (url, js, $index, $data, event) {
+        
+        if($index===3){    
+            console.log('url,',url)
+            console.log('js',js)
+            console.log('index',$index)
+            console.log('$data',$data)
+            console.log('$event',event)
+            if (event === undefined) {
+                event = $data;
+                $data = $index;
+                $index = null;
+            }
+            exports.childList([]);
+            var ele = $(event.target);
+            exports.currentItem[0] = ele;
+            var child = ele.data("child");
+            ele.parent().addClass('active').siblings('.active').removeClass("active");
+            exports.childList(child).menuName(!!js ? ele.text() : '规则说明');
+            //右边的a标签点击
+            $('.guide_right a').on('click', function () {
+                exports.childList(child).menuName(!!js && $(this).text());
+            });
+            $('#' + ele.data('hide')).hide();
+            if ((!Utils.Cookie.get('PeriodsID') || Utils.Cookie.get('PeriodsStatus') - 0 === 0) && ele.closest('div').hasClass('menu') && !ele.data('exclude')) {
+                this.replace(); return;
+            }
+            //console.log($('#print_box').height() + '' + $('body').height());
+            if ($index !== null) location.hash = "$" + $index;
+            framework.view(url, js, undefined, true);
+        }
+        
+    };
     exports.tabmenu = function (url, js, $index, $data, event) {
+        if($index===3){    
+            console.log('url,',url)
+            console.log('js',js)
+            console.log('index',$index)
+            console.log('$data',$data)
+            console.log('$event',event)
+            // framework.view("/index.php/Portal/FastChoose/Index", "BetPanel/FastChoose/Index", undefined, true);
+        }
         if (event === undefined) {
             event = $data;
             $data = $index;
@@ -509,6 +550,7 @@ define(function (require, exports, module) {
         $(window).on('hashchange', function () {
             var hash = location.hash;
             if (/^#\$/.test(hash)) return; /// #$ 开头则为玩法的切换
+            console.log('111')
             var selector = hash.replace('!', '');
             if (selector === '') {
                 window.location.reload();
