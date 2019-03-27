@@ -924,7 +924,24 @@ class HomeController extends HomebaseController {
           }
           //$data['PeriodsStatus']=0;
         }
-        echo json_encode($data);//echo '{"CompanyID":"16969","ID":"285927","CloseDt":"2017/7/23 9:59:00","DrawDt":"2017/7/23 10:00:00","OpenDt":"2017/7/23 9:50:00","PeriodsStatus":0,"status":true,"PeriodsNumber":"20170723024","info":"获取成功","nowDateTime":"2017-7-23 9:14:40","dw":{"c_t":"20170723023","c_d":"2017-07-23 03:00:07","c_r":"6,8,3,9,3"}}';
+        echo '{
+          "CompanyID": 1,
+          "DrawDt": "2019/03/26 01:30:00",
+          "CloseDt": "2019/03/26 01:29:00",
+          "OpenDt": "2019/03/26 01:10:30",
+          "PeriodsNumber": "190326004",
+          "ID": "190326004",
+          "status": true,
+          "info": "获取成功",
+          "dw": {
+            "c_t": "190326003",
+            "c_d": "2019/03/26 01:11:09",
+            "c_r": "5,8,9,8,6"
+          },
+          "nowDateTime": "2019/03/26 01:13:07",
+          "PeriodsStatus": 1
+        }';
+        // echo json_encode($data);//echo '{"CompanyID":"16969","ID":"285927","CloseDt":"2017/7/23 9:59:00","DrawDt":"2017/7/23 10:00:00","OpenDt":"2017/7/23 9:50:00","PeriodsStatus":0,"status":true,"PeriodsNumber":"20170723024","info":"获取成功","nowDateTime":"2017-7-23 9:14:40","dw":{"c_t":"20170723023","c_d":"2017-07-23 03:00:07","c_r":"6,8,3,9,3"}}';
     }
     public function GetUserLoginNoticeByType(){
       header('Content-type: application/json');

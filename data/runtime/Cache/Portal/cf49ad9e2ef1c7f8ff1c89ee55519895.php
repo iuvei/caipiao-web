@@ -28,9 +28,45 @@
     }
 </style>
 <div class="table-out">
-    <div style="background: green">
-            <!-- <iframe src="/i/eg_landscape.jpg"></iframe> -->
-        </div>
+    <div id="beat_left_part" style="width: 40%" >
+            <!-- <div id="IFRAME">
+                    <iframe src="/index.php/Portal/FastBeat/Index" frameborder="0"></iframe>
+            </div> -->
+        <!-- <table class="tablecommon table-border" style="width: 100%"  width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr class="title">
+                <td colspan="7">下注框<input type="hidden" value="2017/12/01 01:23:20" id="ServerDateTM" /></td>
+            </tr>
+            <tr class="tr-e">
+                    <td>彩种</td>
+                    <td>注单编号</td>
+                    <td>号码</td>
+                    <td>赔率</td>
+                    <td>金额</td>
+                    <td>状态</td>
+                    <td>
+                        <label>全选&nbsp;<input type="checkbox" /></label>
+                        <input type="button" value="退码" />
+                    </td>
+            </tr>
+            <tbody>
+                    <tr >
+                        <td ></td>
+                        
+                        <td ></td>
+                        <td>
+                            <label style="font-weight: bold;" />&nbsp;
+                            <label style="color: red; font-weight: bold;">现</label>
+                        </td>
+                        <td style="font-weight: bold;"></td>
+                        <td style="color: red; font-weight: bold;"></td>
+                        <td ></td>
+                        <td width="90">
+                            <input type="checkbox"  />
+                        </td>
+                    </tr>
+            </tbody>
+        </table> -->
+    </div>
     <div id="choose_left_part" style="position: absolute; top: 0; bottom: 0; left: 0; overflow: auto;width:40%;display: none;">
         <table class="tablecommon" width="100%" cellspacing="0" cellpadding="0" border="0">
             <tr class="title">
@@ -369,7 +405,7 @@
                         <table width="100%" cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <td align="center" colspan="4">
-                                    <input class="btn" type="button" value="生成" data-bind="click:render" />
+                                    <input class="btn" type="button" value="生成" data-bind="click:render;" />
                                     <input class="btn" type="reset" value="复位" id="reset" />
                                 </td>
                             </tr>
